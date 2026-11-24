@@ -159,3 +159,15 @@ def test_run_skips_ignored_offer(tmp_path, monkeypatch):
     h = meldungen.offer_hash("testshop|https://example.org/deal")
     sent, bot = _run(tmp_path, monkeypatch, at(25, "16:00"), 200, ignored={h: {"produkt": "makita-dhp490rfx3"}})
     assert sent == [] and bot["warteschlange"] == []
+
+
+def test_test_alert_has_buttons_for_real_product(tmp_path, monkeypatch):
+    sent = []
+    monkeypatch.setattr(telegram.Telegram, "_call", lambda self, m, p: sent.append((m, p)) or {})
+    (tmp_path / "products.yaml").write_text(FIXTURE.read_text(encoding="utf-8"), encoding="utf-8")
+    tg = telegram.Telegram(None, "t", "1")
+    assert main.send_test_alert(tg, "1", tmp_path / "products.yaml") == 0
+    text, kb = sent[0][1]["text"], json.loads(sent[0][1]["reply_markup"])["inline_keyboard"]
+    assert "TESTMELDUNG" in text and "Makita" in text
+    assert kb[0][0]["callback_data"] == "k:makita-dhp490rfx3:21500"
+    assert main.send_test_alert(tg, "99", tmp_path / "products.yaml") == 1
