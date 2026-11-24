@@ -56,6 +56,8 @@ test("Zielpreis-Vorschlag und Suchbegriffe", () => {
   assert.deepEqual(deriveTerms("Philips Airfryer 5000 Series HD9255/90"), ["HD9255"]);
   assert.deepEqual(deriveTerms("Makita DHP490RFX3 Akku-Schlagbohrschrauber 18V"), ["DHP490RFX3"]);
   assert.deepEqual(deriveTerms("Tolle Kaffeemaschine aus Glas"), ["Tolle Kaffeemaschine aus Glas"]);
+  assert.deepEqual(deriveTerms("Logitech B110 Silent Maus"), ["Logitech B110"]);
+  assert.deepEqual(deriveTerms("Lenovo L24-4e Full HD LED-Monitor 60,5 cm"), ["L24-4e"]);
 });
 
 test("robots.txt wird beachtet", async () => {
@@ -105,6 +107,7 @@ test("Link → Zielpreis ändern → Zahl schicken", async () => {
   assert.match(d.tg.edited[0].text, /Schick mir jetzt den Zielpreis/);
   await handleUpdate(msg("72,50"), d);
   assert.match(d.tg.sent.at(-1).text, /Ziel 72,50 €/);
+  assert.deepEqual(d.tg.markups.at(-1), { id: 77, buttons: [] }); // Abbrechen unter der Vorschau ist weg
   assert.equal(parseProducts(d.gh.store.get("products.yaml").text).at(-1).zielpreis, 72.5);
   // danach ist eine Zahl wieder nur eine Zahl
   await handleUpdate(msg("50"), d);
@@ -156,7 +159,9 @@ test("Ignorieren, Ziel −10 €, Pausieren", async () => {
 
   await handleUpdate(click("q:makita-dhp490rfx3", ALERT), d);
   assert.equal(parseProducts(d.gh.store.get("products.yaml").text)[0].aktiv, false);
-  assert.equal(d.tg.markups.at(-1).buttons[0][0].text, "⏸ Pausiert");
+  const rows = d.tg.markups.at(-1).buttons;
+  assert.equal(rows[1][1].text, "⏸ Pausiert"); // nur der gedrückte Button ändert sich
+  assert.equal(rows[0][0].callback_data, "k:makita-dhp490rfx3:18400"); // „Gekauft“ bleibt möglich
 });
 
 test("Buttons aus fremden Chats werden ignoriert", async () => {

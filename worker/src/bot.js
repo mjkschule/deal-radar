@@ -432,7 +432,7 @@ async function linkCallback(code, key, cq, deps) {
     await tg.edit(cq.message.message_id, "⌛ Die Vorschau ist abgelaufen – schick den Link bitte noch einmal.");
     return;
   }
-  await kv.put("warte_ziel", key, { expirationTtl: WAIT_TTL });
+  await kv.put("warte_ziel", JSON.stringify({ key, msg: cq.message.message_id }), { expirationTtl: WAIT_TTL });
   const p = JSON.parse(raw);
   await tg.edit(cq.message.message_id,
     linkPreview(p, p.target, "\n✏️ <b>Schick mir jetzt den Zielpreis als Zahl</b>, z. B. <code>49,99</code>"),
@@ -493,7 +493,7 @@ async function cmdRuhe(arg, { gh, now }) {
     await editFile(gh, CONFIG, `Telegram: Ruhezeiten ${a}`, (t) => setConfigValue(t, "ruhezeiten", "aktiv", on ? "true" : "false"));
     const cfg = await loadConfig(gh);
     return on
-      ? `🔕 Ruhezeiten sind <b>an</b>: ${esc(describe(cfg))}.\nZurückgehaltene Meldungen kommen danach gesammelt.`
+      ? `🔕 Ruhezeiten sind <b>an</b>: ${esc(describe(cfg))}.\nZurückgehaltene Meldungen kommen direkt nach der Ruhezeit.`
       : "🔔 Ruhezeiten sind <b>aus</b> – Sofort-Meldungen kommen jetzt rund um die Uhr. Wieder einschalten: /ruhe an";
   }
   if (a) return "Format: <code>/ruhe an</code> oder <code>/ruhe aus</code> (ohne Zusatz: aktueller Stand)";
@@ -513,11 +513,14 @@ export async function handleText(text, deps) {
   if (url && (!t.startsWith("/") || /^\/neu(@\w+)?\s+https?:/i.test(t))) return cmdLink(url[0], deps);
   // Zielpreis nach "Zielpreis ändern"
   if (/^\d+(?:[.,]\d{1,2})?\s*€?$/.test(t)) {
-    const key = await deps.kv.get("warte_ziel");
-    if (key) {
+    const wait = await deps.kv.get("warte_ziel");
+    if (wait) {
+      const { key, msg } = JSON.parse(wait);
       const price = parsePrice(t);
       if (!(price > 0)) return { text: "Der Zielpreis muss größer als 0 sein." };
-      return { text: await createFromLink(key, price, deps) };
+      const text = await createFromLink(key, price, deps);
+      await deps.tg.editMarkup(msg, []).catch(() => {}); // "Abbrechen" unter der Vorschau entfernen
+      return { text };
     }
   }
   const m = /^\/([a-zäöüß]+)(?:@\w+)?\s*([\s\S]*)$/i.exec(t);
@@ -557,7 +560,13 @@ export async function handleUpdate(update, deps) {
         r = { toast: "Hat nicht geklappt", text: `❌ Hat nicht geklappt: ${esc(e.message)}`, label: null };
       }
       await tg.answer(cq.id, r.toast);
-      if (r.label) await tg.editMarkup(cq.message.message_id, [[{ text: r.label, callback_data: "n" }], ...urlRow(cq)]);
+      if (r.label) {
+        // Gekauft: nur noch Ergebnis + Link. Sonst wird nur der gedrückte Button ersetzt.
+        const rows = code === "k" ? [[{ text: r.label, callback_data: "n" }], ...urlRow(cq)]
+          : (cq.message?.reply_markup?.inline_keyboard || []).map((row) => row.map((b) =>
+            b.callback_data === cq.data ? { text: r.label, callback_data: "n" } : b));
+        await tg.editMarkup(cq.message.message_id, rows);
+      }
       if (r.text) await tg.send(r.text);
       return "meldung";
     }
