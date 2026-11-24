@@ -14,6 +14,10 @@ on:
         description: "Nur eine Telegram-Testnachricht senden"
         type: boolean
         default: false
+      test_meldung:
+        description: "Nur eine Beispiel-Meldung mit Buttons senden – Nummer aus /liste oder id (leer = normaler Lauf)"
+        type: string
+        default: ""
 
 permissions:
   contents: write   # Preisverlauf committen
@@ -66,9 +70,17 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python -m dealradar.main --test-telegram
 
+      - name: Telegram-Beispielmeldung mit Buttons
+        if: steps.ende.outputs.beendet != 'true' && inputs.test_meldung != '' && !inputs.test_telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TEST_MELDUNG: ${{ inputs.test_meldung }}
+        run: python -m dealradar.main --test-meldung "$TEST_MELDUNG"
+
       - name: Deal-Radar ausführen
         id: run
-        if: steps.ende.outputs.beendet != 'true' && !inputs.test_telegram
+        if: steps.ende.outputs.beendet != 'true' && !inputs.test_telegram && (inputs.test_meldung == '' || inputs.test_meldung == null)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

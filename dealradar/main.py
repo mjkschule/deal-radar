@@ -19,6 +19,7 @@ from . import botdata, github, logic, meldungen, page, storage
 from .config import ROOT, ConfigError, end_datetime, is_over, load_config, load_products, now_local
 from .commands import CommandProcessor, split_message
 from .http import FetchError, Http
+from .models import Offer
 from .score import deal_score
 from .sources import Context, Skipped, all_sources
 from .telegram import Telegram, TelegramError, format_alert
@@ -98,6 +99,9 @@ def run(args) -> int:
                 "Ab jetzt melde ich mich, sobald ein guter Deal auftaucht.")
         print("Testnachricht gesendet.")
         return 0
+
+    if getattr(args, "test_meldung", None):
+        return send_test_alert(tg, args.test_meldung, ROOT / "products.yaml")
 
     out = Path(args.out) if args.out else ROOT
     data_dir, docs_dir = out / "data", out / "docs"
@@ -217,10 +221,37 @@ def run(args) -> int:
     return 0
 
 
+def send_test_alert(tg: Telegram, which: str, products_path: Path) -> int:
+    """Schickt eine Beispiel-Meldung (mit allen Buttons) für ein Produkt – zum Ausprobieren.
+    which: Nummer aus /liste oder die id. Die Buttons wirken auf das ECHTE Produkt."""
+    products = load_products(products_path)
+    which = str(which).strip()
+    p = (products[int(which) - 1] if which.isdigit() and 0 < int(which) <= len(products)
+         else next((x for x in products if x.id == which), None))
+    if not p:
+        print(f"Produkt '{which}' nicht gefunden (Nummer aus /liste oder id angeben).")
+        return 1
+    if not tg.configured:
+        print("TELEGRAM_BOT_TOKEN oder TELEGRAM_CHAT_ID fehlt.")
+        return 1
+    tg.dry_run = False
+    url = p.shop_urls[0] if p.shop_urls else "https://mjkschule.github.io/deal-radar/"
+    offer = Offer(product_id=p.id, source="test", shop="Testmeldung", title=f"{p.name} (Beispiel)",
+                  url=url, price=p.zielpreis, shipping=0)
+    alert = logic.Alert(p, offer, None, ["Zielpreis erreicht"])
+    text = ("🧪 <b>TESTMELDUNG</b> – kein echtes Angebot. Die Buttons wirken aber auf das echte Produkt!\n\n"
+            + format_alert(alert, None))
+    tg.send(text, meldungen.buttons(p.id, offer.key, offer.target_value, url))
+    print(f"Testmeldung für {p.id} gesendet.")
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Deal-Radar")
     ap.add_argument("--dry-run", action="store_true", help="nichts an Telegram senden")
     ap.add_argument("--test-telegram", action="store_true", help="nur eine Telegram-Testnachricht senden")
+    ap.add_argument("--test-meldung", metavar="NR_ODER_ID",
+                    help="nur eine Beispiel-Meldung mit Buttons für dieses Produkt senden")
     ap.add_argument("--out", help="anderer Ausgabeordner für data/ und docs/ (zum Testen)")
     ap.add_argument("--only", help="nur diese Produkt-IDs (kommagetrennt)")
     args = ap.parse_args(argv)

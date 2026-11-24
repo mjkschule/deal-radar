@@ -234,6 +234,11 @@ Legende in `/liste`: ✅ Ziel erreicht · 🟡 bis 10 % darüber · 🔴 darübe
 ## 3. Manuell auslösen
 
 **Actions** → **Deal-Radar** → **Run workflow** → **Run workflow** (ohne Haken).
+
+**Beispiel-Meldung mit Buttons** (zum Ausprobieren): beim **Run workflow** in das Feld
+„Nur eine Beispiel-Meldung …“ die **Nummer aus `/liste`** eintragen. Dann kommt eine als 🧪 TESTMELDUNG
+gekennzeichnete Nachricht mit allen Buttons. Achtung: Die Buttons wirken auf das **echte** Produkt
+(„Gekauft“ entfernt es also) – am besten mit einem Testprodukt ausprobieren.
 Oder im Terminal:
 ```bash
 gh workflow run radar.yml --repo mjkschule/deal-radar
