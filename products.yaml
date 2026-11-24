@@ -136,7 +136,7 @@
 
 # per Telegram hinzugefügt
 - id: philips-airfryer-5000-hd9255-4-1-l
-  aktiv: false
+  aktiv: true
   name: Philips Airfryer 5000 HD9255 (4,1 l)
   zielpreis: 55.0
   suchbegriffe: [Philips HD9255/80, Philips HD9255/60, Philips Airfryer 5000 HD9255]
