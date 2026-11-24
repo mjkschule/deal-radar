@@ -41,5 +41,30 @@
       ],
       "zielpreis": 7.5
     }
+  },
+  {
+    "id": "logitech-b110-silent-maus",
+    "name": "Logitech B110 Silent Maus",
+    "geloescht_am": "2026-11-24T22:44:15.005Z",
+    "grund": "gekauft",
+    "gekauft": {
+      "preis": 5,
+      "url": "https://www.office-partner.de/logitech-b110-silent-maus-10060823",
+      "am": "2026-11-24T22:44:15.005Z"
+    },
+    "eintrag": {
+      "id": "logitech-b110-silent-maus",
+      "aktiv": false,
+      "name": "Logitech B110 Silent Maus",
+      "kategorie": "sonstiges",
+      "suchbegriffe": [
+        "B110"
+      ],
+      "zielpreis": 5,
+      "ean": "5099206080539",
+      "shop_urls": [
+        "https://www.office-partner.de/logitech-b110-silent-maus-10060823"
+      ]
+    }
   }
 ]
