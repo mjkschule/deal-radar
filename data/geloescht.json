@@ -1,0 +1,30 @@
+[
+ {
+  "eintrag": {
+   "id": "testprodukt-airfryer-ninja",
+   "kategorie": "sonstiges",
+   "name": "Testprodukt Airfryer Ninja",
+   "suchbegriffe": [
+    "Testprodukt Airfryer Ninja"
+   ],
+   "zielpreis": 60.0
+  },
+  "geloescht_am": "2026-11-24T20:57:17+01:00",
+  "id": "testprodukt-airfryer-ninja",
+  "name": "Testprodukt Airfryer Ninja"
+ },
+ {
+  "eintrag": {
+   "id": "testprodukt-airfryer-philips",
+   "kategorie": "sonstiges",
+   "name": "Testprodukt AirFryer Philips",
+   "suchbegriffe": [
+    "Testprodukt AirFryer Philips"
+   ],
+   "zielpreis": 50.0
+  },
+  "geloescht_am": "2026-11-24T20:57:17+01:00",
+  "id": "testprodukt-airfryer-philips",
+  "name": "Testprodukt AirFryer Philips"
+ }
+]
