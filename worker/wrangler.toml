@@ -15,7 +15,7 @@ crons = ["17 */2 * * *", "0 * * * *"]
 # (kostenlos; angelegt mit: npx wrangler kv namespace create deal-radar-bot)
 [[kv_namespaces]]
 binding = "KV"
-id = "KV_ID_PLATZHALTER"
+id = "73679f6d184744a2bcddcdad649e41d6"
 
 [vars]
 GITHUB_REPO = "mjkschule/deal-radar"
