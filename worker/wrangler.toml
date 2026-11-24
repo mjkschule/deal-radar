@@ -1,0 +1,16 @@
+# Cloudflare Worker für den Deal-Radar-Telegram-Bot (kostenloser Plan reicht).
+# Geheime Werte NICHT hier eintragen, sondern mit:  npx wrangler secret put NAME
+#   TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, GITHUB_TOKEN, WEBHOOK_SECRET
+name = "deal-radar-bot"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+# Alle 2 Stunden (Minute 17, UTC) einen Suchlauf auf GitHub starten
+[triggers]
+crons = ["17 */2 * * *"]
+
+[vars]
+GITHUB_REPO = "mjkschule/deal-radar"
+GITHUB_BRANCH = "main"
+PAGE_URL = "https://mjkschule.github.io/deal-radar/"

@@ -9,12 +9,13 @@ Aufruf:
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import os
 import sys
 import time
 from pathlib import Path
 
-from . import github, logic, page, storage
+from . import botdata, github, logic, page, storage
 from .config import ROOT, ConfigError, end_datetime, is_over, load_config, load_products, now_local
 from .commands import CommandProcessor, split_message
 from .http import FetchError, Http
@@ -30,6 +31,9 @@ def handle_telegram_commands(tg: Telegram, http: Http, state: dict, cfg: dict, n
     try:
         texts, offset = tg.commands(state.get("telegram_offset"))
     except TelegramError as e:
+        if "webhook" in str(e).lower():
+            # Normalfall mit Cloudflare Worker: der beantwortet die Befehle sofort.
+            return ["Telegram-Webhook aktiv – Befehle beantwortet der Cloudflare Worker."]
         return [f"Telegram-Befehle nicht lesbar: {e}"]
     state["telegram_offset"] = offset
     if not texts:
@@ -65,6 +69,14 @@ def handle_telegram_commands(tg: Telegram, http: Http, state: dict, cfg: dict, n
     return log
 
 
+def _output(key: str, value: str) -> None:
+    """Wert an GitHub Actions weitergeben (steps.<id>.outputs.<key>)."""
+    path = os.environ.get("GITHUB_OUTPUT")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(f"{key}={value}\n")
+
+
 def run(args) -> int:
     cfg = load_config()
     now = now_local(cfg)
@@ -91,6 +103,16 @@ def run(args) -> int:
     products_path = ROOT / "products.yaml"
     state = storage.load_json(data_dir / "state.json", {})
     history = storage.load_json(data_dir / "verlauf.json", {})
+
+    # Zeitplan-Läufe kommen vom Worker UND (als Reserve) von GitHub. Liegt der letzte
+    # Lauf weniger als X Minuten zurück, wird dieser Lauf übersprungen.
+    if env.get("GITHUB_EVENT_NAME") == "schedule" or env.get("RADAR_GRUND") == "zeitplan":
+        last = state.get("letzter_lauf")
+        gap = int(cfg.get("mindestabstand_minuten", 60))
+        if last and (now - dt.datetime.fromisoformat(last)).total_seconds() < gap * 60:
+            print(f"Letzter Lauf {last} ist weniger als {gap} Minuten her – Zeitplan-Lauf übersprungen.")
+            _output("lauf", "uebersprungen")
+            return 0
 
     for line in handle_telegram_commands(tg, http, state, cfg, now, products_path, data_dir, env):
         print(line)
@@ -158,6 +180,8 @@ def run(args) -> int:
     storage.append_csv(data_dir / "verlauf.csv", now_iso, all_offers)
     storage.save_json(data_dir / "state.json", state)
     storage.save_json(data_dir / "verlauf.json", history)
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    storage.save_json(docs_dir / "bot.json", botdata.build(load_products(products_path), state, history, cfg, now))
     docs_dir.mkdir(parents=True, exist_ok=True)
     (docs_dir / "index.html").write_text(page.render(load_products(products_path), state, history, cfg, now),
                                          encoding="utf-8")

@@ -1,8 +1,8 @@
-# Führt die Tests aus, wenn Code geändert wird.
+# Führt die Tests aus, wenn Code geändert wird (Python-Radar und Telegram-Worker).
 name: Tests
 on:
   push:
-    paths: ["dealradar/**", "tests/**", "products.yaml", "config.yaml"]
+    paths: ["dealradar/**", "tests/**", "worker/**", "products.yaml", "config.yaml"]
   workflow_dispatch:
 jobs:
   test:
@@ -14,3 +14,17 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements-dev.txt
       - run: python -m pytest -q
+  worker:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: worker
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      # products.yaml muss auch für den Worker gültig sein (er ändert sie per Telegram)
+      - run: node -e "import('./src/yamledit.js').then(m=>console.log(m.parseProducts(require('fs').readFileSync('../products.yaml','utf8')).length+' Produkte ok'))"

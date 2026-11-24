@@ -1,0 +1,135 @@
+# =====================================================================
+#  Deal-Radar – deine Produkte
+#
+#  Jeder Eintrag beginnt mit "- id:". Zum Hinzufügen einfach das Beispiel
+#  ganz unten kopieren, das "#" am Zeilenanfang entfernen und anpassen.
+#  Wichtig: Einrückung mit LEERZEICHEN (nicht Tab), genau wie bei den anderen.
+#
+#  Felder:
+#   id               kurzer eindeutiger Name, nur a-z, 0-9 und "-"
+#   name             Anzeigename
+#   kategorie        frei wählbar, z. B. werkzeug, drucker, monitor, zubehoer, auto
+#   typ              "produkt" (Standard) oder "leasing"
+#   suchbegriffe     Liste. Ein Angebot passt, wenn ALLE Wörter EINES Begriffs
+#                    im Titel vorkommen (Groß/klein egal). Modellnummern wie
+#                    "DHP490RFX3" werden auch mit Leerzeichen erkannt ("DHP 490 RFX3").
+#   zielpreis        Alarm, wenn Preis (inkl. Versand) <= Zielpreis
+#                    (bei Leasing: Monatsrate <= Zielpreis)
+#   ausschluss       optional: Wörter, die NICHT vorkommen dürfen
+#   shop_urls        optional: konkrete Produktseiten, deren Preis direkt gelesen wird
+#   mydealz_gruppen  optional: mydealz-Gruppen (die Adresse mydealz.de/gruppe/<name>)
+#   ebay_suche       optional: Suchtext für eBay (Standard: erster Suchbegriff)
+#   pflicht_hinweise optional: Wörter, die im Angebot stehen sollten; fehlen sie,
+#                    gibt es den Hinweis "bitte prüfen"
+#   mindestwerte     optional: z. B. {Hz: 75} oder {kg: 5}. Steht ein kleinerer Wert
+#                    im Angebot, wird es aussortiert; steht keiner da: "bitte prüfen"
+#   notizen          optional: freier Text, erscheint auf der Startseite
+#   aktiv            optional: false = pausiert (wird nicht überwacht, bleibt aber
+#                    in der Liste). Telegram: /pause <Nr.> und /fortsetzen <Nr.>
+# =====================================================================
+
+- id: makita-dhp490rfx3
+  name: "Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)"
+  kategorie: werkzeug
+  suchbegriffe: ["DHP490RFX3", "DHP490RFX", "DHP490 RFX3"]
+  zielpreis: 215
+  ausschluss: ["DHP490Z", "solo", "ohne Akku"]
+  mydealz_gruppen: [makita, werkzeug, akkuschrauber]
+  ebay_suche: "Makita DHP490RFX3"
+  notizen: "Set mit 2x 3,0 Ah, Ladegerät, Koffer und 74-teiligem Zubehör."
+
+- id: hp-deskjet-2922
+  name: "HP DeskJet 2922 (Farbe, WLAN, Scan/Kopie)"
+  kategorie: drucker
+  suchbegriffe: ["DeskJet 2922"]
+  zielpreis: 45
+  ausschluss: ["Patrone", "Patronen", "Druckerpatronen", "Toner"]
+  mydealz_gruppen: [drucker, multifunktionsdrucker, hp]
+  ebay_suche: "HP DeskJet 2922"
+
+- id: epson-et-2922
+  name: "Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)"
+  kategorie: drucker
+  suchbegriffe: ["ET-2922", "ET 2922", "EcoTank 2922"]
+  zielpreis: 155
+  ausschluss: ["Nachfülltinte", "Tintenflaschen", "Ersatztinte"]
+  mydealz_gruppen: [drucker, multifunktionsdrucker, epson]
+  ebay_suche: "Epson EcoTank ET-2922"
+  shop_urls:
+    - "https://www.baur.de/p/AKLBB2123259027"
+
+- id: drucker-allgemein
+  name: "Multifunktionsdrucker Farbe WLAN (allgemein)"
+  kategorie: drucker
+  suchbegriffe: ["Multifunktionsdrucker", "Multifunktionsgerät", "3in1 Drucker", "3 in 1 Drucker", "All-in-One Drucker", "Tintenstrahl Multifunktion"]
+  zielpreis: 60
+  ausschluss: ["Patrone", "Patronen", "Toner", "Nachfülltinte", "Druckerpapier", "s/w", "Schwarzweiß", "Monochrom", "Mono"]
+  mydealz_gruppen: [drucker, multifunktionsdrucker]
+  ebay_suche: "Multifunktionsdrucker Farbe WLAN"
+  pflicht_hinweise: ["WLAN", "Farbe"]
+  notizen: "Netzwerk (WLAN oder LAN), Farbe, Scan und Kopie."
+
+- id: lenovo-l24-4e
+  name: "Lenovo L24-4e (24 Zoll, Full HD, 100 Hz)"
+  kategorie: monitor
+  suchbegriffe: ["L24-4e", "L24 4e", "L24e-4"]
+  zielpreis: 65
+  mydealz_gruppen: [monitor, lenovo]
+  ebay_suche: "Lenovo L24-4e"
+  shop_urls:
+    - "https://www.office-partner.de/lenovo-l24-4e-full-hd-led-monitor-60-5-cm-23.8-n2008239836"
+  notizen: "VESA bitte im Datenblatt prüfen (benötigt 75x75 oder 100x100)."
+
+- id: monitor-24-allgemein
+  name: "Monitor 24 Zoll mit VESA (Full HD, mind. 75 Hz)"
+  kategorie: monitor
+  suchbegriffe: ["24 Zoll Monitor", "23 8 Zoll Monitor", "24 Monitor Full HD", "23 8 Monitor", "24 Monitor FHD", "24 Monitor 1080p"]
+  zielpreis: 75
+  ausschluss: ["27 Zoll", "32 Zoll", "34 Zoll", "4K", "WQHD", "1440p", "Halterung", "Monitorarm", "Wandhalterung", "Monitorständer"]
+  mydealz_gruppen: [monitor]
+  ebay_suche: "Monitor 24 Zoll Full HD VESA 75Hz"
+  pflicht_hinweise: ["VESA"]
+  mindestwerte: {Hz: 75}
+  notizen: "Muss VESA 75x75 oder 100x100 haben."
+
+- id: wandhalterung-c27f396
+  name: "Monitor-Wandhalterung für Samsung C27F396FHU"
+  kategorie: zubehoer
+  suchbegriffe: ["Monitor Wandhalterung", "Monitorhalterung Wand", "Wandhalterung Monitor", "Monitor Wandhalter", "Wandhalterung VESA 75", "Wandhalterung VESA 100", "Bildschirm Wandhalterung"]
+  zielpreis: 18
+  ausschluss: ["Tischhalterung", "Tischklemme", "Standfuß", "Monitorständer", "Schreibtisch"]
+  mydealz_gruppen: [tv-wandhalterung, monitor]
+  ebay_suche: "Monitor Wandhalterung schwenkbar VESA 75 100"
+  pflicht_hinweise: ["schwenkbar", "VESA"]
+  mindestwerte: {kg: 5}
+  notizen: "Curved, VESA 75x75, 4,1 kg ohne Fuß. Gesucht: schwenkbar, VESA 75/100, Traglast ab 5 kg."
+
+- id: opel-frontera-electric-leasing
+  name: "Opel Frontera Electric – Privatleasing"
+  kategorie: auto
+  typ: leasing
+  suchbegriffe: ["Frontera Electric", "Frontera Elektro", "Frontera e", "Frontera EV"]
+  zielpreis: 250
+  ausschluss: ["Gewerbeleasing", "Gewerbekunden", "nur Gewerbe", "Kauf", "Finanzierung", "Auto-Abo"]
+  mydealz_gruppen: [opel, auto-leasing, elektroautos]
+  leasing:
+    laufzeit_monate: 36
+    min_km_jahr: 15000
+    max_sonderzahlung: 1000
+    leasingmarkt_url: "https://www.leasingmarkt.de/leasing-opel-frontera?tg=PRIVATE"
+  notizen: "36 Monate, mind. 15.000 km/Jahr, keine oder geringe Sonderzahlung (bis 1.000 €)."
+
+# ---------------------------------------------------------------------
+# BEISPIEL für ein neues Produkt (Raute "#" am Zeilenanfang entfernen):
+#
+# - id: kaffeemaschine-xyz
+#   name: "De'Longhi Magnifica S"
+#   kategorie: haushalt
+#   suchbegriffe: ["Magnifica S", "ECAM 22.110"]
+#   zielpreis: 249
+#   ausschluss: ["gebraucht", "defekt"]
+#   shop_urls:
+#     - "https://www.beispiel-shop.de/produkt/123"
+#   mydealz_gruppen: [kaffeevollautomaten]
+#   notizen: "Nur in Schwarz"
+# ---------------------------------------------------------------------

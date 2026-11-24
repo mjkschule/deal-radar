@@ -6,6 +6,8 @@ name: Deal-Radar
 on:
   schedule:
     - cron: "17 */2 * * *"   # alle 2 Stunden, Minute 17 (UTC; GitHub startet oft etwas später)
+  repository_dispatch:        # vom Telegram-Bot (Cloudflare Worker): Zeitplan und nach Befehlen
+    types: [radar]
   workflow_dispatch:          # "Run workflow"-Knopf zum manuellen Auslösen
     inputs:
       test_telegram:
@@ -69,10 +71,11 @@ jobs:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
           GITHUB_TOKEN: ${{ github.token }}   # für Telegram-Befehle: products.yaml per API committen
+          RADAR_GRUND: ${{ github.event.client_payload.grund }}   # "zeitplan" oder "befehl" (vom Worker)
         run: python -m dealradar.main
 
       - name: Preisverlauf speichern (Commit)
-        if: steps.run.outcome == 'success'
+        if: steps.run.outcome == 'success' && steps.run.outputs.lauf != 'uebersprungen'
         run: |
           git config user.name "deal-radar-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -86,22 +89,22 @@ jobs:
           fi
 
       - name: Startseite vorbereiten
-        if: steps.run.outcome == 'success'
+        if: steps.run.outcome == 'success' && steps.run.outputs.lauf != 'uebersprungen'
         uses: actions/upload-pages-artifact@v5
         with:
           path: docs
 
       - name: Startseite veröffentlichen
         id: deploy_try
-        if: steps.run.outcome == 'success'
+        if: steps.run.outcome == 'success' && steps.run.outputs.lauf != 'uebersprungen'
         continue-on-error: true   # GitHub findet das Artefakt manchmal erst Sekunden später
         uses: actions/deploy-pages@v5
 
       - name: Kurz warten (zweiter Versuch)
-        if: steps.run.outcome == 'success' && steps.deploy_try.outcome == 'failure'
+        if: steps.run.outcome == 'success' && steps.run.outputs.lauf != 'uebersprungen' && steps.deploy_try.outcome == 'failure'
         run: sleep 30
 
       - name: Startseite veröffentlichen (zweiter Versuch)
         id: deploy
-        if: steps.run.outcome == 'success' && steps.deploy_try.outcome == 'failure'
+        if: steps.run.outcome == 'success' && steps.run.outputs.lauf != 'uebersprungen' && steps.deploy_try.outcome == 'failure'
         uses: actions/deploy-pages@v5
