@@ -151,6 +151,7 @@
 
 # per Telegram-Link hinzugefügt (office-partner.de)
 - id: logitech-b110-silent-maus
+  aktiv: false
   name: "Logitech B110 Silent Maus"
   kategorie: sonstiges
   suchbegriffe: ["B110"]
