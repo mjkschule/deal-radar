@@ -61,7 +61,7 @@ meldungen:
 # Ein-/ausschalten auch per Telegram: /ruhe an  bzw.  /ruhe aus
 # "tage" gilt für den Beginn; 22:00–07:00 reicht also in den nächsten Morgen.
 ruhezeiten:
-  aktiv: false
+  aktiv: true
   zeiten:
     - {tage: "Mo-Fr", von: "07:30", bis: "14:00"}
     - {tage: "Mo-So", von: "22:00", bis: "07:00"}
