@@ -1,12 +1,12 @@
 {
  "enddatum": "2026-11-27T23:59+01:00",
- "letzter_lauf": "2026-11-24T21:29:41+01:00",
+ "letzter_lauf": "2026-11-24T23:13:03+01:00",
  "produkte": {
   "drucker-allgemein": {
    "aktiv": true,
    "bester": {
     "effektivpreis": 39.99,
-    "gesehen": "2026-11-24T21:29:41+01:00",
+    "gesehen": "2026-11-24T23:13:03+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: Farbe"
@@ -32,7 +32,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-24T21:29:41+01:00",
+    "gesehen": "2026-11-24T23:13:03+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -70,7 +70,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-24T21:29:41+01:00",
+    "gesehen": "2026-11-24T23:13:03+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -95,7 +95,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 184.0,
-    "gesehen": "2026-11-24T21:29:41+01:00",
+    "gesehen": "2026-11-24T23:13:03+01:00",
     "hinweise": [
      "Gutschein/Code nötig",
      "nur für Neukunden",
@@ -122,7 +122,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 65.99,
-    "gesehen": "2026-11-24T21:29:41+01:00",
+    "gesehen": "2026-11-24T23:13:03+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -159,7 +159,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 336.66,
-    "gesehen": "2026-11-24T21:29:41+01:00",
+    "gesehen": "2026-11-24T23:13:03+01:00",
     "hinweise": [
      "Verfügbar: 03/2027",
      "Sonderzahlung unbekannt",
@@ -194,11 +194,23 @@
    "ziel_erreicht": false,
    "zielpreis": 55.0
   },
+  "testprodukt-deal-radar": {
+   "aktiv": true,
+   "bester": null,
+   "kategorie": "sonstiges",
+   "name": "Testprodukt Deal-Radar",
+   "score": null,
+   "tiefstpreis": null,
+   "tiefstpreis_shop": null,
+   "typ": "produkt",
+   "ziel_erreicht": false,
+   "zielpreis": 9.99
+  },
   "wandhalterung-c27f396": {
    "aktiv": true,
    "bester": {
     "effektivpreis": 9.99,
-    "gesehen": "2026-11-24T21:29:41+01:00",
+    "gesehen": "2026-11-24T23:13:03+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -225,37 +237,37 @@
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-24T21:29:41+01:00"
+   "zeit": "2026-11-24T23:13:03+01:00"
   },
   "leasingmarkt": {
    "anzahl": 26,
-   "dauer_s": 72.0,
+   "dauer_s": 70.6,
    "meldung": "18 Seiten, 0 Detailseiten geladen; 261 Angebote geprüft, 26 elektrisch",
    "status": "ok",
-   "zeit": "2026-11-24T21:29:41+01:00"
+   "zeit": "2026-11-24T23:13:03+01:00"
   },
   "mydealz": {
    "anzahl": 24,
-   "dauer_s": 53.2,
+   "dauer_s": 51.4,
    "meldung": "15/15 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-24T21:29:41+01:00"
+   "zeit": "2026-11-24T23:13:03+01:00"
   },
   "shop": {
    "anzahl": 2,
-   "dauer_s": 10.3,
+   "dauer_s": 8.9,
    "meldung": "2/2 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-24T21:29:41+01:00"
+   "zeit": "2026-11-24T23:13:03+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
-   "dauer_s": 4.7,
+   "dauer_s": 4.2,
    "meldung": "25 Artikel im Feed",
    "status": "ok",
-   "zeit": "2026-11-24T21:29:41+01:00"
+   "zeit": "2026-11-24T23:13:03+01:00"
   }
  },
- "stand": "2026-11-24T21:29:41+01:00",
+ "stand": "2026-11-24T23:13:03+01:00",
  "version": 1
 }
