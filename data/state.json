@@ -1,13 +1,31 @@
 {
  "angebote": {
   "drucker-allgemein": {
+   "alza|https://www.mydealz.de/deals/canon-pixma-g3430-multifunktionsdrucker-mit-tanks-2880515": {
+    "first_seen": "2026-11-24T19:05:22+01:00",
+    "hints": [
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T19:05:22+01:00",
+    "leasing": {},
+    "price": 125.98,
+    "product_id": "drucker-allgemein",
+    "shipping": null,
+    "shop": "Alza",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Canon PIXMA G3430 Multifunktionsdrucker mit Tanks",
+    "url": "https://www.mydealz.de/deals/canon-pixma-g3430-multifunktionsdrucker-mit-tanks-2880515",
+    "vergleichspreis": 125.98
+   },
    "amazon|https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743": {
     "first_seen": "2026-11-24T12:32:33+01:00",
     "hints": [
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 174.99,
     "product_id": "drucker-allgemein",
@@ -26,7 +44,7 @@
      "evtl. nur per App",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 339.0,
     "product_id": "drucker-allgemein",
@@ -39,12 +57,31 @@
     "url": "https://www.mydealz.de/deals/epson-ecotank-et-4955-a4-multifunktionsdrucker-tintentank-wi-fi-airprint-adf-duplexdruck-scannen-kopieren-fax-60eur-cashback-2873541",
     "vergleichspreis": 339.0
    },
+   "amazon|https://www.mydealz.de/deals/hp-deskjet-4320-multifunktionsdrucker-druckenkopierenscannen-wlan-adf-inkl-6-monate-instant-ink-2880644": {
+    "first_seen": "2026-11-24T19:05:22+01:00",
+    "hints": [
+     "Gutschein/Code nötig",
+     "evtl. nur per App"
+    ],
+    "last_seen": "2026-11-24T19:05:22+01:00",
+    "leasing": {},
+    "price": 45.99,
+    "product_id": "drucker-allgemein",
+    "shipping": 0.0,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "HP DeskJet 4320 Multifunktionsdrucker, Drucken/Kopieren/Scannen, WLAN, ADF, inkl. 6 Monate Instant Ink",
+    "url": "https://www.mydealz.de/deals/hp-deskjet-4320-multifunktionsdrucker-druckenkopierenscannen-wlan-adf-inkl-6-monate-instant-ink-2880644",
+    "vergleichspreis": 45.99
+   },
    "amazon|https://www.mydealz.de/deals/hp-officejet-pro-8132e-multifunktionsdrucker-a4-druckenscannenkopierenfaxen-wlan-lan-duplex-basalt-2875280": {
     "first_seen": "2026-11-24T12:32:33+01:00",
     "hints": [
      "evtl. nur per App"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 89.99,
     "product_id": "drucker-allgemein",
@@ -87,7 +124,7 @@
      "Versand unbekannt",
      "bitte prüfen: Farbe"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 127.42,
     "product_id": "drucker-allgemein",
@@ -106,7 +143,7 @@
      "nur für Neukunden",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 534.0,
     "product_id": "drucker-allgemein",
@@ -126,7 +163,7 @@
      "Versand unbekannt",
      "bitte prüfen: WLAN"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 76.51,
     "product_id": "drucker-allgemein",
@@ -145,7 +182,7 @@
      "Versand unbekannt",
      "bitte prüfen: Farbe"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 39.99,
     "product_id": "drucker-allgemein",
@@ -163,7 +200,7 @@
     "hints": [
      "bitte prüfen: Farbe"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 357.99,
     "product_id": "drucker-allgemein",
@@ -181,7 +218,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 119.99,
     "product_id": "drucker-allgemein",
@@ -199,7 +236,7 @@
     "hints": [
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 160.93,
     "product_id": "drucker-allgemein",
@@ -218,7 +255,7 @@
      "Versand unbekannt",
      "bitte prüfen: Farbe"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 163.99,
     "product_id": "drucker-allgemein",
@@ -237,7 +274,7 @@
      "Preis evtl. inkl. Cashback/Payback",
      "bitte prüfen: Farbe"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 199.0,
     "product_id": "drucker-allgemein",
@@ -257,7 +294,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 184.9,
     "product_id": "epson-et-2922",
@@ -276,7 +313,7 @@
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 174.99,
     "product_id": "epson-et-2922",
@@ -294,7 +331,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 199.9,
     "product_id": "epson-et-2922",
@@ -315,7 +352,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 73.78,
     "product_id": "lenovo-l24-4e",
@@ -337,7 +374,7 @@
      "nur für Neukunden",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 184.0,
     "product_id": "makita-dhp490rfx3",
@@ -360,7 +397,7 @@
      "Versand unbekannt",
      "bitte prüfen: VESA"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 79.99,
     "product_id": "monitor-24-allgemein",
@@ -378,7 +415,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 65.99,
     "product_id": "monitor-24-allgemein",
@@ -394,7 +431,7 @@
    "notebooksbilliger|https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252": {
     "first_seen": "2026-11-24T12:32:33+01:00",
     "hints": [],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 65.99,
     "product_id": "monitor-24-allgemein",
@@ -832,7 +869,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 44.95,
     "product_id": "wandhalterung-c27f396",
@@ -853,7 +890,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 12.0,
     "product_id": "wandhalterung-c27f396",
@@ -871,7 +908,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 9.99,
     "product_id": "wandhalterung-c27f396",
@@ -890,7 +927,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-24T12:35:08+01:00",
+    "last_seen": "2026-11-24T19:05:22+01:00",
     "leasing": {},
     "price": 35.99,
     "product_id": "wandhalterung-c27f396",
@@ -919,46 +956,67 @@
    }
   }
  },
- "gemeldet": {},
- "gemeldet_shop_preis": {},
- "letzter_lauf": "2026-11-24T12:35:08+01:00",
+ "gemeldet": {
+  "amazon|https://www.mydealz.de/deals/hp-deskjet-4320-multifunktionsdrucker-druckenkopierenscannen-wlan-adf-inkl-6-monate-instant-ink-2880644": 45.99,
+  "amazon|https://www.mydealz.de/deals/prime-one-for-all-tv-wandhalterung-neigbar-wm4421-32-bis-65-zoll-vesa-100x100-bis-400x400-10-jahre-garantie-max-100-kg-schwarz-2815407": 12.0,
+  "baur|https://www.mydealz.de/deals/makita-dhp490rfx3-18v-akku-schlagbohrschrauber-set-2x-30-ah-akkus-ladegerat-koffer-74-tlg-zubehor-ab-17808-eur-eff-inkl-cb-und-pb-2877733": 184.0,
+  "ebay|https://www.mydealz.de/deals/tv-wandhalterung-schwenk-neigbar-vesa-400x400-23-50-zoll-fur-fernseher-und-monitor-2651968": 9.99,
+  "lidl|https://www.mydealz.de/deals/epson-expression-home-xp-2200-3-in-1-wlan-multifunktionsdrucker-bei-lidl-2878456": 39.99,
+  "notebooksbilliger|https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252": 65.99
+ },
+ "gemeldet_shop_preis": {
+  "drucker-allgemein": [
+   "lidl|39.99",
+   "amazon|45.99"
+  ],
+  "makita-dhp490rfx3": [
+   "baur|184.00"
+  ],
+  "monitor-24-allgemein": [
+   "notebooksbilliger|65.99"
+  ],
+  "wandhalterung-c27f396": [
+   "ebay|9.99",
+   "amazon|12.00"
+  ]
+ },
+ "letzter_lauf": "2026-11-24T19:05:22+01:00",
  "quellen": {
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-24T12:35:08+01:00"
+   "zeit": "2026-11-24T19:05:22+01:00"
   },
   "leasingmarkt": {
-   "anzahl": 15,
-   "dauer_s": 20.9,
-   "meldung": "6 Seiten, 0 Detailseiten geladen; 90 Angebote geprüft, 16 elektrisch",
-   "status": "ok",
-   "zeit": "2026-11-24T12:35:08+01:00"
+   "dauer_s": 15.6,
+   "meldung": "JSONDecodeError: Expecting ',' delimiter: line 1 column 39328 (char 39327)",
+   "status": "fehler",
+   "zeit": "2026-11-24T19:05:22+01:00"
   },
   "mydealz": {
-   "anzahl": 23,
-   "dauer_s": 49.6,
+   "anzahl": 24,
+   "dauer_s": 49.1,
    "meldung": "15/15 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-24T12:35:08+01:00"
+   "zeit": "2026-11-24T19:05:22+01:00"
   },
   "shop": {
    "anzahl": 2,
-   "dauer_s": 8.7,
+   "dauer_s": 8.3,
    "meldung": "2/2 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-24T12:35:08+01:00"
+   "zeit": "2026-11-24T19:05:22+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
    "dauer_s": 4.3,
    "meldung": "25 Artikel im Feed",
    "status": "ok",
-   "zeit": "2026-11-24T12:35:08+01:00"
+   "zeit": "2026-11-24T19:05:22+01:00"
   }
  },
- "telegram_offset": null,
+ "telegram_offset": 157988587,
  "tiefstpreis": {
   "drucker-allgemein": {
    "first_seen": "2026-11-24T12:32:33+01:00",
