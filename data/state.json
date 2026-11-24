@@ -1,0 +1,1101 @@
+{
+ "angebote": {
+  "drucker-allgemein": {
+   "amazon|https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "evtl. nur per App",
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 174.99,
+    "product_id": "drucker-allgemein",
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Epson EcoTank ET-2922 Multifunktionsdrucker mit WLAN",
+    "url": "https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743",
+    "vergleichspreis": 174.99
+   },
+   "amazon|https://www.mydealz.de/deals/epson-ecotank-et-4955-a4-multifunktionsdrucker-tintentank-wi-fi-airprint-adf-duplexdruck-scannen-kopieren-fax-60eur-cashback-2873541": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "evtl. nur per App",
+     "Preis evtl. inkl. Cashback/Payback"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 339.0,
+    "product_id": "drucker-allgemein",
+    "shipping": 0.0,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Epson EcoTank ET-4955 A4-Multifunktionsdrucker (Tintentank, Wi-Fi & AirPrint, ADF, Duplexdruck, Scannen, Kopieren & Fax) | + 60€ Cashback",
+    "url": "https://www.mydealz.de/deals/epson-ecotank-et-4955-a4-multifunktionsdrucker-tintentank-wi-fi-airprint-adf-duplexdruck-scannen-kopieren-fax-60eur-cashback-2873541",
+    "vergleichspreis": 339.0
+   },
+   "amazon|https://www.mydealz.de/deals/hp-officejet-pro-8132e-multifunktionsdrucker-a4-druckenscannenkopierenfaxen-wlan-lan-duplex-basalt-2875280": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "evtl. nur per App"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 89.99,
+    "product_id": "drucker-allgemein",
+    "shipping": 0.0,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "HP OfficeJet Pro 8132e Multifunktionsdrucker, A4, Drucken/Scannen/Kopieren/Faxen, WLAN, LAN, Duplex, Basalt",
+    "url": "https://www.mydealz.de/deals/hp-officejet-pro-8132e-multifunktionsdrucker-a4-druckenscannenkopierenfaxen-wlan-lan-duplex-basalt-2875280",
+    "vergleichspreis": 89.99
+   },
+   "amazon|https://www.mydealz.de/deals/hp-smart-tank-7305-tintentank-multifunktionsdrucker-fur-19889-eur-bei-amazon-30-eur-hp-cashback-16889-eur-effektiv-2850198": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Preis evtl. inkl. Cashback/Payback",
+     "evtl. nur mit Prime",
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 189.96,
+    "product_id": "drucker-allgemein",
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "[Prime] HP Smart Tank 7305 Tintentankdrucker Multifunktionsdrucker mit Duplex + ADF für 189,96 € + 30 € HP Cashback = 159,96 € effektiv",
+    "url": "https://www.mydealz.de/deals/hp-smart-tank-7305-tintentank-multifunktionsdrucker-fur-19889-eur-bei-amazon-30-eur-hp-cashback-16889-eur-effektiv-2850198",
+    "vergleichspreis": 189.96
+   },
+   "amazon|https://www.mydealz.de/deals/pantum-bm2309w-multifunktionsgerat-drucker-scanner-kopierer-3in1-laserdrucker-prime-black-friday-bei-amazon-2876890": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Gutschein/Code nötig",
+     "evtl. nur per App",
+     "Preis evtl. inkl. Cashback/Payback",
+     "evtl. nur mit Prime",
+     "Versand unbekannt",
+     "bitte prüfen: Farbe"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 127.42,
+    "product_id": "drucker-allgemein",
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "PANTUM BM2309W \"Multifunktionsgerät\", Drucker Scanner Kopierer 3in1, Laserdrucker (prime) [Black Friday bei Amazon]",
+    "url": "https://www.mydealz.de/deals/pantum-bm2309w-multifunktionsgerat-drucker-scanner-kopierer-3in1-laserdrucker-prime-black-friday-bei-amazon-2876890",
+    "vergleichspreis": 127.42
+   },
+   "coolblue|https://www.mydealz.de/deals/brother-mfc-l8730cdw-4-in-1-farblaser-multifunktionsdrucker-mit-duplexdruck-duplexscan-2870723": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "nur für Neukunden",
+     "Preis evtl. inkl. Cashback/Payback"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 534.0,
+    "product_id": "drucker-allgemein",
+    "shipping": 0.0,
+    "shop": "Coolblue",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "[REGIONAL] Brother MFC-L8730CDW - 4-in-1 Farblaser-Multifunktionsdrucker (mit Duplexdruck & Duplexscan)",
+    "url": "https://www.mydealz.de/deals/brother-mfc-l8730cdw-4-in-1-farblaser-multifunktionsdrucker-mit-duplexdruck-duplexscan-2870723",
+    "vergleichspreis": 534.0
+   },
+   "galaxus|https://www.mydealz.de/deals/hp-envy-photo-7930-3in1-drucker-zum-idealo-bestpreis-2879440": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Marketplace-Händler",
+     "Versand unbekannt",
+     "bitte prüfen: WLAN"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 76.51,
+    "product_id": "drucker-allgemein",
+    "shipping": null,
+    "shop": "Galaxus",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "HP Envy Photo 7930 3in1 Drucker",
+    "url": "https://www.mydealz.de/deals/hp-envy-photo-7930-3in1-drucker-zum-idealo-bestpreis-2879440",
+    "vergleichspreis": 76.51
+   },
+   "lidl|https://www.mydealz.de/deals/epson-expression-home-xp-2200-3-in-1-wlan-multifunktionsdrucker-bei-lidl-2878456": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Versand unbekannt",
+     "bitte prüfen: Farbe"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 39.99,
+    "product_id": "drucker-allgemein",
+    "shipping": null,
+    "shop": "Lidl",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Epson Expression Home XP-2200 – 3-in-1 WLAN-Multifunktionsdrucker bei Lidl",
+    "url": "https://www.mydealz.de/deals/epson-expression-home-xp-2200-3-in-1-wlan-multifunktionsdrucker-bei-lidl-2878456",
+    "vergleichspreis": 39.99
+   },
+   "notebooksbilliger|https://www.mydealz.de/deals/multifunktionsdrucker-brother-dcp-l3560cdw-led-mehrfarbig-2865985": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "bitte prüfen: Farbe"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 357.99,
+    "product_id": "drucker-allgemein",
+    "shipping": 0.0,
+    "shop": "notebooksbilliger",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Multifunktionsdrucker Brother DCP-L3560CDW, LED, mehrfarbig",
+    "url": "https://www.mydealz.de/deals/multifunktionsdrucker-brother-dcp-l3560cdw-led-mehrfarbig-2865985",
+    "vergleichspreis": 357.99
+   },
+   "notebooksbilliger|https://www.mydealz.de/deals/xerox-b225-laser-multifunktionsgerat-sw-a4-drucker-kopierer-scanner-usb-lan-wlan-apple-airprint-2866718": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 119.99,
+    "product_id": "drucker-allgemein",
+    "shipping": null,
+    "shop": "notebooksbilliger",
+    "source": "mydealz",
+    "status": "ausgeschlossen",
+    "status_reason": "Ausschlusswort „s/w“",
+    "title": "Xerox B225 Laser-Multifunktionsgerät s/w A4, Drucker, Kopierer, Scanner, USB, LAN, WLAN, Apple Airprint",
+    "url": "https://www.mydealz.de/deals/xerox-b225-laser-multifunktionsgerat-sw-a4-drucker-kopierer-scanner-usb-lan-wlan-apple-airprint-2866718",
+    "vergleichspreis": 119.99
+   },
+   "pc componentes|https://www.mydealz.de/deals/14093-eur-mit-cb-epson-ecotank-et-2910-multifunktionsdrucker-druckenscannenkopieren-wlan-airprint-nachfullbare-tintentanks-2854770": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Preis evtl. inkl. Cashback/Payback"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 160.93,
+    "product_id": "drucker-allgemein",
+    "shipping": 0.0,
+    "shop": "PC Componentes",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "140,93 € mit Cb | Epson EcoTank ET-2910 Multifunktionsdrucker - Drucken/Scannen/Kopieren, WLAN, AirPrint, nachfüllbare Tintentanks",
+    "url": "https://www.mydealz.de/deals/14093-eur-mit-cb-epson-ecotank-et-2910-multifunktionsdrucker-druckenscannenkopieren-wlan-airprint-nachfullbare-tintentanks-2854770",
+    "vergleichspreis": 160.93
+   },
+   "pc componentes|https://www.mydealz.de/deals/brother-dcp-l2627dwe-multifunktionsdrucker-2853293": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Versand unbekannt",
+     "bitte prüfen: Farbe"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 163.99,
+    "product_id": "drucker-allgemein",
+    "shipping": null,
+    "shop": "PC Componentes",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Brother DCP-L2627DWE Laser Multifunktionsdrucker",
+    "url": "https://www.mydealz.de/deals/brother-dcp-l2627dwe-multifunktionsdrucker-2853293",
+    "vergleichspreis": 163.99
+   },
+   "saturn|https://www.mydealz.de/deals/hp-smart-tank-7308-tintentank-multifunktionsdrucker-duplex-adf-wlan-lan-inkl-tinte-fur-199-eur-bei-saturn-mediamarkt-ebay-2874791": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Preis evtl. inkl. Cashback/Payback",
+     "bitte prüfen: Farbe"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 199.0,
+    "product_id": "drucker-allgemein",
+    "shipping": 0.0,
+    "shop": "Saturn",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "HP Smart Tank 7308 Tintentank-Multifunktionsdrucker (Duplex, ADF, WLAN, LAN, inkl. Tinte) für 199 € bei Saturn, MediaMarkt & eBay",
+    "url": "https://www.mydealz.de/deals/hp-smart-tank-7308-tintentank-multifunktionsdrucker-duplex-adf-wlan-lan-inkl-tinte-fur-199-eur-bei-saturn-mediamarkt-ebay-2874791",
+    "vergleichspreis": 199.0
+   }
+  },
+  "epson-et-2922": {
+   "amazon|https://www.mydealz.de/deals/epson-ecotank-et-2922-fur-18490-eur-bei-amazon-2847452": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 184.9,
+    "product_id": "epson-et-2922",
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Epson EcoTank ET-2922 für 184,90 € bei Amazon",
+    "url": "https://www.mydealz.de/deals/epson-ecotank-et-2922-fur-18490-eur-bei-amazon-2847452",
+    "vergleichspreis": 184.9
+   },
+   "amazon|https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "evtl. nur per App",
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 174.99,
+    "product_id": "epson-et-2922",
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Epson EcoTank ET-2922 Multifunktionsdrucker mit WLAN",
+    "url": "https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743",
+    "vergleichspreis": 174.99
+   },
+   "baur.de|https://www.baur.de/p/AKLBB2123259027": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 199.9,
+    "product_id": "epson-et-2922",
+    "shipping": null,
+    "shop": "baur.de",
+    "source": "shop",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Epson Multifunktionsdrucker »EcoTank ET-2922«",
+    "url": "https://www.baur.de/p/AKLBB2123259027",
+    "vergleichspreis": 199.9
+   }
+  },
+  "hp-deskjet-2922": {},
+  "lenovo-l24-4e": {
+   "office-partner.de|https://www.office-partner.de/lenovo-l24-4e-full-hd-led-monitor-60-5-cm-23.8-n2008239836": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 73.78,
+    "product_id": "lenovo-l24-4e",
+    "shipping": null,
+    "shop": "office-partner.de",
+    "source": "shop",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Lenovo L24-4e (24 Zoll, Full HD, 100 Hz)",
+    "url": "https://www.office-partner.de/lenovo-l24-4e-full-hd-led-monitor-60-5-cm-23.8-n2008239836",
+    "vergleichspreis": 73.78
+   }
+  },
+  "makita-dhp490rfx3": {
+   "baur|https://www.mydealz.de/deals/makita-dhp490rfx3-18v-akku-schlagbohrschrauber-set-2x-30-ah-akkus-ladegerat-koffer-74-tlg-zubehor-ab-17808-eur-eff-inkl-cb-und-pb-2877733": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Gutschein/Code nötig",
+     "nur für Neukunden",
+     "Preis evtl. inkl. Cashback/Payback"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 184.0,
+    "product_id": "makita-dhp490rfx3",
+    "shipping": 0.0,
+    "shop": "BAUR",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Makita DHP490RFX3 18V Akku-Schlagbohrschrauber Set (2x 3,0 Ah Akkus, Ladegerät, Koffer + 74-tlg. Zubehör) ab 178,08 € eff. (inkl. CB und PB)",
+    "url": "https://www.mydealz.de/deals/makita-dhp490rfx3-18v-akku-schlagbohrschrauber-set-2x-30-ah-akkus-ladegerat-koffer-74-tlg-zubehor-ab-17808-eur-eff-inkl-cb-und-pb-2877733",
+    "vergleichspreis": 184.0
+   }
+  },
+  "monitor-24-allgemein": {
+   "joybuy|https://www.mydealz.de/deals/hkc-g24h3d-gaming-monitor-238-19201080-240-hz-fast-ips-schwarz-2879509": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Gutschein/Code nötig",
+     "evtl. nur per App",
+     "Versand unbekannt",
+     "bitte prüfen: VESA"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 79.99,
+    "product_id": "monitor-24-allgemein",
+    "shipping": null,
+    "shop": "Joybuy",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "HKC G24H3D Gaming-Monitor 23,8 1920*1080 240 Hz Fast IPS Schwarz",
+    "url": "https://www.mydealz.de/deals/hkc-g24h3d-gaming-monitor-238-19201080-240-hz-fast-ips-schwarz-2879509",
+    "vergleichspreis": 79.99
+   },
+   "notebooksbilliger|https://www.mydealz.de/deals/238-acer-nitro-vg0-vg240yp6bip-full-hd-ips-144hz-entspiegelt-15001-kontrast-1x-dp-12-1xhdmi-14-1x-35mm-gaming-monitor-2877936": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 65.99,
+    "product_id": "monitor-24-allgemein",
+    "shipping": null,
+    "shop": "notebooksbilliger",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "23.8\" Acer Nitro VG0 VG240YP6bip, Full-HD, IPS, 144Hz, entspiegelt, 1500:1 Kontrast, 1x DP 1.2, 1xHDMI 1.4, 1x 3.5mm, Gaming Monitor",
+    "url": "https://www.mydealz.de/deals/238-acer-nitro-vg0-vg240yp6bip-full-hd-ips-144hz-entspiegelt-15001-kontrast-1x-dp-12-1xhdmi-14-1x-35mm-gaming-monitor-2877936",
+    "vergleichspreis": 65.99
+   },
+   "notebooksbilliger|https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 65.99,
+    "product_id": "monitor-24-allgemein",
+    "shipping": 0.0,
+    "shop": "notebooksbilliger",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "[notebooksbilliger] Acer Nitro VG240YP6bip Monitor | 23,8\" IPS, Full HD, 144Hz, FreeSync, 99% sRGB | 65,99€ (inkl. Versand) | 0.9% CB Budgey",
+    "url": "https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252",
+    "vergleichspreis": 65.99
+   }
+  },
+  "opel-frontera-electric-leasing": {
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102431?adVariant=35578496": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102431?adVariant=35578496",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102432?adVariant=35578520": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102432?adVariant=35578520",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102435?adVariant=35578544": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102435?adVariant=35578544",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102438?adVariant=35578603": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102438?adVariant=35578603",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102440?adVariant=35578623": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102440?adVariant=35578623",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261512?adVariant=36750703": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261512?adVariant=36750703",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261517?adVariant=36750730": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261517?adVariant=36750730",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261520?adVariant=36750799": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261520?adVariant=36750799",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261522?adVariant=36750834": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261522?adVariant=36750834",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261541?adVariant=36750986": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261541?adVariant=36750986",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261542?adVariant=36750998": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: Sofort",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 360.77,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 360.77,
+     "sonderzahlung": null
+    },
+    "price": 360.77,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13261542?adVariant=36750998",
+    "vergleichspreis": 360.77
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13288208?adVariant=37424029": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: 04/2027",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 429.0,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 429.0,
+     "sonderzahlung": null
+    },
+    "price": 429.0,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera electric Extended Range Ultimate ⚡Bestellaktion⚡BESCHREIBUNG LESEN",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13288208?adVariant=37424029",
+    "vergleichspreis": 429.0
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13349763?adVariant=39376690": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: 03/2027"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": 1492.3,
+     "effektiv": 342.45,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 301.0,
+     "sonderzahlung": 0.0
+    },
+    "price": 301.0,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Electric 52-kWh-Batterie 83kW Edition - Vorlauffahrzeug!",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13349763?adVariant=39376690",
+    "vergleichspreis": 342.45
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13361745?adVariant=39835830": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: 05/2027",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": null,
+     "effektiv": 417.0,
+     "gewerbe": false,
+     "km": 15000,
+     "monate": 36,
+     "rate": 417.0,
+     "sonderzahlung": null
+    },
+    "price": 417.0,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Electric 43-kWh-Batterie 83kW Edition - frei konfigurierbar!",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13361745?adVariant=39835830",
+    "vergleichspreis": 417.0
+   },
+   "leasingmarkt.de|https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13383022?adVariant=40228432": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Verfügbar: 05/2027"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {
+     "bereitstellung": 1189.3,
+     "effektiv": 346.04,
+     "gewerbe": false,
+     "km": 20000,
+     "monate": 36,
+     "rate": 313.0,
+     "sonderzahlung": 0.0
+    },
+    "price": 313.0,
+    "product_id": "opel-frontera-electric-leasing",
+    "shipping": null,
+    "shop": "LeasingMarkt.de",
+    "source": "leasingmarkt",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Opel Frontera: Opel Frontera Electric 43-kWh-Batterie 83kW Start - frei konfigurierbar!",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13383022?adVariant=40228432",
+    "vergleichspreis": 346.04
+   }
+  },
+  "wandhalterung-c27f396": {
+   "amazon|https://www.mydealz.de/deals/bontec-tv-wandhalterung-mit-1040-mm-extra-langem-gelenkarm-fur-32-75-zoll-bis-60kg-neigbar-schwenk-und-drehbar-max-vesa-600-x-400-mm-2750508": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 44.95,
+    "product_id": "wandhalterung-c27f396",
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "BONTEC TV Wandhalterung mit 1040 mm Extra Langem Gelenkarm für 32-75 Zoll bis 60kg Neigbar Schwenk- und Drehbar Max. VESA 600 x 400 mm",
+    "url": "https://www.mydealz.de/deals/bontec-tv-wandhalterung-mit-1040-mm-extra-langem-gelenkarm-fur-32-75-zoll-bis-60kg-neigbar-schwenk-und-drehbar-max-vesa-600-x-400-mm-2750508",
+    "vergleichspreis": 44.95
+   },
+   "amazon|https://www.mydealz.de/deals/prime-one-for-all-tv-wandhalterung-neigbar-wm4421-32-bis-65-zoll-vesa-100x100-bis-400x400-10-jahre-garantie-max-100-kg-schwarz-2815407": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "evtl. nur per App",
+     "evtl. nur mit Prime",
+     "Versand unbekannt",
+     "bitte prüfen: schwenkbar"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 12.0,
+    "product_id": "wandhalterung-c27f396",
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "[Prime] One for All TV-Wandhalterung - Neigbar WM4421 32 bis 65 Zoll - VESA 100x100 bis 400x400-10 Jahre Garantie - max. 100 kg - Schwarz",
+    "url": "https://www.mydealz.de/deals/prime-one-for-all-tv-wandhalterung-neigbar-wm4421-32-bis-65-zoll-vesa-100x100-bis-400x400-10-jahre-garantie-max-100-kg-schwarz-2815407",
+    "vergleichspreis": 12.0
+   },
+   "ebay|https://www.mydealz.de/deals/tv-wandhalterung-schwenk-neigbar-vesa-400x400-23-50-zoll-fur-fernseher-und-monitor-2651968": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 9.99,
+    "product_id": "wandhalterung-c27f396",
+    "shipping": null,
+    "shop": "eBay",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "TV Wandhalterung Schwenk & neigbar VESA 400x400 | 23-50 Zoll für Fernseher und Monitor",
+    "url": "https://www.mydealz.de/deals/tv-wandhalterung-schwenk-neigbar-vesa-400x400-23-50-zoll-fur-fernseher-und-monitor-2651968",
+    "vergleichspreis": 9.99
+   },
+   "joybuy|https://www.mydealz.de/deals/bestpreis-vogels-tvm-1609-tv-wandhalterung-schwarz-fur-40-100-zoll-vesa-600-400-75-kg-max-gewicht-clickloc-system-2877030": {
+    "first_seen": "2026-11-24T12:32:33+01:00",
+    "hints": [
+     "Versand unbekannt",
+     "bitte prüfen: schwenkbar"
+    ],
+    "last_seen": "2026-11-24T12:32:33+01:00",
+    "leasing": {},
+    "price": 35.99,
+    "product_id": "wandhalterung-c27f396",
+    "shipping": null,
+    "shop": "Joybuy",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Vogel's TVM 1609 TV Wandhalterung Schwarz - für 40-100 Zoll, VESA 600 × 400, 75 kg Max. Gewicht, ClickLoc System",
+    "url": "https://www.mydealz.de/deals/bestpreis-vogels-tvm-1609-tv-wandhalterung-schwarz-fur-40-100-zoll-vesa-600-400-75-kg-max-gewicht-clickloc-system-2877030",
+    "vergleichspreis": 35.99
+   }
+  }
+ },
+ "cache": {
+  "leasingmarkt_details": {
+   "39376690": {
+    "bereitstellung": 1492.3,
+    "sonderzahlung": 0.0,
+    "t": "2026-11-24T12:32:33.908644+01:00"
+   },
+   "40228432": {
+    "bereitstellung": 1189.3,
+    "sonderzahlung": 0.0,
+    "t": "2026-11-24T12:32:33.908644+01:00"
+   }
+  }
+ },
+ "gemeldet": {},
+ "gemeldet_shop_preis": {},
+ "letzter_lauf": "2026-11-24T12:32:33+01:00",
+ "quellen": {
+  "ebay": {
+   "dauer_s": 0.0,
+   "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
+   "status": "deaktiviert",
+   "zeit": "2026-11-24T12:32:33+01:00"
+  },
+  "leasingmarkt": {
+   "anzahl": 15,
+   "dauer_s": 31.0,
+   "meldung": "6 Seiten, 2 Detailseiten geladen; 90 Angebote geprüft, 16 elektrisch",
+   "status": "ok",
+   "zeit": "2026-11-24T12:32:33+01:00"
+  },
+  "mydealz": {
+   "anzahl": 23,
+   "dauer_s": 51.2,
+   "meldung": "15/15 Feeds gelesen",
+   "status": "ok",
+   "zeit": "2026-11-24T12:32:33+01:00"
+  },
+  "shop": {
+   "anzahl": 2,
+   "dauer_s": 9.6,
+   "meldung": "2/2 Shop-Seiten gelesen",
+   "status": "ok",
+   "zeit": "2026-11-24T12:32:33+01:00"
+  },
+  "sparneuwagen": {
+   "anzahl": 0,
+   "dauer_s": 4.9,
+   "meldung": "25 Artikel im Feed",
+   "status": "ok",
+   "zeit": "2026-11-24T12:32:33+01:00"
+  }
+ },
+ "telegram_offset": null,
+ "tiefstpreis": {
+  "drucker-allgemein": {
+   "first_seen": "2026-11-24T12:32:33+01:00",
+   "hints": [
+    "Versand unbekannt",
+    "bitte prüfen: Farbe"
+   ],
+   "last_seen": "2026-11-24T12:32:33+01:00",
+   "leasing": {},
+   "price": 39.99,
+   "product_id": "drucker-allgemein",
+   "shipping": null,
+   "shop": "Lidl",
+   "source": "mydealz",
+   "status": "ok",
+   "status_reason": "",
+   "title": "Epson Expression Home XP-2200 – 3-in-1 WLAN-Multifunktionsdrucker bei Lidl",
+   "url": "https://www.mydealz.de/deals/epson-expression-home-xp-2200-3-in-1-wlan-multifunktionsdrucker-bei-lidl-2878456",
+   "vergleichspreis": 39.99
+  },
+  "epson-et-2922": {
+   "first_seen": "2026-11-24T12:32:33+01:00",
+   "hints": [
+    "evtl. nur per App",
+    "Versand unbekannt"
+   ],
+   "last_seen": "2026-11-24T12:32:33+01:00",
+   "leasing": {},
+   "price": 174.99,
+   "product_id": "epson-et-2922",
+   "shipping": null,
+   "shop": "Amazon",
+   "source": "mydealz",
+   "status": "ok",
+   "status_reason": "",
+   "title": "Epson EcoTank ET-2922 Multifunktionsdrucker mit WLAN",
+   "url": "https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743",
+   "vergleichspreis": 174.99
+  },
+  "lenovo-l24-4e": {
+   "first_seen": "2026-11-24T12:32:33+01:00",
+   "hints": [
+    "Versand unbekannt"
+   ],
+   "last_seen": "2026-11-24T12:32:33+01:00",
+   "leasing": {},
+   "price": 73.78,
+   "product_id": "lenovo-l24-4e",
+   "shipping": null,
+   "shop": "office-partner.de",
+   "source": "shop",
+   "status": "ok",
+   "status_reason": "",
+   "title": "Lenovo L24-4e (24 Zoll, Full HD, 100 Hz)",
+   "url": "https://www.office-partner.de/lenovo-l24-4e-full-hd-led-monitor-60-5-cm-23.8-n2008239836",
+   "vergleichspreis": 73.78
+  },
+  "makita-dhp490rfx3": {
+   "first_seen": "2026-11-24T12:32:33+01:00",
+   "hints": [
+    "Gutschein/Code nötig",
+    "nur für Neukunden",
+    "Preis evtl. inkl. Cashback/Payback"
+   ],
+   "last_seen": "2026-11-24T12:32:33+01:00",
+   "leasing": {},
+   "price": 184.0,
+   "product_id": "makita-dhp490rfx3",
+   "shipping": 0.0,
+   "shop": "BAUR",
+   "source": "mydealz",
+   "status": "ok",
+   "status_reason": "",
+   "title": "Makita DHP490RFX3 18V Akku-Schlagbohrschrauber Set (2x 3,0 Ah Akkus, Ladegerät, Koffer + 74-tlg. Zubehör) ab 178,08 € eff. (inkl. CB und PB)",
+   "url": "https://www.mydealz.de/deals/makita-dhp490rfx3-18v-akku-schlagbohrschrauber-set-2x-30-ah-akkus-ladegerat-koffer-74-tlg-zubehor-ab-17808-eur-eff-inkl-cb-und-pb-2877733",
+   "vergleichspreis": 184.0
+  },
+  "monitor-24-allgemein": {
+   "first_seen": "2026-11-24T12:32:33+01:00",
+   "hints": [],
+   "last_seen": "2026-11-24T12:32:33+01:00",
+   "leasing": {},
+   "price": 65.99,
+   "product_id": "monitor-24-allgemein",
+   "shipping": 0.0,
+   "shop": "notebooksbilliger",
+   "source": "mydealz",
+   "status": "ok",
+   "status_reason": "",
+   "title": "[notebooksbilliger] Acer Nitro VG240YP6bip Monitor | 23,8\" IPS, Full HD, 144Hz, FreeSync, 99% sRGB | 65,99€ (inkl. Versand) | 0.9% CB Budgey",
+   "url": "https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252",
+   "vergleichspreis": 65.99
+  },
+  "opel-frontera-electric-leasing": {
+   "first_seen": "2026-11-24T12:32:33+01:00",
+   "hints": [
+    "Verfügbar: 03/2027"
+   ],
+   "last_seen": "2026-11-24T12:32:33+01:00",
+   "leasing": {
+    "bereitstellung": 1492.3,
+    "effektiv": 342.45,
+    "gewerbe": false,
+    "km": 15000,
+    "monate": 36,
+    "rate": 301.0,
+    "sonderzahlung": 0.0
+   },
+   "price": 301.0,
+   "product_id": "opel-frontera-electric-leasing",
+   "shipping": null,
+   "shop": "LeasingMarkt.de",
+   "source": "leasingmarkt",
+   "status": "ok",
+   "status_reason": "",
+   "title": "Opel Frontera: Opel Frontera Electric 52-kWh-Batterie 83kW Edition - Vorlauffahrzeug!",
+   "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13349763?adVariant=39376690",
+   "vergleichspreis": 342.45
+  },
+  "wandhalterung-c27f396": {
+   "first_seen": "2026-11-24T12:32:33+01:00",
+   "hints": [
+    "Versand unbekannt"
+   ],
+   "last_seen": "2026-11-24T12:32:33+01:00",
+   "leasing": {},
+   "price": 9.99,
+   "product_id": "wandhalterung-c27f396",
+   "shipping": null,
+   "shop": "eBay",
+   "source": "mydealz",
+   "status": "ok",
+   "status_reason": "",
+   "title": "TV Wandhalterung Schwenk & neigbar VESA 400x400 | 23-50 Zoll für Fernseher und Monitor",
+   "url": "https://www.mydealz.de/deals/tv-wandhalterung-schwenk-neigbar-vesa-400x400-23-50-zoll-fur-fernseher-und-monitor-2651968",
+   "vergleichspreis": 9.99
+  }
+ },
+ "version": 1
+}

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deal-Radar</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2430;--muted:#667085;--line:#e4e7ec;--accent:#2f5bea;
+--green:#12a150;--yellow:#e6a700;--red:#d92d20;--grey:#98a2b3;--chip:#eef2f6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1218;--card:#181c24;--text:#e6e9ef;
+--muted:#98a2b3;--line:#2a303c;--accent:#7b9bff;--chip:#232937}}
+:root[data-theme="dark"]{--bg:#0f1218;--card:#181c24;--text:#e6e9ef;--muted:#98a2b3;--line:#2a303c;--accent:#7b9bff;--chip:#232937}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
+.top{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+h1{font-size:1.5rem;margin:4px 0 12px} h2{font-size:1.05rem;margin:0}
+.big{font-size:1.6rem;font-weight:700;font-variant-numeric:tabular-nums}
+.muted{color:var(--muted);font-size:.9rem}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card header{display:flex;gap:10px;align-items:flex-start}
+.dot{width:12px;height:12px;border-radius:50%;flex:none;margin-top:5px;display:inline-block}
+.dot.green{background:var(--green)} .dot.yellow{background:var(--yellow)} .dot.red{background:var(--red)} .dot.grey{background:var(--grey)}
+.tag{font-size:.75rem;padding:1px 8px;border-radius:99px;background:var(--chip)}
+.tag.green{color:var(--green)} .tag.red{color:var(--red)} .tag.yellow{color:var(--yellow)}
+.price{font-size:1.8rem;font-weight:700;font-variant-numeric:tabular-nums} .price.none{font-size:1.1rem;color:var(--muted)}
+.offer-title{font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+.hints{font-size:.85rem;background:var(--chip);border-radius:8px;padding:6px 8px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;border-top:1px solid var(--line);padding-top:8px}
+.facts span{display:block;font-size:.78rem;color:var(--muted)} .facts small{color:var(--muted)}
+.spark{width:100%;height:48px} .spark-line{fill:none;stroke:var(--accent);stroke-width:2;vector-effect:non-scaling-stroke}
+.spark-dot{fill:var(--accent)} .spark-target{stroke:var(--green);stroke-dasharray:4 4;stroke-width:1;vector-effect:non-scaling-stroke}
+.spark-legend{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted)}
+.spark-empty{font-size:.8rem;color:var(--muted)}
+dl.lease{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:4px 0;font-size:.9rem}
+dl.lease dt{color:var(--muted)} dl.lease dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+details{font-size:.88rem} details ul{padding-left:18px;margin:6px 0} details li{margin-bottom:4px;overflow-wrap:anywhere}
+summary{cursor:pointer;color:var(--muted)}
+.sources{list-style:none;padding:0;margin:0;display:grid;gap:4px;font-size:.9rem}
+.sources li{display:flex;gap:6px;align-items:baseline;flex-wrap:wrap} .sources .dot{margin-top:0}
+.notes{font-size:.85rem;color:var(--muted)}
+footer{margin:24px 0;font-size:.8rem;color:var(--muted)}
+</style></head><body><div class="wrap">
+<h1>📡 Deal-Radar</h1>
+<section class="top">
+  <div class="box"><div class="muted">Letzter Lauf</div><div class="big">24.11. 12:32 Uhr</div>
+  <div class="muted">läuft automatisch etwa alle 2 Stunden</div></div>
+  <div class="box"><div class="muted">Countdown bis Black Friday-Ende</div>
+  <div class="big" id="countdown" data-end="2026-11-27T23:59:59+01:00">…</div>
+  <div class="muted">Ende: 27.11.2026, 23:59 Uhr</div></div>
+  <div class="box"><div class="muted">Ziel erreicht</div><div class="big">4 / 8</div>
+  <div class="muted">Produkte mit grüner Ampel</div></div>
+  <div class="box"><div class="muted">Datenquellen</div><ul class="sources"><li><span class="dot green"></span><b>mydealz</b> <span class="tag green">OK</span><span class="muted"> 15/15 Feeds gelesen · 23 Treffer</span></li><li><span class="dot grey"></span><b>ebay</b> <span class="tag grey">aus</span><span class="muted"> deaktiviert – keine eBay-API-Schlüssel hinterlegt</span></li><li><span class="dot green"></span><b>shop</b> <span class="tag green">OK</span><span class="muted"> 2/2 Shop-Seiten gelesen · 2 Treffer</span></li><li><span class="dot green"></span><b>leasingmarkt</b> <span class="tag green">OK</span><span class="muted"> 6 Seiten, 2 Detailseiten geladen; 90 Angebote geprüft, 16 elektrisch · 15 Treffer</span></li><li><span class="dot green"></span><b>sparneuwagen</b> <span class="tag green">OK</span><span class="muted"> 25 Artikel im Feed · 0 Treffer</span></li></ul></div>
+</section>
+<section class="grid">
+<article class="card" id="makita-dhp490rfx3">
+  <header><span class="dot green" title="Ziel erreicht"></span><div><h2>Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)</h2>
+  <div class="muted">werkzeug · <span class="tag green">Ziel erreicht</span></div></div></header>
+  <div class="price">184,00 €</div><div class="muted">inkl. Versand</div><div class="shop"><a href="https://www.mydealz.de/deals/makita-dhp490rfx3-18v-akku-schlagbohrschrauber-set-2x-30-ah-akkus-ladegerat-koffer-74-tlg-zubehor-ab-17808-eur-eff-inkl-cb-und-pb-2877733" rel="noopener" target="_blank">BAUR öffnen ↗</a> <span class="muted">· gesehen 24.11. 12:32 Uhr · mydealz</span></div><div class="offer-title">Makita DHP490RFX3 18V Akku-Schlagbohrschrauber Set (2x 3,0 Ah Akkus, Ladegerät, Koffer + 74-tlg. Zubehör) ab 178,08 € eff. (inkl. CB und PB)</div><div class="hints">⚠️ Gutschein/Code nötig · nur für Neukunden · Preis evtl. inkl. Cashback/Payback</div>
+  <div class="facts"><div><span>Zielpreis</span><b>215,00 €</b></div>
+  <div><span>Tiefstpreis seit Start</span><b>184,00 €</b>
+  <small>BAUR, 24.11. 12:32 Uhr</small></div></div>
+  <div class="spark-empty">Noch zu wenig Daten für einen Verlauf</div>
+  <div class="notes">Set mit 2x 3,0 Ah, Ladegerät, Koffer und 74-teiligem Zubehör.</div>
+</article>
+<article class="card" id="hp-deskjet-2922">
+  <header><span class="dot grey" title="kein aktuelles Angebot"></span><div><h2>HP DeskJet 2922 (Farbe, WLAN, Scan/Kopie)</h2>
+  <div class="muted">drucker · <span class="tag grey">kein aktuelles Angebot</span></div></div></header>
+  <div class="price none">Kein aktuelles Angebot</div><div class="muted">Das Radar sucht weiter …</div>
+  <div class="facts"><div><span>Zielpreis</span><b>45,00 €</b></div>
+  <div><span>Tiefstpreis seit Start</span><b>–</b>
+  </div></div>
+  <div class="spark-empty">Noch zu wenig Daten für einen Verlauf</div>
+  
+</article>
+<article class="card" id="epson-et-2922">
+  <header><span class="dot red" title="über Zielpreis"></span><div><h2>Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)</h2>
+  <div class="muted">drucker · <span class="tag red">über Zielpreis</span></div></div></header>
+  <div class="price">174,99 €</div><div class="muted">Versand unbekannt</div><div class="shop"><a href="https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743" rel="noopener" target="_blank">Amazon öffnen ↗</a> <span class="muted">· gesehen 24.11. 12:32 Uhr · mydealz</span></div><div class="offer-title">Epson EcoTank ET-2922 Multifunktionsdrucker mit WLAN</div><div class="hints">⚠️ evtl. nur per App · Versand unbekannt</div>
+  <div class="facts"><div><span>Zielpreis</span><b>155,00 €</b></div>
+  <div><span>Tiefstpreis seit Start</span><b>174,99 €</b>
+  <small>Amazon, 24.11. 12:32 Uhr</small></div></div>
+  <div class="spark-empty">Noch zu wenig Daten für einen Verlauf</div>
+  
+</article>
+<article class="card" id="drucker-allgemein">
+  <header><span class="dot green" title="Ziel erreicht"></span><div><h2>Multifunktionsdrucker Farbe WLAN (allgemein)</h2>
+  <div class="muted">drucker · <span class="tag green">Ziel erreicht</span></div></div></header>
+  <div class="price">39,99 €</div><div class="muted">Versand unbekannt</div><div class="shop"><a href="https://www.mydealz.de/deals/epson-expression-home-xp-2200-3-in-1-wlan-multifunktionsdrucker-bei-lidl-2878456" rel="noopener" target="_blank">Lidl öffnen ↗</a> <span class="muted">· gesehen 24.11. 12:32 Uhr · mydealz</span></div><div class="offer-title">Epson Expression Home XP-2200 – 3-in-1 WLAN-Multifunktionsdrucker bei Lidl</div><div class="hints">⚠️ Versand unbekannt · bitte prüfen: Farbe</div>
+  <div class="facts"><div><span>Zielpreis</span><b>60,00 €</b></div>
+  <div><span>Tiefstpreis seit Start</span><b>39,99 €</b>
+  <small>Lidl, 24.11. 12:32 Uhr</small></div></div>
+  <div class="spark-empty">Noch zu wenig Daten für einen Verlauf</div>
+  <div class="notes">Netzwerk (WLAN oder LAN), Farbe, Scan und Kopie.</div><details><summary>Verdächtig / ausgeschlossen (1)</summary><ul><li><a href="https://www.mydealz.de/deals/xerox-b225-laser-multifunktionsgerat-sw-a4-drucker-kopierer-scanner-usb-lan-wlan-apple-airprint-2866718" rel="noopener" target="_blank">Xerox B225 Laser-Multifunktionsgerät s/w A4, Drucker, Kopierer, Scanner, USB, LAN, WLAN, A</a><span class="muted"> · notebooksbilliger · 119,99 € – Ausschlusswort „s/w“</span></li></ul></details>
+</article>
+<article class="card" id="lenovo-l24-4e">
+  <header><span class="dot red" title="über Zielpreis"></span><div><h2>Lenovo L24-4e (24 Zoll, Full HD, 100 Hz)</h2>
+  <div class="muted">monitor · <span class="tag red">über Zielpreis</span></div></div></header>
+  <div class="price">73,78 €</div><div class="muted">Versand unbekannt</div><div class="shop"><a href="https://www.office-partner.de/lenovo-l24-4e-full-hd-led-monitor-60-5-cm-23.8-n2008239836" rel="noopener" target="_blank">office-partner.de öffnen ↗</a> <span class="muted">· gesehen 24.11. 12:32 Uhr · shop</span></div><div class="offer-title">Lenovo L24-4e (24 Zoll, Full HD, 100 Hz)</div><div class="hints">⚠️ Versand unbekannt</div>
+  <div class="facts"><div><span>Zielpreis</span><b>65,00 €</b></div>
+  <div><span>Tiefstpreis seit Start</span><b>73,78 €</b>
+  <small>office-partner.de, 24.11. 12:32 Uhr</small></div></div>
+  <div class="spark-empty">Noch zu wenig Daten für einen Verlauf</div>
+  <div class="notes">VESA bitte im Datenblatt prüfen (benötigt 75x75 oder 100x100).</div>
+</article>
+<article class="card" id="monitor-24-allgemein">
+  <header><span class="dot green" title="Ziel erreicht"></span><div><h2>Monitor 24 Zoll mit VESA (Full HD, mind. 75 Hz)</h2>
+  <div class="muted">monitor · <span class="tag green">Ziel erreicht</span></div></div></header>
+  <div class="price">65,99 €</div><div class="muted">inkl. Versand</div><div class="shop"><a href="https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252" rel="noopener" target="_blank">notebooksbilliger öffnen ↗</a> <span class="muted">· gesehen 24.11. 12:32 Uhr · mydealz</span></div><div class="offer-title">[notebooksbilliger] Acer Nitro VG240YP6bip Monitor | 23,8&quot; IPS, Full HD, 144Hz, FreeSync, 99% sRGB | 65,99€ (inkl. Versand) | 0.9% CB Budgey</div>
+  <div class="facts"><div><span>Zielpreis</span><b>75,00 €</b></div>
+  <div><span>Tiefstpreis seit Start</span><b>65,99 €</b>
+  <small>notebooksbilliger, 24.11. 12:32 Uhr</small></div></div>
+  <div class="spark-empty">Noch zu wenig Daten für einen Verlauf</div>
+  <div class="notes">Muss VESA 75x75 oder 100x100 haben.</div>
+</article>
+<article class="card" id="wandhalterung-c27f396">
+  <header><span class="dot green" title="Ziel erreicht"></span><div><h2>Monitor-Wandhalterung für Samsung C27F396FHU</h2>
+  <div class="muted">zubehoer · <span class="tag green">Ziel erreicht</span></div></div></header>
+  <div class="price">9,99 €</div><div class="muted">Versand unbekannt</div><div class="shop"><a href="https://www.mydealz.de/deals/tv-wandhalterung-schwenk-neigbar-vesa-400x400-23-50-zoll-fur-fernseher-und-monitor-2651968" rel="noopener" target="_blank">eBay öffnen ↗</a> <span class="muted">· gesehen 24.11. 12:32 Uhr · mydealz</span></div><div class="offer-title">TV Wandhalterung Schwenk &amp; neigbar VESA 400x400 | 23-50 Zoll für Fernseher und Monitor</div><div class="hints">⚠️ Versand unbekannt</div>
+  <div class="facts"><div><span>Zielpreis</span><b>18,00 €</b></div>
+  <div><span>Tiefstpreis seit Start</span><b>9,99 €</b>
+  <small>eBay, 24.11. 12:32 Uhr</small></div></div>
+  <div class="spark-empty">Noch zu wenig Daten für einen Verlauf</div>
+  <div class="notes">Curved, VESA 75x75, 4,1 kg ohne Fuß. Gesucht: schwenkbar, VESA 75/100, Traglast ab 5 kg.</div>
+</article>
+<article class="card" id="opel-frontera-electric-leasing">
+  <header><span class="dot red" title="über Zielpreis"></span><div><h2>Opel Frontera Electric – Privatleasing</h2>
+  <div class="muted">auto · <span class="tag red">über Zielpreis</span></div></div></header>
+  <div class="price">342,45 € eff./Monat</div><div class="muted"></div><div class="shop"><a href="https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13349763?adVariant=39376690" rel="noopener" target="_blank">LeasingMarkt.de öffnen ↗</a> <span class="muted">· gesehen 24.11. 12:32 Uhr · leasingmarkt</span></div><div class="offer-title">Opel Frontera: Opel Frontera Electric 52-kWh-Batterie 83kW Edition - Vorlauffahrzeug!</div><div class="hints">⚠️ Verfügbar: 03/2027</div><dl class="lease"><dt>Rate</dt><dd>301,00 €</dd><dt>Sonderzahlung</dt><dd>0,00 €</dd><dt>Bereitstellung</dt><dd>1.492,30 €</dd><dt>Laufzeit / km</dt><dd>36 Mon. · 15000 km/Jahr</dd><dt>Effektive Rate</dt><dd>342,45 €</dd></dl>
+  <div class="facts"><div><span>Zielpreis</span><b>250,00 €/Monat (Rate)</b></div>
+  <div><span>Tiefstpreis seit Start</span><b>342,45 €</b>
+  <small>LeasingMarkt.de, 24.11. 12:32 Uhr</small></div></div>
+  <div class="spark-empty">Noch zu wenig Daten für einen Verlauf</div>
+  <div class="notes">36 Monate, mind. 15.000 km/Jahr, keine oder geringe Sonderzahlung (bis 1.000 €).</div>
+</article></section>
+<footer>Preise ohne Gewähr; „Versand unbekannt“ = Versandkosten nicht ermittelbar. Ampel: grün = Zielpreis erreicht,
+gelb = bis 10 % darüber, rot = darüber, grau = kein aktuelles Angebot (letzte 48 Std.).
+Leasing: verglichen wird die effektive Rate = (Rate × Monate + Sonderzahlung + Bereitstellung) / Monate;
+der Alarm richtet sich nach der Monatsrate.</footer>
+</div>
+<script>
+(function(){var el=document.getElementById("countdown");if(!el)return;var end=new Date(el.dataset.end);
+function tick(){var s=Math.floor((end-new Date())/1000);if(s<=0){el.textContent="vorbei";return;}
+var d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);
+el.textContent=(d?d+" T ":"")+h+" Std "+m+" Min";}tick();setInterval(tick,30000);})();
+</script></body></html>
