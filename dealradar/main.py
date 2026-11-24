@@ -15,10 +15,11 @@ import sys
 import time
 from pathlib import Path
 
-from . import botdata, github, logic, page, storage
+from . import botdata, github, logic, meldungen, page, storage
 from .config import ROOT, ConfigError, end_datetime, is_over, load_config, load_products, now_local
 from .commands import CommandProcessor, split_message
 from .http import FetchError, Http
+from .score import deal_score
 from .sources import Context, Skipped, all_sources
 from .telegram import Telegram, TelegramError, format_alert
 
@@ -151,17 +152,42 @@ def run(args) -> int:
     # --- Bewerten, melden, speichern ---
     rules = cfg["regeln"]
     now_iso = now.isoformat(timespec="seconds")
-    sent = 0
+    sent = queued = 0
+    ignored = storage.load_json(data_dir / "ignoriert.json", {})
+    quiet = meldungen.quiet_now(cfg, now)
+    if quiet:
+        print("Ruhezeit: normale Meldungen werden danach vom Worker nachgeliefert.")
     for p in products:
         offers = [o for o in all_offers if o.product_id == p.id]
-        alerts = logic.evaluate(p, offers, state, rules)
+        alerts = [a for a in logic.evaluate(p, offers, state, rules)
+                  if meldungen.offer_hash(a.offer.key) not in ignored]
         for a in alerts:
+            o = a.offer
+            low = (state.get("tiefstpreis") or {}).get(p.id)
+            score = deal_score(o.compare_price, history.get(p.id, []),
+                               low.get("vergleichspreis") if low else None, now)
+            how = meldungen.route("Zielpreis erreicht" in a.reasons, score, o.target_value, p.zielpreis, cfg, now)
+            text = format_alert(a, score)
+            keyboard = meldungen.buttons(p.id, o.key, o.target_value, o.url)
             try:
-                # Nur als "gemeldet" merken, wenn die Nachricht wirklich angekommen ist
-                # (sonst würden Deals vor dem Eintragen der Secrets verloren gehen).
-                if tg.send(format_alert(a)):
+                if how == meldungen.SOFORT:
+                    # Nur als "gemeldet" merken, wenn die Nachricht wirklich angekommen ist
+                    # (sonst würden Deals vor dem Eintragen der Secrets verloren gehen).
+                    if tg.send(text, keyboard):
+                        logic.mark_reported(state, a)
+                        sent += 1
+                elif tg.live:
+                    # Der Worker liefert nach der Ruhezeit bzw. in der 19-Uhr-Übersicht.
+                    meldungen.queue_add(state, {
+                        "id": meldungen.offer_hash(f"{o.key}|{o.compare_price}"), "art": how,
+                        "produkt": p.id, "name": p.name, "preis": o.compare_price, "shop": o.shop,
+                        "url": o.url, "score": score, "ziel_erreicht": "Zielpreis erreicht" in a.reasons,
+                        "text": text, "buttons": keyboard, "zeit": now.isoformat(timespec="seconds"),
+                    }, now)
                     logic.mark_reported(state, a)
-                    sent += 1
+                    queued += 1
+                else:
+                    print(f"---- ({how}, nicht gespeichert) ----\n{text}\n----")
             except TelegramError as ex:
                 print(f"Telegram-Fehler: {ex}", file=sys.stderr)
         logic.remember(p, offers, state, now, rules)
@@ -174,6 +200,7 @@ def run(args) -> int:
             counts[o.status] = counts.get(o.status, 0) + 1
         print(f"  {p.id}: {len(offers)} Angebote {counts} · bester: {best['vergleichspreis'] if best else '–'} "
               f"· gemeldet: {len(alerts)}")
+    meldungen.prune_queue(state, now)
     state["letzter_lauf"] = now_iso
     state["version"] = 1
 
@@ -186,7 +213,7 @@ def run(args) -> int:
     (docs_dir / "index.html").write_text(page.render(load_products(products_path), state, history, cfg, now),
                                          encoding="utf-8")
     (docs_dir / ".nojekyll").write_text("", encoding="utf-8")
-    print(f"Fertig: {len(all_offers)} Angebote, {sent} Meldungen, {http.request_count} Abrufe.")
+    print(f"Fertig: {len(all_offers)} Angebote, {sent} Meldungen, {queued} vorgemerkt, {http.request_count} Abrufe.")
     return 0
 
 

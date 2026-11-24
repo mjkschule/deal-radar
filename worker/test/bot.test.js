@@ -73,7 +73,7 @@ test("Mehrdeutiger Name -> Buttons, Klick führt die Aktion aus", async () => {
   assert.equal(products(d).length, 10); // noch nichts gelöscht
   await handleUpdate({ callback_query: { id: "cb1", data: q.buttons[1][0].callback_data,
     message: { message_id: 42, chat: { id: 111 } } } }, d);
-  assert.deepEqual(d.tg.answered, ["cb1"]);
+  assert.deepEqual(d.tg.answered.map((a) => a.id), ["cb1"]);
   assert.match(d.tg.edited[0].text, /Gelöscht: <b>Ninja Airfryer<\/b>/);
   assert.equal(d.tg.edited[0].id, 42);
   assert.ok(!products(d).some((p) => p.id === "ninja-airfryer"));

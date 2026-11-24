@@ -102,6 +102,12 @@ cd worker && npm install
 npx wrangler login
 ```
 (öffnet den Browser → bei Cloudflare anmelden → **Allow**)
+Einmalig einen kleinen Speicher anlegen (Cloudflare KV, kostenlos). Der Bot merkt sich darin
+Link-Vorschauen und welche Meldungen schon verschickt sind:
+```bash
+npx wrangler kv namespace create deal-radar-bot
+```
+Die ausgegebene `id` in `worker/wrangler.toml` bei `[[kv_namespaces]]` eintragen. Dann hochladen:
 ```bash
 npx wrangler deploy
 ```
@@ -145,7 +151,20 @@ holt der Suchlauf die Befehle wieder selbst ab (alle 2 Stunden).
 3. Ein Workflow trägt das Produkt automatisch ein und schließt das Issue mit einer Bestätigung.
    (Aus Sicherheitsgründen nur für dich als Besitzer; Issues von Fremden werden ignoriert.)
 
-### Variante C: Telegram-Befehl
+### Variante C: Shop-Link schicken (am einfachsten)
+Schick deinem Bot einfach den **Link zur Produktseite** (z. B. aus der Teilen-Funktion der Shop-App).
+Der Bot
+1. prüft die **robots.txt** des Shops (verbietet sie das Auslesen, sagt er das und ruft nichts ab),
+2. liest **Name, EAN und aktuellen Preis** aus den maschinenlesbaren Angaben der Seite (schema.org),
+3. schlägt einen **Zielpreis 10 % unter dem bekannten Tiefstpreis** vor (bei neuen Produkten: dem
+   aktuellen Preis) und zeigt die Buttons **Übernehmen**, **Zielpreis ändern** und **Abbrechen**.
+
+Bei „Zielpreis ändern“ schickst du danach einfach die Zahl, z. B. `49,99`. Das neue Produkt bekommt den
+Link als `shop_urls` (der Preis dort wird bei jedem Lauf gelesen) und Suchbegriffe aus der Modellnummer.
+Getestet: BAUR und Office-Partner klappen (inkl. EAN). Shops mit Bot-Schutz geben die Seite nicht an
+Programme heraus – dann sagt der Bot das ehrlich, und du nimmst Variante D.
+
+### Variante D: Telegram-Befehl
 Schreibe deinem Bot:
 ```
 /neu Bosch PSR 18 LI-2; 89; PSR 18 LI-2, PSR18
@@ -167,12 +186,26 @@ Befehle auch im Menü, wenn du `/` tippst.
 | `/liste` | `/liste` | Alle Produkte mit **Nummer**, Zielpreis, aktuell günstigstem Effektivpreis (inkl. Versand, bei Leasing die effektive Rate), Shop und **Deal-Score** |
 | `/top` | `/top` | Die 5 besten Deals nach Deal-Score, mit Link |
 | `/status` | `/status` | Letzter und nächster Suchlauf, Zustand jeder Quelle, Anzahl Produkte |
+| *(Link)* | `https://www.baur.de/p/…` | Produkt per Shop-Link anlegen (Variante C) |
 | `/neu` | `/neu Philips HD9255; 55; HD9255, Airfryer 5000` | Produkt anlegen (Name; Zielpreis; Suchbegriffe) |
 | `/ziel` | `/ziel 3 49,99` oder `/ziel makita 199` | Zielpreis ändern |
 | `/pause` | `/pause 3` | Produkt vorübergehend **nicht überwachen** (setzt `aktiv: false`); auf der Startseite ausgegraut am Ende |
 | `/fortsetzen` | `/fortsetzen 3` | Wieder überwachen (setzt `aktiv: true`) |
 | `/loeschen` | `/loeschen 3` oder `/löschen Makita` | Produkt entfernen; der Bot nennt, **welches** gelöscht wurde |
+| `/ruhe` | `/ruhe aus`, `/ruhe an`, `/ruhe` | Ruhezeiten aus-/einschalten bzw. Stand anzeigen (ändert `config.yaml`) |
 | `/hilfe` | `/hilfe` | Alle Befehle mit Beispielen |
+
+**Buttons unter jeder Deal-Meldung**
+
+| Button | Was passiert |
+|---|---|
+| ✅ Gekauft | Produkt wird nicht mehr überwacht und verschwindet von der Startseite. In `data/geloescht.json` steht „gekauft“ mit Preis, Link und Datum; der Preisverlauf bleibt. |
+| 🙈 Ignorieren | Genau **dieses** Angebot wird nie wieder gemeldet (gespeichert in `data/ignoriert.json`). Andere Angebote fürs gleiche Produkt kommen weiter. |
+| 🎯 Ziel −10 € | Zielpreis um 10 € senken |
+| ⏸ Pausieren | wie `/pause` |
+| 🔗 Zum Angebot | öffnet das Angebot |
+
+Die Meldung selbst bleibt stehen; der gedrückte Button zeigt danach das Ergebnis (z. B. „✅ Gekauft“).
 
 Legende in `/liste`: ✅ Ziel erreicht · 🟡 bis 10 % darüber · 🔴 darüber · ⚪ kein Angebot · ⏸ pausiert ·
 🆕 neu (wird beim nächsten Lauf gesucht).
@@ -219,14 +252,31 @@ Danach gibt es keine Läufe mehr. Zum Reaktivieren: Enddatum in die Zukunft setz
 
 ## 5. Wann wird gemeldet?
 
+**Welche Angebote kommen überhaupt in Frage?**
+
 | Regel | Bedeutung |
 |---|---|
 | ✅ Zielpreis | Preis **inkl. Versand** ≤ Zielpreis (Leasing: Monatsrate ≤ Zielpreis) |
 | ✅ Preissturz | Preis mindestens **10 % unter dem bisher niedrigsten** vom Radar gesehenen Preis |
 | 🔁 Keine Doppelmeldung | Gleiches Angebot (Shop + Link oder Shop + Preis) nur einmal; erneut nur, wenn es billiger wird |
+| 🙈 Ignoriert | Angebote, unter denen du „Ignorieren“ gedrückt hast |
 | 🚫 Ausgeschlossen | Ausschlusswort im Titel oder Mindestwert unterschritten (z. B. nur 60 Hz) |
 | ⚠️ Verdächtig | Preis < 40 % des Medians der gesehenen Preise (Bezugswert höchstens der Zielpreis) |
 | 🚗 Nicht passend (Leasing) | andere Laufzeit als 36 Monate, < 15.000 km/Jahr, nur Gewerbe, Sonderzahlung > 1.000 € |
+
+**Wann und wie kommt die Nachricht?** (Einstellungen in `config.yaml` unter `meldungen` und `ruhezeiten`)
+
+| Fall | Nachricht |
+|---|---|
+| Zielpreis erreicht **oder** Deal-Score ≥ 85 | **sofort** (mit Buttons) |
+| alle anderen guten Deals (z. B. Preissturz mit Score 70) | in der **Tagesübersicht um 19:00** |
+| Sofort-Meldung in einer **Ruhezeit** (Mo–Fr 7:30–14:00, täglich 22:00–7:00) | wird zurückgehalten und **direkt nach der Ruhezeit** nachgeliefert (um 7:00 bzw. 14:00) |
+| … außer Score ≥ 90 oder Zielpreis um **mehr als 15 %** unterboten | kommt **trotz Ruhezeit sofort** |
+
+Die **Tagesübersicht** zeigt: alle Produkte mit erreichtem Zielpreis, die weiteren guten Deals seit der
+letzten Übersicht und eine Kurzliste aller Produkte. Übersicht und Nachlieferung verschickt der
+Cloudflare Worker (stündlicher Zeitplan); die Meldungen dafür stehen in `docs/bot.json`.
+Ruhezeiten ausschalten: `/ruhe aus` (oder `aktiv: false` in `config.yaml`).
 
 Ist der Versand nicht ermittelbar, steht „Versand unbekannt“ in Nachricht und Karte.
 Leasing: **Effektive Rate** = (Rate × Monate + Sonderzahlung + Bereitstellung) / Monate.
@@ -262,7 +312,8 @@ dealradar/               der Python-Code (gut kommentiert)
 data/state.json          gemeldete Angebote, Tiefstpreise, gesehene Angebote (vom Workflow gepflegt)
 data/verlauf.json        Preisverlauf pro Lauf (für die Sparklines)
 data/verlauf.csv         alle gesehenen Angebote (mit ; getrennt, öffnet in Excel)
-data/geloescht.json      per /loeschen entfernte Produkte (zum Wiederherstellen)
+data/geloescht.json      per /loeschen oder „Gekauft“ entfernte Produkte (zum Wiederherstellen)
+data/ignoriert.json      per Button „Ignorieren“ ausgeblendete Angebote
 docs/index.html          die Startseite (wird automatisch erzeugt)
 docs/bot.json            aktuelle Preise für den Telegram-Bot (wird automatisch erzeugt)
 worker/                  der Telegram-Bot als Cloudflare Worker (JavaScript)

@@ -4,17 +4,22 @@
 //                     (geschützt durch das Secret WEBHOOK_SECRET)
 //   GET  /setup     – setzt den Webhook und registriert die Befehle (setMyCommands);
 //                     kann gefahrlos mehrfach aufgerufen werden
-//   Zeitplan        – alle 2 Stunden einen Suchlauf auf GitHub starten
+//   Zeitplan        – alle 2 Stunden (Minute 17) einen Suchlauf auf GitHub starten;
+//                     jede volle Stunde: Meldungen nach der Ruhezeit nachliefern und
+//                     um 19 Uhr die Tagesübersicht schicken (src/daily.js)
 //
 // Secrets (per `npx wrangler secret put NAME`): TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID,
-// GITHUB_TOKEN, WEBHOOK_SECRET. Variablen stehen in wrangler.toml.
+// GITHUB_TOKEN, WEBHOOK_SECRET. Variablen und der KV-Speicher (Binding KV) stehen in wrangler.toml.
 
 import { handleUpdate } from "./bot.js";
+import { hourly } from "./daily.js";
 import { makeGitHub } from "./github.js";
 import { makeTelegram, setup } from "./telegram.js";
 
+export const HOURLY_CRON = "0 * * * *";
+
 function deps(env) {
-  return { env, gh: makeGitHub(env), tg: makeTelegram(env), now: new Date() };
+  return { env, gh: makeGitHub(env), tg: makeTelegram(env), kv: env.KV, fetch: (...a) => fetch(...a), now: new Date() };
 }
 
 export default {
@@ -46,6 +51,11 @@ export default {
   },
 
   async scheduled(event, env, ctx) {
+    if (event.cron === HOURLY_CRON) {
+      ctx.waitUntil(hourly(deps(env)).then((r) => console.log("stündlich:", JSON.stringify(r)))
+        .catch((e) => console.error("stündlich fehlgeschlagen:", e)));
+      return;
+    }
     ctx.waitUntil(makeGitHub(env).dispatch("zeitplan"));
   },
 };
