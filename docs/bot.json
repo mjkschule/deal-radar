@@ -1,0 +1,261 @@
+{
+ "enddatum": "2026-11-27T23:59+01:00",
+ "letzter_lauf": "2026-11-24T21:29:41+01:00",
+ "produkte": {
+  "drucker-allgemein": {
+   "aktiv": true,
+   "bester": {
+    "effektivpreis": 39.99,
+    "gesehen": "2026-11-24T21:29:41+01:00",
+    "hinweise": [
+     "Versand unbekannt",
+     "bitte prüfen: Farbe"
+    ],
+    "preis": 39.99,
+    "quelle": "mydealz",
+    "rate": null,
+    "shop": "Lidl",
+    "titel": "Epson Expression Home XP-2200 – 3-in-1 WLAN-Multifunktionsdrucker bei Lidl",
+    "url": "https://www.mydealz.de/deals/epson-expression-home-xp-2200-3-in-1-wlan-multifunktionsdrucker-bei-lidl-2878456",
+    "versand": null
+   },
+   "kategorie": "drucker",
+   "name": "Multifunktionsdrucker Farbe WLAN (allgemein)",
+   "score": 60,
+   "tiefstpreis": 39.99,
+   "tiefstpreis_shop": "Lidl",
+   "typ": "produkt",
+   "ziel_erreicht": true,
+   "zielpreis": 60.0
+  },
+  "epson-et-2922": {
+   "aktiv": true,
+   "bester": {
+    "effektivpreis": 174.99,
+    "gesehen": "2026-11-24T21:29:41+01:00",
+    "hinweise": [
+     "evtl. nur per App",
+     "Versand unbekannt"
+    ],
+    "preis": 174.99,
+    "quelle": "mydealz",
+    "rate": null,
+    "shop": "Amazon",
+    "titel": "Epson EcoTank ET-2922 Multifunktionsdrucker mit WLAN",
+    "url": "https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743",
+    "versand": null
+   },
+   "kategorie": "drucker",
+   "name": "Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
+   "score": 60,
+   "tiefstpreis": 174.99,
+   "tiefstpreis_shop": "Amazon",
+   "typ": "produkt",
+   "ziel_erreicht": false,
+   "zielpreis": 155.0
+  },
+  "hp-deskjet-2922": {
+   "aktiv": true,
+   "bester": null,
+   "kategorie": "drucker",
+   "name": "HP DeskJet 2922 (Farbe, WLAN, Scan/Kopie)",
+   "score": null,
+   "tiefstpreis": null,
+   "tiefstpreis_shop": null,
+   "typ": "produkt",
+   "ziel_erreicht": false,
+   "zielpreis": 45.0
+  },
+  "lenovo-l24-4e": {
+   "aktiv": true,
+   "bester": {
+    "effektivpreis": 73.78,
+    "gesehen": "2026-11-24T21:29:41+01:00",
+    "hinweise": [
+     "Versand unbekannt"
+    ],
+    "preis": 73.78,
+    "quelle": "shop",
+    "rate": null,
+    "shop": "office-partner.de",
+    "titel": "Lenovo L24-4e (24 Zoll, Full HD, 100 Hz)",
+    "url": "https://www.office-partner.de/lenovo-l24-4e-full-hd-led-monitor-60-5-cm-23.8-n2008239836",
+    "versand": null
+   },
+   "kategorie": "monitor",
+   "name": "Lenovo L24-4e (24 Zoll, Full HD, 100 Hz)",
+   "score": 60,
+   "tiefstpreis": 73.78,
+   "tiefstpreis_shop": "office-partner.de",
+   "typ": "produkt",
+   "ziel_erreicht": false,
+   "zielpreis": 65.0
+  },
+  "makita-dhp490rfx3": {
+   "aktiv": true,
+   "bester": {
+    "effektivpreis": 184.0,
+    "gesehen": "2026-11-24T21:29:41+01:00",
+    "hinweise": [
+     "Gutschein/Code nötig",
+     "nur für Neukunden",
+     "Preis evtl. inkl. Cashback/Payback"
+    ],
+    "preis": 184.0,
+    "quelle": "mydealz",
+    "rate": null,
+    "shop": "BAUR",
+    "titel": "Makita DHP490RFX3 18V Akku-Schlagbohrschrauber Set (2x 3,0 Ah Akkus, Ladegerät, Koffer + 74-tlg. Zubehör) ab 178,08 € eff. (inkl. CB und PB)",
+    "url": "https://www.mydealz.de/deals/makita-dhp490rfx3-18v-akku-schlagbohrschrauber-set-2x-30-ah-akkus-ladegerat-koffer-74-tlg-zubehor-ab-17808-eur-eff-inkl-cb-und-pb-2877733",
+    "versand": 0.0
+   },
+   "kategorie": "werkzeug",
+   "name": "Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
+   "score": 60,
+   "tiefstpreis": 184.0,
+   "tiefstpreis_shop": "BAUR",
+   "typ": "produkt",
+   "ziel_erreicht": true,
+   "zielpreis": 215.0
+  },
+  "monitor-24-allgemein": {
+   "aktiv": true,
+   "bester": {
+    "effektivpreis": 65.99,
+    "gesehen": "2026-11-24T21:29:41+01:00",
+    "hinweise": [
+     "Versand unbekannt"
+    ],
+    "preis": 65.99,
+    "quelle": "mydealz",
+    "rate": null,
+    "shop": "notebooksbilliger",
+    "titel": "23.8\" Acer Nitro VG0 VG240YP6bip, Full-HD, IPS, 144Hz, entspiegelt, 1500:1 Kontrast, 1x DP 1.2, 1xHDMI 1.4, 1x 3.5mm, Gaming Monitor",
+    "url": "https://www.mydealz.de/deals/238-acer-nitro-vg0-vg240yp6bip-full-hd-ips-144hz-entspiegelt-15001-kontrast-1x-dp-12-1xhdmi-14-1x-35mm-gaming-monitor-2877936",
+    "versand": null
+   },
+   "kategorie": "monitor",
+   "name": "Monitor 24 Zoll mit VESA (Full HD, mind. 75 Hz)",
+   "score": 60,
+   "tiefstpreis": 65.99,
+   "tiefstpreis_shop": "notebooksbilliger",
+   "typ": "produkt",
+   "ziel_erreicht": true,
+   "zielpreis": 75.0
+  },
+  "ninja-air-fryer-af100eu-3-8-l": {
+   "aktiv": true,
+   "bester": null,
+   "kategorie": "sonstiges",
+   "name": "Ninja Air Fryer AF100EU (3,8 l)",
+   "score": null,
+   "tiefstpreis": null,
+   "tiefstpreis_shop": null,
+   "typ": "produkt",
+   "ziel_erreicht": false,
+   "zielpreis": 65.0
+  },
+  "opel-frontera-electric-leasing": {
+   "aktiv": true,
+   "bester": {
+    "effektivpreis": 336.66,
+    "gesehen": "2026-11-24T21:29:41+01:00",
+    "hinweise": [
+     "Verfügbar: 03/2027",
+     "Sonderzahlung unbekannt",
+     "Bereitstellungskosten unbekannt"
+    ],
+    "preis": 336.66,
+    "quelle": "leasingmarkt",
+    "rate": 336.66,
+    "shop": "LeasingMarkt.de",
+    "titel": "Opel Frontera: Opel Frontera Electric | 43 kWh | Start ab 281€ | Edition, GS, Ultimate",
+    "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13297018?adVariant=37756459",
+    "versand": null
+   },
+   "kategorie": "auto",
+   "name": "Opel Frontera Electric – Privatleasing",
+   "score": 60,
+   "tiefstpreis": 336.66,
+   "tiefstpreis_shop": "LeasingMarkt.de",
+   "typ": "leasing",
+   "ziel_erreicht": false,
+   "zielpreis": 250.0
+  },
+  "philips-airfryer-5000-hd9255-4-1-l": {
+   "aktiv": true,
+   "bester": null,
+   "kategorie": "sonstiges",
+   "name": "Philips Airfryer 5000 HD9255 (4,1 l)",
+   "score": null,
+   "tiefstpreis": null,
+   "tiefstpreis_shop": null,
+   "typ": "produkt",
+   "ziel_erreicht": false,
+   "zielpreis": 55.0
+  },
+  "wandhalterung-c27f396": {
+   "aktiv": true,
+   "bester": {
+    "effektivpreis": 9.99,
+    "gesehen": "2026-11-24T21:29:41+01:00",
+    "hinweise": [
+     "Versand unbekannt"
+    ],
+    "preis": 9.99,
+    "quelle": "mydealz",
+    "rate": null,
+    "shop": "eBay",
+    "titel": "TV Wandhalterung Schwenk & neigbar VESA 400x400 | 23-50 Zoll für Fernseher und Monitor",
+    "url": "https://www.mydealz.de/deals/tv-wandhalterung-schwenk-neigbar-vesa-400x400-23-50-zoll-fur-fernseher-und-monitor-2651968",
+    "versand": null
+   },
+   "kategorie": "zubehoer",
+   "name": "Monitor-Wandhalterung für Samsung C27F396FHU",
+   "score": 60,
+   "tiefstpreis": 9.99,
+   "tiefstpreis_shop": "eBay",
+   "typ": "produkt",
+   "ziel_erreicht": true,
+   "zielpreis": 18.0
+  }
+ },
+ "quellen": {
+  "ebay": {
+   "dauer_s": 0.0,
+   "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
+   "status": "deaktiviert",
+   "zeit": "2026-11-24T21:29:41+01:00"
+  },
+  "leasingmarkt": {
+   "anzahl": 26,
+   "dauer_s": 72.0,
+   "meldung": "18 Seiten, 0 Detailseiten geladen; 261 Angebote geprüft, 26 elektrisch",
+   "status": "ok",
+   "zeit": "2026-11-24T21:29:41+01:00"
+  },
+  "mydealz": {
+   "anzahl": 24,
+   "dauer_s": 53.2,
+   "meldung": "15/15 Feeds gelesen",
+   "status": "ok",
+   "zeit": "2026-11-24T21:29:41+01:00"
+  },
+  "shop": {
+   "anzahl": 2,
+   "dauer_s": 10.3,
+   "meldung": "2/2 Shop-Seiten gelesen",
+   "status": "ok",
+   "zeit": "2026-11-24T21:29:41+01:00"
+  },
+  "sparneuwagen": {
+   "anzahl": 0,
+   "dauer_s": 4.7,
+   "meldung": "25 Artikel im Feed",
+   "status": "ok",
+   "zeit": "2026-11-24T21:29:41+01:00"
+  }
+ },
+ "stand": "2026-11-24T21:29:41+01:00",
+ "version": 1
+}
