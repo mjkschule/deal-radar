@@ -148,11 +148,3 @@
   zielpreis: 65.0
   suchbegriffe: [Ninja AF100EU, Ninja Air Fryer AF100]
   kategorie: sonstiges
-
-# per Telegram hinzugefügt
-- id: testprodukt-deal-radar
-  aktiv: true
-  name: "Testprodukt Deal-Radar"
-  kategorie: sonstiges
-  suchbegriffe: ["Testprodukt XYZ123"]
-  zielpreis: 7.5
