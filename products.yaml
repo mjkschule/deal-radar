@@ -151,6 +151,7 @@
 
 # per Telegram hinzugefügt
 - id: testprodukt-deal-radar
+  aktiv: false
   name: "Testprodukt Deal-Radar"
   kategorie: sonstiges
   suchbegriffe: ["Testprodukt XYZ123"]
