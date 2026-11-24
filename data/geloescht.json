@@ -1,30 +1,45 @@
 [
- {
-  "eintrag": {
-   "id": "testprodukt-airfryer-ninja",
-   "kategorie": "sonstiges",
-   "name": "Testprodukt Airfryer Ninja",
-   "suchbegriffe": [
-    "Testprodukt Airfryer Ninja"
-   ],
-   "zielpreis": 60.0
+  {
+    "eintrag": {
+      "id": "testprodukt-airfryer-ninja",
+      "kategorie": "sonstiges",
+      "name": "Testprodukt Airfryer Ninja",
+      "suchbegriffe": [
+        "Testprodukt Airfryer Ninja"
+      ],
+      "zielpreis": 60
+    },
+    "geloescht_am": "2026-11-24T20:57:17+01:00",
+    "id": "testprodukt-airfryer-ninja",
+    "name": "Testprodukt Airfryer Ninja"
   },
-  "geloescht_am": "2026-11-24T20:57:17+01:00",
-  "id": "testprodukt-airfryer-ninja",
-  "name": "Testprodukt Airfryer Ninja"
- },
- {
-  "eintrag": {
-   "id": "testprodukt-airfryer-philips",
-   "kategorie": "sonstiges",
-   "name": "Testprodukt AirFryer Philips",
-   "suchbegriffe": [
-    "Testprodukt AirFryer Philips"
-   ],
-   "zielpreis": 50.0
+  {
+    "eintrag": {
+      "id": "testprodukt-airfryer-philips",
+      "kategorie": "sonstiges",
+      "name": "Testprodukt AirFryer Philips",
+      "suchbegriffe": [
+        "Testprodukt AirFryer Philips"
+      ],
+      "zielpreis": 50
+    },
+    "geloescht_am": "2026-11-24T20:57:17+01:00",
+    "id": "testprodukt-airfryer-philips",
+    "name": "Testprodukt AirFryer Philips"
   },
-  "geloescht_am": "2026-11-24T20:57:17+01:00",
-  "id": "testprodukt-airfryer-philips",
-  "name": "Testprodukt AirFryer Philips"
- }
+  {
+    "id": "testprodukt-deal-radar",
+    "name": "Testprodukt Deal-Radar",
+    "geloescht_am": "2026-11-24T22:13:49.395Z",
+    "eintrag": {
+      "id": "testprodukt-deal-radar",
+      "aktiv": true,
+      "name": "Testprodukt Deal-Radar",
+      "kategorie": "sonstiges",
+      "suchbegriffe": [
+        "Testprodukt XYZ123"
+      ],
+      "zielpreis": 7.5
+    }
+  }
 ]
