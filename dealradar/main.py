@@ -9,41 +9,59 @@ Aufruf:
 from __future__ import annotations
 
 import argparse
-import html
 import os
 import sys
 import time
 from pathlib import Path
 
-from . import logic, page, storage
+from . import github, logic, page, storage
 from .config import ROOT, ConfigError, end_datetime, is_over, load_config, load_products, now_local
-from .http import Http
-from .products_edit import append_product, parse_telegram_command
+from .commands import CommandProcessor, split_message
+from .http import FetchError, Http
 from .sources import Context, Skipped, all_sources
 from .telegram import Telegram, TelegramError, format_alert
 
 
-def handle_telegram_commands(tg: Telegram, state: dict, products_path: Path) -> list[str]:
-    """Verarbeitet /neu-Befehle. Gibt Statusmeldungen zurück."""
+def handle_telegram_commands(tg: Telegram, http: Http, state: dict, cfg: dict, now, products_path: Path,
+                             data_dir: Path, env: dict) -> list[str]:
+    """Holt Befehle aus deinem Telegram-Chat, führt sie aus, committet products.yaml
+    per GitHub-API und schickt die Antworten. Gibt Log-Zeilen zurück."""
     log = []
     try:
         texts, offset = tg.commands(state.get("telegram_offset"))
     except TelegramError as e:
         return [f"Telegram-Befehle nicht lesbar: {e}"]
     state["telegram_offset"] = offset
-    for text in texts:
-        cmd = text.strip().split()[0].lower() if text.strip() else ""
-        if cmd.startswith("/neu"):
+    if not texts:
+        return log
+    batch = CommandProcessor(products_path, state, cfg, now).run(texts)
+    log.append(f"{len(texts)} Telegram-Nachricht(en) verarbeitet: {'; '.join(batch.changes) or 'keine Änderung'}")
+
+    if batch.archived:  # gelöschte Produkte aufheben (Preisverlauf bleibt in verlauf.json)
+        archive = storage.load_json(data_dir / "geloescht.json", [])
+        archive.extend(batch.archived)
+        storage.save_json(data_dir / "geloescht.json", archive)
+
+    if batch.changes:
+        token, repo = env.get("GITHUB_TOKEN"), env.get("GITHUB_REPOSITORY")
+        if token and repo:
             try:
-                entry = append_product(products_path, parse_telegram_command(text), comment="per Telegram hinzugefügt")
-                tg.send(f"✅ Neues Produkt <b>{html.escape(entry['name'])}</b> (Ziel {entry['zielpreis']:g} €) "
-                        f"wird ab jetzt beobachtet.\nSuchbegriffe: {html.escape(', '.join(entry['suchbegriffe']))}")
-                log.append(f"Produkt {entry['id']} per Telegram hinzugefügt")
-            except ConfigError as e:
-                tg.send(f"❌ Konnte das Produkt nicht anlegen: {html.escape(str(e))}\nBeispiel: /neu Bosch PSR 18; 89; PSR 18 LI-2, PSR18")
-        elif cmd in ("/start", "/hilfe", "/help"):
-            tg.send("📡 Deal-Radar\nNeues Produkt: <code>/neu Name; Zielpreis; Suchbegriff1, Suchbegriff2</code>\n"
-                    "Befehle werden beim nächsten Lauf (alle 2 Std.) verarbeitet.")
+                sha = github.commit_file(http, token, repo, env.get("GITHUB_REF_NAME") or "main", "products.yaml",
+                                         products_path.read_text(encoding="utf-8"),
+                                         "Telegram: " + "; ".join(batch.changes))
+                log.append(f"products.yaml per GitHub-API committet ({(sha or 'unverändert')[:7]})")
+            except (github.GitHubError, FetchError) as e:
+                # Kein Drama: Der Commit-Schritt im Workflow nimmt products.yaml ebenfalls mit.
+                log.append(f"GitHub-API-Commit fehlgeschlagen, Workflow committet später: {e}")
+        else:
+            log.append("Kein GITHUB_TOKEN (lokal) – products.yaml nur lokal geändert")
+
+    for reply in batch.replies:
+        for part in split_message(reply):
+            try:
+                tg.send(part)
+            except TelegramError as e:
+                log.append(f"Antwort nicht gesendet: {e}")
     return log
 
 
@@ -74,9 +92,13 @@ def run(args) -> int:
     state = storage.load_json(data_dir / "state.json", {})
     history = storage.load_json(data_dir / "verlauf.json", {})
 
-    for line in handle_telegram_commands(tg, state, products_path):
+    for line in handle_telegram_commands(tg, http, state, cfg, now, products_path, data_dir, env):
         print(line)
-    products = load_products(products_path)
+    all_products = load_products(products_path)
+    paused = [p.id for p in all_products if not p.aktiv]
+    if paused:
+        print(f"Pausiert (nicht überwacht): {', '.join(paused)}")
+    products = [p for p in all_products if p.aktiv]
     if args.only:
         products = [p for p in products if p.id in args.only.split(",")]
 

@@ -1,4 +1,4 @@
-"""Telegram: Nachrichten senden und den Befehl /neu entgegennehmen.
+"""Telegram: Nachrichten senden und Befehle (/neu, /liste, /loeschen …) abholen.
 
 Benötigt TELEGRAM_BOT_TOKEN und TELEGRAM_CHAT_ID (GitHub Secrets).
 Befehle werden NUR aus deinem eigenen Chat (TELEGRAM_CHAT_ID) angenommen.

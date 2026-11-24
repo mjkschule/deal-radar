@@ -1,7 +1,9 @@
-"""Neue Produkte zu products.yaml hinzufügen (aus Telegram-/neu oder GitHub-Issue).
+"""products.yaml ändern: Produkte hinzufügen, löschen, pausieren/fortsetzen.
 
-Die Datei wird NICHT neu geschrieben, sondern der neue Eintrag unten angehängt –
-so bleiben deine Kommentare erhalten.
+Die Datei wird NIE komplett neu geschrieben. Es werden nur die Zeilen des
+betroffenen Eintrags angehängt, entfernt oder angepasst – so bleiben deine
+Kommentare und die Formatierung erhalten. Nach jeder Änderung wird geprüft,
+ob die Datei noch gültig ist; sonst bleibt sie unverändert.
 """
 
 from __future__ import annotations
@@ -103,3 +105,67 @@ def append_product(path: Path, product: dict, comment: str = "") -> dict:
     parse_products(yaml.safe_load(new_text))  # Gesamtdatei noch gültig?
     path.write_text(new_text, encoding="utf-8")
     return entry
+
+
+_ITEM_START = re.compile(r"""^- id:\s*["']?([a-z0-9][a-z0-9-]*)["']?\s*(#.*)?$""")
+
+
+def _find_block(lines: list[str], pid: str) -> tuple[int, int]:
+    """Zeilenbereich [start, end) des Eintrags mit dieser id (ohne Leerzeilen am Ende)."""
+    for i, line in enumerate(lines):
+        m = _ITEM_START.match(line.rstrip("\n"))
+        if m and m.group(1) == pid:
+            j = i + 1
+            # Der Eintrag geht weiter, solange Zeilen eingerückt oder leer sind
+            while j < len(lines) and (not lines[j].strip() or lines[j][:1] in (" ", "\t")):
+                j += 1
+            while j > i + 1 and not lines[j - 1].strip():
+                j -= 1
+            return i, j
+    raise ConfigError(f"Eintrag '{pid}' wurde in products.yaml nicht gefunden (bitte im Web-Editor ändern).")
+
+
+def _check_and_write(path: Path, new_text: str) -> list:
+    products = parse_products(yaml.safe_load(new_text))
+    path.write_text(new_text, encoding="utf-8")
+    return products
+
+
+def remove_product(path: Path, pid: str) -> dict:
+    """Entfernt den Eintrag (samt direkt darüberstehendem Kommentar). Gibt den alten Eintrag zurück."""
+    text = path.read_text(encoding="utf-8")
+    raw = yaml.safe_load(text) or []
+    old = next((item for item in raw if isinstance(item, dict) and str(item.get("id")) == pid), None)
+    if old is None:
+        raise ConfigError(f"Produkt '{pid}' gibt es nicht (mehr).")
+    lines = text.splitlines(keepends=True)
+    start, end = _find_block(lines, pid)
+    # Kommentarzeilen direkt darüber (z. B. "# per Telegram hinzugefügt") gehören dazu,
+    # Trennlinien wie "# ====" oder "# ----" bleiben stehen.
+    while start > 0 and lines[start - 1].startswith("#") and not re.match(r"^#\s*[=-]{3,}", lines[start - 1]):
+        start -= 1
+    # eine Leerzeile davor mit entfernen, damit keine doppelten Leerzeilen bleiben
+    if start > 0 and not lines[start - 1].strip():
+        start -= 1
+    new_lines = lines[:start] + lines[end:]
+    products = _check_and_write(path, "".join(new_lines))
+    if any(p.id == pid for p in products):
+        raise ConfigError("Löschen fehlgeschlagen (Eintrag noch vorhanden).")
+    return old
+
+
+def set_active(path: Path, pid: str, active: bool) -> None:
+    """Setzt 'aktiv: true/false' im Eintrag (fügt die Zeile ggf. direkt unter 'id' ein)."""
+    text = path.read_text(encoding="utf-8")
+    lines = text.splitlines(keepends=True)
+    start, end = _find_block(lines, pid)
+    value = "true" if active else "false"
+    for k in range(start + 1, end):
+        if re.match(r"^  aktiv\s*:", lines[k]):
+            lines[k] = f"  aktiv: {value}\n"
+            break
+    else:
+        lines.insert(start + 1, f"  aktiv: {value}\n")
+    products = _check_and_write(path, "".join(lines))
+    if next(p for p in products if p.id == pid).aktiv is not active:
+        raise ConfigError("Ändern von 'aktiv' fehlgeschlagen.")

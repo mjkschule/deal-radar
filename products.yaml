@@ -24,6 +24,8 @@
 #   mindestwerte     optional: z. B. {Hz: 75} oder {kg: 5}. Steht ein kleinerer Wert
 #                    im Angebot, wird es aussortiert; steht keiner da: "bitte prüfen"
 #   notizen          optional: freier Text, erscheint auf der Startseite
+#   aktiv            optional: false = pausiert (wird nicht überwacht, bleibt aber
+#                    in der Liste). Telegram: /pause <Nr.> und /fortsetzen <Nr.>
 # =====================================================================
 
 - id: makita-dhp490rfx3

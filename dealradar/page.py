@@ -96,6 +96,8 @@ def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules
     best = current_best(p, state, now, rules)
     low = (state.get("tiefstpreis") or {}).get(p.id)
     color, label = ampel(best, p)
+    if not p.aktiv:
+        color, label = "grey", "pausiert"
     unit = " €/Monat" if p.is_leasing else " €"
     target = f"{_fmt(p.zielpreis)}{unit}" + (" (Rate)" if p.is_leasing else "")
     if best:
@@ -119,6 +121,10 @@ def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules
                 + (_leasing_details(best) if p.is_leasing else ""))
     else:
         main = '<div class="price none">Kein aktuelles Angebot</div><div class="muted">Das Radar sucht weiter …</div>'
+    if not p.aktiv:
+        main = ('<div class="price none">⏸ Pausiert</div><div class="muted">Wird gerade nicht überwacht. '
+                'Wieder einschalten: <code>/fortsetzen</code> in Telegram oder <code>aktiv: true</code> '
+                'in products.yaml.</div>')
 
     extra = ""
     bad = offers_by_status(p, state, now, rules, (VERDAECHTIG, AUSGESCHLOSSEN))
@@ -131,7 +137,7 @@ def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules
                   + "".join(_offer_row(d, tz) for d in bad[:15]) + "</ul></details>")
     notes = f'<div class="notes">{e(p.notizen)}</div>' if p.notizen else ""
     return f"""
-<article class="card" id="{e(p.id)}">
+<article class="card{"" if p.aktiv else " paused"}" id="{e(p.id)}">
   <header><span class="dot {color}" title="{label}"></span><div><h2>{e(p.name)}</h2>
   <div class="muted">{e(p.kategorie)} · <span class="tag {color}">{label}</span></div></div></header>
   {main}
@@ -159,8 +165,12 @@ def render(products: list[Product], state: dict, history: dict, cfg: dict, now: 
         f'<span class="muted"> {e(s.get("meldung", ""))}'
         f'{" · " + str(s.get("anzahl")) + " Treffer" if s.get("status") == "ok" else ""}</span></li>'
         for name, s in sources.items())
-    reached = sum(1 for p in products if ampel(current_best(p, state, now, rules), p)[0] == "green")
-    cards = "".join(product_card(p, state, history, now, rules, tz) for p in products)
+    # Gelöschte Produkte stehen nicht mehr in products.yaml und erscheinen daher hier nicht –
+    # ihr Preisverlauf bleibt aber in data/verlauf.json archiviert.
+    active = [p for p in products if p.aktiv]
+    reached = sum(1 for p in active if ampel(current_best(p, state, now, rules), p)[0] == "green")
+    ordered = active + [p for p in products if not p.aktiv]  # pausierte ans Ende
+    cards = "".join(product_card(p, state, history, now, rules, tz) for p in ordered)
     ended = now > end
     return f"""<!doctype html>
 <html lang="de"><head><meta charset="utf-8">
@@ -184,6 +194,7 @@ h1{{font-size:1.5rem;margin:4px 0 12px}} h2{{font-size:1.05rem;margin:0}}
 .muted{{color:var(--muted);font-size:.9rem}}
 .grid{{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}}
 .card{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}}
+.card.paused{{opacity:.6}}
 .card header{{display:flex;gap:10px;align-items:flex-start}}
 .dot{{width:12px;height:12px;border-radius:50%;flex:none;margin-top:5px;display:inline-block}}
 .dot.green{{background:var(--green)}} .dot.yellow{{background:var(--yellow)}} .dot.red{{background:var(--red)}} .dot.grey{{background:var(--grey)}}
@@ -214,7 +225,7 @@ footer{{margin:24px 0;font-size:.8rem;color:var(--muted)}}
   <div class="box"><div class="muted">{"Radar beendet" if ended else "Countdown bis Black Friday-Ende"}</div>
   <div class="big" id="countdown" data-end="{end.isoformat()}">{"vorbei" if ended else "…"}</div>
   <div class="muted">Ende: {end.astimezone(tz).strftime("%d.%m.%Y, %H:%M Uhr")}</div></div>
-  <div class="box"><div class="muted">Ziel erreicht</div><div class="big">{reached} / {len(products)}</div>
+  <div class="box"><div class="muted">Ziel erreicht</div><div class="big">{reached} / {len(active)}</div>
   <div class="muted">Produkte mit grüner Ampel</div></div>
   <div class="box"><div class="muted">Datenquellen</div><ul class="sources">{src_html or "<li>noch kein Lauf</li>"}</ul></div>
 </section>

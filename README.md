@@ -80,7 +80,7 @@ Beim nächsten Lauf ist eBay automatisch aktiv.
 
 ---
 
-## 2. Produkte hinzufügen
+## 2. Produkte hinzufügen und verwalten
 
 ### Variante A: `products.yaml` im GitHub-Webeditor
 1. Öffne [`products.yaml`](products.yaml) auf GitHub und klicke oben rechts auf den **Stift** (Edit).
@@ -101,13 +101,40 @@ Schreibe deinem Bot:
 ```
 /neu Bosch PSR 18 LI-2; 89; PSR 18 LI-2, PSR18
 ```
-Format: `/neu Name; Zielpreis; Suchbegriff1, Suchbegriff2`. Der Befehl wird beim nächsten Lauf
+Format: `/neu Name; Zielpreis; Suchbegriff1, Suchbegriff2`. Der Bot antwortet mit der Nummer des
+neuen Produkts. Der Befehl wird beim nächsten Lauf
 verarbeitet (spätestens nach 2 Stunden), dann kommt eine Bestätigung. Nur Nachrichten aus **deinem**
 Chat werden angenommen.
 
 **Tipp zu Suchbegriffen:** Ein Angebot passt, wenn *alle Wörter eines Begriffs* im Titel stehen.
 Modellnummern wie `DHP490RFX3` werden auch als `DHP 490 RFX3` erkannt. mydealz-Gruppen findest du in der
 Adresszeile: `mydealz.de/gruppe/kaffeevollautomaten` → Gruppe `kaffeevollautomaten`.
+
+### Produkte anzeigen, löschen und pausieren (Telegram)
+
+| Befehl | Was passiert |
+|---|---|
+| `/liste` | Alle Produkte mit **Nummer**, Zielpreis und aktuell günstigstem Preis (Stand: letzter Lauf). ✅ Ziel erreicht · 🟡 knapp darüber · 🔴 darüber · ⚪ kein Angebot · ⏸ pausiert |
+| `/loeschen 3` oder `/loeschen Makita` | Entfernt das Produkt aus `products.yaml` (Commit über die GitHub-API) und bestätigt, **welches** Produkt gelöscht wurde. Es verschwindet beim Seitenbau im selben Lauf von der Startseite. `/löschen` geht auch. |
+| `/pause 3` | Produkt vorübergehend **nicht überwachen**, ohne es zu löschen (setzt `aktiv: false`). Auf der Startseite erscheint es ausgegraut am Ende. |
+| `/fortsetzen 3` | Wieder überwachen (setzt `aktiv: true`). |
+| `/hilfe` | Kurze Übersicht der Befehle. |
+
+- **Nummer oder Name:** Bei einem Namen reicht ein Teil, z. B. `/pause lenovo`. Passt der Name auf
+  mehrere Produkte (z. B. zwei Airfryer), fragt der Bot nach und listet die Treffer mit Nummer auf.
+  Dann einfach mit der Nummer antworten, z. B. `/loeschen 9`.
+- **Nummern:** Sie entsprechen der Reihenfolge in `products.yaml`. Nach einem Löschen rücken die
+  Nummern dahinter auf. Schick im Zweifel vorher `/liste`. Mehrere Befehle, die du zwischen zwei Läufen
+  schickst, beziehen sich alle auf dieselbe Nummerierung.
+- **Preisverlauf:** Beim Löschen bleibt der Verlauf in `data/verlauf.json` und `data/verlauf.csv`
+  erhalten (archiviert), wird aber nicht mehr angezeigt. Der gelöschte Eintrag selbst wird in
+  `data/geloescht.json` aufgehoben. Zum Wiederherstellen kopierst du ihn von dort zurück in `products.yaml`.
+- **Sicherheit:** Befehle werden **nur aus deinem eigenen Chat** (`TELEGRAM_CHAT_ID`) angenommen.
+  Nachrichten aus anderen Chats oder Gruppen ignoriert der Bot.
+- **Wann?** Der Bot fragt seine Nachrichten bei jedem Lauf ab, also alle 2 Stunden. Sofort geht es mit
+  **Actions → Deal-Radar → Run workflow**.
+- **Ohne Telegram:** Löschen kannst du auch im Web-Editor (Eintrag entfernen). Zum Pausieren schreibst
+  du `aktiv: false` in den Eintrag.
 
 ---
 
@@ -175,6 +202,7 @@ dealradar/               der Python-Code (gut kommentiert)
 data/state.json          gemeldete Angebote, Tiefstpreise, gesehene Angebote (vom Workflow gepflegt)
 data/verlauf.json        Preisverlauf pro Lauf (für die Sparklines)
 data/verlauf.csv         alle gesehenen Angebote (mit ; getrennt, öffnet in Excel)
+data/geloescht.json      per /loeschen entfernte Produkte (zum Wiederherstellen)
 docs/index.html          die Startseite (wird automatisch erzeugt)
 .github/workflows/       radar.yml (alle 2 Std.), add-product.yml (Issue → Produkt), tests.yml
 ```

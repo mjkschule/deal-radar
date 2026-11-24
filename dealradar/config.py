@@ -51,6 +51,7 @@ class Product:
     mindestwerte: dict[str, float] = field(default_factory=dict)
     notizen: str = ""
     leasing: dict = field(default_factory=dict)
+    aktiv: bool = True  # False = pausiert (per /pause), wird nicht überwacht
 
     @property
     def is_leasing(self) -> bool:
@@ -141,6 +142,9 @@ def parse_products(raw) -> list[Product]:
         typ = str(item.get("typ", "produkt")).strip().lower()
         if typ not in ("produkt", "leasing"):
             raise ConfigError(f"{where}: 'typ' muss 'produkt' oder 'leasing' sein.")
+        aktiv = item.get("aktiv", True)
+        if not isinstance(aktiv, bool):
+            raise ConfigError(f"{where}: 'aktiv' muss true oder false sein.")
         mins = item.get("mindestwerte") or {}
         if not isinstance(mins, dict):
             raise ConfigError(f"{where}: 'mindestwerte' muss so aussehen: {{Hz: 75}}")
@@ -160,6 +164,7 @@ def parse_products(raw) -> list[Product]:
                 mindestwerte={str(k): float(v) for k, v in mins.items()},
                 notizen=str(item.get("notizen") or ""),
                 leasing=dict(item.get("leasing") or {}),
+                aktiv=aktiv,
             )
         )
     return products
