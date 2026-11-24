@@ -18,13 +18,14 @@ from dealradar.telegram import Telegram
 
 TZ = ZoneInfo("Europe/Berlin")
 NOW = dt.datetime(2026, 11, 25, 12, 0, tzinfo=TZ)
+FIXTURE = Path(__file__).parent / "fixtures" / "products_test.yaml"
 
 
 @pytest.fixture
 def ppath(tmp_path) -> Path:
-    """Kopie der echten products.yaml (8 Produkte, mit Kommentaren)."""
+    """Kopie einer festen products.yaml (8 Produkte, mit Kommentaren)."""
     p = tmp_path / "products.yaml"
-    shutil.copy(ROOT / "products.yaml", p)
+    shutil.copy(FIXTURE, p)
     return p
 
 
@@ -63,7 +64,7 @@ def test_remove_also_drops_attached_telegram_comment(ppath):
     assert "# per Telegram hinzugefügt" in ppath.read_text()
     remove_product(ppath, "testprodukt-airfryer")
     assert "per Telegram hinzugefügt" not in ppath.read_text()
-    assert ppath.read_text() == (ROOT / "products.yaml").read_text()  # exakt wie vorher
+    assert ppath.read_text() == FIXTURE.read_text()  # exakt wie vorher
 
 
 def test_remove_unknown_raises(ppath):

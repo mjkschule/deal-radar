@@ -1,0 +1,16 @@
+{
+  "name": "deal-radar-bot",
+  "private": true,
+  "type": "module",
+  "description": "Telegram-Bot des Deal-Radars als Cloudflare Worker",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "wrangler": "4.158.0"
+  }
+}

@@ -10,7 +10,7 @@ einer **Startseite** für jedes Produkt den aktuell günstigsten Preis.
 
 ---
 
-## 1. Einrichtung (einmalig, ca. 10 Minuten)
+## 1. Einrichtung (einmalig, ca. 20 Minuten)
 
 Das Repo, GitHub Pages und die Workflows sind schon eingerichtet. Es fehlen nur noch deine
 Telegram-Zugangsdaten (und optional die eBay-Schlüssel).
@@ -80,6 +80,55 @@ Beim nächsten Lauf ist eBay automatisch aktiv.
 
 ---
 
+### 1.6 Sofort-Antworten im Bot (Cloudflare Worker, kostenlos)
+
+Ohne diesen Schritt beantwortet der Bot Befehle erst beim nächsten Suchlauf (bis zu 2 Stunden). Mit dem
+**Cloudflare Worker** antwortet er sofort und startet die Suchläufe zuverlässig alle 2 Stunden selbst. Der
+Zeitplan von GitHub bleibt als Reserve; doppelte Läufe innerhalb von 60 Minuten werden übersprungen.
+
+**a) GitHub-Token für den Worker** (darf nur `products.yaml` ändern und Läufe starten)
+1. GitHub → oben rechts dein Bild → **Settings** → ganz unten **Developer settings** →
+   **Personal access tokens** → **Fine-grained tokens** → **Generate new token**.
+2. Name: `deal-radar-bot`, Expiration: **Custom** → z. B. 31.12.2026.
+3. **Repository access:** *Only select repositories* → `deal-radar`.
+4. **Permissions → Repository permissions → Contents:** *Read and write* (Metadata wird automatisch gesetzt).
+5. **Generate token** → den Token (`github_pat_…`) kopieren. Er wird nur einmal angezeigt.
+
+**b) Worker hochladen** (im Terminal, im Ordner `worker/`)
+```bash
+cd worker && npm install
+```
+```bash
+npx wrangler login
+```
+(öffnet den Browser → bei Cloudflare anmelden → **Allow**)
+```bash
+npx wrangler deploy
+```
+Am Ende steht die Adresse des Workers, z. B. `https://deal-radar-bot.<name>.workers.dev`.
+
+**c) Geheime Werte im Worker speichern**: Jeder Befehl fragt nach dem Wert; die Eingabe ist unsichtbar.
+```bash
+npx wrangler secret put TELEGRAM_BOT_TOKEN
+```
+```bash
+npx wrangler secret put TELEGRAM_CHAT_ID
+```
+```bash
+npx wrangler secret put GITHUB_TOKEN
+```
+```bash
+openssl rand -hex 32 | npx wrangler secret put WEBHOOK_SECRET
+```
+(Der letzte erzeugt ein zufälliges Passwort, mit dem Telegram sich beim Worker ausweist. Du musst es dir nicht merken.)
+
+**d) Bot mit dem Worker verbinden:** Rufe im Browser einmal `https://deal-radar-bot.<name>.workers.dev/setup`
+auf. Dort sollte `"ok":true` stehen. Damit ist der Webhook gesetzt, und die Befehle sind bei Telegram
+registriert (Menü beim Tippen von `/`).
+
+**Worker wieder entfernen:** Rufe `https://api.telegram.org/bot<DEIN-TOKEN>/deleteWebhook` auf. Dann
+holt der Suchlauf die Befehle wieder selbst ab (alle 2 Stunden).
+
 ## 2. Produkte hinzufügen und verwalten
 
 ### Variante A: `products.yaml` im GitHub-Webeditor
@@ -101,40 +150,51 @@ Schreibe deinem Bot:
 ```
 /neu Bosch PSR 18 LI-2; 89; PSR 18 LI-2, PSR18
 ```
-Format: `/neu Name; Zielpreis; Suchbegriff1, Suchbegriff2`. Der Bot antwortet mit der Nummer des
-neuen Produkts. Der Befehl wird beim nächsten Lauf
-verarbeitet (spätestens nach 2 Stunden), dann kommt eine Bestätigung. Nur Nachrichten aus **deinem**
-Chat werden angenommen.
+Format: `/neu Name; Zielpreis; Suchbegriff1, Suchbegriff2`. Der Bot bestätigt **sofort** mit der Nummer
+des neuen Produkts und startet einen Suchlauf. Nur Nachrichten aus **deinem** Chat werden angenommen.
 
 **Tipp zu Suchbegriffen:** Ein Angebot passt, wenn *alle Wörter eines Begriffs* im Titel stehen.
 Modellnummern wie `DHP490RFX3` werden auch als `DHP 490 RFX3` erkannt. mydealz-Gruppen findest du in der
 Adresszeile: `mydealz.de/gruppe/kaffeevollautomaten` → Gruppe `kaffeevollautomaten`.
 
-### Produkte anzeigen, löschen und pausieren (Telegram)
+### Alle Bot-Befehle
 
-| Befehl | Was passiert |
-|---|---|
-| `/liste` | Alle Produkte mit **Nummer**, Zielpreis und aktuell günstigstem Preis (Stand: letzter Lauf). ✅ Ziel erreicht · 🟡 knapp darüber · 🔴 darüber · ⚪ kein Angebot · ⏸ pausiert |
-| `/loeschen 3` oder `/loeschen Makita` | Entfernt das Produkt aus `products.yaml` (Commit über die GitHub-API) und bestätigt, **welches** Produkt gelöscht wurde. Es verschwindet beim Seitenbau im selben Lauf von der Startseite. `/löschen` geht auch. |
-| `/pause 3` | Produkt vorübergehend **nicht überwachen**, ohne es zu löschen (setzt `aktiv: false`). Auf der Startseite erscheint es ausgegraut am Ende. |
-| `/fortsetzen 3` | Wieder überwachen (setzt `aktiv: true`). |
-| `/hilfe` | Kurze Übersicht der Befehle. |
+Der Bot antwortet **sofort** (über den Cloudflare Worker, siehe Abschnitt 1.6). In Telegram erscheinen die
+Befehle auch im Menü, wenn du `/` tippst.
 
-- **Nummer oder Name:** Bei einem Namen reicht ein Teil, z. B. `/pause lenovo`. Passt der Name auf
-  mehrere Produkte (z. B. zwei Airfryer), fragt der Bot nach und listet die Treffer mit Nummer auf.
-  Dann einfach mit der Nummer antworten, z. B. `/loeschen 9`.
-- **Nummern:** Sie entsprechen der Reihenfolge in `products.yaml`. Nach einem Löschen rücken die
-  Nummern dahinter auf. Schick im Zweifel vorher `/liste`. Mehrere Befehle, die du zwischen zwei Läufen
-  schickst, beziehen sich alle auf dieselbe Nummerierung.
-- **Preisverlauf:** Beim Löschen bleibt der Verlauf in `data/verlauf.json` und `data/verlauf.csv`
-  erhalten (archiviert), wird aber nicht mehr angezeigt. Der gelöschte Eintrag selbst wird in
-  `data/geloescht.json` aufgehoben. Zum Wiederherstellen kopierst du ihn von dort zurück in `products.yaml`.
-- **Sicherheit:** Befehle werden **nur aus deinem eigenen Chat** (`TELEGRAM_CHAT_ID`) angenommen.
-  Nachrichten aus anderen Chats oder Gruppen ignoriert der Bot.
-- **Wann?** Der Bot fragt seine Nachrichten bei jedem Lauf ab, also alle 2 Stunden. Sofort geht es mit
-  **Actions → Deal-Radar → Run workflow**.
-- **Ohne Telegram:** Löschen kannst du auch im Web-Editor (Eintrag entfernen). Zum Pausieren schreibst
-  du `aktiv: false` in den Eintrag.
+| Befehl | Beispiel | Was passiert |
+|---|---|---|
+| `/liste` | `/liste` | Alle Produkte mit **Nummer**, Zielpreis, aktuell günstigstem Effektivpreis (inkl. Versand, bei Leasing die effektive Rate), Shop und **Deal-Score** |
+| `/top` | `/top` | Die 5 besten Deals nach Deal-Score, mit Link |
+| `/status` | `/status` | Letzter und nächster Suchlauf, Zustand jeder Quelle, Anzahl Produkte |
+| `/neu` | `/neu Philips HD9255; 55; HD9255, Airfryer 5000` | Produkt anlegen (Name; Zielpreis; Suchbegriffe) |
+| `/ziel` | `/ziel 3 49,99` oder `/ziel makita 199` | Zielpreis ändern |
+| `/pause` | `/pause 3` | Produkt vorübergehend **nicht überwachen** (setzt `aktiv: false`); auf der Startseite ausgegraut am Ende |
+| `/fortsetzen` | `/fortsetzen 3` | Wieder überwachen (setzt `aktiv: true`) |
+| `/loeschen` | `/loeschen 3` oder `/löschen Makita` | Produkt entfernen; der Bot nennt, **welches** gelöscht wurde |
+| `/hilfe` | `/hilfe` | Alle Befehle mit Beispielen |
+
+Legende in `/liste`: ✅ Ziel erreicht · 🟡 bis 10 % darüber · 🔴 darüber · ⚪ kein Angebot · ⏸ pausiert ·
+🆕 neu (wird beim nächsten Lauf gesucht).
+
+- **Nummer oder Name:** Bei einem Namen reicht ein Teil, z. B. `/pause lenovo`. Passt er auf mehrere
+  Produkte (z. B. zwei Airfryer), fragt der Bot mit **Buttons** nach – einfach antippen.
+- **Nummern** entsprechen der Reihenfolge in `products.yaml`. Nach dem Löschen rücken die Nummern dahinter
+  auf; im Zweifel vorher `/liste` schicken.
+- **Was passiert bei Änderungen?** Der Worker ändert `products.yaml` per Commit über die GitHub-API
+  (Kommentare bleiben erhalten), bestätigt sofort und startet einen Suchlauf. Die Startseite ist nach
+  ein paar Minuten aktuell.
+- **Preise** in `/liste`, `/top` und `/status` stammen aus `docs/bot.json`, die jeder Suchlauf neu schreibt.
+- **Deal-Score (vorläufig):** 0–100, berechnet nur aus dem **eigenen** Preisverlauf der letzten 90 Tage,
+  nie aus UVP oder Streichpreisen. 50 = üblicher Preis, 75 = 10 % unter dem Median, 100 = 20 % oder mehr
+  darunter, +10 auf dem Allzeit-Tiefstpreis. Unter 5 Messpunkten steht „–“.
+- **Preisverlauf beim Löschen:** bleibt in `data/verlauf.json` und `data/verlauf.csv` erhalten, wird aber
+  nicht mehr angezeigt. Der gelöschte Eintrag wird in `data/geloescht.json` aufgehoben (zum Wiederherstellen
+  zurück in `products.yaml` kopieren).
+- **Sicherheit:** Der Bot antwortet **nur deinem eigenen Chat** (`TELEGRAM_CHAT_ID`). Den Worker erreicht
+  Telegram nur mit dem geheimen `WEBHOOK_SECRET`; alle anderen Anfragen werden abgewiesen.
+- **Ohne Telegram:** Löschen geht auch im Web-Editor (Eintrag entfernen); zum Pausieren `aktiv: false`
+  in den Eintrag schreiben.
 
 ---
 
@@ -204,6 +264,8 @@ data/verlauf.json        Preisverlauf pro Lauf (für die Sparklines)
 data/verlauf.csv         alle gesehenen Angebote (mit ; getrennt, öffnet in Excel)
 data/geloescht.json      per /loeschen entfernte Produkte (zum Wiederherstellen)
 docs/index.html          die Startseite (wird automatisch erzeugt)
+docs/bot.json            aktuelle Preise für den Telegram-Bot (wird automatisch erzeugt)
+worker/                  der Telegram-Bot als Cloudflare Worker (JavaScript)
 .github/workflows/       radar.yml (alle 2 Std.), add-product.yml (Issue → Produkt), tests.yml
 ```
 
@@ -229,3 +291,12 @@ python3.12 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 - **Läufe kommen unregelmäßig:** GitHub startet geplante Läufe oft 5–30 Minuten später; das ist normal.
 - **Quelle auf „Fehler“:** Die Webseite war nicht erreichbar oder hat ihren Aufbau geändert. Die
   anderen Quellen laufen weiter. Eine Quelle kann in `config.yaml` unter `quellen:` abgeschaltet werden.
+- **Bot antwortet nicht:** Rufe `https://deal-radar-bot.<name>.workers.dev/setup` auf. Steht dort
+  `"ok":true` und bei `letzter_fehler` nichts, ist alles verbunden. Sonst fehlt meist ein Secret
+  (Abschnitt 1.6 c). Live-Log des Workers: `cd worker && npx wrangler tail`.
+- **Bot meldet „Hat nicht geklappt: GitHub … 401/403“:** Der GitHub-Token ist abgelaufen oder hat nicht
+  die Berechtigung *Contents: Read and write*. Neuen Token anlegen (1.6 a) und mit
+  `npx wrangler secret put GITHUB_TOKEN` ersetzen.
+- **Keine Läufe alle 2 Stunden:** Im Cloudflare-Dashboard → Workers → `deal-radar-bot` → **Settings →
+  Triggers** prüfen, ob der Cron `17 */2 * * *` eingetragen ist. Übersprungene Läufe (weniger als
+  60 Minuten nach dem letzten) sind normal und stehen im Log als „Zeitplan-Lauf übersprungen“.
