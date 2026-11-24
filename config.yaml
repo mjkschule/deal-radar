@@ -30,7 +30,7 @@ quellen:
 mydealz_immer: ["new", "hot"]
 
 # LeasingMarkt: wie viele Ergebnisseiten (je 15 Angebote) maximal geladen werden
-leasingmarkt_max_seiten: 6
+leasingmarkt_max_seiten: 20   # alle Ergebnisseiten (Stand 24.11.: 18); Elektro-Angebote stehen oft weiter hinten
 # ... und für wie viele Angebote pro Lauf die Detailseite (Sonderzahlung,
 # Überführung) nachgeladen wird
 leasingmarkt_max_details: 4

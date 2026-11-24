@@ -29,7 +29,7 @@ jobs:
     timeout-minutes: 25
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deploy_try.outputs.page_url || steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
 
@@ -86,11 +86,21 @@ jobs:
 
       - name: Startseite vorbereiten
         if: steps.run.outcome == 'success'
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: docs
 
       - name: Startseite veröffentlichen
-        id: deploy
+        id: deploy_try
         if: steps.run.outcome == 'success'
-        uses: actions/deploy-pages@v4
+        continue-on-error: true   # GitHub findet das Artefakt manchmal erst Sekunden später
+        uses: actions/deploy-pages@v5
+
+      - name: Kurz warten (zweiter Versuch)
+        if: steps.run.outcome == 'success' && steps.deploy_try.outcome == 'failure'
+        run: sleep 30
+
+      - name: Startseite veröffentlichen (zweiter Versuch)
+        id: deploy
+        if: steps.run.outcome == 'success' && steps.deploy_try.outcome == 'failure'
+        uses: actions/deploy-pages@v5

@@ -76,6 +76,18 @@ def test_leasingmarkt_listing_parsing():
     assert leasingmarkt._detail_url(listings[0], 13).endswith("adVariant=13")
 
 
+def test_leasingmarkt_listing_with_quote_in_headline():
+    # Echter Fall vom 24.11.2026: "Nav10\"" (10-Zoll-Navi) zerstörte das einfache Entmaskieren.
+    data = {"totalPages": 6, "listings": [
+        {"id": 1, "headline": 'Opel Frontera Hybrid Nav10" Kam PDC', "fuelCategory": "Hybrid"},
+        {"id": 2, "headline": "Frontera Electric", "fuelCategory": "Elektro"}]}
+    inner = '{"searchFilter":"x","initialResult":' + json.dumps(data) + '}'
+    page = '<script>self.__next_f.push([1,' + json.dumps(inner) + '])</script>'
+    listings, pages = leasingmarkt.parse_listings(page)
+    assert pages == 6 and [l["id"] for l in listings] == [1, 2]
+    assert listings[0]["headline"].endswith('Nav10" Kam PDC')
+
+
 def test_leasingmarkt_detail_costs():
     page = ("<div>Einmalige Kosten inkl. MwSt.</div><div>Anzahlung</div><div>0,00 €</div>"
             "<div>Überführungskosten</div><div>1.323,30 €</div><div>Zulassungskosten</div><div>169,00 €</div>")

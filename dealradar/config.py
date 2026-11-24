@@ -20,7 +20,7 @@ DEFAULT_CONFIG = {
     "timeout_sekunden": 25,
     "quellen": {"mydealz": True, "ebay": True, "shop": True, "leasingmarkt": True, "sparneuwagen": True},
     "mydealz_immer": ["new", "hot"],
-    "leasingmarkt_max_seiten": 6,
+    "leasingmarkt_max_seiten": 20,
     "leasingmarkt_max_details": 4,
     "regeln": {
         "rabatt_vs_tiefstpreis": 0.10,

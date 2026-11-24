@@ -22,13 +22,38 @@ NAME = "leasingmarkt"
 BASE = "https://www.leasingmarkt.de"
 
 
+def _js_string_from(page: str, start: int) -> str:
+    """Dekodiert ein JavaScript-String-Literal ab Position `start` bis zum schließenden
+    (nicht maskierten) Anführungszeichen. So bleiben Zeichen wie  Nav10\"  in
+    Überschriften korrekt erhalten."""
+    j = start
+    while j < len(page):
+        c = page[j]
+        if c == "\\":
+            j += 2
+        elif c == '"':
+            break
+        else:
+            j += 1
+    return json.loads('"' + page[start:j] + '"')
+
+
 def parse_listings(page: str) -> tuple[list[dict], int]:
-    """Gibt (Liste der Angebote, Gesamtseiten) aus einer Ergebnisseite zurück."""
-    s = page.replace('\\"', '"')
-    i = s.find('"initialResult":')
-    if i < 0:
+    """Gibt (Liste der Angebote, Gesamtseiten) aus einer Ergebnisseite zurück.
+
+    Die Daten stecken als JSON in einem JavaScript-String (self.__next_f.push([1,"..."])).
+    Dieser String wird erst sauber dekodiert, danach wird das JSON gelesen."""
+    marker = '\\"initialResult\\":'
+    i = page.find(marker)
+    if i >= 0:
+        s = _js_string_from(page, i)
+        key = '"initialResult":'
+    else:  # falls die Daten einmal unmaskiert in der Seite stehen
+        s, key = page, '"initialResult":'
+    k = s.find(key)
+    if k < 0:
         raise ValueError("Seitenaufbau unbekannt (initialResult fehlt)")
-    obj, _ = json.JSONDecoder().raw_decode(s[i + len('"initialResult":'):])
+    obj, _ = json.JSONDecoder().raw_decode(s[k + len(key):])
     return obj.get("listings", []), int(obj.get("totalPages") or 1)
 
 
@@ -83,7 +108,7 @@ def fetch(products: list[Product], ctx: Context) -> list[Offer]:
     if not leasing_products:
         ctx.notes.append("kein Leasing-Produkt mit leasingmarkt_url")
         return []
-    max_pages = int(ctx.config.get("leasingmarkt_max_seiten", 6))
+    max_pages = int(ctx.config.get("leasingmarkt_max_seiten", 20))
     max_details = int(ctx.config.get("leasingmarkt_max_details", 4))
     cache = ctx.cache.setdefault("leasingmarkt_details", {})
     now = ctx.now
@@ -95,11 +120,21 @@ def fetch(products: list[Product], ctx: Context) -> list[Offer]:
         listings: list[dict] = []
         total_pages = 1
         page = 1
+        bad_pages = []
         while page <= min(total_pages, max_pages):
-            ls, total_pages = parse_listings(ctx.http.get(_page_url(prod.leasing["leasingmarkt_url"], page)))
+            html = ctx.http.get(_page_url(prod.leasing["leasingmarkt_url"], page))
+            try:
+                ls, total_pages = parse_listings(html)
+            except ValueError:  # eine kaputte Seite überspringen, nicht die ganze Quelle verlieren
+                if page == 1:
+                    raise
+                bad_pages.append(page)
+                ls = []
             listings.extend(ls)
             pages_read += 1
             page += 1
+        if bad_pages:
+            ctx.notes.append(f"Seite(n) {', '.join(map(str, bad_pages))} nicht lesbar")
         electric = [l for l in listings if str(l.get("fuelCategory", "")).lower().startswith("elektro")]
         candidates = []
         for l in electric:
