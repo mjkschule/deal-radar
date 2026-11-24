@@ -113,10 +113,11 @@ def run(args) -> int:
         alerts = logic.evaluate(p, offers, state, rules)
         for a in alerts:
             try:
-                tg.send(format_alert(a))
-                if not args.dry_run:
+                # Nur als "gemeldet" merken, wenn die Nachricht wirklich angekommen ist
+                # (sonst würden Deals vor dem Eintragen der Secrets verloren gehen).
+                if tg.send(format_alert(a)):
                     logic.mark_reported(state, a)
-                sent += 1
+                    sent += 1
             except TelegramError as ex:
                 print(f"Telegram-Fehler: {ex}", file=sys.stderr)
         logic.remember(p, offers, state, now, rules)

@@ -47,12 +47,14 @@ class Telegram:
             raise TelegramError(f"Telegram meldet Fehler: {data.get('description', status)}")
         return data["result"]
 
-    def send(self, text: str) -> None:
+    def send(self, text: str) -> bool:
+        """Sendet eine Nachricht. True = wirklich bei Telegram angekommen."""
         if self.dry_run or not self.configured:
             print("---- Telegram (nicht gesendet) ----\n" + text + "\n----")
-            return
+            return False
         self._call("sendMessage", {"chat_id": self.chat_id, "text": text, "parse_mode": "HTML",
                                    "disable_web_page_preview": "true"})
+        return True
 
     def commands(self, offset: int | None) -> tuple[list[str], int | None]:
         """Liest neue Nachrichten. Gibt (Texte aus deinem Chat, neuer Offset) zurück."""
