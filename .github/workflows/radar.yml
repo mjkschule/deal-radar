@@ -34,6 +34,10 @@ jobs:
       url: ${{ steps.deploy_try.outputs.page_url || steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          # Immer den neuesten Stand holen: Läufe vom Bot warten evtl. in der Schlange,
+          # und sonst würde der Stand vom Zeitpunkt des Befehls benutzt.
+          ref: ${{ github.event.repository.default_branch }}
 
       - uses: actions/setup-python@v6
         with:
@@ -84,7 +88,9 @@ jobs:
             echo "Keine Änderungen."
           else
             git commit -m "Deal-Radar: Lauf $(TZ=Europe/Berlin date '+%d.%m.%Y %H:%M')"
-            git pull --rebase --autostash
+            # Bei Konflikten in den Lauf-Daten gewinnt dieser (neueste) Lauf;
+            # Änderungen an products.yaml vom Bot bleiben unberührt.
+            git pull --rebase --autostash -X theirs
             git push
           fi
 
