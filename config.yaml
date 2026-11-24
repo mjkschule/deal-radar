@@ -49,3 +49,22 @@ regeln:
   aktuell_stunden: 48
   # Nach so vielen Tagen werden alte Angebote aus dem Speicher entfernt
   vergessen_nach_tagen: 7
+
+# Welche Deals kommen SOFORT aufs Handy? (alles andere steht in der Tagesübersicht)
+meldungen:
+  # Sofort, wenn der Zielpreis erreicht ist ODER der Deal-Score mindestens so hoch ist
+  sofort_ab_score: 85
+  # Tägliche Übersicht (verschickt der Cloudflare Worker, volle Stunde)
+  uebersicht_uhrzeit: "19:00"
+
+# Ruhezeiten: Sofort-Meldungen werden zurückgehalten und danach nachgeliefert.
+# Ein-/ausschalten auch per Telegram: /ruhe an  bzw.  /ruhe aus
+# "tage" gilt für den Beginn; 22:00–07:00 reicht also in den nächsten Morgen.
+ruhezeiten:
+  aktiv: true
+  zeiten:
+    - {tage: "Mo-Fr", von: "07:30", bis: "14:00"}
+    - {tage: "Mo-So", von: "22:00", bis: "07:00"}
+  # Ausnahmen – kommen auch in der Ruhezeit sofort:
+  ausnahme_ab_score: 90        # Deal-Score mindestens 90
+  ausnahme_unter_ziel: 0.15    # Zielpreis um mehr als 15 % unterboten

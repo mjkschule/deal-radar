@@ -29,6 +29,20 @@ DEFAULT_CONFIG = {
         "aktuell_stunden": 48,
         "vergessen_nach_tagen": 7,
     },
+    # Phase 2: welche Deals sofort kommen, Ruhezeiten, tägliche Übersicht
+    "meldungen": {
+        "sofort_ab_score": 85,
+        "uebersicht_uhrzeit": "19:00",
+    },
+    "ruhezeiten": {
+        "aktiv": True,
+        "zeiten": [
+            {"tage": "Mo-Fr", "von": "07:30", "bis": "14:00"},
+            {"tage": "Mo-So", "von": "22:00", "bis": "07:00"},
+        ],
+        "ausnahme_ab_score": 90,
+        "ausnahme_unter_ziel": 0.15,
+    },
 }
 
 
@@ -53,6 +67,7 @@ class Product:
     notizen: str = ""
     leasing: dict = field(default_factory=dict)
     aktiv: bool = True  # False = pausiert (per /pause), wird nicht überwacht
+    ean: str = ""  # EAN/GTIN, z. B. beim Anlegen per Shop-Link übernommen
 
     @property
     def is_leasing(self) -> bool:
@@ -166,6 +181,7 @@ def parse_products(raw) -> list[Product]:
                 notizen=str(item.get("notizen") or ""),
                 leasing=dict(item.get("leasing") or {}),
                 aktiv=aktiv,
+                ean=str(item.get("ean") or ""),
             )
         )
     return products

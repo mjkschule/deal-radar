@@ -43,6 +43,8 @@ export function parseProducts(text) {
       typ: String(item.typ || "produkt").toLowerCase(),
       kategorie: String(item.kategorie || "sonstiges"),
       suchbegriffe: terms.map(String),
+      ean: item.ean == null ? null : String(item.ean),
+      shop_urls: item.shop_urls == null ? [] : [].concat(item.shop_urls).map(String),
     };
   });
 }
@@ -125,7 +127,8 @@ export function setTarget(text, id, price) {
 }
 
 /** Hängt ein neues Produkt unten an (vor dem Beispiel-Kommentar ist egal – YAML ignoriert Kommentare). */
-export function appendProduct(text, { name, zielpreis, suchbegriffe, kategorie = "sonstiges" }, comment = "") {
+export function appendProduct(text, { name, zielpreis, suchbegriffe, kategorie = "sonstiges", ean = null, shop_urls = [] },
+  comment = "") {
   const existing = parseProducts(text);
   const ids = new Set(existing.map((p) => p.id));
   const base = slugify(name);
@@ -136,8 +139,32 @@ export function appendProduct(text, { name, zielpreis, suchbegriffe, kategorie =
   if (comment) block += `# ${comment}\n`;
   block += `- id: ${id}\n  name: ${q(name)}\n  kategorie: ${kategorie}\n` +
     `  suchbegriffe: [${suchbegriffe.map(q).join(", ")}]\n  zielpreis: ${yamlNumber(zielpreis)}\n`;
+  if (ean) block += `  ean: ${q(ean)}\n`;
+  if (shop_urls.length) block += `  shop_urls: [${shop_urls.map(q).join(", ")}]\n`;
   const newText = text + block;
   const product = parseProducts(newText).find((p) => p.id === id);
   if (!product) throw new ProductError("Anlegen fehlgeschlagen.");
   return { text: newText, product, number: existing.length + 1 };
+}
+
+/**
+ * Setzt in config.yaml einen Wert in einem Abschnitt, z. B. ruhezeiten -> aktiv: false.
+ * Nur die eine Zeile wird geändert; Kommentare bleiben stehen.
+ */
+export function setConfigValue(text, section, key, value) {
+  const lines = splitLines(text);
+  const start = lines.findIndex((l) => new RegExp(`^${section}:\\s*(#.*)?$`).test(l.replace(/\n$/, "")));
+  if (start < 0) throw new ProductError(`Abschnitt '${section}' fehlt in config.yaml.`);
+  let k = start + 1;
+  for (; k < lines.length && (!lines[k].trim() || /^[ \t#]/.test(lines[k])); k++) {
+    const m = new RegExp(`^(\\s+)${key}:\\s*[^#\\n]*?(\\s*#.*)?$`).exec(lines[k].replace(/\n$/, ""));
+    if (m && m[1].length === 2) {
+      lines[k] = `${m[1]}${key}: ${value}${m[2] || ""}\n`;
+      const newText = lines.join("");
+      const parsed = parse(newText);
+      if (String(parsed?.[section]?.[key]) !== String(value)) throw new ProductError("config.yaml ließ sich nicht ändern.");
+      return { text: newText };
+    }
+  }
+  throw new ProductError(`'${key}' fehlt im Abschnitt '${section}' der config.yaml.`);
 }

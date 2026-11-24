@@ -6,9 +6,16 @@ main = "src/index.js"
 compatibility_date = "2026-11-01"
 workers_dev = true
 
-# Alle 2 Stunden (Minute 17, UTC) einen Suchlauf auf GitHub starten
+# "17 */2 * * *": alle 2 Stunden (Minute 17, UTC) einen Suchlauf auf GitHub starten
+# "0 * * * *":    jede volle Stunde Ruhezeit-Meldungen nachliefern / Tagesübersicht (19 Uhr)
 [triggers]
-crons = ["17 */2 * * *"]
+crons = ["17 */2 * * *", "0 * * * *"]
+
+# Kleiner Speicher des Bots: Link-Vorschauen, bereits verschickte Meldungen
+# (kostenlos; angelegt mit: npx wrangler kv namespace create deal-radar-bot)
+[[kv_namespaces]]
+binding = "KV"
+id = "KV_ID_PLATZHALTER"
 
 [vars]
 GITHUB_REPO = "mjkschule/deal-radar"

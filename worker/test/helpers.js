@@ -39,11 +39,37 @@ export function fakeTelegram() {
   return {
     sent: [],
     edited: [],
+    markups: [],
     answered: [],
     async send(text, buttons) { this.sent.push({ text, buttons }); },
-    async edit(id, text) { this.edited.push({ id, text }); },
-    async answer(id) { this.answered.push(id); },
+    async edit(id, text, buttons) { this.edited.push({ id, text, buttons }); },
+    async editMarkup(id, buttons) { this.markups.push({ id, buttons }); },
+    async answer(id, text) { this.answered.push({ id, text }); },
   };
+}
+
+/** Cloudflare-KV im Speicher (get/put/delete). */
+export function fakeKV() {
+  const m = new Map();
+  return {
+    map: m,
+    async get(k) { return m.has(k) ? m.get(k) : null; },
+    async put(k, v) { m.set(k, String(v)); },
+    async delete(k) { m.delete(k); },
+  };
+}
+
+/** fetch-Ersatz: { "https://host/pfad": [status, body] } */
+export function fakeFetch(routes) {
+  const calls = [];
+  const fn = async (url) => {
+    calls.push(String(url));
+    const r = routes[String(url)];
+    if (!r) return new Response("not found", { status: 404 });
+    return new Response(r[1], { status: r[0] });
+  };
+  fn.calls = calls;
+  return fn;
 }
 
 export const BOTDATA = JSON.stringify({
@@ -60,10 +86,17 @@ export const BOTDATA = JSON.stringify({
   },
 });
 
-export function deps(extraFiles = {}) {
-  const gh = fakeGitHub({ "products.yaml": FIXTURE, "docs/bot.json": BOTDATA, ...extraFiles });
+export const CONFIG = readFileSync(new URL("../../config.yaml", import.meta.url), "utf8");
+
+export function deps(extraFiles = {}, { now = "2026-11-25T12:00:00+01:00", routes = {} } = {}) {
+  const gh = fakeGitHub({ "products.yaml": FIXTURE, "docs/bot.json": BOTDATA, "config.yaml": CONFIG, ...extraFiles });
   const tg = fakeTelegram();
-  return { gh, tg, env: ENV, now: new Date("2026-11-25T12:00:00+01:00") };
+  return { gh, tg, kv: fakeKV(), fetch: fakeFetch(routes), env: ENV, now: new Date(now) };
 }
+
+export const click = (data, extra = {}) => ({
+  update_id: 2,
+  callback_query: { id: "cb1", data, message: { message_id: 77, chat: { id: 111 }, ...extra } },
+});
 
 export const msg = (text, chatId = 111) => ({ update_id: 1, message: { chat: { id: chatId }, text } });

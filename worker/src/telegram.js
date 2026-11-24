@@ -4,11 +4,12 @@ export const COMMANDS = [
   { command: "liste", description: "Alle Produkte mit Preis und Deal-Score" },
   { command: "top", description: "Die 5 besten Deals nach Deal-Score" },
   { command: "status", description: "Letzter/nächster Lauf und Quellen" },
-  { command: "neu", description: "Produkt anlegen: /neu Name; Zielpreis; Suchbegriffe" },
+  { command: "neu", description: "Produkt anlegen: Shop-Link schicken oder /neu Name; Zielpreis" },
   { command: "ziel", description: "Zielpreis ändern: /ziel 3 49,99" },
   { command: "pause", description: "Produkt pausieren: /pause 3" },
   { command: "fortsetzen", description: "Pausiertes Produkt fortsetzen: /fortsetzen 3" },
   { command: "loeschen", description: "Produkt löschen: /loeschen 3" },
+  { command: "ruhe", description: "Ruhezeiten: /ruhe an, /ruhe aus oder /ruhe (Stand)" },
   { command: "hilfe", description: "Alle Befehle mit Beispielen" },
 ];
 
@@ -31,11 +32,19 @@ export function makeTelegram(env, fetchImpl = fetch) {
       if (buttons) params.reply_markup = { inline_keyboard: buttons };
       return call("sendMessage", params);
     },
-    edit(messageId, text) {
-      return call("editMessageText", {
+    /** Nur die Buttons einer Nachricht ändern (z. B. nach „Gekauft“ unter einer Deal-Meldung). */
+    editMarkup(messageId, buttons) {
+      return call("editMessageReplyMarkup", {
+        chat_id: env.TELEGRAM_CHAT_ID, message_id: messageId, reply_markup: { inline_keyboard: buttons || [] },
+      });
+    },
+    edit(messageId, text, buttons) {
+      const params = {
         chat_id: env.TELEGRAM_CHAT_ID, message_id: messageId, text, parse_mode: "HTML",
         disable_web_page_preview: true,
-      });
+      };
+      if (buttons) params.reply_markup = { inline_keyboard: buttons };
+      return call("editMessageText", params);
     },
     answer(callbackId, text = "") {
       return call("answerCallbackQuery", { callback_query_id: callbackId, text });

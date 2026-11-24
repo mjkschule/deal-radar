@@ -47,13 +47,21 @@ class Telegram:
             raise TelegramError(f"Telegram meldet Fehler: {data.get('description', status)}")
         return data["result"]
 
-    def send(self, text: str) -> bool:
-        """Sendet eine Nachricht. True = wirklich bei Telegram angekommen."""
-        if self.dry_run or not self.configured:
+    @property
+    def live(self) -> bool:
+        """True, wenn wirklich gesendet wird (Secrets gesetzt, kein --dry-run)."""
+        return self.configured and not self.dry_run
+
+    def send(self, text: str, buttons: list | None = None) -> bool:
+        """Sendet eine Nachricht (optional mit Buttons). True = wirklich bei Telegram angekommen."""
+        if not self.live:
             print("---- Telegram (nicht gesendet) ----\n" + text + "\n----")
             return False
-        self._call("sendMessage", {"chat_id": self.chat_id, "text": text, "parse_mode": "HTML",
-                                   "disable_web_page_preview": "true"})
+        params = {"chat_id": self.chat_id, "text": text, "parse_mode": "HTML",
+                  "disable_web_page_preview": "true"}
+        if buttons:
+            params["reply_markup"] = json.dumps({"inline_keyboard": buttons})
+        self._call("sendMessage", params)
         return True
 
     def commands(self, offset: int | None) -> tuple[list[str], int | None]:
@@ -79,7 +87,7 @@ def _e(s) -> str:
     return html.escape(str(s), quote=False)
 
 
-def format_alert(a: Alert) -> str:
+def format_alert(a: Alert, score: int | None = None) -> str:
     o, p = a.offer, a.product
     lines = [f"🔥 <b>{_e(p.name)}</b>"]
     if o.leasing:
@@ -106,6 +114,8 @@ def format_alert(a: Alert) -> str:
             lines.append(f"📊 Bisheriger Tiefstpreis: {_fmt(a.previous_low)} €")
     else:
         lines.append("📊 Erster vom Radar gesehener Preis")
+    if score is not None:
+        lines.append(f"⭐ Deal-Score: <b>{score}</b>/100")
     if o.hints:
         lines.append("⚠️ " + _e(" · ".join(o.hints)))
     lines.append(f"🔗 <a href=\"{html.escape(o.url)}\">Zum Angebot</a>")

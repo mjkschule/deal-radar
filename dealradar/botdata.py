@@ -11,6 +11,7 @@ import datetime as dt
 
 from .config import Product, end_datetime
 from .logic import current_best
+from .meldungen import quiet_now
 from .score import deal_score
 
 
@@ -61,5 +62,8 @@ def build(products: list[Product], state: dict, history: dict, cfg: dict, now: d
         "letzter_lauf": state.get("letzter_lauf"),
         "enddatum": end_datetime(cfg).isoformat(timespec="minutes"),
         "quellen": state.get("quellen") or {},
+        "ruhezeit_beim_lauf": quiet_now(cfg, now),
+        # Meldungen, die der Worker nach der Ruhezeit bzw. in der Tagesübersicht verschickt
+        "warteschlange": state.get("warteschlange") or [],
         "produkte": out,
     }
