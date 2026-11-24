@@ -172,7 +172,9 @@ export function deriveTerms(name) {
       models.push(base.length >= 4 ? base : t);
     }
   }
-  const terms = [...new Set(models)].slice(0, 3);
+  // Kurze Modellnummern (z. B. "B110") passen auf zu vieles -> Marke (erstes Wort) davor
+  const brand = words[0];
+  const terms = [...new Set(models.map((m) => (m.length < 6 && brand && brand !== m ? `${brand} ${m}` : m)))].slice(0, 3);
   return terms.length ? terms : [words.slice(0, 4).join(" ")];
 }
 
