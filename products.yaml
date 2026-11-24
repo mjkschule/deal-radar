@@ -148,13 +148,3 @@
   zielpreis: 65.0
   suchbegriffe: [Ninja AF100EU, Ninja Air Fryer AF100]
   kategorie: sonstiges
-
-# per Telegram-Link hinzugefügt (office-partner.de)
-- id: logitech-b110-silent-maus
-  aktiv: false
-  name: "Logitech B110 Silent Maus"
-  kategorie: sonstiges
-  suchbegriffe: ["B110"]
-  zielpreis: 5
-  ean: "5099206080539"
-  shop_urls: ["https://www.office-partner.de/logitech-b110-silent-maus-10060823"]
