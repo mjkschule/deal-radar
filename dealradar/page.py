@@ -74,11 +74,12 @@ def ampel(best: dict | None, product: Product) -> tuple[str, str]:
 
 def _leasing_details(d: dict) -> str:
     l = d.get("leasing") or {}
+    km = f"{l['km']:,}".replace(",", ".") if l.get("km") else "?"
     rows = [
         ("Rate", euro(l.get("rate"))),
         ("Sonderzahlung", euro(l.get("sonderzahlung")) if l.get("sonderzahlung") is not None else "unbekannt"),
         ("Bereitstellung", euro(l.get("bereitstellung")) if l.get("bereitstellung") is not None else "unbekannt"),
-        ("Laufzeit / km", f"{l.get('monate') or '?'} Mon. · {(str(l.get('km')) if l.get('km') else '?')} km/Jahr"),
+        ("Laufzeit / km", f"{l.get('monate') or '?'} Mon. · {km} km/Jahr"),
         ("Effektive Rate", euro(l.get("effektiv"))),
     ]
     return '<dl class="lease">' + "".join(f"<dt>{a}</dt><dd>{b}</dd>" for a, b in rows) + "</dl>"
@@ -110,7 +111,8 @@ def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules
         hints = " · ".join(best.get("hints") or [])
         main = (f'<div class="price">{big}</div>'
                 f'<div class="muted">{e(ship)}</div>'
-                f'<div class="shop"><a href="{e(best["url"])}" rel="noopener" target="_blank">{e(best["shop"])} öffnen ↗</a>'
+                f'<div class="shop"><a href="{e(best["url"])}" rel="noopener" target="_blank">Zum Angebot ↗</a>'
+                f' <b>{e(best["shop"])}</b>'
                 f' <span class="muted">· gesehen {when(best.get("first_seen"), tz)} · {e(best["source"])}</span></div>'
                 f'<div class="offer-title">{e(best["title"][:140])}</div>'
                 + (f'<div class="hints">⚠️ {e(hints)}</div>' if hints else "")
