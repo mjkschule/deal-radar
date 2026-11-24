@@ -133,3 +133,32 @@
 #   mydealz_gruppen: [kaffeevollautomaten]
 #   notizen: "Nur in Schwarz"
 # ---------------------------------------------------------------------
+
+# per Telegram hinzugefügt
+- id: philips-airfryer-5000-hd9255-4-1-l
+  aktiv: false
+  name: Philips Airfryer 5000 HD9255 (4,1 l)
+  zielpreis: 55.0
+  suchbegriffe: [Philips HD9255/80, Philips HD9255/60, Philips Airfryer 5000 HD9255]
+  kategorie: sonstiges
+
+# per Telegram hinzugefügt
+- id: ninja-air-fryer-af100eu-3-8-l
+  name: Ninja Air Fryer AF100EU (3,8 l)
+  zielpreis: 65.0
+  suchbegriffe: [Ninja AF100EU, Ninja Air Fryer AF100]
+  kategorie: sonstiges
+
+# per Telegram hinzugefügt
+- id: testprodukt-airfryer-philips
+  name: Testprodukt AirFryer Philips
+  zielpreis: 50.0
+  suchbegriffe: [Testprodukt AirFryer Philips]
+  kategorie: sonstiges
+
+# per Telegram hinzugefügt
+- id: testprodukt-airfryer-ninja
+  name: Testprodukt Airfryer Ninja
+  zielpreis: 60.0
+  suchbegriffe: [Testprodukt Airfryer Ninja]
+  kategorie: sonstiges
