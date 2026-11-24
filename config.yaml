@@ -1,0 +1,47 @@
+# =====================================================================
+#  Deal-Radar – allgemeine Einstellungen
+#  Diese Datei kannst du direkt im GitHub-Webeditor ändern (Stift-Symbol).
+# =====================================================================
+
+# Bis wann soll das Radar laufen? Danach beendet sich jeder Lauf sofort
+# und der Workflow schaltet sich selbst ab (keine Läufe, keine Fehler mehr).
+# Format: JJJJ-MM-TTTHH:MM (Uhrzeit in der unten angegebenen Zeitzone)
+enddatum: "2026-11-27T23:59"
+zeitzone: "Europe/Berlin"
+
+# So meldet sich das Tool bei Webseiten. Bitte ehrlich lassen.
+user_agent: "DealRadar/1.0 (private Preisbeobachtung; Open-Source-Bot, max. 1 Abruf/2 Std.)"
+
+# Höflichkeit: Mindestpause zwischen zwei Abrufen bei derselben Webseite (Sekunden)
+pause_sekunden: 3
+# Wie lange auf eine Antwort gewartet wird (Sekunden)
+timeout_sekunden: 25
+
+# Datenquellen einzeln an-/ausschalten (true = an, false = aus)
+quellen:
+  mydealz: true        # RSS-Feeds der mydealz-Gruppen
+  ebay: true           # eBay Browse API (nur aktiv, wenn die eBay-Secrets gesetzt sind)
+  shop: true           # konkrete Shop-Produktseiten (Preis aus JSON-LD / Microdata)
+  leasingmarkt: true   # LeasingMarkt.de (nur für Produkte mit typ: leasing)
+  sparneuwagen: true   # Sparneuwagen.de Haupt-Feed (nur für typ: leasing)
+
+# Diese mydealz-Feeds werden immer für ALLE Produkte durchsucht
+# (zusätzlich zu den Gruppen, die beim Produkt stehen).
+mydealz_immer: ["new", "hot"]
+
+# LeasingMarkt: wie viele Ergebnisseiten (je 15 Angebote) maximal geladen werden
+leasingmarkt_max_seiten: 6
+# ... und für wie viele Angebote pro Lauf die Detailseite (Sonderzahlung,
+# Überführung) nachgeladen wird
+leasingmarkt_max_details: 4
+
+# Regeln für einen "guten Deal"
+regeln:
+  # Melden, wenn mindestens so viel % unter dem bisher niedrigsten Preis (0.10 = 10 %)
+  rabatt_vs_tiefstpreis: 0.10
+  # "verdächtig", wenn Preis unter diesem Anteil des Medians liegt (0.40 = 40 %)
+  verdacht_unter_median: 0.40
+  # So lange gilt ein gesehenes Angebot als "aktuell" (Stunden)
+  aktuell_stunden: 48
+  # Nach so vielen Tagen werden alte Angebote aus dem Speicher entfernt
+  vergessen_nach_tagen: 7

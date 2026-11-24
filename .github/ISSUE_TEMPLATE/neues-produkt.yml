@@ -1,0 +1,61 @@
+name: Neues Produkt
+description: Ein Produkt zum Deal-Radar hinzufügen (wird automatisch in products.yaml übernommen)
+title: "Neues Produkt: "
+labels: ["neues-produkt"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Nach dem Absenden trägt ein Workflow das Produkt automatisch ein und schließt dieses Issue.
+        (Funktioniert nur für den Besitzer des Repos.)
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Anzeigename des Produkts
+      placeholder: "De'Longhi Magnifica S"
+    validations:
+      required: true
+  - type: dropdown
+    id: kategorie
+    attributes:
+      label: Kategorie
+      options: [sonstiges, werkzeug, drucker, monitor, zubehoer, haushalt, elektronik, auto]
+      default: 0
+  - type: textarea
+    id: suchbegriffe
+    attributes:
+      label: Suchbegriffe
+      description: Ein Begriff pro Zeile. Ein Angebot passt, wenn alle Wörter eines Begriffs im Titel stehen.
+      placeholder: |
+        Magnifica S
+        ECAM 22.110
+    validations:
+      required: true
+  - type: input
+    id: zielpreis
+    attributes:
+      label: Zielpreis (€)
+      description: Alarm, wenn der Preis inkl. Versand gleich oder niedriger ist
+      placeholder: "249"
+    validations:
+      required: true
+  - type: textarea
+    id: ausschluss
+    attributes:
+      label: Ausschlusswörter
+      description: Optional, ein Wort pro Zeile (z. B. gebraucht, defekt)
+  - type: textarea
+    id: shop_urls
+    attributes:
+      label: Shop-URLs
+      description: Optional, konkrete Produktseiten, eine pro Zeile
+  - type: input
+    id: mydealz
+    attributes:
+      label: mydealz-Gruppen
+      description: Optional, kommagetrennt (z. B. kaffeevollautomaten). Der Name steht in der Adresse mydealz.de/gruppe/<name>
+  - type: textarea
+    id: notizen
+    attributes:
+      label: Notizen

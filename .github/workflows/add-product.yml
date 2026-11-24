@@ -1,0 +1,58 @@
+# Übernimmt ein Produkt aus dem Issue-Formular "Neues Produkt" in products.yaml
+# und schließt das Issue. Aus Sicherheitsgründen nur für Issues des Repo-Besitzers.
+name: Neues Produkt übernehmen
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: deal-radar
+  cancel-in-progress: false
+
+jobs:
+  add:
+    if: contains(github.event.issue.labels.*.name, 'neues-produkt') && github.event.issue.user.login == github.repository_owner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Produkt in products.yaml eintragen
+        id: add
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python scripts/add_product.py
+
+      - name: Commit
+        run: |
+          git config user.name "deal-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add products.yaml
+          git commit -m "Neues Produkt: ${{ steps.add.outputs.id }} (Issue #${{ github.event.issue.number }})"
+          git pull --rebase
+          git push
+
+      - name: Issue schließen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue close "${{ github.event.issue.number }}" --repo "${{ github.repository }}" \
+            --comment "✅ Übernommen als \`${{ steps.add.outputs.id }}\`. Das Produkt wird ab dem nächsten Lauf (spätestens in 2 Stunden) beobachtet."
+
+      - name: Fehler melden
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --repo "${{ github.repository }}" \
+            --body "❌ Das Produkt konnte nicht übernommen werden. Details stehen im Actions-Log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

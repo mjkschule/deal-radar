@@ -1,0 +1,96 @@
+# Deal-Radar: läuft alle 2 Stunden, sucht Angebote, meldet per Telegram,
+# aktualisiert die Startseite (GitHub Pages) und speichert den Preisverlauf im Repo.
+# Nach dem Enddatum (config.yaml) schaltet sich dieser Workflow selbst ab.
+name: Deal-Radar
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"   # alle 2 Stunden, Minute 17 (UTC; GitHub startet oft etwas später)
+  workflow_dispatch:          # "Run workflow"-Knopf zum manuellen Auslösen
+    inputs:
+      test_telegram:
+        description: "Nur eine Telegram-Testnachricht senden"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # Preisverlauf committen
+  actions: write    # Workflow nach dem Enddatum abschalten
+  pages: write      # Startseite veröffentlichen
+  id-token: write
+
+concurrency:
+  group: deal-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Abhängigkeiten installieren
+        run: pip install -r requirements.txt
+
+      - name: Enddatum prüfen
+        id: ende
+        run: python -m dealradar.ende
+
+      - name: Enddatum erreicht – Workflow abschalten
+        if: steps.ende.outputs.beendet == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Black Friday ist vorbei – Deal-Radar schaltet sich ab."
+          gh workflow disable radar.yml --repo "${{ github.repository }}"
+
+      - name: Telegram-Testnachricht
+        if: steps.ende.outputs.beendet != 'true' && inputs.test_telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m dealradar.main --test-telegram
+
+      - name: Deal-Radar ausführen
+        id: run
+        if: steps.ende.outputs.beendet != 'true' && !inputs.test_telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: python -m dealradar.main
+
+      - name: Preisverlauf speichern (Commit)
+        if: steps.run.outcome == 'success'
+        run: |
+          git config user.name "deal-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data docs products.yaml
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Deal-Radar: Lauf $(TZ=Europe/Berlin date '+%d.%m.%Y %H:%M')"
+            git pull --rebase --autostash
+            git push
+          fi
+
+      - name: Startseite vorbereiten
+        if: steps.run.outcome == 'success'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Startseite veröffentlichen
+        id: deploy
+        if: steps.run.outcome == 'success'
+        uses: actions/deploy-pages@v4
