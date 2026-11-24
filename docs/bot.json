@@ -1,12 +1,12 @@
 {
  "enddatum": "2026-11-27T23:59+01:00",
- "letzter_lauf": "2026-11-24T23:40:07+01:00",
+ "letzter_lauf": "2026-11-24T23:44:21+01:00",
  "produkte": {
   "drucker-allgemein": {
    "aktiv": true,
    "bester": {
     "effektivpreis": 39.99,
-    "gesehen": "2026-11-24T23:40:07+01:00",
+    "gesehen": "2026-11-24T23:44:21+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: Farbe"
@@ -32,7 +32,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-24T23:40:07+01:00",
+    "gesehen": "2026-11-24T23:44:21+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -70,7 +70,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-24T23:40:07+01:00",
+    "gesehen": "2026-11-24T23:44:21+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -91,36 +91,11 @@
    "ziel_erreicht": false,
    "zielpreis": 65.0
   },
-  "logitech-b110-silent-maus": {
-   "aktiv": true,
-   "bester": {
-    "effektivpreis": 6.49,
-    "gesehen": "2026-11-24T23:40:07+01:00",
-    "hinweise": [
-     "Versand unbekannt"
-    ],
-    "preis": 6.49,
-    "quelle": "shop",
-    "rate": null,
-    "shop": "office-partner.de",
-    "titel": "Logitech B110 Silent Maus",
-    "url": "https://www.office-partner.de/logitech-b110-silent-maus-10060823",
-    "versand": null
-   },
-   "kategorie": "sonstiges",
-   "name": "Logitech B110 Silent Maus",
-   "score": null,
-   "tiefstpreis": 6.49,
-   "tiefstpreis_shop": "office-partner.de",
-   "typ": "produkt",
-   "ziel_erreicht": false,
-   "zielpreis": 5.0
-  },
   "makita-dhp490rfx3": {
    "aktiv": true,
    "bester": {
     "effektivpreis": 184.0,
-    "gesehen": "2026-11-24T23:40:07+01:00",
+    "gesehen": "2026-11-24T23:44:21+01:00",
     "hinweise": [
      "Gutschein/Code nötig",
      "nur für Neukunden",
@@ -147,7 +122,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 65.99,
-    "gesehen": "2026-11-24T23:40:07+01:00",
+    "gesehen": "2026-11-24T23:44:21+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -184,7 +159,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 336.66,
-    "gesehen": "2026-11-24T23:40:07+01:00",
+    "gesehen": "2026-11-24T23:44:21+01:00",
     "hinweise": [
      "Verfügbar: 03/2027",
      "Sonderzahlung unbekannt",
@@ -223,7 +198,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 9.99,
-    "gesehen": "2026-11-24T23:40:07+01:00",
+    "gesehen": "2026-11-24T23:44:21+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -250,39 +225,39 @@
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-24T23:40:07+01:00"
+   "zeit": "2026-11-24T23:44:21+01:00"
   },
   "leasingmarkt": {
    "anzahl": 26,
-   "dauer_s": 64.5,
+   "dauer_s": 71.6,
    "meldung": "18 Seiten, 0 Detailseiten geladen; 261 Angebote geprüft, 26 elektrisch",
    "status": "ok",
-   "zeit": "2026-11-24T23:40:07+01:00"
+   "zeit": "2026-11-24T23:44:21+01:00"
   },
   "mydealz": {
    "anzahl": 24,
-   "dauer_s": 49.6,
+   "dauer_s": 51.0,
    "meldung": "15/15 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-24T23:40:07+01:00"
+   "zeit": "2026-11-24T23:44:21+01:00"
   },
   "shop": {
-   "anzahl": 3,
-   "dauer_s": 12.3,
-   "meldung": "3/3 Shop-Seiten gelesen",
+   "anzahl": 2,
+   "dauer_s": 10.2,
+   "meldung": "2/2 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-24T23:40:07+01:00"
+   "zeit": "2026-11-24T23:44:21+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
-   "dauer_s": 4.3,
+   "dauer_s": 4.7,
    "meldung": "25 Artikel im Feed",
    "status": "ok",
-   "zeit": "2026-11-24T23:40:07+01:00"
+   "zeit": "2026-11-24T23:44:21+01:00"
   }
  },
  "ruhezeit_beim_lauf": true,
- "stand": "2026-11-24T23:40:07+01:00",
+ "stand": "2026-11-24T23:44:21+01:00",
  "version": 1,
  "warteschlange": []
 }
