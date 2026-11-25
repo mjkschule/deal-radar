@@ -127,7 +127,9 @@ def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules
             else:
                 ship = "Versand unbekannt"
         conds = [h for h in best.get("hints") or [] if h in BEDINGUNGEN]
-        hints = " · ".join(h for h in best.get("hints") or [] if h not in BEDINGUNGEN)
+        # "Versand unbekannt" steht schon unter dem Preis – nicht doppelt anzeigen
+        hints = " · ".join(h for h in best.get("hints") or []
+                           if h not in BEDINGUNGEN and h not in ("Versand unbekannt", "gebraucht/B-Ware"))
         calc = rechenweg(best)
         low_v = low["vergleichspreis"] if low else None
         score = deal_score(best["vergleichspreis"], history.get(p.id, []), low_v, now)
@@ -293,7 +295,8 @@ def render(products: list[Product], state: dict, history: dict, cfg: dict, now: 
 body{{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}}
 a{{color:var(--accent)}}
 .wrap{{max-width:1100px;margin:0 auto;padding:16px}}
-.top{{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:16px}}
+.top{{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:16px}}
+@media (max-width:520px){{.top .big{{font-size:1.1rem}} .top .box{{padding:10px 12px}}}}
 .box{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}}
 h1{{font-size:1.5rem;margin:4px 0 12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}}
 h2{{font-size:1.05rem;margin:0}}
