@@ -418,7 +418,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 184.9,
     "product_id": "epson-et-2922",
@@ -441,7 +441,7 @@
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 174.99,
     "product_id": "epson-et-2922",
@@ -463,7 +463,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 199.9,
     "product_id": "epson-et-2922",
@@ -478,14 +478,14 @@
     "vertrauen": [],
     "weitere_quellen": []
    },
-   "idealo (preisalarm)|https://clicks.news.idealo.com/f/a/W_wd_k9dsy3vIEuDyLlHBg~~/AAAHahA~/bHZdznQ7JCS22P7YiYriT4NiRHgjrClBFNbZgC4gsCKH9ukAcQoJsHwfXyt5-2H4fDq1bR2MvhbZ2AqTLT4Dt58I7OlQIEw4abEDByu21fhF5SK9HPAbQnA9xWfIJH8uoAdOp96gCnWz1KRo9CROycHkdy4hcj3Ia7ru3VOaDjq0-Ke3kCd8JcZXv91Qu5Bvy3QyHdNGXKuMK2zBJZ3hLAjgPvPQeRt6vhIwsRZFfFvckYxLzqxC8xoAhmZ6uXbBedx-PLxUclYILcv0SJb1zaLm9SZm7zRz6CZIkMdd6aGTatLqj8uBL0iHJFs4YHiaMujbTVNCGlF_ILWBhxuE7A~~": {
+   "idealo (preisalarm)|https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Epson+EcoTank+ET-2922+%28Farbe%2C+WLAN%2C+Scan%2FKopie%29": {
     "abzuege": [],
     "ean": "",
     "first_seen": "2026-11-25T20:25:55+01:00",
     "hints": [
      "Bestpreis laut Preisalarm – Shop und Versand im Portal prüfen"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 150.71,
     "product_id": "epson-et-2922",
@@ -495,7 +495,7 @@
     "status": "ok",
     "status_reason": "",
     "title": "idealo-Preisalarm: Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
-    "url": "https://clicks.news.idealo.com/f/a/W_wd_k9dsy3vIEuDyLlHBg~~/AAAHahA~/bHZdznQ7JCS22P7YiYriT4NiRHgjrClBFNbZgC4gsCKH9ukAcQoJsHwfXyt5-2H4fDq1bR2MvhbZ2AqTLT4Dt58I7OlQIEw4abEDByu21fhF5SK9HPAbQnA9xWfIJH8uoAdOp96gCnWz1KRo9CROycHkdy4hcj3Ia7ru3VOaDjq0-Ke3kCd8JcZXv91Qu5Bvy3QyHdNGXKuMK2zBJZ3hLAjgPvPQeRt6vhIwsRZFfFvckYxLzqxC8xoAhmZ6uXbBedx-PLxUclYILcv0SJb1zaLm9SZm7zRz6CZIkMdd6aGTatLqj8uBL0iHJFs4YHiaMujbTVNCGlF_ILWBhxuE7A~~",
+    "url": "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Epson+EcoTank+ET-2922+%28Farbe%2C+WLAN%2C+Scan%2FKopie%29",
     "vergleichspreis": 150.71,
     "vertrauen": [],
     "weitere_quellen": []
@@ -510,7 +510,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 73.78,
     "product_id": "lenovo-l24-4e",
@@ -560,7 +560,7 @@
      "nur für Neukunden",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 184.0,
     "product_id": "makita-dhp490rfx3",
@@ -575,36 +575,14 @@
     "vertrauen": [],
     "weitere_quellen": []
    },
-   "idealo (preisalarm)|https://clicks.news.idealo.com/f/a/3PnLBfj7CaaINfywS7rXWw~~/AAAHahA~/rubWA_Sy9sJAjzKs9jXnOu2R8q3_mrjq3AEChrrhgzsNKEOLVSz0fkqRs_yd5TWefkqTRkIQc17es-SFJ1aKIMzRXg9LgB8MMe2RP0d60LhDmc43KJRpFbPM4Ua7lUMSFr6RTKDXnXnYdIIhaW59H9GBJBGWT46IIIAa3eOrcjw44S7rxlof8aFkkpPWYHzaf4MymHGsxobUccbbFeQvjGl0iVuqMofJOSdqg2t96ObBrb06sbD396kKkGge7AwZjJV8IzHr6vk47WeCjkkSDEw43T6adrJcthojWZoGE7eu66J-b0rTk45zdF1Uugu7HhC5bciPr7oY92kNAH0Kkg~~": {
+   "idealo (preisalarm)|https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Makita+DHP490RFX3+%282x+3%2C0+Ah%2C+Ladeger%C3%A4t%2C+Koffer%2C+74-tlg.+Zubeh%C3%B6r%29": {
     "abzuege": [],
     "ean": "",
-    "first_seen": "2026-11-25T20:25:55+01:00",
+    "first_seen": "2026-11-25T20:56:29+01:00",
     "hints": [
      "Bestpreis laut Preisalarm – Shop und Versand im Portal prüfen"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
-    "leasing": {},
-    "price": 189.92,
-    "product_id": "makita-dhp490rfx3",
-    "shipping": null,
-    "shop": "idealo (Preisalarm)",
-    "source": "postfach",
-    "status": "ok",
-    "status_reason": "",
-    "title": "idealo-Preisalarm: Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
-    "url": "https://clicks.news.idealo.com/f/a/3PnLBfj7CaaINfywS7rXWw~~/AAAHahA~/rubWA_Sy9sJAjzKs9jXnOu2R8q3_mrjq3AEChrrhgzsNKEOLVSz0fkqRs_yd5TWefkqTRkIQc17es-SFJ1aKIMzRXg9LgB8MMe2RP0d60LhDmc43KJRpFbPM4Ua7lUMSFr6RTKDXnXnYdIIhaW59H9GBJBGWT46IIIAa3eOrcjw44S7rxlof8aFkkpPWYHzaf4MymHGsxobUccbbFeQvjGl0iVuqMofJOSdqg2t96ObBrb06sbD396kKkGge7AwZjJV8IzHr6vk47WeCjkkSDEw43T6adrJcthojWZoGE7eu66J-b0rTk45zdF1Uugu7HhC5bciPr7oY92kNAH0Kkg~~",
-    "vergleichspreis": 189.92,
-    "vertrauen": [],
-    "weitere_quellen": []
-   },
-   "idealo (preisalarm)|https://clicks.news.idealo.com/f/a/Hs-yyx7K2wXl0UlFIAdIVA~~/AAAHahA~/yeafeX1oyWqF1FG1rxrSt18_xKPaikCsejuEd18AUIO5onionW3knoiCUl1v29La8YhxqlBKArZokzT1_lmZmrC23bPa0ZoGg3dKV6Nsn1cK-sUYJo5pKgK2RaWR8-HXK6ncvUHHjjOu5k4m-Jxxc_Wk9wPiVCBAG6Sks7n3udKg3AmeAhp683wSA_hFnHHzeQh7KWwm2fc-3xVsI9KQWxx6AIEH_Rjr1g3QX_HezA9SMHzTuZChVy6A32HhvuzNJVw-0eMq5-to7MfZ_LLkyXaKdz8X-pkMjM570zDbgmvY_CMctAyABBJc0k3X5JUdJfk-39xmQ3YMR54E4VH0GA~~": {
-    "abzuege": [],
-    "ean": "",
-    "first_seen": "2026-11-25T20:25:55+01:00",
-    "hints": [
-     "Bestpreis laut Preisalarm – Shop und Versand im Portal prüfen"
-    ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 190.31,
     "product_id": "makita-dhp490rfx3",
@@ -614,7 +592,7 @@
     "status": "ok",
     "status_reason": "",
     "title": "idealo-Preisalarm: Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
-    "url": "https://clicks.news.idealo.com/f/a/Hs-yyx7K2wXl0UlFIAdIVA~~/AAAHahA~/yeafeX1oyWqF1FG1rxrSt18_xKPaikCsejuEd18AUIO5onionW3knoiCUl1v29La8YhxqlBKArZokzT1_lmZmrC23bPa0ZoGg3dKV6Nsn1cK-sUYJo5pKgK2RaWR8-HXK6ncvUHHjjOu5k4m-Jxxc_Wk9wPiVCBAG6Sks7n3udKg3AmeAhp683wSA_hFnHHzeQh7KWwm2fc-3xVsI9KQWxx6AIEH_Rjr1g3QX_HezA9SMHzTuZChVy6A32HhvuzNJVw-0eMq5-to7MfZ_LLkyXaKdz8X-pkMjM570zDbgmvY_CMctAyABBJc0k3X5JUdJfk-39xmQ3YMR54E4VH0GA~~",
+    "url": "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Makita+DHP490RFX3+%282x+3%2C0+Ah%2C+Ladeger%C3%A4t%2C+Koffer%2C+74-tlg.+Zubeh%C3%B6r%29",
     "vergleichspreis": 190.31,
     "vertrauen": [],
     "weitere_quellen": []
@@ -629,7 +607,7 @@
      "evtl. nur lokal/in der Filiale",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 86.89,
     "product_id": "monitor-24-allgemein",
@@ -676,7 +654,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 84.0,
     "product_id": "monitor-24-allgemein",
@@ -714,7 +692,7 @@
     "ean": "",
     "first_seen": "2026-11-24T12:32:33+01:00",
     "hints": [],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 65.99,
     "product_id": "monitor-24-allgemein",
@@ -739,7 +717,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 129.99,
     "product_id": "ninja-dualzone-7-6-l-heissluftfritteuse",
@@ -1721,7 +1699,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 44.95,
     "product_id": "wandhalterung-c27f396",
@@ -1746,7 +1724,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 12.0,
     "product_id": "wandhalterung-c27f396",
@@ -1768,7 +1746,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 9.99,
     "product_id": "wandhalterung-c27f396",
@@ -1791,7 +1769,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-25T20:52:51+01:00",
+    "last_seen": "2026-11-25T20:56:29+01:00",
     "leasing": {},
     "price": 35.99,
     "product_id": "wandhalterung-c27f396",
@@ -1811,9 +1789,9 @@
  "bot_name": "MJK_Dealradar_bot",
  "cache": {
   "blogs": {
-   "dealdoktor": "2026-11-25T20:52:51+01:00",
-   "mein-deal": "2026-11-25T20:52:51+01:00",
-   "mytopdeals": "2026-11-25T20:52:51+01:00"
+   "dealdoktor": "2026-11-25T20:56:29+01:00",
+   "mein-deal": "2026-11-25T20:56:29+01:00",
+   "mytopdeals": "2026-11-25T20:56:29+01:00"
   },
   "gutscheine": [],
   "hersteller": {
@@ -1848,9 +1826,6 @@
   "amazon|https://www.mydealz.de/deals/prime-one-for-all-tv-wandhalterung-neigbar-wm4421-32-bis-65-zoll-vesa-100x100-bis-400x400-10-jahre-garantie-max-100-kg-schwarz-2815407": 12.0,
   "baur|https://www.mydealz.de/deals/makita-dhp490rfx3-18v-akku-schlagbohrschrauber-set-2x-30-ah-akkus-ladegerat-koffer-74-tlg-zubehor-ab-17808-eur-eff-inkl-cb-und-pb-2877733": 184.0,
   "ebay|https://www.mydealz.de/deals/tv-wandhalterung-schwenk-neigbar-vesa-400x400-23-50-zoll-fur-fernseher-und-monitor-2651968": 9.99,
-  "idealo (preisalarm)|https://clicks.news.idealo.com/f/a/3PnLBfj7CaaINfywS7rXWw~~/AAAHahA~/rubWA_Sy9sJAjzKs9jXnOu2R8q3_mrjq3AEChrrhgzsNKEOLVSz0fkqRs_yd5TWefkqTRkIQc17es-SFJ1aKIMzRXg9LgB8MMe2RP0d60LhDmc43KJRpFbPM4Ua7lUMSFr6RTKDXnXnYdIIhaW59H9GBJBGWT46IIIAa3eOrcjw44S7rxlof8aFkkpPWYHzaf4MymHGsxobUccbbFeQvjGl0iVuqMofJOSdqg2t96ObBrb06sbD396kKkGge7AwZjJV8IzHr6vk47WeCjkkSDEw43T6adrJcthojWZoGE7eu66J-b0rTk45zdF1Uugu7HhC5bciPr7oY92kNAH0Kkg~~": 189.92,
-  "idealo (preisalarm)|https://clicks.news.idealo.com/f/a/Hs-yyx7K2wXl0UlFIAdIVA~~/AAAHahA~/yeafeX1oyWqF1FG1rxrSt18_xKPaikCsejuEd18AUIO5onionW3knoiCUl1v29La8YhxqlBKArZokzT1_lmZmrC23bPa0ZoGg3dKV6Nsn1cK-sUYJo5pKgK2RaWR8-HXK6ncvUHHjjOu5k4m-Jxxc_Wk9wPiVCBAG6Sks7n3udKg3AmeAhp683wSA_hFnHHzeQh7KWwm2fc-3xVsI9KQWxx6AIEH_Rjr1g3QX_HezA9SMHzTuZChVy6A32HhvuzNJVw-0eMq5-to7MfZ_LLkyXaKdz8X-pkMjM570zDbgmvY_CMctAyABBJc0k3X5JUdJfk-39xmQ3YMR54E4VH0GA~~": 190.31,
-  "idealo (preisalarm)|https://clicks.news.idealo.com/f/a/W_wd_k9dsy3vIEuDyLlHBg~~/AAAHahA~/bHZdznQ7JCS22P7YiYriT4NiRHgjrClBFNbZgC4gsCKH9ukAcQoJsHwfXyt5-2H4fDq1bR2MvhbZ2AqTLT4Dt58I7OlQIEw4abEDByu21fhF5SK9HPAbQnA9xWfIJH8uoAdOp96gCnWz1KRo9CROycHkdy4hcj3Ia7ru3VOaDjq0-Ke3kCd8JcZXv91Qu5Bvy3QyHdNGXKuMK2zBJZ3hLAjgPvPQeRt6vhIwsRZFfFvckYxLzqxC8xoAhmZ6uXbBedx-PLxUclYILcv0SJb1zaLm9SZm7zRz6CZIkMdd6aGTatLqj8uBL0iHJFs4YHiaMujbTVNCGlF_ILWBhxuE7A~~": 150.71,
   "lidl|https://www.mydealz.de/deals/epson-expression-home-xp-2200-3-in-1-wlan-multifunktionsdrucker-bei-lidl-2878456": 39.99,
   "notebooksbilliger|https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252": 65.99
  },
@@ -1875,27 +1850,27 @@
    "amazon|12.00"
   ]
  },
- "letzter_lauf": "2026-11-25T20:52:51+01:00",
+ "letzter_lauf": "2026-11-25T20:56:29+01:00",
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.2,
+   "dauer_s": 4.8,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:52:51+01:00"
+   "zeit": "2026-11-25T20:56:29+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T20:52:51+01:00"
+   "zeit": "2026-11-25T20:56:29+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1948 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:52:51+01:00"
+   "zeit": "2026-11-25T20:56:29+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
@@ -1906,31 +1881,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 4.6,
+   "dauer_s": 5.2,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:52:51+01:00"
+   "zeit": "2026-11-25T20:56:29+01:00"
   },
   "mydealz": {
    "anzahl": 10,
-   "dauer_s": 46.7,
+   "dauer_s": 47.9,
    "meldung": "14/14 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:52:51+01:00"
+   "zeit": "2026-11-25T20:56:29+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.6,
+   "dauer_s": 3.7,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:52:51+01:00"
+   "zeit": "2026-11-25T20:56:29+01:00"
   },
   "postfach": {
    "anzahl": 3,
-   "dauer_s": 1.6,
+   "dauer_s": 1.4,
    "meldung": "7 Mails, 3 Preisalarme mit Treffer, 0 Gutscheine",
    "status": "ok",
-   "zeit": "2026-11-25T20:52:51+01:00"
+   "zeit": "2026-11-25T20:56:29+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -1938,10 +1913,10 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 12.3,
+   "dauer_s": 14.1,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:52:51+01:00"
+   "zeit": "2026-11-25T20:56:29+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -1990,7 +1965,7 @@
    "status": "ok",
    "status_reason": "",
    "title": "idealo-Preisalarm: Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
-   "url": "https://clicks.news.idealo.com/f/a/W_wd_k9dsy3vIEuDyLlHBg~~/AAAHahA~/bHZdznQ7JCS22P7YiYriT4NiRHgjrClBFNbZgC4gsCKH9ukAcQoJsHwfXyt5-2H4fDq1bR2MvhbZ2AqTLT4Dt58I7OlQIEw4abEDByu21fhF5SK9HPAbQnA9xWfIJH8uoAdOp96gCnWz1KRo9CROycHkdy4hcj3Ia7ru3VOaDjq0-Ke3kCd8JcZXv91Qu5Bvy3QyHdNGXKuMK2zBJZ3hLAjgPvPQeRt6vhIwsRZFfFvckYxLzqxC8xoAhmZ6uXbBedx-PLxUclYILcv0SJb1zaLm9SZm7zRz6CZIkMdd6aGTatLqj8uBL0iHJFs4YHiaMujbTVNCGlF_ILWBhxuE7A~~",
+   "url": "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Epson+EcoTank+ET-2922+%28Farbe%2C+WLAN%2C+Scan%2FKopie%29",
    "vergleichspreis": 150.71,
    "vertrauen": [],
    "weitere_quellen": []
