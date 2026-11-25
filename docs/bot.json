@@ -1,14 +1,14 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-25T19:17:42+01:00",
+ "letzter_lauf": "2026-11-25T20:05:46+01:00",
  "produkte": {
   "epson-et-2922": {
    "aktiv": true,
    "alternativen": [],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-25T19:17:42+01:00",
+    "gesehen": "2026-11-25T20:05:46+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -38,7 +38,7 @@
    "alternativen": [],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-25T19:17:42+01:00",
+    "gesehen": "2026-11-25T20:05:46+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -67,7 +67,7 @@
    "alternativen": [],
    "bester": {
     "effektivpreis": 184.0,
-    "gesehen": "2026-11-25T19:17:42+01:00",
+    "gesehen": "2026-11-25T20:05:46+01:00",
     "hinweise": [
      "Gutschein/Code nötig",
      "nur für Neukunden",
@@ -122,6 +122,35 @@
    "ziel_erreicht": true,
    "zielpreis": 75.0
   },
+  "ninja-dualzone-7-6-l-heissluftfritteuse": {
+   "aktiv": true,
+   "alternativen": [],
+   "bester": {
+    "effektivpreis": 129.99,
+    "gesehen": "2026-11-25T20:05:46+01:00",
+    "hinweise": [
+     "Versand unbekannt"
+    ],
+    "preis": 129.99,
+    "quelle": "shop",
+    "rate": null,
+    "rechenweg": "",
+    "shop": "sharkninja.de",
+    "titel": "Ninja DualZone 7,6-l-Heißluftfritteuse mit 2 Schubladen – Schwarz",
+    "url": "https://www.sharkninja.de/ninja-dualzone-76-l-heissluftfritteuse-mit-2-schubladen-schwarz/DZ801EU.html?gclsrc=aw.ds&utm_source=google&utm_medium=cpc&utm_campaign=ninja_pla_heated_cooking_air-fryers_brand&utm_content=203334940767&utm_productid=DZ801EU&gad_source=1&gad_campaignid=24187195660&gbraid=0AAAAACnqWUIZoLEyQNCoG6ZhyXnJVw5M1&gclid=CjwKCAiAq5rYBhB-EiwAhj1RdhFGpOh5hDX7Fi1R8Z3SU3hyyiCA96LLGaHMKHMey7NfiuQ99u7xkxoC470QAvD_BwE&dwvar_DZ801EU_color=363838",
+    "versand": null,
+    "vertrauen": []
+   },
+   "kategorie": "sonstiges",
+   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
+   "name": "Ninja DualZone 7,6-l-Heißluftfritteuse mit 2 Schubladen – Schwarz",
+   "score": null,
+   "tiefstpreis": 129.99,
+   "tiefstpreis_shop": "sharkninja.de",
+   "typ": "produkt",
+   "ziel_erreicht": false,
+   "zielpreis": 116.0
+  },
   "opel-frontera-electric-leasing": {
    "aktiv": true,
    "alternativen": [],
@@ -158,7 +187,7 @@
    "alternativen": [],
    "bester": {
     "effektivpreis": 9.99,
-    "gesehen": "2026-11-25T19:17:42+01:00",
+    "gesehen": "2026-11-25T20:05:46+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -186,79 +215,80 @@
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 8.2,
-   "meldung": "20 Beiträge (2 Feed-Seiten)",
+   "dauer_s": 4.3,
+   "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T20:05:46+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T20:05:46+01:00"
   },
   "hersteller": {
    "anzahl": 0,
-   "dauer_s": 0.0,
+   "dauer_s": 10.9,
    "meldung": "Tefal: 1948 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T20:05:46+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
    "dauer_s": 69.7,
-   "meldung": "18 Seiten, 0 Detailseiten geladen; 263 Angebote geprüft, 29 elektrisch",
+   "meldung": "nur alle 110 Min. abgefragt – Stand 19:17 Uhr",
    "status": "ok",
    "zeit": "2026-11-25T19:17:42+01:00"
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 9.0,
+   "dauer_s": 8.8,
    "meldung": "32 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T20:05:46+01:00"
   },
   "mydealz": {
-   "anzahl": 11,
-   "dauer_s": 46.2,
+   "anzahl": 10,
+   "dauer_s": 47.7,
    "meldung": "14/14 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T20:05:46+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.8,
+   "dauer_s": 3.7,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T20:05:46+01:00"
   },
   "postfach": {
-   "dauer_s": 0.0,
-   "meldung": "nicht eingerichtet (Gmail-Konto + App-Passwort, siehe README 1.7)",
-   "status": "deaktiviert",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "anzahl": 0,
+   "dauer_s": 0.8,
+   "meldung": "2 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine",
+   "status": "ok",
+   "zeit": "2026-11-25T20:05:46+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
    "status": "deaktiviert"
   },
   "shop": {
-   "anzahl": 2,
-   "dauer_s": 8.6,
-   "meldung": "2/2 Shop-Seiten gelesen",
+   "anzahl": 3,
+   "dauer_s": 14.0,
+   "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T20:05:46+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
    "dauer_s": 4.3,
-   "meldung": "25 Artikel im Feed",
+   "meldung": "nur alle 110 Min. abgefragt – Stand 19:17 Uhr",
    "status": "ok",
    "zeit": "2026-11-25T19:17:42+01:00"
   }
  },
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-25T19:17:42+01:00",
+ "stand": "2026-11-25T20:05:46+01:00",
  "version": 1,
  "warteschlange": []
 }
