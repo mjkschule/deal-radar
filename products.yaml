@@ -50,7 +50,7 @@
   name: "Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)"
   kategorie: drucker
   suchbegriffe: ["ET-2922", "ET 2922", "EcoTank 2922"]
-  zielpreis: 155
+  zielpreis: 145
   ausschluss: ["Nachfülltinte", "Tintenflaschen", "Ersatztinte"]
   mydealz_gruppen: [drucker, multifunktionsdrucker, epson]
   ebay_suche: "Epson EcoTank ET-2922"
