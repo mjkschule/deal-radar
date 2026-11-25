@@ -29,6 +29,10 @@ NOW = dt.datetime(2026, 11, 27, 12, 0, tzinfo=dt.timezone(dt.timedelta(hours=1))
     ("Brother HL-L2350DW Laserdrucker monochrom", None),
     ("HP 305 Druckerpatronen Multipack", None),
     ("Bambu Lab A1 mini 3D-Drucker", None),
+    ("BOSCH TWK7S05 Wasserkocher, 1,7 L, 2200 W", "wasserkocher"),
+    ("Timemore Fish Pro X 900ml - Electric Gooseneck Kettle", "wasserkocher"),
+    ("Durgol Entkalker für Wasserkocher, 2x 500 ml", None),
+    ("Russell Hobbs Frühstücksset Wasserkocher + Toaster", None),
 ])
 def test_categories(title, kat):
     assert rabattknaller.category_of(title, title, KATS) == kat
