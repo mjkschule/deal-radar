@@ -8,13 +8,25 @@ App installierbar) für jedes Produkt den aktuell günstigsten Preis.
 - **Startseite:** https://mjkschule.github.io/deal-radar/
 - **Läufe ansehen / manuell starten:** Reiter **Actions** im Repo
 - **Produkte:** Datei [`products.yaml`](products.yaml) · **Einstellungen:** [`config.yaml`](config.yaml)
+- **Telegram-Bot:** alle Befehle siehe Abschnitt 2 („Alle Bot-Befehle“), Kurzfassung im Bot mit `/hilfe`
+- **Kosten:** keine – GitHub (öffentliches Repo), GitHub Pages, Cloudflare Worker und Telegram sind kostenlos.
+
+**So hängt alles zusammen**
+
+| Teil | Aufgabe |
+|---|---|
+| GitHub Actions (`dealradar/`, Python) | sucht in allen Quellen, bewertet, schickt Deal-Meldungen, schreibt Preisverlauf und Startseite |
+| Cloudflare Worker (`worker/`, JavaScript) | beantwortet Bot-Befehle sofort, startet die Läufe nach Zeitplan, liefert Ruhezeit-Meldungen nach, schickt die Tagesübersicht |
+| GitHub Pages (`docs/`) | Startseite (auch als App) |
+| Telegram | Meldungen, Befehle, Buttons – nur für deine Chat-ID |
 
 ---
 
 ## 1. Einrichtung (einmalig, ca. 20 Minuten)
 
-Das Repo, GitHub Pages und die Workflows sind schon eingerichtet. Es fehlen nur noch deine
-Telegram-Zugangsdaten (und optional die eBay-Schlüssel).
+**Stand 25.11.2026:** Repo, GitHub Pages, Workflows, Telegram-Bot (1.1–1.4) und Cloudflare Worker (1.6) sind
+eingerichtet und laufen. **Optional offen:** eBay (1.5) und das Gmail-Deal-Postfach (1.7).
+Die folgenden Schritte brauchst du nur, wenn du etwas neu einrichtest (z. B. neuer Bot oder Token abgelaufen).
 
 ### 1.1 Telegram-Bot anlegen (@BotFather)
 
@@ -79,13 +91,12 @@ Ohne eBay-Schlüssel steht die Quelle auf der Startseite einfach auf „aus“. 
 
 Beim nächsten Lauf ist eBay automatisch aktiv.
 
----
-
 ### 1.6 Sofort-Antworten im Bot (Cloudflare Worker, kostenlos)
 
 Ohne diesen Schritt beantwortet der Bot Befehle erst beim nächsten Suchlauf (bis zu 2 Stunden). Mit dem
 **Cloudflare Worker** antwortet er sofort und startet die Suchläufe zuverlässig nach dem Zeitplan (Abschnitt 4) selbst. Der
-Zeitplan von GitHub bleibt als Reserve; doppelte Läufe innerhalb von 60 Minuten werden übersprungen.
+Zeitplan von GitHub bleibt als Reserve; doppelte Läufe werden übersprungen (Abschnitt 4).
+**Deine Worker-Adresse:** `https://deal-radar-bot.deal-radar-bot.workers.dev`
 
 **a) GitHub-Token für den Worker** (darf nur `products.yaml` ändern und Läufe starten)
 1. GitHub → oben rechts dein Bild → **Settings** → ganz unten **Developer settings** →
@@ -272,15 +283,18 @@ Legende in `/liste`: ✅ Ziel erreicht · 🟡 bis 10 % darüber · 🔴 darübe
 
 ## 3. Manuell auslösen
 
-**Actions** → **Deal-Radar** → **Run workflow** → **Run workflow** (ohne Haken).
+**Suchlauf sofort:** **Actions** → **Deal-Radar** → **Run workflow** → **Run workflow** (ohne Haken).
+(Jeder Bot-Befehl, der etwas ändert, startet ebenfalls einen Lauf.) Im Terminal:
+```bash
+gh workflow run radar.yml --repo mjkschule/deal-radar
+```
 
 **Beispiel-Meldung mit Buttons** (zum Ausprobieren): beim **Run workflow** in das Feld
 „Nur eine Beispiel-Meldung …“ die **Nummer aus `/liste`** eintragen. Dann kommt eine als 🧪 TESTMELDUNG
 gekennzeichnete Nachricht mit allen Buttons. Achtung: Die Buttons wirken auf das **echte** Produkt
-(„Gekauft“ entfernt es also) – am besten mit einem Testprodukt ausprobieren.
-Oder im Terminal:
+(„Gekauft“ entfernt es also) – am besten mit einem Testprodukt ausprobieren. Im Terminal (Nummer 11):
 ```bash
-gh workflow run radar.yml --repo mjkschule/deal-radar
+gh workflow run radar.yml --repo mjkschule/deal-radar -f test_meldung=11
 ```
 
 ## 4. Zeitplan und Enddatum
@@ -428,7 +442,9 @@ docs/index.html          die Startseite (wird automatisch erzeugt)
 docs/manifest.webmanifest, docs/sw.js, docs/icon-*.png   damit die Startseite als App installierbar ist
 docs/bot.json            aktuelle Preise für den Telegram-Bot (wird automatisch erzeugt)
 worker/                  der Telegram-Bot als Cloudflare Worker (JavaScript)
-.github/workflows/       radar.yml (alle 2 Std.), add-product.yml (Issue → Produkt), tests.yml
+.github/workflows/       radar.yml (Suchlauf), add-product.yml (Issue → Produkt), tests.yml (Tests bei jeder Änderung)
+tests/                   Python-Tests (Preisleser, Effektivpreis, Deal-Score, Quellen, Zeitplan, Startseite …)
+worker/test/             Tests des Telegram-Bots
 ```
 
 ## 8. Lokal ausprobieren (für Neugierige)
@@ -459,6 +475,9 @@ python3.12 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 - **Bot meldet „Hat nicht geklappt: GitHub … 401/403“:** Der GitHub-Token ist abgelaufen oder hat nicht
   die Berechtigung *Contents: Read and write*. Neuen Token anlegen (1.6 a) und mit
   `npx wrangler secret put GITHUB_TOKEN` ersetzen.
+- **Etwas ist kaputtgegangen – alter Stand zurück?** Vor jeder Ausbaustufe gibt es einen Sicherungspunkt
+  (Git-Tag): `vor-phase-1` … `vor-phase-5`, `vor-abschluss`. Preisverlauf und `products.yaml` gehen dabei nicht
+  verloren, wenn du nur einzelne Code-Dateien zurückholst – frag im Zweifel nach, bevor du etwas zurücksetzt.
 - **Läufe kommen nicht im erwarteten Takt:** `/status` im Bot zeigt Takt und nächsten Lauf. Im
   Cloudflare-Dashboard → Workers → `deal-radar-bot` → **Settings → Triggers** müssen die Crons
   `17,47 * * * *` und `0 * * * *` stehen. Übersprungene Läufe (siehe Abschnitt 4) sind normal und stehen im

@@ -89,9 +89,9 @@ def offer_from_item(item: dict, product: Product, blog: str) -> Offer | None:
         price = prices.parse_price(item["description"][:300])
     if not price or price <= 0:
         return None  # kein Preis oder Gratis-Aktion
-    shipping = prices.parse_shipping(item["title"])
+    shipping = prices.parse_shipping(item["title"], price)
     if shipping is None:
-        shipping = prices.parse_shipping(item["description"])
+        shipping = prices.parse_shipping(item["description"], price)
     text = f"{item['title']} {item['description']}"
     hints = prices.detect_hints(text)
     if shipping is None:

@@ -74,9 +74,9 @@ def offer_from_item(item: dict, product: Product) -> Offer | None:
     if price is None:
         return None
     # Titel zuerst (dort steht meist "inkl. Versand"), dann die Beschreibung
-    shipping = prices.parse_shipping(item["title"])
+    shipping = prices.parse_shipping(item["title"], price)
     if shipping is None:
-        shipping = prices.parse_shipping(item["description"])
+        shipping = prices.parse_shipping(item["description"], price)
     hints = prices.detect_hints(text)
     if shipping is None:
         hints.append("Versand unbekannt")
