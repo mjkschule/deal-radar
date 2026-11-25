@@ -122,5 +122,45 @@
         "fritteusen"
       ]
     }
+  },
+  {
+    "id": "drucker-allgemein",
+    "name": "Multifunktionsdrucker Farbe WLAN (allgemein)",
+    "geloescht_am": "2026-11-25T17:08:24.637Z",
+    "eintrag": {
+      "id": "drucker-allgemein",
+      "name": "Multifunktionsdrucker Farbe WLAN (allgemein)",
+      "kategorie": "drucker",
+      "suchbegriffe": [
+        "Multifunktionsdrucker",
+        "Multifunktionsgerät",
+        "3in1 Drucker",
+        "3 in 1 Drucker",
+        "All-in-One Drucker",
+        "Tintenstrahl Multifunktion"
+      ],
+      "zielpreis": 60,
+      "ausschluss": [
+        "Patrone",
+        "Patronen",
+        "Toner",
+        "Nachfülltinte",
+        "Druckerpapier",
+        "s/w",
+        "Schwarzweiß",
+        "Monochrom",
+        "Mono"
+      ],
+      "mydealz_gruppen": [
+        "drucker",
+        "multifunktionsdrucker"
+      ],
+      "ebay_suche": "Multifunktionsdrucker Farbe WLAN",
+      "pflicht_hinweise": [
+        "WLAN",
+        "Farbe"
+      ],
+      "notizen": "Netzwerk (WLAN oder LAN), Farbe, Scan und Kopie."
+    }
   }
 ]
