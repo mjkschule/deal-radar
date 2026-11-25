@@ -56,6 +56,24 @@ regeln:
   # Nach so vielen Tagen werden alte Angebote aus dem Speicher entfernt
   vergessen_nach_tagen: 7
 
+# Effektivpreis = Preis + Versand − Gutschein − Cashback − Zahlungsrabatt
+effektivpreis:
+  # Gutscheine aus dem Deal-Postfach abziehen (nur wenn Shop, Mindestbestellwert und Gültigkeit passen)
+  gutscheine_aus_postfach: true
+  # Cashback je Shop in Prozent, z. B. {Otto: 3, MediaMarkt: 1.5} – Shoop lässt sich nicht automatisch
+  # auslesen; leer = kein Cashback eingerechnet
+  cashback: {}
+  # Rabatt deiner Zahlart in Prozent (z. B. Kreditkarte mit Cashback); 0 = keiner
+  zahlungsrabatt_prozent: 0
+  # optional: Zahlungsrabatt nur bei diesen Shops, z. B. [Amazon]; leer = überall
+  zahlungsrabatt_nur_shops: []
+
+# Für den Hinweis "Kaufen oder warten?"
+aktionstage:
+  black_friday: "2026-11-27"
+  cyber_monday: "2026-11-30"
+  weihnachten: "2026-12-24"
+
 # Welche Deals kommen SOFORT aufs Handy? (alles andere steht in der Tagesübersicht)
 meldungen:
   # Sofort, wenn der Zielpreis erreicht ist ODER der Deal-Score mindestens so hoch ist

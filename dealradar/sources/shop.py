@@ -51,6 +51,7 @@ def _shipping_from_offer(o: dict) -> float | None:
 def extract_price(html_text: str) -> dict | None:
     """Gibt {"price", "shipping", "available", "name"} zurück oder None."""
     name = None
+    gtin = ""
     for block in re.findall(r'<script[^>]*application/ld\+json[^>]*>(.*?)</script>', html_text, re.S | re.I):
         try:
             data = json.loads(block.strip())
@@ -62,6 +63,8 @@ def extract_price(html_text: str) -> dict | None:
         for n in nodes:
             if isinstance(n, dict) and n.get("@type") == "Product" and n.get("name"):
                 name = n["name"]
+                gtin = next((str(n[k]).strip() for k in ("gtin13", "gtin", "gtin14", "gtin12", "gtin8", "ean")
+                             if n.get(k)), "")
         candidates = []
         for o in found:
             if str(o.get("priceCurrency", "EUR")).upper() not in ("EUR", ""):
@@ -75,6 +78,7 @@ def extract_price(html_text: str) -> dict | None:
         if candidates:
             best = min(candidates, key=lambda c: (not c["available"], c["price"]))
             best["name"] = name
+            best["ean"] = gtin if re.fullmatch(r"\d{8,14}", gtin or "") else ""
             return best
 
     m = re.search(r'<meta[^>]+(?:property|name)=["\'](?:product:price:amount|og:price:amount)["\'][^>]*content=["\']([^"\']+)', html_text, re.I)
@@ -119,7 +123,8 @@ def fetch(products: list[Product], ctx: Context) -> list[Offer]:
             shipping = info["shipping"]
             hints = [] if shipping is not None else ["Versand unbekannt"]
             o = Offer(product_id=prod.id, source=NAME, shop=host, title=info.get("name") or prod.name,
-                      url=url, price=info["price"], shipping=shipping, hints=hints, text=info.get("name") or "")
+                      url=url, price=info["price"], shipping=shipping, hints=hints, text=info.get("name") or "",
+                      ean=info.get("ean") or "")
             if not info["available"]:
                 o.status, o.status_reason = NICHT_VERFUEGBAR, "laut Shop nicht lieferbar"
             offers.append(o)

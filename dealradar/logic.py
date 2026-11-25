@@ -15,6 +15,7 @@ import re
 import statistics
 from dataclasses import dataclass
 
+from . import bewertung
 from .config import Product
 from .matching import check_minimums, excluded_word, missing_required
 from .models import AUSGESCHLOSSEN, NICHT_PASSEND, NICHT_VERFUEGBAR, OK, VERDAECHTIG, Offer
@@ -45,7 +46,14 @@ def classify(product: Product, offer: Offer) -> None:
     if reason:
         offer.status, offer.status_reason = AUSGESCHLOSSEN, reason
         return
-    offer.hints = _unique(offer.hints + hints + missing_required(product, text))
+    if bewertung.ean_mismatch(product.ean, offer.ean):
+        offer.status, offer.status_reason = AUSGESCHLOSSEN, f"andere EAN ({offer.ean})"
+        return
+    offer.hints = _unique(offer.hints + hints + missing_required(product, text) + bewertung.condition_hints(text))
+    if "gebraucht/B-Ware" in offer.hints and not product.b_ware:
+        offer.status, offer.status_reason = AUSGESCHLOSSEN, "B-Ware/gebraucht (beim Produkt b_ware: true setzen)"
+        return
+    offer.vertrauen = bewertung.trust_flags(offer)
 
     if product.is_leasing:
         cfg = product.leasing

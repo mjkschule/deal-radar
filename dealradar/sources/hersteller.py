@@ -122,7 +122,8 @@ def fetch(products: list[Product], ctx: Context) -> list[Offer]:
                 read += 1
                 hints = [] if info["shipping"] is not None else ["Versand unbekannt"]
                 o = Offer(product_id=pid, source=NAME, shop=name, title=info.get("name") or prod.name, url=url,
-                          price=info["price"], shipping=info["shipping"], hints=hints, text=info.get("name") or "")
+                          price=info["price"], shipping=info["shipping"], hints=hints, text=info.get("name") or "",
+                          ean=info.get("ean") or "")
                 if not info["available"]:
                     o.status, o.status_reason = NICHT_VERFUEGBAR, "laut Hersteller nicht lieferbar"
                 offers.append(o)

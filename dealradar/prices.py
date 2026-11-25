@@ -58,8 +58,17 @@ def to_number(raw: str | None, german: bool = True) -> float | None:
         return None
 
 
+# Vergleichs-/Streichpreise: Beträge direkt nach diesen Wörtern zählen NICHT als Preis
+_REF_BEFORE = re.compile(
+    r"(?:statt|uvp|streichpreis|ehemals|vorher|regulär|normal(?:preis|erweise)?|sonst|bisher|"
+    r"vergleichspreis|ursprünglich|idealo|preisvergleich|pvg|vgp|unverbindliche\s+preisempfehlung)"
+    r"[\s:.(\[–-]*(?:(?:ab|von|bei|nur|ca\.?|rund)\s+)?$", re.I)
+_REF_AFTER = re.compile(r"^\s*\)?\s*(?:uvp|pvg|vgp)\b", re.I)
+
+
 def parse_price(text: str | None) -> float | None:
-    """Erster Geldbetrag im Text, z. B. "nur 184,90 € statt 249 €" -> 184.9."""
+    """Erster Geldbetrag im Text, der KEIN Vergleichspreis ist:
+    "nur 184,90 € statt 249 €" -> 184.9, "UVP 119 € jetzt 79 €" -> 79.0."""
     if not text:
         return None
     t = html.unescape(text)
@@ -67,8 +76,11 @@ def parse_price(text: str | None) -> float | None:
         return 0.0
     for m in _MONEY_RE.finditer(t):
         val = to_number(m.group("a") or m.group("b"))
-        if val is not None:
-            return val
+        if val is None:
+            continue
+        if _REF_BEFORE.search(t[max(0, m.start() - 40):m.start()]) or _REF_AFTER.match(t[m.end():m.end() + 8]):
+            continue  # UVP / Streichpreis / Preisvergleich
+        return val
     return None
 
 

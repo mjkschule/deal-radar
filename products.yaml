@@ -26,6 +26,14 @@
 #   notizen          optional: freier Text, erscheint auf der Startseite
 #   aktiv            optional: false = pausiert (wird nicht überwacht, bleibt aber
 #                    in der Liste). Telegram: /pause <Nr.> und /fortsetzen <Nr.>
+#   ean              optional: EAN/GTIN. Nennt eine Shopseite eine ANDERE EAN, wird das
+#                    Angebot aussortiert (falsche Variante)
+#   aliase           optional: weitere Namen/Varianten, zählen wie Suchbegriffe
+#   alternativen     optional: gleichwertige Produkte, die auch gemeldet werden
+#                    (klar als "Alternative" gekennzeichnet), je Eintrag:
+#                    {name: ..., suchbegriffe: [...], zielpreis: ...}  (zielpreis optional)
+#   b_ware           optional: true = auch B-Ware/gebraucht/refurbished melden
+#                    (Standard: aussortieren)
 # =====================================================================
 
 - id: makita-dhp490rfx3
@@ -131,6 +139,9 @@
 #   shop_urls:
 #     - "https://www.beispiel-shop.de/produkt/123"
 #   mydealz_gruppen: [kaffeevollautomaten]
+#   aliase: ["ECAM22.110.B"]
+#   alternativen:
+#     - {name: "Philips EP2220", suchbegriffe: ["EP2220"], zielpreis: 229}
 #   notizen: "Nur in Schwarz"
 # ---------------------------------------------------------------------
 

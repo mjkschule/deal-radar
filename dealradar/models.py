@@ -28,6 +28,9 @@ class Offer:
     first_seen: str = ""
     last_seen: str = ""
     weitere_quellen: list[str] = field(default_factory=list)  # gleiches Angebot auch hier gefunden
+    ean: str = ""            # EAN/GTIN laut Shopseite (falls angegeben)
+    abzuege: list[dict] = field(default_factory=list)  # {art, betrag, text}: Gutschein, Cashback, Zahlart
+    vertrauen: list[str] = field(default_factory=list)  # Warnungen der Vertrauensprüfung (gelb markiert)
     # Nur für die Auswertung (Beschreibungstext), wird nicht gespeichert
     text: str = field(default="", repr=False)
 
@@ -55,7 +58,8 @@ class Offer:
         if self.leasing:
             eff = self.effective_rate
             return eff if eff is not None else self.price
-        return round(self.price + (self.shipping or 0), 2)
+        # Effektivpreis: Preis + Versand − Gutschein − Cashback − Zahlungsrabatt
+        return round(self.price + (self.shipping or 0) - sum(a["betrag"] for a in self.abzuege), 2)
 
     @property
     def target_value(self) -> float | None:

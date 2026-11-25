@@ -6,9 +6,12 @@ import datetime as dt
 import html
 from zoneinfo import ZoneInfo
 
-from .config import Product, end_datetime
+from . import bewertung
+from .bewertung import BEDINGUNGEN, rechenweg
+from .config import Product, end_datetime, expand_alternatives
 from .logic import _fmt, current_best, offers_by_status
 from .models import AUSGESCHLOSSEN, NICHT_PASSEND, VERDAECHTIG
+from .score import deal_score
 
 
 def e(s) -> str:
@@ -92,7 +95,18 @@ def _offer_row(d: dict, tz) -> str:
             f'<span class="muted"> · {e(d["shop"])} · {price}{reason}</span></li>')
 
 
-def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules: dict, tz) -> str:
+def _alternatives_html(p: Product, state: dict, now: dt.datetime, rules: dict) -> str:
+    rows = []
+    for alt in expand_alternatives([p])[1:]:
+        b = current_best(alt, state, now, rules)
+        price = (f'{euro(b["vergleichspreis"])} bei <a href="{e(b["url"])}" rel="noopener" target="_blank">'
+                 f'{e(b["shop"])}</a>' if b else "kein aktuelles Angebot")
+        rows.append(f"<li>{e(alt.name)}: {price} <span class=\"muted\">(Ziel {euro(alt.zielpreis)})</span></li>")
+    return f'<details open><summary>🔁 Alternativen ({len(rows)})</summary><ul>{"".join(rows)}</ul></details>' if rows else ""
+
+
+def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules: dict, tz,
+                 cfg: dict | None = None) -> str:
     best = current_best(p, state, now, rules)
     low = (state.get("tiefstpreis") or {}).get(p.id)
     color, label = ampel(best, p)
@@ -110,9 +124,21 @@ def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules
                 ship = f"inkl. {euro(best['shipping'])} Versand"
             else:
                 ship = "Versand unbekannt"
-        hints = " · ".join(best.get("hints") or [])
+        conds = [h for h in best.get("hints") or [] if h in BEDINGUNGEN]
+        hints = " · ".join(h for h in best.get("hints") or [] if h not in BEDINGUNGEN)
+        calc = rechenweg(best)
+        low_v = low["vergleichspreis"] if low else None
+        score = deal_score(best["vergleichspreis"], history.get(p.id, []), low_v, now)
+        reached = color == "green"
+        advice = bewertung.buy_or_wait(cfg, now, score, reached) if cfg and p.aktiv else ""
         main = (f'<div class="price">{big}</div>'
-                f'<div class="muted">{e(ship)}</div>'
+                f'<div class="muted">{e(ship)}{" · Score " + str(score) if score is not None else ""}</div>'
+                + (f'<div class="muted">🧮 {e(calc)}</div>' if calc else "")
+                + ('<div class="hints">♻️ <b>B-Ware / gebraucht</b></div>' if "gebraucht/B-Ware" in (best.get("hints") or []) else "")
+                + (f'<div class="hints">📋 Bedingungen: {e(" · ".join(conds))}</div>' if conds else "")
+                + (f'<div class="hints trust">🟡 Bitte prüfen: {e(" · ".join(best.get("vertrauen") or []))}</div>'
+                   if best.get("vertrauen") else "")
+                + (f'<div class="advice">{e(advice)}</div>' if advice else "") +
                 f'<div class="shop"><a href="{e(best["url"])}" rel="noopener" target="_blank">Zum Angebot ↗</a>'
                 f' <b>{e(best["shop"])}</b>'
                 f' <span class="muted">· gesehen {when(best.get("first_seen"), tz)} · {e(best["source"])}</span></div>'
@@ -135,6 +161,7 @@ def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules
     if bad:
         extra += (f'<details><summary>Verdächtig / ausgeschlossen ({len(bad)})</summary><ul>'
                   + "".join(_offer_row(d, tz) for d in bad[:15]) + "</ul></details>")
+    extra += _alternatives_html(p, state, now, rules)
     notes = f'<div class="notes">{e(p.notizen)}</div>' if p.notizen else ""
     return f"""
 <article class="card{"" if p.aktiv else " paused"}" id="{e(p.id)}">
@@ -192,7 +219,7 @@ def render(products: list[Product], state: dict, history: dict, cfg: dict, now: 
     active = [p for p in products if p.aktiv]
     reached = sum(1 for p in active if ampel(current_best(p, state, now, rules), p)[0] == "green")
     ordered = active + [p for p in products if not p.aktiv]  # pausierte ans Ende
-    cards = "".join(product_card(p, state, history, now, rules, tz) for p in ordered)
+    cards = "".join(product_card(p, state, history, now, rules, tz, cfg) for p in ordered)
     ended = now > end
     coupons = gutscheine_html(state, now)
     return f"""<!doctype html>
@@ -239,6 +266,8 @@ summary{{cursor:pointer;color:var(--muted)}}
 .sources{{list-style:none;padding:0;margin:0;display:grid;gap:4px;font-size:.9rem}}
 .sources li{{display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}} .sources .dot{{margin-top:0}}
 .notes{{font-size:.85rem;color:var(--muted)}}
+.hints.trust{{background:color-mix(in srgb,var(--yellow) 18%,var(--card))}}
+.advice{{font-size:.9rem;font-weight:600}}
 footer{{margin:24px 0;font-size:.8rem;color:var(--muted)}}
 </style></head><body><div class="wrap">
 <h1>📡 Deal-Radar</h1>

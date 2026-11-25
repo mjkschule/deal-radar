@@ -36,7 +36,7 @@ def matches(product: Product, text: str) -> bool:
     """True, wenn mindestens ein Suchbegriff des Produkts im Text vorkommt."""
     norm = normalize(text)
     comp = norm.replace(" ", "")
-    return any(_phrase_hits(p, norm, comp) for p in product.suchbegriffe)
+    return any(_phrase_hits(p, norm, comp) for p in product.suchbegriffe + product.aliase)
 
 
 def excluded_word(product: Product, text: str) -> str | None:
