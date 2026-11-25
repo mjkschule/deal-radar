@@ -84,5 +84,23 @@
         "https://www.office-partner.de/logitech-b110-silent-maus-10060823"
       ]
     }
+  },
+  {
+    "id": "ninja-air-fryer-af100eu-3-8-l",
+    "name": "Ninja Air Fryer AF100EU (3,8 l)",
+    "geloescht_am": "2026-11-25T17:07:10.259Z",
+    "eintrag": {
+      "id": "ninja-air-fryer-af100eu-3-8-l",
+      "name": "Ninja Air Fryer AF100EU (3,8 l)",
+      "zielpreis": 65,
+      "suchbegriffe": [
+        "Ninja AF100EU",
+        "Ninja Air Fryer AF100"
+      ],
+      "kategorie": "sonstiges",
+      "mydealz_gruppen": [
+        "fritteusen"
+      ]
+    }
   }
 ]
