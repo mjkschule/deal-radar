@@ -80,12 +80,12 @@ def _run_in_copy(tmp_path, monkeypatch, env, last_run_minutes_ago):
 
 
 def test_schedule_run_skipped_when_last_run_recent(tmp_path, monkeypatch):
-    output, ran = _run_in_copy(tmp_path, monkeypatch, {"RADAR_GRUND": "zeitplan"}, 20)
+    output, ran = _run_in_copy(tmp_path, monkeypatch, {"RADAR_GRUND": "zeitplan"}, 5)
     assert "lauf=uebersprungen" in output and not ran
 
 
 def test_schedule_run_happens_when_last_run_old(tmp_path, monkeypatch):
-    output, ran = _run_in_copy(tmp_path, monkeypatch, {"GITHUB_EVENT_NAME": "schedule"}, 90)
+    output, ran = _run_in_copy(tmp_path, monkeypatch, {"GITHUB_EVENT_NAME": "schedule"}, 150)
     assert "uebersprungen" not in output and ran
     assert (tmp_path / "docs" / "bot.json").exists()
 

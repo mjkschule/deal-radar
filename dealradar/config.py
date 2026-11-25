@@ -13,7 +13,10 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 
 DEFAULT_CONFIG = {
-    "enddatum": "2026-11-27T23:59",
+    "enddatum": "2026-11-30T23:59",
+    "nach_ende": "wunschliste",
+    "quellen_alarm_nach": 3,
+    "quellen_mindestabstand_minuten": {"leasingmarkt": 110, "sparneuwagen": 110},
     "zeitzone": "Europe/Berlin",
     "user_agent": "DealRadar/1.0 (private Preisbeobachtung)",
     "pause_sekunden": 3,
@@ -22,7 +25,6 @@ DEFAULT_CONFIG = {
                 "mein-deal": True, "mytopdeals": True, "schnaeppchenfuchs": True, "dealdoktor": True,
                 "hersteller": True, "postfach": True},
     "mydealz_immer": ["new", "hot"],
-    "mindestabstand_minuten": 60,
     "leasingmarkt_max_seiten": 20,
     "leasingmarkt_max_details": 4,
     "regeln": {
@@ -106,10 +108,12 @@ def load_config(path: Path | None = None) -> dict:
     return _deep_merge(DEFAULT_CONFIG, data)
 
 
-def end_datetime(cfg: dict) -> dt.datetime:
-    """Enddatum als zeitzonenbewusstes datetime (inklusive der angegebenen Minute)."""
+def end_datetime(cfg: dict) -> dt.datetime | None:
+    """Enddatum als zeitzonenbewusstes datetime (inklusive der angegebenen Minute); None = "nie"."""
     tz = ZoneInfo(cfg["zeitzone"])
     raw = str(cfg["enddatum"]).strip()
+    if raw.lower() in ("nie", "never", "none", ""):
+        return None
     try:
         end = dt.datetime.fromisoformat(raw)
     except ValueError as e:
@@ -125,8 +129,10 @@ def now_local(cfg: dict) -> dt.datetime:
 
 
 def is_over(cfg: dict, now: dt.datetime | None = None) -> bool:
-    now = now or now_local(cfg)
-    return now > end_datetime(cfg)
+    """True nur, wenn das Radar ganz aus ist (Enddatum vorbei UND nach_ende: aus).
+    Mit nach_ende: wunschliste läuft es nach dem Enddatum 1x täglich weiter."""
+    from .zeitplan import mode
+    return mode(cfg, now or now_local(cfg)) == "aus"
 
 
 _ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")

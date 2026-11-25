@@ -1,8 +1,9 @@
 # 📡 Deal-Radar
 
-Sucht bis einschließlich **Black Friday (27.11.2026, 23:59 Uhr)** alle 2 Stunden automatisch nach guten
-Angeboten für deine Produkte, schickt dir eine **Telegram-Nachricht**, wenn ein Deal gut ist, und zeigt auf
-einer **Startseite** für jedes Produkt den aktuell günstigsten Preis.
+Sucht automatisch nach guten Angeboten für deine Produkte – normal **alle 2 Stunden**, von **Black Friday
+bis Cyber Monday (27.–30.11.2026) alle 30 Minuten**, danach im **Wunschlisten-Modus einmal täglich** –,
+schickt dir eine **Telegram-Nachricht**, wenn ein Deal gut ist, und zeigt auf einer **Startseite** (auch als
+App installierbar) für jedes Produkt den aktuell günstigsten Preis.
 
 - **Startseite:** https://mjkschule.github.io/deal-radar/
 - **Läufe ansehen / manuell starten:** Reiter **Actions** im Repo
@@ -83,7 +84,7 @@ Beim nächsten Lauf ist eBay automatisch aktiv.
 ### 1.6 Sofort-Antworten im Bot (Cloudflare Worker, kostenlos)
 
 Ohne diesen Schritt beantwortet der Bot Befehle erst beim nächsten Suchlauf (bis zu 2 Stunden). Mit dem
-**Cloudflare Worker** antwortet er sofort und startet die Suchläufe zuverlässig alle 2 Stunden selbst. Der
+**Cloudflare Worker** antwortet er sofort und startet die Suchläufe zuverlässig nach dem Zeitplan (Abschnitt 4) selbst. Der
 Zeitplan von GitHub bleibt als Reserve; doppelte Läufe innerhalb von 60 Minuten werden übersprungen.
 
 **a) GitHub-Token für den Worker** (darf nur `products.yaml` ändern und Läufe starten)
@@ -163,6 +164,17 @@ gelöscht oder als gelesen markiert). Da das Repo öffentlich ist, werden **kein
 Texte oder Adressen gespeichert** – nur Shop, Rabatt, Mindestbestellwert und Gültigkeit. Den Code findest
 du in der Mail. Ohne die beiden Secrets steht die Quelle `postfach` einfach auf „nicht eingerichtet“.
 
+### 1.8 Startseite als App aufs Handy (optional)
+
+Die Startseite lässt sich wie eine App installieren (eigenes Symbol, ohne Browser-Leiste, zeigt offline den
+letzten Stand):
+- **iPhone (Safari):** https://mjkschule.github.io/deal-radar/ öffnen → **Teilen**-Symbol → **Zum Home-Bildschirm**.
+- **Android (Chrome):** Seite öffnen → Menü **⋮** → **App installieren** (oder „Zum Startbildschirm hinzufügen“).
+- **Computer (Chrome/Edge):** in der Adresszeile auf das Installieren-Symbol klicken.
+
+Auf der Seite: oben **🎯 Ziel erreicht** mit Kauf-Button, darunter letzter/nächster Lauf, Laufzeit und die
+Datenquellen; dann Filter nach **Kategorie** und Sortierung (Deal-Score, Nähe zum Zielpreis, Name).
+
 ## 2. Produkte hinzufügen und verwalten
 
 ### Variante A: `products.yaml` im GitHub-Webeditor
@@ -221,6 +233,7 @@ Befehle auch im Menü, wenn du `/` tippst.
 | `/fortsetzen` | `/fortsetzen 3` | Wieder überwachen (setzt `aktiv: true`) |
 | `/loeschen` | `/loeschen 3` oder `/löschen Makita` | Produkt entfernen; der Bot nennt, **welches** gelöscht wurde |
 | `/ruhe` | `/ruhe aus`, `/ruhe an`, `/ruhe` | Ruhezeiten aus-/einschalten bzw. Stand anzeigen (ändert `config.yaml`) |
+| `/ende` | `/ende 24.12.2026`, `/ende nie`, `/ende` | Enddatum setzen bzw. anzeigen (Abschnitt 4) |
 | `/hilfe` | `/hilfe` | Alle Befehle mit Beispielen |
 
 **Buttons unter jeder Deal-Meldung**
@@ -270,14 +283,34 @@ Oder im Terminal:
 gh workflow run radar.yml --repo mjkschule/deal-radar
 ```
 
-## 4. Enddatum ändern
+## 4. Zeitplan und Enddatum
 
-In [`config.yaml`](config.yaml) die Zeile `enddatum: "2026-11-27T23:59"` ändern (z. B. auf
-`"2026-12-01T23:59"` für Cyber Monday) und committen.
+| Zeitraum | Takt |
+|---|---|
+| normal | alle **2 Stunden** |
+| Black Friday bis Cyber Monday (27.11. 0:00 – 30.11. 23:59) | alle **30 Minuten** |
+| nach dem Enddatum (Standard: **30.11.2026, 23:59**) | **Wunschlisten-Modus:** 1× täglich um 8 Uhr |
 
-**Nach dem Enddatum:** Der nächste Lauf beendet sich sofort ohne Fehler und **schaltet den Workflow ab**.
-Danach gibt es keine Läufe mehr. Zum Reaktivieren: Enddatum in die Zukunft setzen, dann
-**Actions** → **Deal-Radar** → **Enable workflow**.
+Alles einstellbar in [`config.yaml`](config.yaml) unter `enddatum`, `nach_ende` und `zeitplan`.
+
+**Per Telegram:**
+- `/ende` – zeigt Enddatum und aktuellen Takt
+- `/ende 24.12.2026` (oder `/ende 24.12.2026 18:00`) – normaler Betrieb bis dahin
+- `/ende nie` – kein Enddatum, das Radar läuft im normalen Takt weiter
+
+**Ganz abschalten nach dem Enddatum:** in `config.yaml` `nach_ende: aus` setzen. Dann beendet sich der nächste
+Lauf nach dem Enddatum ohne Fehler und schaltet den Workflow ab. Zum Reaktivieren: Enddatum in die Zukunft setzen,
+dann **Actions** → **Deal-Radar** → **Enable workflow**.
+
+**Wer startet die Läufe?** Der Cloudflare Worker prüft alle 30 Minuten (Minute 17 und 47), ob laut Zeitplan ein
+Lauf fällig ist. GitHubs eigener Zeitplan (alle 2 Std.) bleibt als Reserve; liegt der letzte Lauf noch nicht
+lange genug zurück (2-Std.-Takt: 108 Min., 30-Min.-Takt: 20 Min.), wird ein Zeitplan-Lauf übersprungen.
+
+**Schonend:** LeasingMarkt und Sparneuwagen werden auch in der Aktionszeit höchstens alle 110 Minuten abgefragt
+(`quellen_mindestabstand_minuten`); dazwischen gelten ihre letzten Angebote weiter.
+
+**Ausfälle:** Fällt eine Quelle **3 Läufe in Folge** aus, bekommst du eine Telegram-Warnung – und eine
+Entwarnung, sobald sie wieder funktioniert (`quellen_alarm_nach` in `config.yaml`).
 
 ---
 
@@ -363,7 +396,8 @@ Die Startseite zeigt pro Produkt das günstigste passende Angebot der letzten 48
 | Geizhals, baustoffshop | ❌ | Nutzungsbedingungen unklar bzw. robots.txt verbietet es |
 
 Alle Abrufe: eigener User-Agent (`DealRadar/1.0 …`), robots.txt-Prüfung vor jedem Abruf,
-mindestens 3 Sekunden Pause pro Webseite, ein Lauf alle 2 Stunden. Antwortet eine Seite mit
+mindestens 3 Sekunden Pause pro Webseite, ein Lauf alle 2 Stunden (Black Friday bis Cyber Monday alle
+30 Minuten; Sitemaps der Hersteller trotzdem höchstens 1× täglich). Antwortet eine Seite mit
 Captcha/403/429, wird das nur als Fehler angezeigt und nicht umgangen. Fällt eine Quelle aus,
 laufen die anderen weiter; der Status steht oben auf der Startseite.
 
@@ -391,6 +425,7 @@ data/verlauf.csv         alle gesehenen Angebote (mit ; getrennt, öffnet in Exc
 data/geloescht.json      per /loeschen oder „Gekauft“ entfernte Produkte (zum Wiederherstellen)
 data/ignoriert.json      per Button „Ignorieren“ ausgeblendete Angebote
 docs/index.html          die Startseite (wird automatisch erzeugt)
+docs/manifest.webmanifest, docs/sw.js, docs/icon-*.png   damit die Startseite als App installierbar ist
 docs/bot.json            aktuelle Preise für den Telegram-Bot (wird automatisch erzeugt)
 worker/                  der Telegram-Bot als Cloudflare Worker (JavaScript)
 .github/workflows/       radar.yml (alle 2 Std.), add-product.yml (Issue → Produkt), tests.yml
@@ -424,6 +459,7 @@ python3.12 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 - **Bot meldet „Hat nicht geklappt: GitHub … 401/403“:** Der GitHub-Token ist abgelaufen oder hat nicht
   die Berechtigung *Contents: Read and write*. Neuen Token anlegen (1.6 a) und mit
   `npx wrangler secret put GITHUB_TOKEN` ersetzen.
-- **Keine Läufe alle 2 Stunden:** Im Cloudflare-Dashboard → Workers → `deal-radar-bot` → **Settings →
-  Triggers** prüfen, ob der Cron `17 */2 * * *` eingetragen ist. Übersprungene Läufe (weniger als
-  60 Minuten nach dem letzten) sind normal und stehen im Log als „Zeitplan-Lauf übersprungen“.
+- **Läufe kommen nicht im erwarteten Takt:** `/status` im Bot zeigt Takt und nächsten Lauf. Im
+  Cloudflare-Dashboard → Workers → `deal-radar-bot` → **Settings → Triggers** müssen die Crons
+  `17,47 * * * *` und `0 * * * *` stehen. Übersprungene Läufe (siehe Abschnitt 4) sind normal und stehen im
+  Log als „Zeitplan-Lauf übersprungen“.

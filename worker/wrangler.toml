@@ -6,10 +6,11 @@ main = "src/index.js"
 compatibility_date = "2026-11-01"
 workers_dev = true
 
-# "17 */2 * * *": alle 2 Stunden (Minute 17, UTC) einen Suchlauf auf GitHub starten
-# "0 * * * *":    jede volle Stunde Ruhezeit-Meldungen nachliefern / Tagesübersicht (19 Uhr)
+# "17,47 * * * *": Takt alle 30 Min.; ob ein Suchlauf fällig ist, steht in config.yaml -> zeitplan
+#                  (normal alle 2 Std., Black Friday bis Cyber Monday alle 30 Min., danach täglich)
+# "0 * * * *":     jede volle Stunde Ruhezeit-Meldungen nachliefern / Tagesübersicht (19 Uhr)
 [triggers]
-crons = ["17 */2 * * *", "0 * * * *"]
+crons = ["17,47 * * * *", "0 * * * *"]
 
 # Kleiner Speicher des Bots: Link-Vorschauen, bereits verschickte Meldungen
 # (kostenlos; angelegt mit: npx wrangler kv namespace create deal-radar-bot)

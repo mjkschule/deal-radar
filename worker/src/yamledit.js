@@ -147,6 +147,19 @@ export function appendProduct(text, { name, zielpreis, suchbegriffe, kategorie =
   return { text: newText, product, number: existing.length + 1 };
 }
 
+/** Setzt in config.yaml einen Wert auf oberster Ebene, z. B. enddatum: "2026-12-24T23:59". */
+export function setTopValue(text, key, value) {
+  const lines = splitLines(text);
+  const re = new RegExp(`^${key}:\\s*[^#\\n]*?(\\s*#.*)?$`);
+  const k = lines.findIndex((l) => re.test(l.replace(/\n$/, "")));
+  if (k < 0) throw new ProductError(`'${key}' fehlt in config.yaml.`);
+  const comment = re.exec(lines[k].replace(/\n$/, ""))[1] || "";
+  lines[k] = `${key}: ${JSON.stringify(String(value))}${comment}\n`;
+  const newText = lines.join("");
+  if (String(parse(newText)?.[key]) !== String(value)) throw new ProductError("config.yaml ließ sich nicht ändern.");
+  return { text: newText };
+}
+
 /**
  * Setzt in config.yaml einen Wert in einem Abschnitt, z. B. ruhezeiten -> aktiv: false.
  * Nur die eine Zeile wird geändert; Kommentare bleiben stehen.

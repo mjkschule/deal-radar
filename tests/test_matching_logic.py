@@ -113,10 +113,12 @@ def test_leasing_rules():
 
 
 def test_end_date_inclusive():
-    cfg = {"enddatum": "2026-11-27T23:59", "zeitzone": "Europe/Berlin"}
+    cfg = {"enddatum": "2026-11-27T23:59", "zeitzone": "Europe/Berlin", "nach_ende": "aus"}
     tz = ZoneInfo("Europe/Berlin")
     assert not is_over(cfg, dt.datetime(2026, 11, 27, 23, 59, 30, tzinfo=tz))
     assert is_over(cfg, dt.datetime(2026, 11, 28, 0, 0, 1, tzinfo=tz))
+    # Standard nach dem Ende: Wunschlisten-Modus – nicht abschalten
+    assert not is_over({**cfg, "nach_ende": "wunschliste"}, dt.datetime(2026, 11, 28, 0, 0, 1, tzinfo=tz))
     assert end_datetime(cfg).utcoffset() == dt.timedelta(hours=1)
 
 

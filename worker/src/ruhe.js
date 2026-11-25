@@ -32,6 +32,7 @@ export function readConfig(text) {
     ...raw,
     meldungen: { ...DEFAULTS.meldungen, ...(raw.meldungen || {}) },
     ruhezeiten: { ...DEFAULTS.ruhezeiten, ...(raw.ruhezeiten || {}) },
+    zeitplan: { ...(raw.zeitplan || {}) },
   };
 }
 
