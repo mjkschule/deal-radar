@@ -10,7 +10,8 @@ from . import bewertung
 from .bewertung import BEDINGUNGEN, rechenweg
 from .config import Product, end_datetime, expand_alternatives
 from .logic import _fmt, current_best, offers_by_status
-from .models import AUSGESCHLOSSEN, NICHT_PASSEND, VERDAECHTIG
+from .meldungen import offer_hash
+from .models import ABGELAUFEN, AUSGESCHLOSSEN, IGNORIERT, NICHT_PASSEND, VERDAECHTIG
 from .score import deal_score
 
 
@@ -95,6 +96,21 @@ def _offer_row(d: dict, tz) -> str:
             f'<span class="muted"> · {e(d["shop"])} · {price}{reason}</span></li>')
 
 
+def offer_key(d: dict) -> str:
+    """Gleicher Schlüssel wie Offer.key (Shop + Link)."""
+    return f"{(d.get('shop') or '').lower()}|{(d.get('url') or '').split('#')[0]}"
+
+
+def hide_link(d: dict, state: dict) -> str:
+    """Link „Abgelaufen? Ausblenden“: öffnet deinen Telegram-Bot, der das Angebot ausblendet.
+    Nur dein Chat darf das – ein fremder Besucher der Seite kann nichts ändern."""
+    bot = state.get("bot_name")
+    if not bot:
+        return ""
+    return (f'<a class="hide" href="https://t.me/{e(bot)}?start=x_{offer_hash(offer_key(d))}" rel="noopener" '
+            f'target="_blank" title="Angebot abgelaufen oder unpassend? Per Telegram ausblenden">🚫 Abgelaufen?</a>')
+
+
 def _alternatives_html(p: Product, state: dict, now: dt.datetime, rules: dict) -> str:
     rows = []
     for alt in expand_alternatives([p])[1:]:
@@ -147,7 +163,8 @@ def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules
                 + (f'<div class="advice">{e(advice)}</div>' if advice else "") +
                 f'<div class="shop"><a href="{e(best["url"])}" rel="noopener" target="_blank">Zum Angebot ↗</a>'
                 f' <b>{e(best["shop"])}</b>'
-                f' <span class="muted">· gesehen {when(best.get("first_seen"), tz)} · {e(best["source"])}</span></div>'
+                f' <span class="muted">· gesehen {when(best.get("first_seen"), tz)} · {e(best["source"])}</span>'
+                f' {hide_link(best, state)}</div>'
                 f'<div class="offer-title">{e(best["title"][:140])}</div>'
                 + (f'<div class="hints">⚠️ {e(hints)}</div>' if hints else "")
                 + (_leasing_details(best) if p.is_leasing else ""))
@@ -161,12 +178,16 @@ def product_card(p: Product, state: dict, history: dict, now: dt.datetime, rules
     extra = ""
     bad = offers_by_status(p, state, now, rules, (VERDAECHTIG, AUSGESCHLOSSEN))
     unfit = offers_by_status(p, state, now, rules, (NICHT_PASSEND,))
+    gone = offers_by_status(p, state, now, rules, (ABGELAUFEN, IGNORIERT))
     if unfit:
         extra += (f'<details><summary>Nicht passend ({len(unfit)})</summary><ul>'
                   + "".join(_offer_row(d, tz) for d in unfit[:15]) + "</ul></details>")
     if bad:
         extra += (f'<details><summary>Verdächtig / ausgeschlossen ({len(bad)})</summary><ul>'
                   + "".join(_offer_row(d, tz) for d in bad[:15]) + "</ul></details>")
+    if gone:
+        extra += (f'<details><summary>Abgelaufen / ausgeblendet ({len(gone)})</summary><ul>'
+                  + "".join(_offer_row(d, tz) for d in gone[:15]) + "</ul></details>")
     extra += _alternatives_html(p, state, now, rules)
     notes = f'<div class="notes">{e(p.notizen)}</div>' if p.notizen else ""
     return f"""
@@ -224,7 +245,8 @@ def _reached_html(products: list[Product], state: dict, now: dt.datetime, rules:
         rows.append(
             f'<li><div><a href="#{e(p.id)}"><b>{e(p.name)}</b></a>'
             f'<div class="muted">{euro(value)}{unit} bei {e(best["shop"])} · Ziel {euro(p.zielpreis)}{unit}</div></div>'
-            f'<a class="buy" href="{e(best["url"])}" rel="noopener" target="_blank">Zum Angebot ↗</a></li>')
+            f'<div class="acts">{hide_link(best, state)}'
+            f'<a class="buy" href="{e(best["url"])}" rel="noopener" target="_blank">Zum Angebot ↗</a></div></li>')
     if not rows:
         return ('<section class="box reached none"><h2>🎯 Ziel erreicht</h2>'
                 '<div class="muted">Gerade hat kein Produkt seinen Zielpreis erreicht.</div></section>')
@@ -302,6 +324,8 @@ h1{{font-size:1.5rem;margin:4px 0 12px;display:flex;gap:10px;align-items:center;
 h2{{font-size:1.05rem;margin:0}}
 .big{{font-size:1.4rem;font-weight:700;font-variant-numeric:tabular-nums}}
 .muted{{color:var(--muted);font-size:.9rem}}
+a.hide{{font-size:.85em;color:var(--muted);white-space:nowrap;margin-left:6px}}
+.acts{{display:flex;gap:10px;align-items:center}}
 .reached{{margin-bottom:16px;border-color:var(--green)}} .reached.none{{border-color:var(--line)}}
 .reached ul{{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}}
 .reached li{{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;

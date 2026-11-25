@@ -15,7 +15,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import bewertung, botdata, github, logic, meldungen, page, pwa, storage, zeitplan
+from . import ablauf, bewertung, botdata, github, logic, meldungen, page, pwa, storage, zeitplan
 from .config import (ROOT, ConfigError, end_datetime, expand_alternatives, is_over, load_config, load_products,
                      now_local)
 from .commands import CommandProcessor, split_message
@@ -177,6 +177,12 @@ def run(args) -> int:
     now_iso = now.isoformat(timespec="seconds")
     sent = queued = 0
     ignored = storage.load_json(data_dir / "ignoriert.json", {})
+    if tg.live and not state.get("bot_name"):
+        try:
+            state["bot_name"] = tg.username()
+        except TelegramError as ex:
+            print(f"Telegram-Fehler: {ex}", file=sys.stderr)
+    budget = {"rest": int(ablauf.settings(cfg)["max_abrufe"])}  # Ablauf-Prüfungen pro Lauf
     quiet = meldungen.quiet_now(cfg, now)
     if quiet:
         print("Ruhezeit: normale Meldungen werden danach vom Worker nachgeliefert.")
@@ -184,8 +190,13 @@ def run(args) -> int:
     for p in products:
         offers = logic.merge_duplicates([o for o in all_offers if o.product_id == p.id])
         bewertung.apply_effective(offers, cfg, coupons, now)
-        alerts = [a for a in logic.evaluate(p, offers, state, rules)
-                  if meldungen.offer_hash(a.offer.key) not in ignored]
+
+        def hide(offs, p=p):
+            ablauf.apply_ignored(offs, ignored)
+            for note in ablauf.check(ablauf.candidates(offs), state, http, cfg, now, budget):
+                print(f"  {p.id}: {note}")
+
+        alerts = logic.evaluate(p, offers, state, rules, after_classify=hide)
         for a in alerts:
             o = a.offer
             low = (state.get("tiefstpreis") or {}).get(p.id)

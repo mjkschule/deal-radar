@@ -48,6 +48,13 @@ quellen_mindestabstand_minuten:
   leasingmarkt: 110
   sparneuwagen: 110
 
+# Abgelaufene mydealz-Deals erkennen (Deal-Seite wird geöffnet; laut robots.txt erlaubt)
+ablauf:
+  aktiv: true
+  pruefen_stunden: 3     # laufende Deals höchstens so oft erneut prüfen
+  max_abrufe: 25         # höchstens so viele Deal-Seiten pro Lauf
+  merken_tage: 14
+
 # Telegram-Warnung, wenn eine Quelle so viele Läufe in Folge ausfällt (und Entwarnung danach)
 quellen_alarm_nach: 3
 

@@ -10,6 +10,8 @@ VERDAECHTIG = "verdaechtig"
 AUSGESCHLOSSEN = "ausgeschlossen"
 NICHT_PASSEND = "nicht_passend"
 NICHT_VERFUEGBAR = "nicht_verfuegbar"
+ABGELAUFEN = "abgelaufen"      # Deal laut Quelle abgelaufen
+IGNORIERT = "ignoriert"        # von dir ausgeblendet (data/ignoriert.json)
 
 
 @dataclass

@@ -110,6 +110,8 @@ def _run(tmp_path, monkeypatch, now, price, ignored=None):
     sent = []
 
     def fake_call(self, method, params):
+        if method == "getMe":  # Bot-Name für den Link „🚫 Abgelaufen?“
+            return {"username": "TestBot"}
         sent.append((method, params))
         return {}
 

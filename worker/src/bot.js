@@ -44,11 +44,14 @@ export const HELP =
   "<code>/ruhe aus</code> / <code>/ruhe an</code> – Ruhezeiten aus- oder einschalten, <code>/ruhe</code> zeigt den Stand\n" +
   "<code>/ende 24.12.2026</code> / <code>/ende nie</code> – bis wann normal gesucht wird (danach 1× täglich)\n" +
   "Unter jeder Meldung: ✅ Gekauft · 🙈 Ignorieren · 🎯 Ziel −10 € · ⏸ Pausieren · 🔗 Zum Angebot\n\n" +
+  "<b>Abgelaufene Angebote</b>\n" +
+  "Abgelaufene mydealz-Deals blende ich selbst aus. Sonst: <code>/weg 3</code> – Angebote von Nr. 3 zeigen und " +
+  "eines ausblenden, oder auf der Startseite „🚫 Abgelaufen?“ antippen.\n\n" +
   "Statt der Nummer geht auch ein Name, z. B. <code>/pause airfryer</code>. " +
   "Passt er auf mehrere Produkte, frage ich mit Buttons nach.";
 
 const SHORT_HELP =
-  "Das kenne ich nicht. Befehle: /liste · /top · /status · /neu · /ziel · /pause · /fortsetzen · /loeschen · /ruhe · /ende\n" +
+  "Das kenne ich nicht. Befehle: /liste · /top · /status · /neu · /ziel · /pause · /fortsetzen · /loeschen · /weg · /ruhe · /ende\n" +
   "Beispiele: /hilfe";
 
 // ---------- Formatierung ----------
@@ -486,6 +489,70 @@ async function alertAction(code, id, extra, cq, deps) {
   return { toast: "Schon erledigt", text: null, label: null };
 }
 
+// ---------- Abgelaufene Angebote ausblenden (/weg, Link der Startseite) ----------
+
+/** Sucht ein aktuelles Angebot in docs/bot.json: { id, name, nr, offer } oder null. */
+async function findOffer(gh, hash) {
+  const bot = await loadBotData(gh);
+  for (const [id, e] of Object.entries(bot.produkte || {})) {
+    const offer = (e.angebote || []).find((o) => o.h === hash);
+    if (offer) return { id, name: e.name || id, offer };
+  }
+  return null;
+}
+
+const offerLine = (o) => `${esc(o.shop)} · ${eur(o.preis)} €`;
+
+export async function hideOffer(hash, quelle, { gh, now }) {
+  const found = await findOffer(gh, hash);
+  let already = false;
+  await editJson(gh, IGNORED, `Telegram: Angebot ${hash} ausgeblendet`, {}, (d) => {
+    already = Boolean(d[hash]);
+    return already ? d : {
+      ...d, [hash]: { produkt: found?.id || null, url: found?.offer.url || null, am: now.toISOString(), quelle },
+    };
+  });
+  const what = found ? `<b>${esc(found.name)}</b>: ${offerLine(found.offer)}` : "Das Angebot";
+  return {
+    text: `🚫 ${what} ist ${already ? "schon " : ""}ausgeblendet – wird nicht mehr gezeigt oder gemeldet.` +
+      (already ? "" : await startRun(gh) + " Danach ist die Startseite aktuell."),
+    buttons: [[{ text: "↩️ Rückgängig", callback_data: `u:${hash}` }]],
+  };
+}
+
+export async function unhideOffer(hash, { gh }) {
+  await editJson(gh, IGNORED, `Telegram: Angebot ${hash} wieder eingeblendet`, {}, (d) => {
+    const { [hash]: _, ...rest } = d;
+    return rest;
+  });
+  return { text: "↩️ Angebot wird wieder gezeigt und gemeldet." + await startRun(gh) };
+}
+
+async function cmdWeg(arg, deps) {
+  const products = await loadProducts(deps.gh);
+  if (!arg.trim()) {
+    return { text: "Welches Produkt? Beispiel: <code>/weg 3</code> (Nummer aus /liste) oder <code>/weg makita</code>" };
+  }
+  const r = resolve(products, arg);
+  if (r.error) return { text: r.error };
+  if (r.candidates) {
+    return {
+      text: `🤔 „${esc(arg)}“ passt auf ${r.candidates.length} Produkte. Bitte genauer, z. B. mit der Nummer aus /liste.`,
+    };
+  }
+  const bot = await loadBotData(deps.gh);
+  const offers = bot.produkte?.[r.product.id]?.angebote || [];
+  if (!offers.length) return { text: `<b>${esc(r.product.name)}</b> hat gerade kein angezeigtes Angebot.` };
+  const buttons = offers.slice(0, 8).map((o) => [{ text: `🚫 ${o.shop} · ${eur(o.preis)} €`.slice(0, 60), callback_data: `w:${o.h}` }]);
+  buttons.push([{ text: "Abbrechen", callback_data: "x" }]);
+  const list = offers.slice(0, 8).map((o) => `• <a href="${esc(o.url)}">${offerLine(o)}</a> – ${esc(o.titel)}`).join("\n");
+  return {
+    text: `🔎 Aktuelle Angebote für <b>${esc(r.product.name)}</b> (günstigstes zuerst):\n${list}\n\n` +
+      "Welches ist abgelaufen oder passt nicht? Tippe es an – es wird ausgeblendet.",
+    buttons,
+  };
+}
+
 // ---------- Enddatum ----------
 
 /** "24.12.2026", "24.12.", "2026-12-24", "2026-12-24T18:00", "nie" -> Wert für config.yaml (oder null) */
@@ -578,7 +645,13 @@ export async function handleText(text, deps) {
     case "liste": return { text: await cmdListe(deps) };
     case "top": return { text: await cmdTop(deps) };
     case "status": return { text: await cmdStatus(deps) };
-    case "hilfe": case "help": case "start": return { text: HELP };
+    case "start": {
+      // Link „🚫 Abgelaufen?“ der Startseite: t.me/<bot>?start=x_<schlüssel>
+      const h = /^x_([0-9a-f]{10})$/.exec(arg);
+      return h ? hideOffer(h[1], "startseite", deps) : { text: HELP };
+    }
+    case "hilfe": case "help": return { text: HELP };
+    case "weg": case "abgelaufen": return cmdWeg(arg, deps);
     case "neu": return { text: await cmdNeu(text, deps) };
     case "loeschen": case "löschen": case "loschen": return writeCommand("d", arg, deps);
     case "pause": return writeCommand("p", arg, deps);
@@ -617,6 +690,18 @@ export async function handleUpdate(update, deps) {
       }
       if (r.text) await tg.send(r.text);
       return "meldung";
+    }
+    if (code === "w" || code === "u") {
+      // w = Angebot ausblenden (aus /weg), u = Ausblenden rückgängig
+      let r;
+      try {
+        r = code === "w" ? await hideOffer(id, "befehl", deps) : await unhideOffer(id, deps);
+      } catch (e) {
+        r = { text: `❌ Hat nicht geklappt: ${esc(e.message)}` };
+      }
+      await tg.answer(cq.id);
+      await tg.edit(cq.message.message_id, r.text, r.buttons);
+      return "angebot";
     }
     let text;
     let answered = false;
