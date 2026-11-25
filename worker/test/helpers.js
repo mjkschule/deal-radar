@@ -86,7 +86,9 @@ export const BOTDATA = JSON.stringify({
   },
 });
 
-export const CONFIG = readFileSync(new URL("../../config.yaml", import.meta.url), "utf8");
+// echte config.yaml, aber Ruhezeiten immer "an" – unabhängig von deinem /ruhe-Stand
+export const CONFIG = readFileSync(new URL("../../config.yaml", import.meta.url), "utf8")
+  .replace(/^(ruhezeiten:\n {2}aktiv:) (true|false)/m, "$1 true");
 
 export function deps(extraFiles = {}, { now = "2026-11-25T12:00:00+01:00", routes = {} } = {}) {
   const gh = fakeGitHub({ "products.yaml": FIXTURE, "docs/bot.json": BOTDATA, "config.yaml": CONFIG, ...extraFiles });

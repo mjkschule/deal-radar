@@ -27,6 +27,7 @@ class Offer:
     status_reason: str = ""
     first_seen: str = ""
     last_seen: str = ""
+    weitere_quellen: list[str] = field(default_factory=list)  # gleiches Angebot auch hier gefunden
     # Nur für die Auswertung (Beschreibungstext), wird nicht gespeichert
     text: str = field(default="", repr=False)
 

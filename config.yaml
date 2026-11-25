@@ -24,6 +24,12 @@ quellen:
   shop: true           # konkrete Shop-Produktseiten (Preis aus JSON-LD / Microdata)
   leasingmarkt: true   # LeasingMarkt.de (nur für Produkte mit typ: leasing)
   sparneuwagen: true   # Sparneuwagen.de Haupt-Feed (nur für typ: leasing)
+  mein-deal: true      # RSS-Feed mein-deal.com
+  mytopdeals: true     # RSS-Feed MyTopDeals
+  schnaeppchenfuchs: true  # RSS-Feed Schnäppchenfuchs
+  dealdoktor: true     # RSS-Feed Dealdoktor
+  hersteller: true     # Herstellershops aus shops.yaml (Tefal, Cosori)
+  postfach: true       # Gmail-Deal-Postfach (nur aktiv, wenn die Mail-Secrets gesetzt sind)
 
 # Diese mydealz-Feeds werden immer für ALLE Produkte durchsucht
 # (zusätzlich zu den Gruppen, die beim Produkt stehen).

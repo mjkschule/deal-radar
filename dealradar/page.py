@@ -153,6 +153,28 @@ STATUS_LABEL = {"ok": ("green", "OK"), "fehler": ("red", "Fehler"), "deaktiviert
                 "uebersprungen": ("grey", "übersprungen")}
 
 
+def gutscheine_html(state: dict, now: dt.datetime) -> str:
+    """Gutscheine aus dem Deal-Postfach – ohne Code (der steht nur in deiner Mail)."""
+    today = now.date().isoformat()
+    items = [g for g in (state.get("cache") or {}).get("gutscheine") or []
+             if not g.get("gueltig_bis") or g["gueltig_bis"] >= today]
+    if not items:
+        return ""
+    rows = []
+    for g in sorted(items, key=lambda g: g["shop"].lower()):
+        value = f'{g["rabatt_prozent"]} %' if g.get("rabatt_prozent") else euro(g.get("rabatt_euro"))
+        extra = []
+        if g.get("mindestbestellwert"):
+            extra.append(f'ab {euro(g["mindestbestellwert"])}')
+        if g.get("gueltig_bis"):
+            extra.append("bis " + dt.date.fromisoformat(g["gueltig_bis"]).strftime("%d.%m."))
+        rows.append(f'<li><b>{e(g["shop"])}</b>: {value} Rabatt'
+                    f'{" · " + " · ".join(extra) if extra else ""}'
+                    f'<span class="muted"> (Mail vom {dt.date.fromisoformat(g["mail_vom"]).strftime("%d.%m.")})</span></li>')
+    return ('<section class="box" style="margin-top:16px"><div class="muted">🎟️ Gutscheine aus deinem Deal-Postfach '
+            '(Code steht in der Mail)</div><ul class="sources">' + "".join(rows) + "</ul></section>")
+
+
 def render(products: list[Product], state: dict, history: dict, cfg: dict, now: dt.datetime) -> str:
     tz = ZoneInfo(cfg["zeitzone"])
     rules = cfg["regeln"]
@@ -172,6 +194,7 @@ def render(products: list[Product], state: dict, history: dict, cfg: dict, now: 
     ordered = active + [p for p in products if not p.aktiv]  # pausierte ans Ende
     cards = "".join(product_card(p, state, history, now, rules, tz) for p in ordered)
     ended = now > end
+    coupons = gutscheine_html(state, now)
     return f"""<!doctype html>
 <html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -230,6 +253,7 @@ footer{{margin:24px 0;font-size:.8rem;color:var(--muted)}}
   <div class="box"><div class="muted">Datenquellen</div><ul class="sources">{src_html or "<li>noch kein Lauf</li>"}</ul></div>
 </section>
 <section class="grid">{cards}</section>
+{coupons}
 <footer>Preise ohne Gewähr; „Versand unbekannt“ = Versandkosten nicht ermittelbar. Ampel: grün = Zielpreis erreicht,
 gelb = bis 10 % darüber, rot = darüber, grau = kein aktuelles Angebot (letzte {rules.get("aktuell_stunden", 48)} Std.).
 Leasing: verglichen wird die effektive Rate = (Rate × Monate + Sonderzahlung + Bereitstellung) / Monate;
