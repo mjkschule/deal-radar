@@ -3,6 +3,7 @@
 export const COMMANDS = [
   { command: "liste", description: "Alle Produkte mit Preis und Deal-Score" },
   { command: "top", description: "Die 5 besten Deals nach Deal-Score" },
+  { command: "knaller", description: "💥 Rabattknaller: große Rabatte in deinen Kategorien" },
   { command: "status", description: "Letzter/nächster Lauf und Quellen" },
   { command: "neu", description: "Produkt anlegen: Shop-Link schicken oder /neu Name; Zielpreis" },
   { command: "ziel", description: "Zielpreis ändern: /ziel 3 49,99" },

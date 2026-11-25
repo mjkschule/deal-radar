@@ -15,7 +15,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import ablauf, bereinigen, bewertung, botdata, github, logic, meldungen, page, pwa, storage, zeitplan
+from . import ablauf, bereinigen, bewertung, rabattknaller, botdata, github, logic, meldungen, page, pwa, storage, zeitplan
 from .config import (ROOT, ConfigError, end_datetime, expand_alternatives, is_over, load_config, load_products,
                      now_local)
 from .commands import CommandProcessor, split_message
@@ -23,7 +23,7 @@ from .http import FetchError, Http
 from .models import Offer
 from .score import deal_score
 from .score import explain as score_explain
-from .sources import Context, Skipped, all_sources, postfach
+from .sources import RAW, Context, Skipped, all_sources, postfach
 from .telegram import Telegram, TelegramError, format_alert
 
 
@@ -145,6 +145,7 @@ def run(args) -> int:
     names = {p.id: p.name for p in products}
 
     # --- Datenquellen abfragen (jede einzeln abgesichert) ---
+    RAW.clear()  # Feed-Einträge dieses Laufs (für den Rabattknaller)
     all_offers = []
     status = {}
     cache = state.setdefault("cache", {})
@@ -250,6 +251,9 @@ def run(args) -> int:
             counts[o.status] = counts.get(o.status, 0) + 1
         print(f"  {p.id}: {len(offers)} Angebote {counts} · bester: {best['vergleichspreis'] if best else '–'} "
               f"· gemeldet: {len(alerts)}")
+    knaller_sent, knaller_queued = run_rabattknaller(state, all_offers, http, tg, cfg, now, ignored, budget)
+    sent += knaller_sent
+    queued += knaller_queued
     meldungen.prune_queue(state, now)
     state["letzter_lauf"] = now_iso
     state["version"] = 1
@@ -266,6 +270,43 @@ def run(args) -> int:
     pwa.write_assets(docs_dir)  # Startseite als App installierbar
     print(f"Fertig: {len(all_offers)} Angebote, {sent} Meldungen, {queued} vorgemerkt, {http.request_count} Abrufe.")
     return 0
+
+
+def run_rabattknaller(state: dict, all_offers: list, http, tg, cfg: dict, now, ignored: dict,
+                      budget: dict) -> tuple[int, int]:
+    """Große Rabatte in ganzen Kategorien (config.yaml -> rabattknaller). (gesendet, vorgemerkt)"""
+    if not rabattknaller.settings(cfg)["aktiv"]:
+        state.pop("rabattknaller", None)
+        return 0, 0
+    product_urls = {o.url.split("#")[0] for o in all_offers}  # schon über deine Produktliste gemeldet
+    found = rabattknaller.find(RAW, cfg, product_urls)
+    new = rabattknaller.update(state, found, http, cfg, now, ignored, budget)
+    reported = state["rabattknaller"]["gemeldet"]
+    sent = queued = 0
+    for o in new:
+        how = rabattknaller.route(o, cfg, now)
+        text, keyboard = rabattknaller.format_alert(o), rabattknaller.buttons(o)
+        try:
+            if how == meldungen.SOFORT:
+                if tg.send(text, keyboard):
+                    reported[o.key] = o.compare_price
+                    sent += 1
+            elif tg.live:
+                k = o.knaller
+                meldungen.queue_add(state, {
+                    "id": meldungen.offer_hash(f"knaller|{o.key}|{o.compare_price}"), "art": how, "typ": "knaller",
+                    "produkt": "knaller", "name": f"{k['kategorie_name']}: {o.title[:70]}", "preis": o.compare_price,
+                    "shop": o.shop, "url": o.url, "score": None, "rabatt": k["rabatt"], "hitze": k["hitze"],
+                    "ziel_erreicht": False, "text": text, "buttons": keyboard, "zeit": now.isoformat(timespec="seconds"),
+                }, now)
+                reported[o.key] = o.compare_price
+                queued += 1
+            else:
+                print(f"---- Rabattknaller ({how}, nicht gespeichert) ----\n{text}\n----")
+        except TelegramError as ex:
+            print(f"Telegram-Fehler: {ex}", file=sys.stderr)
+    print(f"Rabattknaller: {len(found)} gefunden, {len(new)} neu, {sent} gesendet, {queued} vorgemerkt")
+    return sent, queued
 
 
 def send_test_alert(tg: Telegram, which: str, products_path: Path) -> int:

@@ -13,7 +13,7 @@ from .. import prices
 from ..config import Product
 from ..matching import matches
 from ..models import Offer
-from . import Context, strip_tags
+from . import Context, remember_raw, strip_tags
 
 NAME = "mydealz"
 BASE = "https://www.mydealz.de/rss/"
@@ -87,6 +87,12 @@ def offer_from_item(item: dict, product: Product) -> Offer | None:
 def fetch(products: list[Product], ctx: Context) -> list[Offer]:
     always = ctx.config.get("mydealz_immer") or []
     paths = feed_paths(products, always)
+    rk = ctx.config.get("rabattknaller") or {}
+    if rk.get("aktiv"):  # Rabattknaller: Kategorie-Gruppen + Feed mit Temperatur (Hitze)
+        extra = [f"gruppe/{g}" for k in (rk.get("kategorien") or {}).values() for g in k.get("gruppen") or []]
+        for path in extra + [rk.get("hitze_feed", "trending")]:
+            if path not in paths:
+                paths.append(path)
     offers: list[Offer] = []
     errors = []
     seen_links: set[tuple[str, str]] = set()
@@ -95,6 +101,7 @@ def fetch(products: list[Product], ctx: Context) -> list[Offer]:
         try:
             items = parse_feed(ctx.http.get(BASE + path))
             ok += 1
+            remember_raw(NAME, [{**i, "feed": path} for i in items])
         except Exception as e:  # einzelner Feed kaputt -> andere weiter
             errors.append(f"{path}: {e}")
             continue

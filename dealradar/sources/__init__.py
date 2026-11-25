@@ -31,6 +31,15 @@ class Context:
     notes: list[str] = field(default_factory=list)  # Hinweise für den Quellenstatus
 
 
+# Alle in diesem Lauf gelesenen Feed-Einträge (für den Rabattknaller, der unabhängig von deiner
+# Produktliste sucht). main.py leert das zu Beginn jedes Laufs.
+RAW: dict[str, list[dict]] = {}
+
+
+def remember_raw(source: str, items: list[dict]) -> None:
+    RAW.setdefault(source, []).extend(items)
+
+
 def strip_tags(text: str) -> str:
     """HTML entfernen und Leerraum zusammenfassen."""
     t = re.sub(r"<(script|style)\b.*?</\1>", " ", text or "", flags=re.S | re.I)

@@ -28,7 +28,8 @@ export const HELP =
   "<b>Anzeigen</b> (Antwort sofort)\n" +
   "/liste – alle Produkte mit Nummer, Zielpreis, Bestpreis, Shop und Deal-Score\n" +
   "/top – die 5 besten Deals nach Deal-Score\n" +
-  "/status – letzter und nächster Suchlauf, Zustand der Quellen\n\n" +
+  "/status – letzter und nächster Suchlauf, Zustand der Quellen\n" +
+  "/knaller – 💥 Rabattknaller: große Rabatte bei Schlagbohrschrauber-Sets, Monitoren, Airfryern, Farbdruckern\n\n" +
   "<b>Neues Produkt</b>\n" +
   "Einfach den <b>Link zur Produktseite</b> eines Shops schicken – ich lese Name, EAN und Preis " +
   "und schlage einen Zielpreis vor.\n" +
@@ -51,7 +52,7 @@ export const HELP =
   "Passt er auf mehrere Produkte, frage ich mit Buttons nach.";
 
 const SHORT_HELP =
-  "Das kenne ich nicht. Befehle: /liste · /top · /status · /neu · /ziel · /pause · /fortsetzen · /loeschen · /weg · /ruhe · /ende\n" +
+  "Das kenne ich nicht. Befehle: /liste · /top · /knaller · /status · /neu · /ziel · /pause · /fortsetzen · /loeschen · /weg · /ruhe · /ende\n" +
   "Beispiele: /hilfe";
 
 // ---------- Formatierung ----------
@@ -498,6 +499,11 @@ async function findOffer(gh, hash) {
     const offer = (e.angebote || []).find((o) => o.h === hash);
     if (offer) return { id, name: e.name || id, offer };
   }
+  const k = (bot.rabattknaller || []).find((o) => o.h === hash);
+  if (k) {
+    return { id: "knaller", name: `Rabattknaller ${k.kategorie_name}`,
+      offer: { shop: k.shop, preis: k.vergleichspreis, url: k.url, titel: k.title } };
+  }
   return null;
 }
 
@@ -526,6 +532,17 @@ export async function unhideOffer(hash, { gh }) {
     return rest;
   });
   return { text: "↩️ Angebot wird wieder gezeigt und gemeldet." + await startRun(gh) };
+}
+
+async function cmdKnaller({ gh }) {
+  const bot = await loadBotData(gh);
+  const rows = bot.rabattknaller || [];
+  if (!rows.length) return "💥 Gerade kein Rabattknaller. Ich suche bei jedem Lauf weiter.";
+  const lines = rows.slice(0, 10).map((k) =>
+    `• <b>${esc(k.kategorie_name)}</b>: <a href="${esc(k.url)}">${esc(String(k.title).slice(0, 80))}</a>\n` +
+    `   ${eur(k.vergleichspreis)} € bei ${esc(k.shop)}` + (k.rabatt != null ? ` · −${k.rabatt} % ggü. Preisvergleich ${eur(k.bezug)} €` : "") +
+    (k.hitze != null ? ` · 🔥 ${k.hitze}°` : ""));
+  return `💥 <b>Rabattknaller</b> (${rows.length}) – große Rabatte in deinen Kategorien:\n\n${lines.join("\n")}`;
 }
 
 async function cmdWeg(arg, deps) {
@@ -652,6 +669,7 @@ export async function handleText(text, deps) {
     }
     case "hilfe": case "help": return { text: HELP };
     case "weg": case "abgelaufen": return cmdWeg(arg, deps);
+    case "knaller": case "rabattknaller": return { text: await cmdKnaller(deps) };
     case "neu": return { text: await cmdNeu(text, deps) };
     case "loeschen": case "löschen": case "loschen": return writeCommand("d", arg, deps);
     case "pause": return writeCommand("p", arg, deps);

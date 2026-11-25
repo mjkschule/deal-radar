@@ -254,6 +254,33 @@ def _reached_html(products: list[Product], state: dict, now: dt.datetime, rules:
             f'<ul>{"".join(rows)}</ul></section>')
 
 
+def _knaller_html(state: dict, cfg: dict, tz) -> str:
+    """💥 Rabattknaller: große Rabatte in deinen Kategorien (nicht auf deiner Produktliste)."""
+    from . import rabattknaller
+    s = rabattknaller.settings(cfg)
+    if not s["aktiv"]:
+        return ""
+    rows = rabattknaller.current(state)
+    head = (f'<h2>💥 Rabattknaller ({len(rows)})</h2><div class="muted">Ab {s["ab_prozent"]} % unter dem '
+            f'Preisvergleich oder sehr heiß bei mydealz (ab {s["hitze_ab"]}°) · '
+            + " · ".join(e(k.get("name", key)) for key, k in (s["kategorien"] or {}).items()) + "</div>")
+    if not rows:
+        return f'<section class="box knaller none">{head}<div class="muted">Gerade kein Rabattknaller.</div></section>'
+    items = []
+    for d in rows[:20]:
+        badge = f'<span class="tag green">−{d["rabatt"]} %</span>' if d.get("rabatt") is not None else ""
+        heat = f' <span class="tag red">🔥 {d["hitze"]}°</span>' if d.get("hitze") is not None else ""
+        ref = f' <span class="muted">Preisvergleich {euro(d["bezug"])}</span>' if d.get("bezug") else ""
+        items.append(
+            f'<li><div><div class="muted">{e(d.get("kategorie_name"))}</div>'
+            f'<a href="{e(d["url"])}" rel="noopener" target="_blank"><b>{e(d["title"][:110])}</b></a>'
+            f'<div><b>{euro(d.get("vergleichspreis"))}</b> bei {e(d["shop"])} {badge}{heat}{ref}</div>'
+            f'<div class="muted">gesehen {when(d.get("first_seen"), tz)} · {e(d["source"])}</div></div>'
+            f'<div class="acts">{hide_link(d, state)}'
+            f'<a class="buy" href="{e(d["url"])}" rel="noopener" target="_blank">Zum Angebot ↗</a></div></li>')
+    return f'<section class="box knaller">{head}<ul>{"".join(items)}</ul></section>'
+
+
 def render(products: list[Product], state: dict, history: dict, cfg: dict, now: dt.datetime) -> str:
     from . import zeitplan  # (hier importiert, um Kreisbezüge zu vermeiden)
     tz = ZoneInfo(cfg["zeitzone"])
@@ -325,6 +352,10 @@ h2{{font-size:1.05rem;margin:0}}
 .big{{font-size:1.4rem;font-weight:700;font-variant-numeric:tabular-nums}}
 .muted{{color:var(--muted);font-size:.9rem}}
 a.hide{{font-size:.85em;color:var(--muted);white-space:nowrap;margin-left:6px}}
+.knaller{{margin-bottom:16px;border-color:#f79009}} .knaller.none{{border-color:var(--line)}}
+.knaller ul{{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:10px}}
+.knaller li{{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;
+border-top:1px solid var(--line);padding-top:10px}}
 .acts{{display:flex;gap:10px;align-items:center}}
 .reached{{margin-bottom:16px;border-color:var(--green)}} .reached.none{{border-color:var(--line)}}
 .reached ul{{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}}
@@ -369,6 +400,7 @@ footer{{margin:24px 0;font-size:.8rem;color:var(--muted)}}
 </style></head><body><div class="wrap">
 <h1>📡 Deal-Radar <span class="tag mode">{e(zeitplan.describe(cfg, now))}</span></h1>
 {_reached_html(ordered, state, now, rules)}
+{_knaller_html(state, cfg, tz)}
 <section class="top">
   <div class="box"><div class="muted">Letzter Lauf</div><div class="big">{when(state.get("letzter_lauf"), tz)}</div></div>
   <div class="box"><div class="muted">Nächster Lauf</div>
