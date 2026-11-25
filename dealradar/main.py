@@ -23,7 +23,7 @@ from .http import FetchError, Http
 from .models import Offer
 from .score import deal_score
 from .score import explain as score_explain
-from .sources import Context, Skipped, all_sources
+from .sources import Context, Skipped, all_sources, postfach
 from .telegram import Telegram, TelegramError, format_alert
 
 
@@ -133,6 +133,11 @@ def run(args) -> int:
         products = [p for p in products if p.id in args.only.split(",")]
     # Alternativen ("<id>~alt1") werden wie eigene Produkte gesucht, aber beim Hauptprodukt gemeldet
     products = expand_alternatives(products)
+    # Klick-Links aus Mails (persönlich) nie im öffentlichen Repo – Altbestand bereinigen
+    names = {p.id: p.name for p in expand_alternatives(all_products)}
+    scrubbed = postfach.scrub_state(state, names) + postfach.scrub_csv(data_dir / "verlauf.csv", names)
+    if scrubbed:
+        print(f"Datenschutz: {scrubbed} Klick-Links aus Mails durch neutrale Links ersetzt.")
     names = {p.id: p.name for p in products}
 
     # --- Datenquellen abfragen (jede einzeln abgesichert) ---
