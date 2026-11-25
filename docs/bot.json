@@ -1,12 +1,12 @@
 {
  "enddatum": "2026-11-27T23:59+01:00",
- "letzter_lauf": "2026-11-25T07:17:28+01:00",
+ "letzter_lauf": "2026-11-25T09:17:43+01:00",
  "produkte": {
   "drucker-allgemein": {
    "aktiv": true,
    "bester": {
     "effektivpreis": 39.99,
-    "gesehen": "2026-11-25T07:17:28+01:00",
+    "gesehen": "2026-11-25T09:17:43+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: Farbe"
@@ -32,7 +32,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-25T07:17:28+01:00",
+    "gesehen": "2026-11-25T09:17:43+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -70,7 +70,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-25T07:17:28+01:00",
+    "gesehen": "2026-11-25T09:17:43+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -95,7 +95,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 184.0,
-    "gesehen": "2026-11-25T07:17:28+01:00",
+    "gesehen": "2026-11-25T09:17:43+01:00",
     "hinweise": [
      "Gutschein/Code nötig",
      "nur für Neukunden",
@@ -122,7 +122,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 65.99,
-    "gesehen": "2026-11-25T07:17:28+01:00",
+    "gesehen": "2026-11-25T09:17:43+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -159,7 +159,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 336.66,
-    "gesehen": "2026-11-25T07:17:28+01:00",
+    "gesehen": "2026-11-25T09:17:43+01:00",
     "hinweise": [
      "Verfügbar: 03/2027",
      "Sonderzahlung unbekannt",
@@ -198,7 +198,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 9.99,
-    "gesehen": "2026-11-25T07:17:28+01:00",
+    "gesehen": "2026-11-25T09:17:43+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -225,39 +225,39 @@
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T07:17:28+01:00"
+   "zeit": "2026-11-25T09:17:43+01:00"
   },
   "leasingmarkt": {
    "anzahl": 26,
-   "dauer_s": 69.8,
+   "dauer_s": 68.2,
    "meldung": "17 Seiten, 0 Detailseiten geladen; 241 Angebote geprüft, 26 elektrisch",
    "status": "ok",
-   "zeit": "2026-11-25T07:17:28+01:00"
+   "zeit": "2026-11-25T09:17:43+01:00"
   },
   "mydealz": {
    "anzahl": 24,
-   "dauer_s": 51.2,
+   "dauer_s": 51.9,
    "meldung": "15/15 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T07:17:28+01:00"
+   "zeit": "2026-11-25T09:17:43+01:00"
   },
   "shop": {
    "anzahl": 2,
-   "dauer_s": 9.6,
+   "dauer_s": 10.9,
    "meldung": "2/2 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T07:17:28+01:00"
+   "zeit": "2026-11-25T09:17:43+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
-   "dauer_s": 4.5,
+   "dauer_s": 4.7,
    "meldung": "25 Artikel im Feed",
    "status": "ok",
-   "zeit": "2026-11-25T07:17:28+01:00"
+   "zeit": "2026-11-25T09:17:43+01:00"
   }
  },
- "ruhezeit_beim_lauf": false,
- "stand": "2026-11-25T07:17:28+01:00",
+ "ruhezeit_beim_lauf": true,
+ "stand": "2026-11-25T09:17:43+01:00",
  "version": 1,
  "warteschlange": []
 }
