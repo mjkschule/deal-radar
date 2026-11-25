@@ -1,19 +1,12 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-25T20:56:29+01:00",
+ "letzter_lauf": "2026-11-25T21:04:13+01:00",
  "produkte": {
   "epson-et-2922": {
    "aktiv": true,
    "alternativen": [],
    "angebote": [
-    {
-     "h": "e8cee894e5",
-     "preis": 150.71,
-     "shop": "idealo (Preisalarm)",
-     "titel": "idealo-Preisalarm: Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
-     "url": "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Epson+EcoTank+ET-2922+%28Farbe%2C+WLAN%2C+Scan%2FKopie%29"
-    },
     {
      "h": "eeea55561c",
      "preis": 174.99,
@@ -30,27 +23,28 @@
     }
    ],
    "bester": {
-    "effektivpreis": 150.71,
-    "gesehen": "2026-11-25T20:56:29+01:00",
+    "effektivpreis": 174.99,
+    "gesehen": "2026-11-25T21:04:13+01:00",
     "hinweise": [
-     "Bestpreis laut Preisalarm – Shop und Versand im Portal prüfen"
+     "evtl. nur per App",
+     "Versand unbekannt"
     ],
-    "preis": 150.71,
-    "quelle": "postfach",
+    "preis": 174.99,
+    "quelle": "mydealz",
     "rate": null,
     "rechenweg": "",
-    "shop": "idealo (Preisalarm)",
-    "titel": "idealo-Preisalarm: Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
-    "url": "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Epson+EcoTank+ET-2922+%28Farbe%2C+WLAN%2C+Scan%2FKopie%29",
+    "shop": "Amazon",
+    "titel": "Epson EcoTank ET-2922 Multifunktionsdrucker mit WLAN",
+    "url": "https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743",
     "versand": null,
     "vertrauen": []
    },
    "kategorie": "drucker",
-   "kaufen_oder_warten": "✅ Kaufen: sehr guter Preis (Score 95)",
+   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
    "name": "Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
-   "score": 95,
-   "tiefstpreis": 150.71,
-   "tiefstpreis_shop": "idealo (Preisalarm)",
+   "score": 60,
+   "tiefstpreis": 174.99,
+   "tiefstpreis_shop": "Amazon",
    "typ": "produkt",
    "ziel_erreicht": false,
    "zielpreis": 145.0
@@ -69,7 +63,7 @@
    ],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-25T20:56:29+01:00",
+    "gesehen": "2026-11-25T21:04:13+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -96,35 +90,12 @@
   "makita-dhp490rfx3": {
    "aktiv": true,
    "alternativen": [],
-   "angebote": [
-    {
-     "h": "1911101be0",
-     "preis": 190.31,
-     "shop": "idealo (Preisalarm)",
-     "titel": "idealo-Preisalarm: Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
-     "url": "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Makita+DHP490RFX3+%282x+3%2C0+Ah%2C+Ladeger%C3%A4t%2C+Koffer%2C+74-tlg.+Zubeh%C3%B6r%29"
-    }
-   ],
-   "bester": {
-    "effektivpreis": 190.31,
-    "gesehen": "2026-11-25T20:56:29+01:00",
-    "hinweise": [
-     "Bestpreis laut Preisalarm – Shop und Versand im Portal prüfen"
-    ],
-    "preis": 190.31,
-    "quelle": "postfach",
-    "rate": null,
-    "rechenweg": "",
-    "shop": "idealo (Preisalarm)",
-    "titel": "idealo-Preisalarm: Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
-    "url": "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Makita+DHP490RFX3+%282x+3%2C0+Ah%2C+Ladeger%C3%A4t%2C+Koffer%2C+74-tlg.+Zubeh%C3%B6r%29",
-    "versand": null,
-    "vertrauen": []
-   },
+   "angebote": [],
+   "bester": null,
    "kategorie": "werkzeug",
-   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
+   "kaufen_oder_warten": "",
    "name": "Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
-   "score": 41,
+   "score": null,
    "tiefstpreis": 184.0,
    "tiefstpreis_shop": "BAUR",
    "typ": "produkt",
@@ -211,7 +182,7 @@
    ],
    "bester": {
     "effektivpreis": 129.99,
-    "gesehen": "2026-11-25T20:56:29+01:00",
+    "gesehen": "2026-11-25T21:04:13+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -338,7 +309,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-25T20:56:29+01:00",
+    "gesehen": "2026-11-25T21:04:13+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -367,23 +338,23 @@
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.8,
+   "dauer_s": 5.4,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:56:29+01:00"
+   "zeit": "2026-11-25T21:04:13+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T20:56:29+01:00"
+   "zeit": "2026-11-25T21:04:13+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1948 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:56:29+01:00"
+   "zeit": "2026-11-25T21:04:13+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
@@ -394,31 +365,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 5.2,
+   "dauer_s": 5.1,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:56:29+01:00"
+   "zeit": "2026-11-25T21:04:13+01:00"
   },
   "mydealz": {
    "anzahl": 10,
-   "dauer_s": 47.9,
+   "dauer_s": 48.8,
    "meldung": "14/14 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:56:29+01:00"
+   "zeit": "2026-11-25T21:04:13+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
    "dauer_s": 3.7,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:56:29+01:00"
+   "zeit": "2026-11-25T21:04:13+01:00"
   },
   "postfach": {
-   "anzahl": 3,
+   "anzahl": 0,
    "dauer_s": 1.4,
-   "meldung": "7 Mails, 3 Preisalarme mit Treffer, 0 Gutscheine",
+   "meldung": "8 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine, 5 Portal-Mails ohne Alarm übersprungen (Bestätigung/Info)",
    "status": "ok",
-   "zeit": "2026-11-25T20:56:29+01:00"
+   "zeit": "2026-11-25T21:04:13+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -429,7 +400,7 @@
    "dauer_s": 14.1,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:56:29+01:00"
+   "zeit": "2026-11-25T21:04:13+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -440,7 +411,7 @@
   }
  },
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-25T20:56:29+01:00",
+ "stand": "2026-11-25T21:04:13+01:00",
  "version": 1,
  "warteschlange": []
 }
