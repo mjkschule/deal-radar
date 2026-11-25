@@ -98,11 +98,27 @@ _SHIP_COST = [
 ]
 
 
-def parse_shipping(text: str | None) -> float | None:
-    """Versandkosten aus Text. 0.0 = versandkostenfrei, None = nicht ermittelbar."""
+# "kostenloser Versand ab 29 €" ist eine Grenze für Gratisversand, KEINE Versandkosten
+_FREE_FROM = re.compile(
+    rf"(?:versandkostenfrei|versandfrei|kostenlose[rn]?\s+versand|gratis[-\s]?versand|versand\s+(?:kostenlos|gratis|frei))"
+    rf"\s*(?:ab|über|ueber)\s*(?:einem\s+)?(?:bestellwert\s+(?:von\s+)?)?(?P<n>{_NUM})\s*(?:€|eur\b|euro\b)", re.I)
+
+
+def parse_shipping(text: str | None, price: float | None = None) -> float | None:
+    """Versandkosten aus Text. 0.0 = versandkostenfrei, None = nicht ermittelbar.
+    Bei "versandkostenfrei ab 29 €" entscheidet der Preis: ab 29 € -> 0.0, sonst unbekannt."""
     if not text:
         return None
     t = html.unescape(text)
+    m = _FREE_FROM.search(t)
+    if m:
+        limit = to_number(m.group("n"))
+        if price is not None and limit is not None and price >= limit:
+            return 0.0
+        t = t[:m.start()] + " " + t[m.end():]  # Grenze nicht als Versandkosten lesen
+        if price is None or (limit is not None and price < limit):
+            rest = parse_shipping(t, price) if t.strip() else None
+            return rest if rest else None
     for rx in _SHIP_COST:
         m = rx.search(t)
         if m:
