@@ -1,14 +1,14 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-25T20:05:46+01:00",
+ "letzter_lauf": "2026-11-25T20:13:19+01:00",
  "produkte": {
   "epson-et-2922": {
    "aktiv": true,
    "alternativen": [],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-25T20:05:46+01:00",
+    "gesehen": "2026-11-25T20:13:19+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -38,7 +38,7 @@
    "alternativen": [],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-25T20:05:46+01:00",
+    "gesehen": "2026-11-25T20:13:19+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -67,7 +67,7 @@
    "alternativen": [],
    "bester": {
     "effektivpreis": 184.0,
-    "gesehen": "2026-11-25T20:05:46+01:00",
+    "gesehen": "2026-11-25T20:13:19+01:00",
     "hinweise": [
      "Gutschein/Code nötig",
      "nur für Neukunden",
@@ -127,7 +127,7 @@
    "alternativen": [],
    "bester": {
     "effektivpreis": 129.99,
-    "gesehen": "2026-11-25T20:05:46+01:00",
+    "gesehen": "2026-11-25T20:13:19+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -187,7 +187,7 @@
    "alternativen": [],
    "bester": {
     "effektivpreis": 9.99,
-    "gesehen": "2026-11-25T20:05:46+01:00",
+    "gesehen": "2026-11-25T20:13:19+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -218,20 +218,20 @@
    "dauer_s": 4.3,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:05:46+01:00"
+   "zeit": "2026-11-25T20:13:19+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T20:05:46+01:00"
+   "zeit": "2026-11-25T20:13:19+01:00"
   },
   "hersteller": {
    "anzahl": 0,
-   "dauer_s": 10.9,
+   "dauer_s": 0.0,
    "meldung": "Tefal: 1948 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:05:46+01:00"
+   "zeit": "2026-11-25T20:13:19+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
@@ -242,31 +242,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 8.8,
-   "meldung": "32 Beiträge (2 Feed-Seiten)",
+   "dauer_s": 4.6,
+   "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:05:46+01:00"
+   "zeit": "2026-11-25T20:13:19+01:00"
   },
   "mydealz": {
    "anzahl": 10,
-   "dauer_s": 47.7,
+   "dauer_s": 48.4,
    "meldung": "14/14 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:05:46+01:00"
+   "zeit": "2026-11-25T20:13:19+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
    "dauer_s": 3.7,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:05:46+01:00"
+   "zeit": "2026-11-25T20:13:19+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 0.8,
-   "meldung": "2 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine",
+   "dauer_s": 1.2,
+   "meldung": "4 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine",
    "status": "ok",
-   "zeit": "2026-11-25T20:05:46+01:00"
+   "zeit": "2026-11-25T20:13:19+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -274,10 +274,10 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 14.0,
+   "dauer_s": 14.2,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:05:46+01:00"
+   "zeit": "2026-11-25T20:13:19+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -288,7 +288,7 @@
   }
  },
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-25T20:05:46+01:00",
+ "stand": "2026-11-25T20:13:19+01:00",
  "version": 1,
  "warteschlange": []
 }
