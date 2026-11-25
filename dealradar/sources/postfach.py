@@ -93,7 +93,7 @@ def portal_link(links: list[str], portal: str, product_name: str) -> str:
         if p.scheme == "https" and p.netloc.lower() in hosts and len(p.path) > 1:
             return clean_link(u)
     return SEARCH.get(portal.lower(), "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q={q}") \
-        .format(q=quote_plus(product_name))
+        .format(q=quote_plus(re.sub(r"\s*\([^)]*\)", "", product_name).strip() or product_name))
 
 
 def is_tracking_link(url: str) -> bool:

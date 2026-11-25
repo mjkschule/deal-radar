@@ -221,7 +221,7 @@ def test_alert_names_other_sources():
 def test_postfach_never_keeps_click_links(tmp_path):
     click = "https://clicks.news.idealo.com/f/a/3PnLBfj7CaaINfywS7rXWw~~/AAAHahA~/rubWA_Sy9sJAjz"
     # 1) neue Mails: Klick-Link -> Portal-Suche; echte Produktseite -> ohne Parameter
-    assert postfach.portal_link([click], "idealo", "Makita DHP490RFX3") == \
+    assert postfach.portal_link([click], "idealo", "Makita DHP490RFX3 (2x 3,0 Ah, Koffer)") == \
         "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Makita+DHP490RFX3"
     assert postfach.portal_link([click, "https://www.idealo.de/preisvergleich/OffersOfProduct/9.html?uid=x"],
                                 "idealo", "M") == "https://www.idealo.de/preisvergleich/OffersOfProduct/9.html"
