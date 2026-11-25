@@ -15,7 +15,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import ablauf, bewertung, botdata, github, logic, meldungen, page, pwa, storage, zeitplan
+from . import ablauf, bereinigen, bewertung, botdata, github, logic, meldungen, page, pwa, storage, zeitplan
 from .config import (ROOT, ConfigError, end_datetime, expand_alternatives, is_over, load_config, load_products,
                      now_local)
 from .commands import CommandProcessor, split_message
@@ -138,6 +138,10 @@ def run(args) -> int:
     scrubbed = postfach.scrub_state(state, names) + postfach.scrub_csv(data_dir / "verlauf.csv", names)
     if scrubbed:
         print(f"Datenschutz: {scrubbed} Klick-Links aus Mails durch neutrale Links ersetzt.")
+    fixed = bereinigen.drop_postfach_offers(state, history, data_dir / "verlauf.csv",
+                                            cfg["regeln"].get("aktuell_stunden", 48))
+    if fixed:
+        print(f"Bereinigt: falsche Preisalarm-Angebote (Wunschpreis) entfernt bei {', '.join(fixed)}")
     names = {p.id: p.name for p in products}
 
     # --- Datenquellen abfragen (jede einzeln abgesichert) ---

@@ -103,14 +103,77 @@ def is_tracking_link(url: str) -> bool:
         and host not in {h for hs in PORTAL_HOSTS.values() for h in hs}
 
 
-def parse_alarm(msg, products: list[Product], portal: str) -> list[Offer]:
-    """Preisalarm-Mail (idealo/Geizhals): passendes Produkt + Preis aus Betreff/Text."""
+# --- Preisalarm-Mails (idealo „Preiswecker“, Geizhals) -------------------------------------------
+# Nur echte Alarm-Mails („Preis gefallen“, „Wunschpreis erreicht“) zählen. Bestätigungs-, Einrichtungs-
+# und Werbe-Mails enthalten zwar Beträge – aber meist DEINEN Wunschpreis, nicht den Angebotspreis.
+_SETUP_RE = re.compile(r"eingerichtet|aktiviert|aktiv\b|angelegt|bestätig|erstellt|gespeichert|gelöscht|deaktiviert|"
+                       r"beendet|abgelaufen|willkommen|registrier|anmeld|newsletter|abonn|verifizier", re.I)
+_TRIGGER_RE = re.compile(r"(?:wunsch)?preis\w*\s+(?:wurde\s+|ist\s+|hast\s+du\s+)?(?:erreicht|unterschritten)|"
+                         r"gefallen|gesunken|günstiger|reduziert|jetzt\s+(?:für|ab|nur|bei)|"
+                         r"neue[rs]?\s+(?:best|tiefst)preis|preissturz|preisalarm\s*:", re.I)
+# „sobald der Preis gefallen ist …“ beschreibt die Zukunft, nicht einen Alarm
+_FUTURE_RE = re.compile(r"(?:sobald|wenn|falls|benachrichtig\w*|informier\w*|sagen\s+(?:dir|ihnen)\s+bescheid)[^.!?]{0,60}$", re.I)
+_WISH_BEFORE = re.compile(r"(?:wunsch|ziel)\s*-?\s*preis\w*|preisgrenze|limit|gewünscht\w*|"
+                          r"(?:dein|ihr)(?:e[mnr]?)?\s+(?:preis|grenze)\w*|(?:bis|unter)\s+(?:zu\s+)?$", re.I)
+_CURRENT_BEFORE = re.compile(r"(?:aktuell\w*|jetzt|neu\w*|nur|best\w*|günstigst\w*|ab|für|auf|bei|preis\w*)"
+                             r"\s*(?:preis\w*)?\s*(?:von|liegt\s+bei|beträgt)?\s*[:=]?\s*(?:nur|ab|für)?\s*$", re.I)
+
+
+def _is_alarm(subject: str, body: str) -> str:
+    """'alarm', 'bestaetigung' (Einrichtung/Bestätigung/Abmeldung) oder 'kein_alarm'."""
+    def triggered(text):
+        return any(not _FUTURE_RE.search(text[max(0, m.start() - 80):m.start()]) for m in _TRIGGER_RE.finditer(text))
+    if triggered(subject):
+        return "alarm"
+    if _SETUP_RE.search(subject):
+        return "bestaetigung"
+    return "alarm" if triggered(body[:2000]) else "kein_alarm"
+
+
+def _amounts(text: str):
+    """(Betrag, Text davor bis zum vorigen Betrag, Vergleichspreis?) für jeden Geldbetrag."""
+    out, last = [], 0
+    for m in prices._MONEY_RE.finditer(text):
+        val = prices.to_number(m.group("a") or m.group("b"))
+        if val is None:
+            continue
+        before = text[max(last, m.start() - 60):m.start()]
+        ref = bool(prices._REF_BEFORE.search(before) or prices._REF_AFTER.match(text[m.end():m.end() + 8]))
+        out.append((val, before, ref))
+        last = m.end()
+    return out
+
+
+def alarm_price(subject: str, body: str) -> tuple[float | None, float | None]:
+    """(Angebotspreis, dein Wunschpreis) aus einer Alarm-Mail. Der Wunschpreis wird NIE als
+    Angebotspreis genommen; ist das Angebot teurer als der Wunschpreis, stimmt etwas nicht -> None."""
+    found = _amounts(subject) + _amounts(body[:3000])
+    wish_vals = [v for v, before, _ in found if _WISH_BEFORE.search(before)]
+    wish = wish_vals[0] if wish_vals else None
+    usable = [(v, before) for v, before, ref in found if not ref and not _WISH_BEFORE.search(before)]
+    labeled = [v for v, before in usable if _CURRENT_BEFORE.search(before)]
+    unlabeled = [v for v, _ in usable if v not in wish_vals]
+    price = (labeled or unlabeled or [None])[0]
+    if price is not None and wish is not None and price > wish + 0.01:
+        return None, wish
+    return price, wish
+
+
+def parse_alarm(msg, products: list[Product], portal: str, stats: dict | None = None) -> list[Offer]:
+    """Preisalarm-Mail (idealo/Geizhals): passendes Produkt + Angebotspreis (nicht dein Wunschpreis)."""
     subject = _text(msg.get("Subject"))
     body, links = mail_body(msg)
-    text = f"{subject} {body[:3000]}"
-    price = prices.parse_price(subject) or prices.parse_price(body[:1500])
-    if not price:
+    kind = _is_alarm(subject, body)
+    price = None
+    if kind == "alarm":
+        price, _ = alarm_price(subject, body)
+        if not price:
+            kind = "kein_preis"
+    if stats is not None:
+        stats[kind] = stats.get(kind, 0) + 1
+    if kind != "alarm":
         return []
+    text = f"{subject} {body[:3000]}"
     offers = []
     for prod in products:
         if prod.is_leasing or not matches(prod, text):
@@ -189,11 +252,12 @@ def fetch(products: list[Product], ctx: Context) -> list[Offer]:
     offers: list[Offer] = []
     coupons: list[dict] = []
     alarms = 0
+    stats: dict[str, int] = {}
     for msg in msgs:
         _, domain = sender_info(msg)
         portal = next((v for k, v in ALARM_ABSENDER.items() if k in domain), None)
         if portal:
-            found = parse_alarm(msg, products, portal)
+            found = parse_alarm(msg, products, portal, stats)
             alarms += 1 if found else 0
             offers.extend(found)
             continue
@@ -208,7 +272,9 @@ def fetch(products: list[Product], ctx: Context) -> list[Offer]:
         if k not in best or score > best[k]["_s"]:
             best[k] = {**c, "_s": score}
     ctx.cache["gutscheine"] = [{k: v for k, v in c.items() if k != "_s"} for c in best.values()]
-    ctx.notes.append(f"{len(msgs)} Mails, {alarms} Preisalarme mit Treffer, {len(best)} Gutscheine")
+    skipped = stats.get("bestaetigung", 0) + stats.get("kein_alarm", 0) + stats.get("kein_preis", 0)
+    ctx.notes.append(f"{len(msgs)} Mails, {alarms} Preisalarme mit Treffer, {len(best)} Gutscheine"
+                     + (f", {skipped} Portal-Mails ohne Alarm übersprungen (Bestätigung/Info)" if skipped else ""))
     return offers
 
 

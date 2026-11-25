@@ -245,3 +245,73 @@ def test_postfach_never_keeps_click_links(tmp_path):
     text = csv_path.read_text(encoding="utf-8")
     assert "idealo.com" not in text and "https://x" in text and "q=Makita" in text
     assert postfach.scrub_csv(csv_path, {}) == 0
+
+
+# ---------- Preisalarm: Wunschpreis ist KEIN Angebot ----------
+
+MAKITA = parse_products([{"id": "makita", "name": "Makita DHP490RFX3", "suchbegriffe": ["DHP490RFX3", "DHP490"],
+                          "zielpreis": 215}])
+IDEALO = "idealo <preiswecker@idealo.de>"
+
+
+@pytest.mark.parametrize("subject,html,price", [
+    # Bestätigungen / Einrichtung -> nie ein Angebot, auch wenn ein Betrag drinsteht
+    ("Dein Preiswecker für Makita DHP490RFX3 ist aktiv", "<p>Dein Wunschpreis: 189,92 €</p>", None),
+    ("Bitte bestätige deinen Preiswecker", "<p>Makita DHP490RFX3 – Wunschpreis 190,31 €. "
+     "Sobald der Preis gefallen ist, sagen wir dir Bescheid.</p>", None),
+    ("Preiswecker eingerichtet: Makita DHP490RFX3", "<p>Wir benachrichtigen dich, wenn der Preis unter 189,92 € "
+     "gesunken ist. Aktueller Preis: 199,00 €</p>", None),
+    ("Dein idealo-Newsletter", "<p>Makita DHP490RFX3 ab 199 € – Top-Angebote der Woche</p>", None),
+    # Echte Alarme: Angebotspreis, egal ob der Wunschpreis davor oder danach steht
+    ("Preiswecker: Makita DHP490RFX3 jetzt für 185,00 €", "<p>Dein Wunschpreis: 189,92 €</p>", 185.0),
+    ("Dein Wunschpreis wurde erreicht!", "<p>Makita DHP490RFX3 – Dein Wunschpreis: 189,92 € · "
+     "Aktueller Bestpreis: 187,49 €</p>", 187.49),
+    ("Der Preis ist gefallen", "<p>Makita DHP490RFX3<br>Jetzt ab 179,90 €<br>Wunschpreis 189,92 €</p>", 179.9),
+    ("Preis gesunken: Makita DHP490RFX3", "<p>Neuer Preis: 189,92 € (dein Wunschpreis: 189,92 €)</p>", 189.92),
+    # Nur der Wunschpreis steht drin -> kein Angebot erfinden
+    ("Dein Wunschpreis wurde erreicht!", "<p>Makita DHP490RFX3 – Wunschpreis 189,92 €</p>", None),
+    # Angebot teurer als Wunschpreis -> falsch gelesen, lieber nichts melden
+    ("Preis gefallen: Makita DHP490RFX3", "<p>Wunschpreis 150 € · jetzt 199 €</p>", None),
+])
+def test_alarm_mail_never_uses_wish_price(subject, html, price):
+    offers = postfach.parse_alarm(mail(IDEALO, subject, html), MAKITA, "idealo")
+    assert [o.price for o in offers] == ([price] if price else [])
+
+
+def test_alarm_stats_in_notes(monkeypatch):
+    mails = [mail(IDEALO, "Dein Preiswecker für Makita DHP490RFX3 ist aktiv", "<p>Wunschpreis: 189,92 €</p>"),
+             mail(IDEALO, "Preiswecker: Makita DHP490RFX3 jetzt für 185,00 €", "<p>Wunschpreis: 189,92 €</p>")]
+    monkeypatch.setattr(postfach, "read_mails", lambda env, since: mails)
+    c = ctx(env={"DEAL_MAIL_ADRESSE": "a@gmail.com", "DEAL_MAIL_APP_PASSWORT": "x"})
+    assert [o.price for o in postfach.fetch(MAKITA, c)] == [185.0]
+    assert "1 Portal-Mails ohne Alarm übersprungen" in c.notes[-1]
+
+
+def test_cleanup_removes_wish_price_offers_once(tmp_path):
+    from dealradar import bereinigen
+    csv_path = tmp_path / "verlauf.csv"
+    csv_path.write_text(
+        "zeit;produkt_id;quelle;shop;titel;preis;versand;vergleichspreis;status;grund;url\n"
+        "2026-11-25T18:00:00+01:00;epson;mydealz;Amazon;E;174,99;;174,99;ok;;https://m/1\n"
+        "2026-11-25T20:13:00+01:00;epson;postfach;idealo (Preisalarm);E;150,71;;150,71;ok;;https://i/x\n"
+        "2026-11-25T20:13:00+01:00;epson;mydealz;Amazon;E;174,99;;174,99;ok;;https://m/1\n"
+        "2026-11-25T20:30:00+01:00;epson;mydealz;Amazon;E;174,99;;174,99;abgelaufen;;https://m/1\n",
+        encoding="utf-8")
+    state = {"angebote": {"epson": {"idealo (preisalarm)|https://i/x": {"source": "postfach"},
+                                    "amazon|https://m/1": {"source": "mydealz"}}},
+             "tiefstpreis": {"epson": {"source": "postfach", "vergleichspreis": 150.71}},
+             "gemeldet_shop_preis": {"epson": ["idealo (preisalarm)|150.71", "amazon|174.99"]},
+             "warteschlange": [{"shop": "idealo (Preisalarm)"}, {"shop": "BAUR"}]}
+    history = {"epson": [{"t": "2026-11-25T18:00:00+01:00", "bester": 174.99, "tief": 174.99},
+                         {"t": "2026-11-25T20:13:00+01:00", "bester": 150.71, "tief": 150.71},
+                         {"t": "2026-11-25T20:30:00+01:00", "bester": 150.71, "tief": 150.71}]}
+    assert bereinigen.drop_postfach_offers(state, history, csv_path) == ["epson"]
+    assert list(state["angebote"]["epson"]) == ["amazon|https://m/1"]
+    assert state["tiefstpreis"]["epson"]["vergleichspreis"] == 174.99
+    assert [(p["bester"], p["tief"]) for p in history["epson"]] == [(174.99, 174.99), (174.99, 174.99), (None, 174.99)]
+    assert state["gemeldet_shop_preis"]["epson"] == ["amazon|174.99"]
+    assert state["warteschlange"] == [{"shop": "BAUR"}]
+    assert ";postfach;" not in csv_path.read_text(encoding="utf-8")
+    # nur einmal
+    state["angebote"]["epson"]["neu"] = {"source": "postfach"}
+    assert bereinigen.drop_postfach_offers(state, history, csv_path) == [] and "neu" in state["angebote"]["epson"]
