@@ -1,7 +1,7 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-25T21:48:27+01:00",
+ "letzter_lauf": "2026-11-25T22:00:51+01:00",
  "produkte": {
   "epson-et-2922": {
    "aktiv": true,
@@ -24,7 +24,7 @@
    ],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-25T21:48:27+01:00",
+    "gesehen": "2026-11-25T22:00:51+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -63,7 +63,7 @@
    ],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-25T21:48:27+01:00",
+    "gesehen": "2026-11-25T22:00:51+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -182,7 +182,7 @@
    ],
    "bester": {
     "effektivpreis": 129.99,
-    "gesehen": "2026-11-25T21:48:27+01:00",
+    "gesehen": "2026-11-25T22:00:51+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -309,7 +309,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-25T21:48:27+01:00",
+    "gesehen": "2026-11-25T22:00:51+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -338,23 +338,23 @@
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.2,
+   "dauer_s": 4.4,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T21:48:27+01:00"
+   "zeit": "2026-11-25T22:00:51+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T21:48:27+01:00"
+   "zeit": "2026-11-25T22:00:51+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1948 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T21:48:27+01:00"
+   "zeit": "2026-11-25T22:00:51+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
@@ -365,31 +365,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 4.7,
+   "dauer_s": 4.4,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T21:48:27+01:00"
+   "zeit": "2026-11-25T22:00:51+01:00"
   },
   "mydealz": {
    "anzahl": 10,
-   "dauer_s": 54.7,
-   "meldung": "16/16 Feeds gelesen",
+   "dauer_s": 56.5,
+   "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T21:48:27+01:00"
+   "zeit": "2026-11-25T22:00:51+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 4.0,
+   "dauer_s": 3.9,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T21:48:27+01:00"
+   "zeit": "2026-11-25T22:00:51+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 2.3,
+   "dauer_s": 2.8,
    "meldung": "10 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 1 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-25T21:48:27+01:00"
+   "zeit": "2026-11-25T22:00:51+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -397,10 +397,10 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 14.3,
+   "dauer_s": 13.2,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T21:48:27+01:00"
+   "zeit": "2026-11-25T22:00:51+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -467,6 +467,17 @@
    "vergleichspreis": 59.99
   },
   {
+   "bezug": 39.95,
+   "h": "5ec955baaa",
+   "hitze": null,
+   "kategorie_name": "Wasserkocher",
+   "rabatt": 37,
+   "shop": "Amazon",
+   "title": "Russell Hobbs Inspire Wasserkocher grau (1,7 l, 2400 W)",
+   "url": "https://www.mydealz.de/deals/russell-hobbs-inspire-wasserkocher-grau-17-l-2400-w-2873558",
+   "vergleichspreis": 24.99
+  },
+  {
    "bezug": 230.0,
    "h": "37cc496cd8",
    "hitze": null,
@@ -479,7 +490,7 @@
   }
  ],
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-25T21:48:27+01:00",
+ "stand": "2026-11-25T22:00:51+01:00",
  "version": 1,
  "warteschlange": [
   {
@@ -510,6 +521,36 @@
    "typ": "knaller",
    "url": "https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520",
    "zeit": "2026-11-25T21:42:13+01:00",
+   "ziel_erreicht": false
+  },
+  {
+   "art": "uebersicht",
+   "buttons": [
+    [
+     {
+      "callback_data": "i:knaller:5ec955baaa",
+      "text": "🙈 Ignorieren"
+     }
+    ],
+    [
+     {
+      "text": "🔗 Zum Angebot",
+      "url": "https://www.mydealz.de/deals/russell-hobbs-inspire-wasserkocher-grau-17-l-2400-w-2873558"
+     }
+    ]
+   ],
+   "hitze": null,
+   "id": "3d9acb33ea",
+   "name": "Wasserkocher: Russell Hobbs Inspire Wasserkocher grau (1,7 l, 2400 W)",
+   "preis": 24.99,
+   "produkt": "knaller",
+   "rabatt": 37,
+   "score": null,
+   "shop": "Amazon",
+   "text": "💥 <b>Rabattknaller: Wasserkocher</b>\n<b>Russell Hobbs Inspire Wasserkocher grau (1,7 l, 2400 W)</b>\n💶 <b>24,99 €</b> bei Amazon\n−37 % ggü. Preisvergleich 39,95 €\n<i>Quelle: mydealz · nicht auf deiner Produktliste</i>\n🔗 <a href=\"https://www.mydealz.de/deals/russell-hobbs-inspire-wasserkocher-grau-17-l-2400-w-2873558\">Zum Angebot</a>",
+   "typ": "knaller",
+   "url": "https://www.mydealz.de/deals/russell-hobbs-inspire-wasserkocher-grau-17-l-2400-w-2873558",
+   "zeit": "2026-11-25T22:00:51+01:00",
    "ziel_erreicht": false
   }
  ]
