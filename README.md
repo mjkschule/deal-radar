@@ -320,8 +320,9 @@ Die Startseite zeigt pro Produkt das günstigste passende Angebot der letzten 48
 | Quelle | Status | Hinweis |
 |---|---|---|
 | mydealz Gruppen-RSS | ✅ | öffentliche Feeds; die mydealz-*Suche* ist per robots.txt gesperrt und wird nicht genutzt (der RSS-Feed ignoriert Suchbegriffe – eine Suche pro Produkt gibt es also nicht) |
-| mein-deal.com, MyTopDeals, Schnäppchenfuchs, Dealdoktor | ✅ | öffentliche RSS-Feeds (geprüft 25.11.2026: robots.txt erlaubt, Bedingungen erlauben privaten Gebrauch); es wird geblättert, bis der letzte Lauf lückenlos erreicht ist |
+| mein-deal.com, MyTopDeals, Dealdoktor | ✅ | öffentliche RSS-Feeds (geprüft 25.11.2026: robots.txt erlaubt, Bedingungen erlauben privaten Gebrauch); es wird geblättert, bis der letzte Lauf lückenlos erreicht ist |
 | Herstellershops Tefal, Cosori | ✅ sparsam | Produktseite über die Sitemap (max. 1×/Tag), Preis aus JSON-LD; Liste in `shops.yaml` |
+| Schnäppchenfuchs | ❌ aus | Feed wäre erlaubt, aber die Seite sperrt GitHubs Server schon bei der robots.txt aus (Bot-Schutz) – wird nicht umgangen; in `config.yaml` abgeschaltet |
 | ninjakitchen.de | ❌ | verweigert schon die robots.txt (HTTP 403) |
 | philips.de | ❌ | Preise erst per JavaScript geladen – nicht maschinenlesbar |
 | makita.de | ❌ | zeigt keine Preise (kein eigener Onlineshop) |

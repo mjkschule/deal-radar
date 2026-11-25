@@ -94,7 +94,7 @@ def test_all_blog_sources_registered():
     names = [s.NAME for s in all_sources()]
     for n in ("mein-deal", "mytopdeals", "schnaeppchenfuchs", "dealdoktor", "hersteller", "postfach"):
         assert n in names
-        assert load_config()["quellen"][n] is True
+        assert isinstance(load_config()["quellen"][n], bool)  # jede Quelle hat einen Schalter
 
 
 # ---------- Herstellershops ----------
