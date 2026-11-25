@@ -38,9 +38,11 @@ def test_schedule_like_worker(tick, mode, due):
 def test_next_run_and_gaps():
     assert zeitplan.next_run(CFG, utc("2026-11-30T23:05")).astimezone(UTC) == utc("2026-12-01T07:17")
     assert zeitplan.next_run(CFG, utc("2026-11-25T13:05")).astimezone(UTC) == utc("2026-11-25T14:17")
-    assert zeitplan.min_gap(CFG, utc("2026-11-25T12:00")) == 108    # 2 Std.
-    assert zeitplan.min_gap(CFG, utc("2026-11-28T12:00")) == 20     # 30 Min.
-    assert zeitplan.min_gap(CFG, utc("2026-12-02T12:00")) == 1296   # täglich
+    assert zeitplan.min_gap(CFG, utc("2026-11-25T12:00")) == 60     # 2 Std.
+    assert zeitplan.min_gap(CFG, utc("2026-11-28T12:00")) == 15     # 30 Min.
+    assert zeitplan.min_gap(CFG, utc("2026-12-02T12:00")) == 720    # täglich
+    # Lauf nach Bot-Befehl um 17:41 darf den planmäßigen Lauf um 19:17 nicht verhindern
+    assert 96 >= zeitplan.min_gap(CFG, utc("2026-11-25T18:17"))
     assert zeitplan.describe(CFG, utc("2026-11-28T12:00")) == "Aktionszeit: alle 30 Minuten"
 
 

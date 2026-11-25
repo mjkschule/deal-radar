@@ -304,7 +304,7 @@ dann **Actions** → **Deal-Radar** → **Enable workflow**.
 
 **Wer startet die Läufe?** Der Cloudflare Worker prüft alle 30 Minuten (Minute 17 und 47), ob laut Zeitplan ein
 Lauf fällig ist. GitHubs eigener Zeitplan (alle 2 Std.) bleibt als Reserve; liegt der letzte Lauf noch nicht
-lange genug zurück (2-Std.-Takt: 108 Min., 30-Min.-Takt: 20 Min.), wird ein Zeitplan-Lauf übersprungen.
+lange genug zurück (halber Takt: 60 Min. bzw. 15 Min.), wird ein Zeitplan-Lauf übersprungen.
 
 **Schonend:** LeasingMarkt und Sparneuwagen werden auch in der Aktionszeit höchstens alle 110 Minuten abgefragt
 (`quellen_mindestabstand_minuten`); dazwischen gelten ihre letzten Angebote weiter.

@@ -51,9 +51,11 @@ def interval_minutes(cfg: dict, now: dt.datetime) -> int | None:
 
 
 def min_gap(cfg: dict, now: dt.datetime) -> int:
-    """So viele Minuten muss der letzte Lauf her sein, damit ein Zeitplan-Lauf nicht übersprungen wird."""
+    """So viele Minuten muss der letzte Lauf her sein, damit ein Zeitplan-Lauf nicht übersprungen wird.
+    Halber Takt: verhindert Doppel-Läufe (Worker + GitHub-Reserve), ohne dass ein Lauf nach einem
+    Bot-Befehl den nächsten planmäßigen Lauf ausfallen lässt."""
     iv = interval_minutes(cfg, now) or 24 * 60
-    return iv - max(10, iv // 10)
+    return iv // 2
 
 
 MODE_TEXT = {"aktion": "Aktionszeit: alle {n} Minuten", "normal": "alle {h} Stunden",
