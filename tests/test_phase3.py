@@ -216,3 +216,32 @@ def test_alert_names_other_sources():
     o = offer("mydealz", "Amazon", 49.0)
     o.product_id, o.weitere_quellen = p.id, ["mein-deal"]
     assert "Quelle: mydealz (auch: mein-deal)" in format_alert(logic.Alert(p, o, None, ["Zielpreis erreicht"]))
+
+
+def test_postfach_never_keeps_click_links(tmp_path):
+    click = "https://clicks.news.idealo.com/f/a/3PnLBfj7CaaINfywS7rXWw~~/AAAHahA~/rubWA_Sy9sJAjz"
+    # 1) neue Mails: Klick-Link -> Portal-Suche; echte Produktseite -> ohne Parameter
+    assert postfach.portal_link([click], "idealo", "Makita DHP490RFX3") == \
+        "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Makita+DHP490RFX3"
+    assert postfach.portal_link([click, "https://www.idealo.de/preisvergleich/OffersOfProduct/9.html?uid=x"],
+                                "idealo", "M") == "https://www.idealo.de/preisvergleich/OffersOfProduct/9.html"
+    assert postfach.portal_link(["https://geizhals.de/r?x=1", "https://link.geizhals.at/abc"], "geizhals", "A B") \
+        == "https://geizhals.de/r"
+    assert postfach.is_tracking_link(click) and not postfach.is_tracking_link("https://www.idealo.de/x")
+    # 2) Altbestand in state.json und verlauf.csv wird bereinigt
+    key = f"idealo (preisalarm)|{click}"
+    d = {"url": click, "shop": "idealo (Preisalarm)", "last_seen": "2026-11-25T20:00:00+01:00"}
+    state = {"angebote": {"makita": {key: dict(d)}}, "tiefstpreis": {"makita": dict(d)}, "gemeldet": {key: 189.92},
+             "warteschlange": [{"url": click, "shop": "idealo (Preisalarm)", "name": "Makita",
+                                "text": f'<a href="{click}">x</a>', "buttons": [[{"text": "🔗", "url": click}]]}]}
+    assert postfach.scrub_state(state, {"makita": "Makita DHP490RFX3"}) == 4
+    assert "idealo.com" not in str(state)
+    assert list(state["angebote"]["makita"]) == [
+        "idealo (preisalarm)|https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=Makita+DHP490RFX3"]
+    csv_path = tmp_path / "verlauf.csv"
+    csv_path.write_text(f"zeit;produkt_id;shop;url\nt;makita;idealo (Preisalarm);{click}\nt;makita;BAUR;https://x\n",
+                        encoding="utf-8")
+    assert postfach.scrub_csv(csv_path, {"makita": "Makita"}) == 1
+    text = csv_path.read_text(encoding="utf-8")
+    assert "idealo.com" not in text and "https://x" in text and "q=Makita" in text
+    assert postfach.scrub_csv(csv_path, {}) == 0

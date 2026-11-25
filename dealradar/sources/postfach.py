@@ -18,7 +18,7 @@ import imaplib
 import re
 from email.header import decode_header, make_header
 from email.utils import parseaddr, parsedate_to_datetime
-from urllib.parse import urlparse
+from urllib.parse import quote_plus, urlparse
 
 from .. import prices
 from ..config import Product
@@ -78,6 +78,31 @@ def clean_link(url: str) -> str:
     return f"{p.scheme}://{p.netloc}{p.path}"
 
 
+# Nur Links auf die echte Portal-Seite – keine Klick-/Newsletter-Weiterleitungen: die enthalten einen
+# persönlichen Schlüssel deines Postfachs und dürfen nicht ins öffentliche Repo.
+PORTAL_HOSTS = {"idealo": ("www.idealo.de", "idealo.de"), "geizhals": ("geizhals.de", "www.geizhals.de")}
+SEARCH = {"idealo": "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q={q}",
+          "geizhals": "https://geizhals.de/?fs={q}"}
+
+
+def portal_link(links: list[str], portal: str, product_name: str) -> str:
+    """Neutraler Link: Produktseite im Portal (ohne Parameter) oder sonst die Portal-Suche."""
+    hosts = PORTAL_HOSTS.get(portal.lower(), ())
+    for u in links:
+        p = urlparse(u)
+        if p.scheme == "https" and p.netloc.lower() in hosts and len(p.path) > 1:
+            return clean_link(u)
+    return SEARCH.get(portal.lower(), "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q={q}") \
+        .format(q=quote_plus(product_name))
+
+
+def is_tracking_link(url: str) -> bool:
+    """Klick-Link aus einer Mail (z. B. clicks.news.idealo.com) – nie speichern."""
+    host = urlparse(url or "").netloc.lower()
+    return bool(host) and any(host.endswith(d) for d in ("idealo.com", "idealo.de", "geizhals.de", "geizhals.at")) \
+        and host not in {h for hs in PORTAL_HOSTS.values() for h in hs}
+
+
 def parse_alarm(msg, products: list[Product], portal: str) -> list[Offer]:
     """Preisalarm-Mail (idealo/Geizhals): passendes Produkt + Preis aus Betreff/Text."""
     subject = _text(msg.get("Subject"))
@@ -86,13 +111,12 @@ def parse_alarm(msg, products: list[Product], portal: str) -> list[Offer]:
     price = prices.parse_price(subject) or prices.parse_price(body[:1500])
     if not price:
         return []
-    link = next((clean_link(u) for u in links if portal.lower() in urlparse(u).netloc.lower()), "")
     offers = []
     for prod in products:
         if prod.is_leasing or not matches(prod, text):
             continue
         offers.append(Offer(product_id=prod.id, source=NAME, shop=f"{portal} (Preisalarm)",
-                            title=f"{portal}-Preisalarm: {prod.name}", url=link or f"https://www.{portal.lower()}.de/",
+                            title=f"{portal}-Preisalarm: {prod.name}", url=portal_link(links, portal, prod.name),
                             price=price, shipping=None,
                             hints=["Bestpreis laut Preisalarm – Shop und Versand im Portal prüfen"], text=text))
     return offers
@@ -186,3 +210,59 @@ def fetch(products: list[Product], ctx: Context) -> list[Offer]:
     ctx.cache["gutscheine"] = [{k: v for k, v in c.items() if k != "_s"} for c in best.values()]
     ctx.notes.append(f"{len(msgs)} Mails, {alarms} Preisalarme mit Treffer, {len(best)} Gutscheine")
     return offers
+
+
+def _neutral(url: str, shop: str, name: str) -> str:
+    portal = "geizhals" if "geizhals" in (shop or "").lower() or "geizhals" in url else "idealo"
+    return portal_link([], portal, name)
+
+
+def scrub_state(state: dict, names: dict[str, str]) -> int:
+    """Ersetzt gespeicherte Klick-Links aus Mails (Altbestand) durch neutrale Portal-Links.
+    names: produkt_id -> Produktname. Gibt die Zahl der ersetzten Links zurück."""
+    n = 0
+    for pid, store in (state.get("angebote") or {}).items():
+        for key in [k for k, d in store.items() if is_tracking_link(d.get("url"))]:
+            d = store.pop(key)
+            d["url"] = _neutral(d["url"], d.get("shop"), names.get(pid, pid))
+            new_key = f"{(d.get('shop') or '').lower()}|{d['url']}"
+            if new_key not in store or store[new_key].get("last_seen", "") < d.get("last_seen", ""):
+                store[new_key] = d
+            n += 1
+    for pid, low in (state.get("tiefstpreis") or {}).items():
+        if low and is_tracking_link(low.get("url")):
+            low["url"] = _neutral(low["url"], low.get("shop"), names.get(pid, pid))
+            n += 1
+    reported = state.get("gemeldet") or {}
+    for key in [k for k in reported if is_tracking_link(k.split("|", 1)[-1])]:
+        reported.pop(key)  # doppelte Meldung verhindert weiterhin "gemeldet_shop_preis" (Shop + Preis)
+        n += 1
+    for item in state.get("warteschlange") or []:
+        if is_tracking_link(item.get("url")):
+            item["url"] = _neutral(item["url"], item.get("shop"), item.get("name", ""))
+            item["text"] = re.sub(r'https://[^"\s<]*idealo\.com[^"\s<]*', item["url"], item.get("text", ""))
+            for row in item.get("buttons") or []:
+                for b in row:
+                    if is_tracking_link(b.get("url")):
+                        b["url"] = item["url"]
+            n += 1
+    return n
+
+
+def scrub_csv(path, names: dict[str, str]) -> int:
+    """Gleiches für data/verlauf.csv (Spalte url)."""
+    import csv
+    if not path.exists() or "idealo.com" not in (text := path.read_text(encoding="utf-8")) and "geizhals.at" not in text:
+        return 0
+    rows = list(csv.DictReader(text.splitlines(), delimiter=";"))
+    n = 0
+    for r in rows:
+        if is_tracking_link(r.get("url")):
+            r["url"] = _neutral(r["url"], r.get("shop"), names.get(r.get("produkt_id"), r.get("produkt_id") or ""))
+            n += 1
+    if n:
+        with path.open("w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=list(rows[0].keys()), delimiter=";")
+            w.writeheader()
+            w.writerows(rows)
+    return n
