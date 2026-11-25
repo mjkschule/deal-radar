@@ -1,7 +1,7 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-25T20:50:40+01:00",
+ "letzter_lauf": "2026-11-25T20:52:51+01:00",
  "produkte": {
   "epson-et-2922": {
    "aktiv": true,
@@ -31,7 +31,7 @@
    ],
    "bester": {
     "effektivpreis": 150.71,
-    "gesehen": "2026-11-25T20:50:40+01:00",
+    "gesehen": "2026-11-25T20:52:51+01:00",
     "hinweise": [
      "Bestpreis laut Preisalarm – Shop und Versand im Portal prüfen"
     ],
@@ -46,14 +46,14 @@
     "vertrauen": []
    },
    "kategorie": "drucker",
-   "kaufen_oder_warten": "✅ Kaufen: Zielpreis erreicht",
+   "kaufen_oder_warten": "✅ Kaufen: sehr guter Preis (Score 95)",
    "name": "Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
    "score": 95,
    "tiefstpreis": 150.71,
    "tiefstpreis_shop": "idealo (Preisalarm)",
    "typ": "produkt",
-   "ziel_erreicht": true,
-   "zielpreis": 155.0
+   "ziel_erreicht": false,
+   "zielpreis": 145.0
   },
   "lenovo-l24-4e": {
    "aktiv": true,
@@ -69,7 +69,7 @@
    ],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-25T20:50:40+01:00",
+    "gesehen": "2026-11-25T20:52:51+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -114,7 +114,7 @@
    ],
    "bester": {
     "effektivpreis": 189.92,
-    "gesehen": "2026-11-25T20:50:40+01:00",
+    "gesehen": "2026-11-25T20:52:51+01:00",
     "hinweise": [
      "Bestpreis laut Preisalarm – Shop und Versand im Portal prüfen"
     ],
@@ -129,14 +129,14 @@
     "vertrauen": []
    },
    "kategorie": "werkzeug",
-   "kaufen_oder_warten": "✅ Kaufen: Zielpreis erreicht",
+   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
    "name": "Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
    "score": 42,
    "tiefstpreis": 184.0,
    "tiefstpreis_shop": "BAUR",
    "typ": "produkt",
-   "ziel_erreicht": true,
-   "zielpreis": 195.0
+   "ziel_erreicht": false,
+   "zielpreis": 185.0
   },
   "monitor-24-allgemein": {
    "aktiv": true,
@@ -218,7 +218,7 @@
    ],
    "bester": {
     "effektivpreis": 129.99,
-    "gesehen": "2026-11-25T20:50:40+01:00",
+    "gesehen": "2026-11-25T20:52:51+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -235,7 +235,7 @@
    "kategorie": "sonstiges",
    "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
    "name": "Ninja DualZone 7,6-l-Heißluftfritteuse mit 2 Schubladen – Schwarz",
-   "score": null,
+   "score": 60,
    "tiefstpreis": 129.99,
    "tiefstpreis_shop": "sharkninja.de",
    "typ": "produkt",
@@ -345,7 +345,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-25T20:50:40+01:00",
+    "gesehen": "2026-11-25T20:52:51+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -374,23 +374,23 @@
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.8,
+   "dauer_s": 4.2,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:50:40+01:00"
+   "zeit": "2026-11-25T20:52:51+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T20:50:40+01:00"
+   "zeit": "2026-11-25T20:52:51+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1948 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:50:40+01:00"
+   "zeit": "2026-11-25T20:52:51+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
@@ -401,31 +401,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 5.3,
+   "dauer_s": 4.6,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:50:40+01:00"
+   "zeit": "2026-11-25T20:52:51+01:00"
   },
   "mydealz": {
    "anzahl": 10,
-   "dauer_s": 47.5,
+   "dauer_s": 46.7,
    "meldung": "14/14 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:50:40+01:00"
+   "zeit": "2026-11-25T20:52:51+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.7,
+   "dauer_s": 3.6,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:50:40+01:00"
+   "zeit": "2026-11-25T20:52:51+01:00"
   },
   "postfach": {
    "anzahl": 3,
    "dauer_s": 1.6,
    "meldung": "7 Mails, 3 Preisalarme mit Treffer, 0 Gutscheine",
    "status": "ok",
-   "zeit": "2026-11-25T20:50:40+01:00"
+   "zeit": "2026-11-25T20:52:51+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -433,10 +433,10 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 14.4,
+   "dauer_s": 12.3,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:50:40+01:00"
+   "zeit": "2026-11-25T20:52:51+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -447,7 +447,7 @@
   }
  },
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-25T20:50:40+01:00",
+ "stand": "2026-11-25T20:52:51+01:00",
  "version": 1,
  "warteschlange": []
 }
