@@ -1,44 +1,75 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-25T20:13:19+01:00",
+ "letzter_lauf": "2026-11-25T20:25:55+01:00",
  "produkte": {
   "epson-et-2922": {
    "aktiv": true,
    "alternativen": [],
+   "angebote": [
+    {
+     "h": "f60326af79",
+     "preis": 150.71,
+     "shop": "idealo (Preisalarm)",
+     "titel": "idealo-Preisalarm: Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
+     "url": "https://clicks.news.idealo.com/f/a/W_wd_k9dsy3vIEuDyLlHBg~~/AAAHahA~/bHZdznQ7JCS22P7YiYriT4NiRHgjrClBFNbZgC4gsCKH9ukAcQoJsHwfXyt5-2H4fDq1bR2MvhbZ2AqTLT4Dt58I7OlQIEw4abEDByu21fhF5SK9HPAbQnA9xWfIJH8uoAdOp96gCnWz1KRo9CROycHkdy4hcj3Ia7ru3VOaDjq0-Ke3kCd8JcZXv91Qu5Bvy3QyHdNGXKuMK2zBJZ3hLAjgPvPQeRt6vhIwsRZFfFvckYxLzqxC8xoAhmZ6uXbBedx-PLxUclYILcv0SJb1zaLm9SZm7zRz6CZIkMdd6aGTatLqj8uBL0iHJFs4YHiaMujbTVNCGlF_ILWBhxuE7A~~"
+    },
+    {
+     "h": "eeea55561c",
+     "preis": 174.99,
+     "shop": "Amazon",
+     "titel": "Epson EcoTank ET-2922 Multifunktionsdrucker mit WLAN",
+     "url": "https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743"
+    },
+    {
+     "h": "4e6f7104ae",
+     "preis": 199.9,
+     "shop": "baur.de",
+     "titel": "Epson Multifunktionsdrucker »EcoTank ET-2922«",
+     "url": "https://www.baur.de/p/AKLBB2123259027"
+    }
+   ],
    "bester": {
-    "effektivpreis": 174.99,
-    "gesehen": "2026-11-25T20:13:19+01:00",
+    "effektivpreis": 150.71,
+    "gesehen": "2026-11-25T20:25:55+01:00",
     "hinweise": [
-     "evtl. nur per App",
-     "Versand unbekannt"
+     "Bestpreis laut Preisalarm – Shop und Versand im Portal prüfen"
     ],
-    "preis": 174.99,
-    "quelle": "mydealz",
+    "preis": 150.71,
+    "quelle": "postfach",
     "rate": null,
     "rechenweg": "",
-    "shop": "Amazon",
-    "titel": "Epson EcoTank ET-2922 Multifunktionsdrucker mit WLAN",
-    "url": "https://www.mydealz.de/deals/epson-ecotank-et-2922-multifunktionsdrucker-mit-wlan-2875743",
+    "shop": "idealo (Preisalarm)",
+    "titel": "idealo-Preisalarm: Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
+    "url": "https://clicks.news.idealo.com/f/a/W_wd_k9dsy3vIEuDyLlHBg~~/AAAHahA~/bHZdznQ7JCS22P7YiYriT4NiRHgjrClBFNbZgC4gsCKH9ukAcQoJsHwfXyt5-2H4fDq1bR2MvhbZ2AqTLT4Dt58I7OlQIEw4abEDByu21fhF5SK9HPAbQnA9xWfIJH8uoAdOp96gCnWz1KRo9CROycHkdy4hcj3Ia7ru3VOaDjq0-Ke3kCd8JcZXv91Qu5Bvy3QyHdNGXKuMK2zBJZ3hLAjgPvPQeRt6vhIwsRZFfFvckYxLzqxC8xoAhmZ6uXbBedx-PLxUclYILcv0SJb1zaLm9SZm7zRz6CZIkMdd6aGTatLqj8uBL0iHJFs4YHiaMujbTVNCGlF_ILWBhxuE7A~~",
     "versand": null,
     "vertrauen": []
    },
    "kategorie": "drucker",
-   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
+   "kaufen_oder_warten": "✅ Kaufen: Zielpreis erreicht",
    "name": "Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
-   "score": 60,
-   "tiefstpreis": 174.99,
-   "tiefstpreis_shop": "Amazon",
+   "score": 95,
+   "tiefstpreis": 150.71,
+   "tiefstpreis_shop": "idealo (Preisalarm)",
    "typ": "produkt",
-   "ziel_erreicht": false,
+   "ziel_erreicht": true,
    "zielpreis": 155.0
   },
   "lenovo-l24-4e": {
    "aktiv": true,
    "alternativen": [],
+   "angebote": [
+    {
+     "h": "26e16cb4b7",
+     "preis": 73.78,
+     "shop": "office-partner.de",
+     "titel": "Lenovo L24-4e (24 Zoll, Full HD, 100 Hz)",
+     "url": "https://www.office-partner.de/lenovo-l24-4e-full-hd-led-monitor-60-5-cm-23.8-n2008239836"
+    }
+   ],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-25T20:13:19+01:00",
+    "gesehen": "2026-11-25T20:25:55+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -65,28 +96,42 @@
   "makita-dhp490rfx3": {
    "aktiv": true,
    "alternativen": [],
+   "angebote": [
+    {
+     "h": "99ee1988c0",
+     "preis": 189.92,
+     "shop": "idealo (Preisalarm)",
+     "titel": "idealo-Preisalarm: Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
+     "url": "https://clicks.news.idealo.com/f/a/3PnLBfj7CaaINfywS7rXWw~~/AAAHahA~/rubWA_Sy9sJAjzKs9jXnOu2R8q3_mrjq3AEChrrhgzsNKEOLVSz0fkqRs_yd5TWefkqTRkIQc17es-SFJ1aKIMzRXg9LgB8MMe2RP0d60LhDmc43KJRpFbPM4Ua7lUMSFr6RTKDXnXnYdIIhaW59H9GBJBGWT46IIIAa3eOrcjw44S7rxlof8aFkkpPWYHzaf4MymHGsxobUccbbFeQvjGl0iVuqMofJOSdqg2t96ObBrb06sbD396kKkGge7AwZjJV8IzHr6vk47WeCjkkSDEw43T6adrJcthojWZoGE7eu66J-b0rTk45zdF1Uugu7HhC5bciPr7oY92kNAH0Kkg~~"
+    },
+    {
+     "h": "7f0d6fdbd7",
+     "preis": 190.31,
+     "shop": "idealo (Preisalarm)",
+     "titel": "idealo-Preisalarm: Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
+     "url": "https://clicks.news.idealo.com/f/a/Hs-yyx7K2wXl0UlFIAdIVA~~/AAAHahA~/yeafeX1oyWqF1FG1rxrSt18_xKPaikCsejuEd18AUIO5onionW3knoiCUl1v29La8YhxqlBKArZokzT1_lmZmrC23bPa0ZoGg3dKV6Nsn1cK-sUYJo5pKgK2RaWR8-HXK6ncvUHHjjOu5k4m-Jxxc_Wk9wPiVCBAG6Sks7n3udKg3AmeAhp683wSA_hFnHHzeQh7KWwm2fc-3xVsI9KQWxx6AIEH_Rjr1g3QX_HezA9SMHzTuZChVy6A32HhvuzNJVw-0eMq5-to7MfZ_LLkyXaKdz8X-pkMjM570zDbgmvY_CMctAyABBJc0k3X5JUdJfk-39xmQ3YMR54E4VH0GA~~"
+    }
+   ],
    "bester": {
-    "effektivpreis": 184.0,
-    "gesehen": "2026-11-25T20:13:19+01:00",
+    "effektivpreis": 189.92,
+    "gesehen": "2026-11-25T20:25:55+01:00",
     "hinweise": [
-     "Gutschein/Code nötig",
-     "nur für Neukunden",
-     "Preis evtl. inkl. Cashback/Payback"
+     "Bestpreis laut Preisalarm – Shop und Versand im Portal prüfen"
     ],
-    "preis": 184.0,
-    "quelle": "mydealz",
+    "preis": 189.92,
+    "quelle": "postfach",
     "rate": null,
     "rechenweg": "",
-    "shop": "BAUR",
-    "titel": "Makita DHP490RFX3 18V Akku-Schlagbohrschrauber Set (2x 3,0 Ah Akkus, Ladegerät, Koffer + 74-tlg. Zubehör) ab 178,08 € eff. (inkl. CB und PB)",
-    "url": "https://www.mydealz.de/deals/makita-dhp490rfx3-18v-akku-schlagbohrschrauber-set-2x-30-ah-akkus-ladegerat-koffer-74-tlg-zubehor-ab-17808-eur-eff-inkl-cb-und-pb-2877733",
-    "versand": 0.0,
+    "shop": "idealo (Preisalarm)",
+    "titel": "idealo-Preisalarm: Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
+    "url": "https://clicks.news.idealo.com/f/a/3PnLBfj7CaaINfywS7rXWw~~/AAAHahA~/rubWA_Sy9sJAjzKs9jXnOu2R8q3_mrjq3AEChrrhgzsNKEOLVSz0fkqRs_yd5TWefkqTRkIQc17es-SFJ1aKIMzRXg9LgB8MMe2RP0d60LhDmc43KJRpFbPM4Ua7lUMSFr6RTKDXnXnYdIIhaW59H9GBJBGWT46IIIAa3eOrcjw44S7rxlof8aFkkpPWYHzaf4MymHGsxobUccbbFeQvjGl0iVuqMofJOSdqg2t96ObBrb06sbD396kKkGge7AwZjJV8IzHr6vk47WeCjkkSDEw43T6adrJcthojWZoGE7eu66J-b0rTk45zdF1Uugu7HhC5bciPr7oY92kNAH0Kkg~~",
+    "versand": null,
     "vertrauen": []
    },
    "kategorie": "werkzeug",
    "kaufen_oder_warten": "✅ Kaufen: Zielpreis erreicht",
    "name": "Makita DHP490RFX3 (2x 3,0 Ah, Ladegerät, Koffer, 74-tlg. Zubehör)",
-   "score": 60,
+   "score": 42,
    "tiefstpreis": 184.0,
    "tiefstpreis_shop": "BAUR",
    "typ": "produkt",
@@ -96,6 +141,43 @@
   "monitor-24-allgemein": {
    "aktiv": true,
    "alternativen": [],
+   "angebote": [
+    {
+     "h": "a44990e65a",
+     "preis": 65.99,
+     "shop": "notebooksbilliger",
+     "titel": "23.8\" Acer Nitro VG0 VG240YP6bip, Full-HD, IPS, 144Hz, entspiegelt, 1500:1 Kontrast, 1x DP 1.2, 1xHD",
+     "url": "https://www.mydealz.de/deals/238-acer-nitro-vg0-vg240yp6bip-full-hd-ips-144hz-entspiegelt-15001-kontrast-1x-dp-12-1xhdmi-14-1x-35mm-gaming-monitor-2877936"
+    },
+    {
+     "h": "19b656a95f",
+     "preis": 65.99,
+     "shop": "notebooksbilliger",
+     "titel": "[notebooksbilliger] Acer Nitro VG240YP6bip Monitor | 23,8\" IPS, Full HD, 144Hz, FreeSync, 99% sRGB |",
+     "url": "https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252"
+    },
+    {
+     "h": "472c7e126e",
+     "preis": 79.99,
+     "shop": "Joybuy",
+     "titel": "HKC G24H3D Gaming-Monitor 23,8 1920*1080 240 Hz Fast IPS Schwarz",
+     "url": "https://www.mydealz.de/deals/hkc-g24h3d-gaming-monitor-238-19201080-240-hz-fast-ips-schwarz-2879509"
+    },
+    {
+     "h": "290c8706f5",
+     "preis": 84.0,
+     "shop": "Joybuy",
+     "titel": "MSI MAG 245F X24 Monitor | 23,8\" Rapid IPS, Full HD 240Hz, FreeSync Premium, 0,5ms (GtG) | 3 Jahre G",
+     "url": "https://www.mydealz.de/deals/msi-mag-245f-x24-monitor-238-rapid-ips-full-hd-240hz-freesync-premium-05ms-gtg-3-jahre-garantie-2881472"
+    },
+    {
+     "h": "9942404604",
+     "preis": 86.89,
+     "shop": "Cyberport",
+     "titel": "iiyama ProLite XB2496HSC-B1 Monitor 23.8\" FHD, IPS, 300nits, 144Hz, 2x USB-C, PD 65W, Höhenverstellb",
+     "url": "https://www.mydealz.de/deals/iiyama-prolite-xb2496hsc-b1-monitor-238-fhd-ips-300nits-144hz-2x-usb-c-pd-65w-hohenverstellbar-pivot-integr-speaker-3j-garantie-2881202"
+    }
+   ],
    "bester": {
     "effektivpreis": 65.99,
     "gesehen": "2026-11-25T13:17:28+01:00",
@@ -125,9 +207,18 @@
   "ninja-dualzone-7-6-l-heissluftfritteuse": {
    "aktiv": true,
    "alternativen": [],
+   "angebote": [
+    {
+     "h": "912e1466b6",
+     "preis": 129.99,
+     "shop": "sharkninja.de",
+     "titel": "Ninja DualZone 7,6-l-Heißluftfritteuse mit 2 Schubladen – Schwarz",
+     "url": "https://www.sharkninja.de/ninja-dualzone-76-l-heissluftfritteuse-mit-2-schubladen-schwarz/DZ801EU.html?gclsrc=aw.ds&utm_source=google&utm_medium=cpc&utm_campaign=ninja_pla_heated_cooking_air-fryers_brand&utm_content=203334940767&utm_productid=DZ801EU&gad_source=1&gad_campaignid=24187195660&gbraid=0AAAAACnqWUIZoLEyQNCoG6ZhyXnJVw5M1&gclid=CjwKCAiAq5rYBhB-EiwAhj1RdhFGpOh5hDX7Fi1R8Z3SU3hyyiCA96LLGaHMKHMey7NfiuQ99u7xkxoC470QAvD_BwE&dwvar_DZ801EU_color=363838"
+    }
+   ],
    "bester": {
     "effektivpreis": 129.99,
-    "gesehen": "2026-11-25T20:13:19+01:00",
+    "gesehen": "2026-11-25T20:25:55+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -154,6 +245,64 @@
   "opel-frontera-electric-leasing": {
    "aktiv": true,
    "alternativen": [],
+   "angebote": [
+    {
+     "h": "c85597982f",
+     "preis": 336.66,
+     "shop": "LeasingMarkt.de",
+     "titel": "Opel Frontera: Opel Frontera Electric | 43 kWh | Start ab 281€ | Edition, GS, Ultimate",
+     "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13297018?adVariant=37756459"
+    },
+    {
+     "h": "988ab58dbf",
+     "preis": 341.0,
+     "shop": "LeasingMarkt.de",
+     "titel": "Opel Frontera: Opel Frontera Electric 43-kWh-Batterie 83kW GS - frei konfigurierbar!",
+     "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13401733?adVariant=40874124"
+    },
+    {
+     "h": "d1c3e1d930",
+     "preis": 342.45,
+     "shop": "LeasingMarkt.de",
+     "titel": "Opel Frontera: Opel Frontera Electric 52-kWh-Batterie 83kW Edition - Vorlauffahrzeug!",
+     "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13349763?adVariant=39376690"
+    },
+    {
+     "h": "9fc6e99493",
+     "preis": 346.04,
+     "shop": "LeasingMarkt.de",
+     "titel": "Opel Frontera: Opel Frontera Electric 43-kWh-Batterie 83kW Start - frei konfigurierbar!",
+     "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13383022?adVariant=40228432"
+    },
+    {
+     "h": "9daf607b42",
+     "preis": 360.77,
+     "shop": "LeasingMarkt.de",
+     "titel": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+     "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102402?adVariant=35578172"
+    },
+    {
+     "h": "94f0f53e01",
+     "preis": 360.77,
+     "shop": "LeasingMarkt.de",
+     "titel": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+     "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102404?adVariant=35578199"
+    },
+    {
+     "h": "2df30cecc5",
+     "preis": 360.77,
+     "shop": "LeasingMarkt.de",
+     "titel": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+     "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102426?adVariant=35578457"
+    },
+    {
+     "h": "835c815abf",
+     "preis": 360.77,
+     "shop": "LeasingMarkt.de",
+     "titel": "Opel Frontera: Opel Frontera Ultimate BEV Extended Range Automatik-Elektroantrieb",
+     "url": "https://www.leasingmarkt.de/leasing/pkw/opel-frontera/13102428?adVariant=35578469"
+    }
+   ],
    "bester": {
     "effektivpreis": 336.66,
     "gesehen": "2026-11-25T19:17:42+01:00",
@@ -185,53 +334,63 @@
   "wandhalterung-c27f396": {
    "aktiv": true,
    "alternativen": [],
+   "angebote": [
+    {
+     "h": "e7105f922e",
+     "preis": 35.99,
+     "shop": "Joybuy",
+     "titel": "Vogel's TVM 1609 TV Wandhalterung Schwarz - für 40-100 Zoll, VESA 600 × 400, 75 kg Max. Gewicht, Cli",
+     "url": "https://www.mydealz.de/deals/bestpreis-vogels-tvm-1609-tv-wandhalterung-schwarz-fur-40-100-zoll-vesa-600-400-75-kg-max-gewicht-clickloc-system-2877030"
+    }
+   ],
    "bester": {
-    "effektivpreis": 9.99,
-    "gesehen": "2026-11-25T20:13:19+01:00",
+    "effektivpreis": 35.99,
+    "gesehen": "2026-11-25T20:25:55+01:00",
     "hinweise": [
-     "Versand unbekannt"
+     "Versand unbekannt",
+     "bitte prüfen: schwenkbar"
     ],
-    "preis": 9.99,
+    "preis": 35.99,
     "quelle": "mydealz",
     "rate": null,
     "rechenweg": "",
-    "shop": "eBay",
-    "titel": "TV Wandhalterung Schwenk & neigbar VESA 400x400 | 23-50 Zoll für Fernseher und Monitor",
-    "url": "https://www.mydealz.de/deals/tv-wandhalterung-schwenk-neigbar-vesa-400x400-23-50-zoll-fur-fernseher-und-monitor-2651968",
+    "shop": "Joybuy",
+    "titel": "Vogel's TVM 1609 TV Wandhalterung Schwarz - für 40-100 Zoll, VESA 600 × 400, 75 kg Max. Gewicht, ClickLoc System",
+    "url": "https://www.mydealz.de/deals/bestpreis-vogels-tvm-1609-tv-wandhalterung-schwarz-fur-40-100-zoll-vesa-600-400-75-kg-max-gewicht-clickloc-system-2877030",
     "versand": null,
     "vertrauen": []
    },
    "kategorie": "zubehoer",
-   "kaufen_oder_warten": "✅ Kaufen: Zielpreis erreicht",
+   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
    "name": "Monitor-Wandhalterung für Samsung C27F396FHU",
-   "score": 60,
+   "score": 0,
    "tiefstpreis": 9.99,
    "tiefstpreis_shop": "eBay",
    "typ": "produkt",
-   "ziel_erreicht": true,
+   "ziel_erreicht": false,
    "zielpreis": 18.0
   }
  },
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.3,
+   "dauer_s": 5.3,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:13:19+01:00"
+   "zeit": "2026-11-25T20:25:55+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T20:13:19+01:00"
+   "zeit": "2026-11-25T20:25:55+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1948 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:13:19+01:00"
+   "zeit": "2026-11-25T20:25:55+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
@@ -242,31 +401,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 4.6,
+   "dauer_s": 4.8,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:13:19+01:00"
+   "zeit": "2026-11-25T20:25:55+01:00"
   },
   "mydealz": {
    "anzahl": 10,
-   "dauer_s": 48.4,
+   "dauer_s": 47.9,
    "meldung": "14/14 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:13:19+01:00"
+   "zeit": "2026-11-25T20:25:55+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.7,
+   "dauer_s": 4.2,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T20:13:19+01:00"
+   "zeit": "2026-11-25T20:25:55+01:00"
   },
   "postfach": {
-   "anzahl": 0,
+   "anzahl": 3,
    "dauer_s": 1.2,
-   "meldung": "4 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine",
+   "meldung": "7 Mails, 3 Preisalarme mit Treffer, 0 Gutscheine",
    "status": "ok",
-   "zeit": "2026-11-25T20:13:19+01:00"
+   "zeit": "2026-11-25T20:25:55+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -274,10 +433,10 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 14.2,
+   "dauer_s": 14.7,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T20:13:19+01:00"
+   "zeit": "2026-11-25T20:25:55+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -288,7 +447,7 @@
   }
  },
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-25T20:13:19+01:00",
+ "stand": "2026-11-25T20:25:55+01:00",
  "version": 1,
  "warteschlange": []
 }
