@@ -246,9 +246,7 @@ Legende in `/liste`: ✅ Ziel erreicht · 🟡 bis 10 % darüber · 🔴 darübe
   (Kommentare bleiben erhalten), bestätigt sofort und startet einen Suchlauf. Die Startseite ist nach
   ein paar Minuten aktuell.
 - **Preise** in `/liste`, `/top` und `/status` stammen aus `docs/bot.json`, die jeder Suchlauf neu schreibt.
-- **Deal-Score (vorläufig):** 0–100, berechnet nur aus dem **eigenen** Preisverlauf der letzten 90 Tage,
-  nie aus UVP oder Streichpreisen. 50 = üblicher Preis, 75 = 10 % unter dem Median, 100 = 20 % oder mehr
-  darunter, +10 auf dem Allzeit-Tiefstpreis. Unter 5 Messpunkten steht „–“.
+- **Deal-Score:** 0–100, siehe Abschnitt 5 („So rechnet das Radar“).
 - **Preisverlauf beim Löschen:** bleibt in `data/verlauf.json` und `data/verlauf.csv` erhalten, wird aber
   nicht mehr angezeigt. Der gelöschte Eintrag wird in `data/geloescht.json` aufgehoben (zum Wiederherstellen
   zurück in `products.yaml` kopieren).
@@ -289,13 +287,41 @@ Danach gibt es keine Läufe mehr. Zum Reaktivieren: Enddatum in die Zukunft setz
 
 | Regel | Bedeutung |
 |---|---|
-| ✅ Zielpreis | Preis **inkl. Versand** ≤ Zielpreis (Leasing: Monatsrate ≤ Zielpreis) |
+| ✅ Zielpreis | **Effektivpreis** ≤ Zielpreis (Leasing: Monatsrate ≤ Zielpreis) |
 | ✅ Preissturz | Preis mindestens **10 % unter dem bisher niedrigsten** vom Radar gesehenen Preis |
 | 🔁 Keine Doppelmeldung | Gleiches Angebot (Shop + Link oder Shop + Preis) nur einmal; erneut nur, wenn es billiger wird |
 | 🙈 Ignoriert | Angebote, unter denen du „Ignorieren“ gedrückt hast |
-| 🚫 Ausgeschlossen | Ausschlusswort im Titel oder Mindestwert unterschritten (z. B. nur 60 Hz) |
+| 🚫 Ausgeschlossen | Ausschlusswort im Titel, Mindestwert unterschritten (z. B. nur 60 Hz), **andere EAN** als beim Produkt eingetragen, oder **B-Ware/gebraucht** (außer `b_ware: true`) |
 | ⚠️ Verdächtig | Preis < 40 % des Medians der gesehenen Preise (Bezugswert höchstens der Zielpreis) |
 | 🚗 Nicht passend (Leasing) | andere Laufzeit als 36 Monate, < 15.000 km/Jahr, nur Gewerbe, Sonderzahlung > 1.000 € |
+
+### So rechnet das Radar
+
+**Effektivpreis** = Preis + Versand − Gutschein − Cashback − Zahlungsrabatt. Der Rechenweg steht in der
+Meldung und auf der Startseite, z. B. `79,99 € + 4,95 € Versand − 16,00 € Gutschein 20 % = 68,94 €`.
+- **Gutschein:** aus deinem Deal-Postfach (Abschnitt 1.7) – nur wenn der Shop passt, der Mindestbestellwert
+  erreicht ist und er noch gilt. Den Code findest du in der Mail.
+- **Cashback / Zahlungsrabatt:** derzeit nicht eingerechnet (Shoop lässt sich nicht automatisch auslesen).
+  Wenn du willst, trägst du Sätze in `config.yaml` → `effektivpreis` ein.
+- **UVP und Streichpreise** („statt 119 €“, „UVP 149 €“, „PVG 229 €“) zählen **nie** – weder als Preis noch
+  für den Score.
+
+**Deal-Score 0–100** – nur aus dem **eigenen** Preisverlauf: `50 + 250 × (Median − Preis) / Median`,
+**+10** auf dem Allzeit-Tiefstpreis, **+5** bis 2 % darüber. 50 = üblicher Preis, 75 = 10 % unter dem
+Median, 100 = 20 % oder mehr darunter. Median = beste Preise der letzten 90 Tage (unter 5 Messungen: „–“).
+Die Meldung nennt Median und Tiefstpreis dazu.
+
+**Markierungen in Meldung und Startseite**
+- 📋 **Bedingungen:** nur Neukunden, Mitgliedschaft (Prime, Club …), nur App, nur lokal/Filiale,
+  Mindestbestellwert, Gutschein-Code nötig, Newsletter-Anmeldung.
+- 🟡 **Bitte prüfen** (Vertrauensprüfung): Marketplace-Händler, Händlerbewertung unter 97 %, Versand aus dem
+  Ausland, Lieferzeit über 7 Tage, keine Rückgabe. Unter 40 % des Medians: ⚠️ **verdächtig** (keine Meldung).
+- ♻️ **B-Ware/gebraucht/refurbished:** nur bei Produkten mit `b_ware: true`, dann deutlich gekennzeichnet.
+- 🔁 **Alternative:** Treffer für ein unter `alternativen` eingetragenes gleichwertiges Produkt; die Buttons
+  wirken auf das Hauptprodukt.
+- **Kaufen oder warten?** ✅ Kaufen bei erreichtem Ziel oder Score ≥ 85; vor Black Friday (27.11.) und
+  Cyber Monday (30.11.) sonst ⏳ eher warten; danach 🤔 „bis Weihnachten selten günstiger“ mit dem
+  letzten sinnvollen Bestelltag. Die Daten stehen in `config.yaml` → `aktionstage`.
 
 **Wann und wie kommt die Nachricht?** (Einstellungen in `config.yaml` unter `meldungen` und `ruhezeiten`)
 

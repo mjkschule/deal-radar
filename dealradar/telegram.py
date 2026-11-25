@@ -87,9 +87,15 @@ def _e(s) -> str:
     return html.escape(str(s), quote=False)
 
 
-def format_alert(a: Alert, score: int | None = None) -> str:
+def format_alert(a: Alert, score: int | None = None, hint: str = "", main_name: str | None = None,
+                 score_why: str = "") -> str:
+    from .bewertung import BEDINGUNGEN, rechenweg
     o, p = a.offer, a.product
     lines = [f"🔥 <b>{_e(p.name)}</b>"]
+    if main_name:
+        lines.append(f"🔁 <i>Alternative zu {_e(main_name)}</i>")
+    if "gebraucht/B-Ware" in o.hints:
+        lines.append("♻️ <b>B-Ware / gebraucht / refurbished</b>")
     if o.leasing:
         l = o.leasing
         lines.append(f"🚗 Rate: <b>{_fmt(o.price)} €/Monat</b>")
@@ -103,6 +109,8 @@ def format_alert(a: Alert, score: int | None = None) -> str:
                 f"+ {_fmt(o.shipping)} € Versand = <b>{_fmt(o.compare_price)} €</b>" if o.shipping is not None else
                 "Versand unbekannt")
         lines.append(f"💶 <b>{_fmt(o.price)} €</b> ({ship})")
+        if o.abzuege:
+            lines.append(f"🧮 Effektiv: <b>{_fmt(o.compare_price)} €</b> = {_e(rechenweg(o))}")
     also = f" (auch: {_e(', '.join(o.weitere_quellen))})" if o.weitere_quellen else ""
     lines.append(f"🏪 {_e(o.shop)} · Quelle: {_e(o.source)}{also}")
     lines.append(f"🎯 Zielpreis: {_fmt(p.zielpreis)} €" + (" ✅" if "Zielpreis erreicht" in a.reasons else ""))
@@ -116,9 +124,17 @@ def format_alert(a: Alert, score: int | None = None) -> str:
     else:
         lines.append("📊 Erster vom Radar gesehener Preis")
     if score is not None:
-        lines.append(f"⭐ Deal-Score: <b>{score}</b>/100")
-    if o.hints:
-        lines.append("⚠️ " + _e(" · ".join(o.hints)))
+        lines.append(f"⭐ Deal-Score: <b>{score}</b>/100" + (f" <i>({_e(score_why)})</i>" if score_why else ""))
+    conds = [h for h in o.hints if h in BEDINGUNGEN]
+    other = [h for h in o.hints if h not in BEDINGUNGEN and h != "gebraucht/B-Ware"]
+    if conds:
+        lines.append("📋 Bedingungen: " + _e(" · ".join(conds)))
+    if o.vertrauen:
+        lines.append("🟡 Bitte prüfen: " + _e(" · ".join(o.vertrauen)))
+    if other:
+        lines.append("⚠️ " + _e(" · ".join(other)))
+    if hint:
+        lines.append(_e(hint))
     lines.append(f"🔗 <a href=\"{html.escape(o.url)}\">Zum Angebot</a>")
     lines.append(f"<i>{_e(o.title[:180])}</i>")
     return "\n".join(lines)

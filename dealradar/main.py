@@ -15,12 +15,14 @@ import sys
 import time
 from pathlib import Path
 
-from . import botdata, github, logic, meldungen, page, storage
-from .config import ROOT, ConfigError, end_datetime, is_over, load_config, load_products, now_local
+from . import bewertung, botdata, github, logic, meldungen, page, storage
+from .config import (ROOT, ConfigError, end_datetime, expand_alternatives, is_over, load_config, load_products,
+                     now_local)
 from .commands import CommandProcessor, split_message
 from .http import FetchError, Http
 from .models import Offer
 from .score import deal_score
+from .score import explain as score_explain
 from .sources import Context, Skipped, all_sources
 from .telegram import Telegram, TelegramError, format_alert
 
@@ -128,6 +130,9 @@ def run(args) -> int:
     products = [p for p in all_products if p.aktiv]
     if args.only:
         products = [p for p in products if p.id in args.only.split(",")]
+    # Alternativen ("<id>~alt1") werden wie eigene Produkte gesucht, aber beim Hauptprodukt gemeldet
+    products = expand_alternatives(products)
+    names = {p.id: p.name for p in products}
 
     # --- Datenquellen abfragen (jede einzeln abgesichert) ---
     all_offers = []
@@ -161,8 +166,10 @@ def run(args) -> int:
     quiet = meldungen.quiet_now(cfg, now)
     if quiet:
         print("Ruhezeit: normale Meldungen werden danach vom Worker nachgeliefert.")
+    coupons = (state.get("cache") or {}).get("gutscheine") or []
     for p in products:
         offers = logic.merge_duplicates([o for o in all_offers if o.product_id == p.id])
+        bewertung.apply_effective(offers, cfg, coupons, now)
         alerts = [a for a in logic.evaluate(p, offers, state, rules)
                   if meldungen.offer_hash(a.offer.key) not in ignored]
         for a in alerts:
@@ -170,9 +177,14 @@ def run(args) -> int:
             low = (state.get("tiefstpreis") or {}).get(p.id)
             score = deal_score(o.compare_price, history.get(p.id, []),
                                low.get("vergleichspreis") if low else None, now)
-            how = meldungen.route("Zielpreis erreicht" in a.reasons, score, o.target_value, p.zielpreis, cfg, now)
-            text = format_alert(a, score)
-            keyboard = meldungen.buttons(p.id, o.key, o.target_value, o.url)
+            reached = "Zielpreis erreicht" in a.reasons
+            how = meldungen.route(reached, score, o.target_value, p.zielpreis, cfg, now)
+            text = format_alert(a, score, hint=bewertung.buy_or_wait(cfg, now, score, reached),
+                                main_name=names.get(p.alternative_zu),
+                                score_why=score_explain(o.compare_price, history.get(p.id, []),
+                                                        low.get("vergleichspreis") if low else None, now))
+            # Buttons wirken immer auf das echte Produkt (bei Alternativen: das Hauptprodukt)
+            keyboard = meldungen.buttons(p.main_id, o.key, o.target_value, o.url)
             try:
                 if how == meldungen.SOFORT:
                     # Nur als "gemeldet" merken, wenn die Nachricht wirklich angekommen ist
@@ -184,7 +196,7 @@ def run(args) -> int:
                     # Der Worker liefert nach der Ruhezeit bzw. in der 19-Uhr-Übersicht.
                     meldungen.queue_add(state, {
                         "id": meldungen.offer_hash(f"{o.key}|{o.compare_price}"), "art": how,
-                        "produkt": p.id, "name": p.name, "preis": o.compare_price, "shop": o.shop,
+                        "produkt": p.main_id, "name": p.name, "preis": o.compare_price, "shop": o.shop,
                         "url": o.url, "score": score, "ziel_erreicht": "Zielpreis erreicht" in a.reasons,
                         "text": text, "buttons": keyboard, "zeit": now.isoformat(timespec="seconds"),
                     }, now)

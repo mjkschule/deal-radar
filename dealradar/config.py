@@ -70,6 +70,15 @@ class Product:
     leasing: dict = field(default_factory=dict)
     aktiv: bool = True  # False = pausiert (per /pause), wird nicht überwacht
     ean: str = ""  # EAN/GTIN, z. B. beim Anlegen per Shop-Link übernommen
+    aliase: list[str] = field(default_factory=list)  # weitere Namen/Varianten (z. B. HD9255/80) – wie Suchbegriffe
+    alternativen: list[dict] = field(default_factory=list)  # gleichwertige Produkte {name, suchbegriffe, zielpreis?}
+    b_ware: bool = False  # True = auch B-Ware/Refurbished/gebraucht melden (klar gekennzeichnet)
+    alternative_zu: str = ""  # nur intern: diese "Produkt"-Zeile ist eine Alternative zu <id>
+
+    @property
+    def main_id(self) -> str:
+        """id des echten Produkts (bei Alternativen das Hauptprodukt)."""
+        return self.alternative_zu or self.id
 
     @property
     def is_leasing(self) -> bool:
@@ -163,6 +172,13 @@ def parse_products(raw) -> list[Product]:
         aktiv = item.get("aktiv", True)
         if not isinstance(aktiv, bool):
             raise ConfigError(f"{where}: 'aktiv' muss true oder false sein.")
+        b_ware = item.get("b_ware", False)
+        if not isinstance(b_ware, bool):
+            raise ConfigError(f"{where}: 'b_ware' muss true oder false sein.")
+        alts = item.get("alternativen") or []
+        if not isinstance(alts, list) or not all(isinstance(a, dict) and a.get("name") for a in alts):
+            raise ConfigError(f"{where}: 'alternativen' muss eine Liste sein, je Eintrag mit 'name' "
+                              "(und optional 'suchbegriffe', 'zielpreis').")
         mins = item.get("mindestwerte") or {}
         if not isinstance(mins, dict):
             raise ConfigError(f"{where}: 'mindestwerte' muss so aussehen: {{Hz: 75}}")
@@ -184,9 +200,30 @@ def parse_products(raw) -> list[Product]:
                 leasing=dict(item.get("leasing") or {}),
                 aktiv=aktiv,
                 ean=str(item.get("ean") or ""),
+                aliase=_as_list(item.get("aliase")),
+                alternativen=[dict(a) for a in alts],
+                b_ware=b_ware,
             )
         )
     return products
+
+
+def expand_alternatives(products: list[Product]) -> list[Product]:
+    """Hängt für jede Alternative eine interne Produktzeile an (id "<haupt-id>~alt1").
+    Die Quellen suchen dann auch danach; Meldungen landen beim Hauptprodukt."""
+    out = list(products)
+    for p in products:
+        for i, a in enumerate(p.alternativen, start=1):
+            terms = _as_list(a.get("suchbegriffe")) or [str(a["name"])]
+            target = a.get("zielpreis", p.zielpreis)
+            out.append(Product(
+                id=f"{p.id}~alt{i}", name=str(a["name"]), suchbegriffe=terms,
+                zielpreis=float(str(target).replace(",", ".")), kategorie=p.kategorie, typ=p.typ,
+                ausschluss=p.ausschluss + _as_list(a.get("ausschluss")), mydealz_gruppen=p.mydealz_gruppen,
+                pflicht_hinweise=p.pflicht_hinweise, mindestwerte=p.mindestwerte, aktiv=p.aktiv,
+                b_ware=p.b_ware, alternative_zu=p.id,
+            ))
+    return out
 
 
 def load_products(path: Path | None = None) -> list[Product]:
