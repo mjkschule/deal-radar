@@ -162,5 +162,31 @@
       ],
       "notizen": "Netzwerk (WLAN oder LAN), Farbe, Scan und Kopie."
     }
+  },
+  {
+    "id": "hp-deskjet-2922",
+    "name": "HP DeskJet 2922 (Farbe, WLAN, Scan/Kopie)",
+    "geloescht_am": "2026-11-25T17:08:42.984Z",
+    "eintrag": {
+      "id": "hp-deskjet-2922",
+      "name": "HP DeskJet 2922 (Farbe, WLAN, Scan/Kopie)",
+      "kategorie": "drucker",
+      "suchbegriffe": [
+        "DeskJet 2922"
+      ],
+      "zielpreis": 45,
+      "ausschluss": [
+        "Patrone",
+        "Patronen",
+        "Druckerpatronen",
+        "Toner"
+      ],
+      "mydealz_gruppen": [
+        "drucker",
+        "multifunktionsdrucker",
+        "hp"
+      ],
+      "ebay_suche": "HP DeskJet 2922"
+    }
   }
 ]
