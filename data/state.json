@@ -1,5 +1,9 @@
 {
  "ablauf": {
+  "https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-25T21:42:13+01:00"
+  },
   "https://www.mydealz.de/deals/bestpreis-vogels-tvm-1609-tv-wandhalterung-schwarz-fur-40-100-zoll-vesa-600-400-75-kg-max-gewicht-clickloc-system-2877030": {
    "abgelaufen": false,
    "geprueft": "2026-11-25T20:25:55+01:00"
@@ -7,6 +11,10 @@
   "https://www.mydealz.de/deals/bontec-tv-wandhalterung-mit-1040-mm-extra-langem-gelenkarm-fur-32-75-zoll-bis-60kg-neigbar-schwenk-und-drehbar-max-vesa-600-x-400-mm-2750508": {
    "abgelaufen": true,
    "geprueft": "2026-11-25T20:25:55+01:00"
+  },
+  "https://www.mydealz.de/deals/cosori-heissluftfritteuse-62-l-mit-beleuchtetem-sichtfenster-12-in-1-1700-w-2879469": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-25T21:42:13+01:00"
   },
   "https://www.mydealz.de/deals/epson-ecotank-et-2922-fur-18490-eur-bei-amazon-2847452": {
    "abgelaufen": true,
@@ -20,9 +28,17 @@
    "abgelaufen": false,
    "geprueft": "2026-11-25T20:25:55+01:00"
   },
+  "https://www.mydealz.de/deals/joybuy-willkommensangebot-app-midea-heissluftfritteuse-1800-watt-7-liter-antihaftbeschichtet-heatxpress-technologie-2878657": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-25T21:42:13+01:00"
+  },
   "https://www.mydealz.de/deals/makita-dhp490rfx3-18v-akku-schlagbohrschrauber-set-2x-30-ah-akkus-ladegerat-koffer-74-tlg-zubehor-ab-17808-eur-eff-inkl-cb-und-pb-2877733": {
    "abgelaufen": true,
    "geprueft": "2026-11-25T20:25:55+01:00"
+  },
+  "https://www.mydealz.de/deals/makitabosch-sammeldeal-schlagbohrschrauber-18v-42-akkukreissage-40v-xgt-kreissage-40v-xgt-2872320": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-25T21:42:13+01:00"
   },
   "https://www.mydealz.de/deals/msi-mag-245f-x24-monitor-238-rapid-ips-full-hd-240hz-freesync-premium-05ms-gtg-3-jahre-garantie-2881472": {
    "abgelaufen": false,
@@ -32,6 +48,14 @@
    "abgelaufen": false,
    "geprueft": "2026-11-25T20:25:55+01:00"
   },
+  "https://www.mydealz.de/deals/otto-up-lieferflat-lenovo-22-l22-4e-1920x1080-fhd-100hz-ips-1920-x-1080-pixel-2150-2876587": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-25T21:42:13+01:00"
+  },
+  "https://www.mydealz.de/deals/prime-cecotec-cecofry-firedome-6000-heissluftfritteuse-indoor-grill-6-l-2400-w-temperaturfuhler-bis-260-c-2878798": {
+   "abgelaufen": true,
+   "geprueft": "2026-11-25T21:42:13+01:00"
+  },
   "https://www.mydealz.de/deals/prime-one-for-all-tv-wandhalterung-neigbar-wm4421-32-bis-65-zoll-vesa-100x100-bis-400x400-10-jahre-garantie-max-100-kg-schwarz-2815407": {
    "abgelaufen": true,
    "geprueft": "2026-11-25T20:25:55+01:00"
@@ -39,6 +63,10 @@
   "https://www.mydealz.de/deals/tv-wandhalterung-schwenk-neigbar-vesa-400x400-23-50-zoll-fur-fernseher-und-monitor-2651968": {
    "abgelaufen": true,
    "geprueft": "2026-11-25T20:25:55+01:00"
+  },
+  "https://www.mydealz.de/deals/voelkner-gourmetmaxx-heissluft-fritteuse-7-liter-1700-watt-sichtfenster-airfryer-2881629": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-25T21:42:13+01:00"
   }
  },
  "angebote": {
@@ -418,7 +446,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 184.9,
     "product_id": "epson-et-2922",
@@ -441,7 +469,7 @@
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 174.99,
     "product_id": "epson-et-2922",
@@ -463,7 +491,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 199.9,
     "product_id": "epson-et-2922",
@@ -488,7 +516,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 73.78,
     "product_id": "lenovo-l24-4e",
@@ -538,7 +566,7 @@
      "nur für Neukunden",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 184.0,
     "product_id": "makita-dhp490rfx3",
@@ -563,7 +591,7 @@
      "evtl. nur lokal/in der Filiale",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 86.89,
     "product_id": "monitor-24-allgemein",
@@ -610,7 +638,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 84.0,
     "product_id": "monitor-24-allgemein",
@@ -648,7 +676,7 @@
     "ean": "",
     "first_seen": "2026-11-24T12:32:33+01:00",
     "hints": [],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 65.99,
     "product_id": "monitor-24-allgemein",
@@ -673,7 +701,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 129.99,
     "product_id": "ninja-dualzone-7-6-l-heissluftfritteuse",
@@ -699,7 +727,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -731,7 +759,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -763,7 +791,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -795,7 +823,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -827,7 +855,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -859,7 +887,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -891,7 +919,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -923,7 +951,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -955,7 +983,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -987,7 +1015,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1019,7 +1047,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1051,7 +1079,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1083,7 +1111,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1115,7 +1143,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1147,7 +1175,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1179,7 +1207,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1211,7 +1239,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1243,7 +1271,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1275,7 +1303,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1307,7 +1335,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1339,7 +1367,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1371,7 +1399,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1403,7 +1431,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 429.0,
@@ -1435,7 +1463,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 336.66,
@@ -1465,7 +1493,7 @@
     "hints": [
      "Verfügbar: 03/2027"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": 1492.3,
      "effektiv": 342.45,
@@ -1523,7 +1551,7 @@
     "hints": [
      "Verfügbar: 05/2027"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": 1189.3,
      "effektiv": 346.04,
@@ -1555,7 +1583,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 341.0,
@@ -1587,7 +1615,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 422.12,
@@ -1619,7 +1647,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-25T19:17:42+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 430.22,
@@ -1655,7 +1683,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 44.95,
     "product_id": "wandhalterung-c27f396",
@@ -1680,7 +1708,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 12.0,
     "product_id": "wandhalterung-c27f396",
@@ -1702,7 +1730,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 9.99,
     "product_id": "wandhalterung-c27f396",
@@ -1725,7 +1753,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-25T21:04:13+01:00",
+    "last_seen": "2026-11-25T21:42:13+01:00",
     "leasing": {},
     "price": 35.99,
     "product_id": "wandhalterung-c27f396",
@@ -1748,9 +1776,9 @@
  "bot_name": "MJK_Dealradar_bot",
  "cache": {
   "blogs": {
-   "dealdoktor": "2026-11-25T21:04:13+01:00",
-   "mein-deal": "2026-11-25T21:04:13+01:00",
-   "mytopdeals": "2026-11-25T21:04:13+01:00"
+   "dealdoktor": "2026-11-25T21:42:13+01:00",
+   "mein-deal": "2026-11-25T21:42:13+01:00",
+   "mytopdeals": "2026-11-25T21:42:13+01:00"
   },
   "gutscheine": [],
   "hersteller": {
@@ -1805,62 +1833,62 @@
    "amazon|12.00"
   ]
  },
- "letzter_lauf": "2026-11-25T21:04:13+01:00",
+ "letzter_lauf": "2026-11-25T21:42:13+01:00",
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 5.4,
+   "dauer_s": 4.0,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1948 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
-   "dauer_s": 69.7,
-   "meldung": "nur alle 110 Min. abgefragt – Stand 19:17 Uhr",
+   "dauer_s": 63.3,
+   "meldung": "18 Seiten, 0 Detailseiten geladen; 263 Angebote geprüft, 29 elektrisch",
    "status": "ok",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 5.1,
-   "meldung": "16 Beiträge (1 Feed-Seite)",
+   "dauer_s": 8.3,
+   "meldung": "32 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "mydealz": {
    "anzahl": 10,
-   "dauer_s": 48.8,
-   "meldung": "14/14 Feeds gelesen",
+   "dauer_s": 52.4,
+   "meldung": "16/16 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.7,
+   "dauer_s": 4.3,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 1.4,
-   "meldung": "8 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine, 5 Portal-Mails ohne Alarm übersprungen (Bestätigung/Info)",
+   "dauer_s": 2.2,
+   "meldung": "10 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine, 7 Portal-Mails ohne Alarm übersprungen (Bestätigung/Info)",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -1868,20 +1896,198 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 14.1,
+   "dauer_s": 12.6,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
-   "dauer_s": 4.3,
-   "meldung": "nur alle 110 Min. abgefragt – Stand 19:17 Uhr",
+   "dauer_s": 4.2,
+   "meldung": "25 Artikel im Feed",
    "status": "ok",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   }
  },
  "quellen_fehler": {},
+ "rabattknaller": {
+  "angebote": {
+   "amazon|https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520": {
+    "abzuege": [],
+    "bezug": 230.0,
+    "ean": "",
+    "first_seen": "2026-11-25T21:42:13+01:00",
+    "h": "37cc496cd8",
+    "heiss": false,
+    "hints": [],
+    "hitze": null,
+    "kategorie": "airfryer",
+    "kategorie_name": "Airfryer",
+    "last_seen": "2026-11-25T21:42:13+01:00",
+    "leasing": {},
+    "price": 159.99,
+    "product_id": "knaller:airfryer",
+    "rabatt": 30,
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Amazon: Ninja DZ400EUBK MAX Dual Zone Heißluftfritteuse – 9,5 l, 2 Körbe & 6-in-1",
+    "url": "https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520",
+    "vergleichspreis": 159.99,
+    "vertrauen": [],
+    "weitere_quellen": []
+   },
+   "amazon|https://www.mydealz.de/deals/cosori-heissluftfritteuse-62-l-mit-beleuchtetem-sichtfenster-12-in-1-1700-w-2879469": {
+    "abzuege": [],
+    "bezug": 99.99,
+    "ean": "",
+    "first_seen": "2026-11-25T21:42:13+01:00",
+    "h": "11d6e86e23",
+    "heiss": false,
+    "hints": [],
+    "hitze": null,
+    "kategorie": "airfryer",
+    "kategorie_name": "Airfryer",
+    "last_seen": "2026-11-25T21:42:13+01:00",
+    "leasing": {},
+    "price": 59.99,
+    "product_id": "knaller:airfryer",
+    "rabatt": 40,
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Cosori Heißluftfritteuse 6,2 L mit beleuchtetem Sichtfenster, 12-in-1, 1700 W",
+    "url": "https://www.mydealz.de/deals/cosori-heissluftfritteuse-62-l-mit-beleuchtetem-sichtfenster-12-in-1-1700-w-2879469",
+    "vergleichspreis": 59.99,
+    "vertrauen": [],
+    "weitere_quellen": []
+   },
+   "joybuy|https://www.mydealz.de/deals/joybuy-willkommensangebot-app-midea-heissluftfritteuse-1800-watt-7-liter-antihaftbeschichtet-heatxpress-technologie-2878657": {
+    "abzuege": [],
+    "bezug": 86.2,
+    "ean": "",
+    "first_seen": "2026-11-25T21:42:13+01:00",
+    "h": "5d94e336f4",
+    "heiss": false,
+    "hints": [
+     "evtl. nur per App"
+    ],
+    "hitze": null,
+    "kategorie": "airfryer",
+    "kategorie_name": "Airfryer",
+    "last_seen": "2026-11-25T21:42:13+01:00",
+    "leasing": {},
+    "price": 34.99,
+    "product_id": "knaller:airfryer",
+    "rabatt": 59,
+    "shipping": null,
+    "shop": "Joybuy",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "[joybuy willkommensangebot App] Midea Heißluftfritteuse, 1800 Watt 7 Liter antihaftbeschichtet HeatXpress-Technologie,",
+    "url": "https://www.mydealz.de/deals/joybuy-willkommensangebot-app-midea-heissluftfritteuse-1800-watt-7-liter-antihaftbeschichtet-heatxpress-technologie-2878657",
+    "vergleichspreis": 34.99,
+    "vertrauen": [],
+    "weitere_quellen": []
+   },
+   "manomano|https://www.mydealz.de/deals/makitabosch-sammeldeal-schlagbohrschrauber-18v-42-akkukreissage-40v-xgt-kreissage-40v-xgt-2872320": {
+    "abzuege": [],
+    "bezug": 219.9,
+    "ean": "",
+    "first_seen": "2026-11-25T21:42:13+01:00",
+    "h": "06af45957a",
+    "heiss": false,
+    "hints": [
+     "Newsletter-Anmeldung nötig"
+    ],
+    "hitze": null,
+    "kategorie": "schlagbohrset",
+    "kategorie_name": "Akku-Schlagbohrschrauber-Set",
+    "last_seen": "2026-11-25T21:42:13+01:00",
+    "leasing": {},
+    "price": 122.5,
+    "product_id": "knaller:schlagbohrset",
+    "rabatt": 44,
+    "shipping": null,
+    "shop": "ManoMano",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Makita/Bosch Sammeldeal Schlagbohrschrauber 18V 42 • Akkukreissäge 40V XGT • Kreissäge 40V XGT",
+    "url": "https://www.mydealz.de/deals/makitabosch-sammeldeal-schlagbohrschrauber-18v-42-akkukreissage-40v-xgt-kreissage-40v-xgt-2872320",
+    "vergleichspreis": 122.5,
+    "vertrauen": [],
+    "weitere_quellen": []
+   },
+   "otto|https://www.mydealz.de/deals/otto-up-lieferflat-lenovo-22-l22-4e-1920x1080-fhd-100hz-ips-1920-x-1080-pixel-2150-2876587": {
+    "abzuege": [],
+    "bezug": 99.0,
+    "ean": "",
+    "first_seen": "2026-11-25T21:42:13+01:00",
+    "h": "940b9f04ae",
+    "heiss": false,
+    "hints": [],
+    "hitze": null,
+    "kategorie": "monitor",
+    "kategorie_name": "Computer-Monitor",
+    "last_seen": "2026-11-25T21:42:13+01:00",
+    "leasing": {},
+    "price": 39.99,
+    "product_id": "knaller:monitor",
+    "rabatt": 60,
+    "shipping": null,
+    "shop": "OTTO",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "[Otto Up Lieferflat] Lenovo Monitor 22\" L22-4e - 1920x1080 (FHD) - 100Hz - IPS 1920 x 1080 Pixel, 21.50\"",
+    "url": "https://www.mydealz.de/deals/otto-up-lieferflat-lenovo-22-l22-4e-1920x1080-fhd-100hz-ips-1920-x-1080-pixel-2150-2876587",
+    "vergleichspreis": 39.99,
+    "vertrauen": [],
+    "weitere_quellen": []
+   },
+   "voelkner|https://www.mydealz.de/deals/voelkner-gourmetmaxx-heissluft-fritteuse-7-liter-1700-watt-sichtfenster-airfryer-2881629": {
+    "abzuege": [],
+    "bezug": 55.98,
+    "ean": "",
+    "first_seen": "2026-11-25T21:42:13+01:00",
+    "h": "06c86267a3",
+    "heiss": false,
+    "hints": [],
+    "hitze": null,
+    "kategorie": "airfryer",
+    "kategorie_name": "Airfryer",
+    "last_seen": "2026-11-25T21:42:13+01:00",
+    "leasing": {},
+    "price": 33.0,
+    "product_id": "knaller:airfryer",
+    "rabatt": 41,
+    "shipping": null,
+    "shop": "voelkner",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "[voelkner] GourmetMaxx Heißluft-Fritteuse 7 Liter 1700 Watt Sichtfenster Airfryer",
+    "url": "https://www.mydealz.de/deals/voelkner-gourmetmaxx-heissluft-fritteuse-7-liter-1700-watt-sichtfenster-airfryer-2881629",
+    "vergleichspreis": 33.0,
+    "vertrauen": [],
+    "weitere_quellen": []
+   }
+  },
+  "gemeldet": {
+   "amazon|https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520": 159.99,
+   "amazon|https://www.mydealz.de/deals/cosori-heissluftfritteuse-62-l-mit-beleuchtetem-sichtfenster-12-in-1-1700-w-2879469": 59.99,
+   "joybuy|https://www.mydealz.de/deals/joybuy-willkommensangebot-app-midea-heissluftfritteuse-1800-watt-7-liter-antihaftbeschichtet-heatxpress-technologie-2878657": 34.99,
+   "manomano|https://www.mydealz.de/deals/makitabosch-sammeldeal-schlagbohrschrauber-18v-42-akkukreissage-40v-xgt-kreissage-40v-xgt-2872320": 122.5,
+   "otto|https://www.mydealz.de/deals/otto-up-lieferflat-lenovo-22-l22-4e-1920x1080-fhd-100hz-ips-1920-x-1080-pixel-2150-2876587": 39.99,
+   "voelkner|https://www.mydealz.de/deals/voelkner-gourmetmaxx-heissluft-fritteuse-7-liter-1700-watt-sichtfenster-airfryer-2881629": 33.0
+  }
+ },
  "telegram_offset": 157988602,
  "tiefstpreis": {
   "drucker-allgemein": {
@@ -2061,5 +2267,36 @@
   }
  },
  "version": 1,
- "warteschlange": []
+ "warteschlange": [
+  {
+   "art": "uebersicht",
+   "buttons": [
+    [
+     {
+      "callback_data": "i:knaller:37cc496cd8",
+      "text": "🙈 Ignorieren"
+     }
+    ],
+    [
+     {
+      "text": "🔗 Zum Angebot",
+      "url": "https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520"
+     }
+    ]
+   ],
+   "hitze": null,
+   "id": "323eb238c5",
+   "name": "Airfryer: Amazon: Ninja DZ400EUBK MAX Dual Zone Heißluftfritteuse – 9,5 l, 2 Kör",
+   "preis": 159.99,
+   "produkt": "knaller",
+   "rabatt": 30,
+   "score": null,
+   "shop": "Amazon",
+   "text": "💥 <b>Rabattknaller: Airfryer</b>\n<b>Amazon: Ninja DZ400EUBK MAX Dual Zone Heißluftfritteuse – 9,5 l, 2 Körbe &amp; 6-in-1</b>\n💶 <b>159,99 €</b> bei Amazon\n−30 % ggü. Preisvergleich 230,00 €\n<i>Quelle: mydealz · nicht auf deiner Produktliste</i>\n🔗 <a href=\"https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520\">Zum Angebot</a>",
+   "typ": "knaller",
+   "url": "https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520",
+   "zeit": "2026-11-25T21:42:13+01:00",
+   "ziel_erreicht": false
+  }
+ ]
 }

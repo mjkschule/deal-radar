@@ -1,7 +1,7 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-25T21:04:13+01:00",
+ "letzter_lauf": "2026-11-25T21:42:13+01:00",
  "produkte": {
   "epson-et-2922": {
    "aktiv": true,
@@ -24,7 +24,7 @@
    ],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-25T21:04:13+01:00",
+    "gesehen": "2026-11-25T21:42:13+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -63,7 +63,7 @@
    ],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-25T21:04:13+01:00",
+    "gesehen": "2026-11-25T21:42:13+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -182,7 +182,7 @@
    ],
    "bester": {
     "effektivpreis": 129.99,
-    "gesehen": "2026-11-25T21:04:13+01:00",
+    "gesehen": "2026-11-25T21:42:13+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -269,7 +269,7 @@
    ],
    "bester": {
     "effektivpreis": 336.66,
-    "gesehen": "2026-11-25T19:17:42+01:00",
+    "gesehen": "2026-11-25T21:42:13+01:00",
     "hinweise": [
      "Verfügbar: 03/2027",
      "Sonderzahlung unbekannt",
@@ -309,7 +309,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-25T21:04:13+01:00",
+    "gesehen": "2026-11-25T21:42:13+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -338,58 +338,58 @@
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 5.4,
+   "dauer_s": 4.0,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1948 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
-   "dauer_s": 69.7,
-   "meldung": "nur alle 110 Min. abgefragt – Stand 19:17 Uhr",
+   "dauer_s": 63.3,
+   "meldung": "18 Seiten, 0 Detailseiten geladen; 263 Angebote geprüft, 29 elektrisch",
    "status": "ok",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 5.1,
-   "meldung": "16 Beiträge (1 Feed-Seite)",
+   "dauer_s": 8.3,
+   "meldung": "32 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "mydealz": {
    "anzahl": 10,
-   "dauer_s": 48.8,
-   "meldung": "14/14 Feeds gelesen",
+   "dauer_s": 52.4,
+   "meldung": "16/16 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.7,
+   "dauer_s": 4.3,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 1.4,
-   "meldung": "8 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine, 5 Portal-Mails ohne Alarm übersprungen (Bestätigung/Info)",
+   "dauer_s": 2.2,
+   "meldung": "10 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine, 7 Portal-Mails ohne Alarm übersprungen (Bestätigung/Info)",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -397,21 +397,120 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 14.1,
+   "dauer_s": 12.6,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T21:04:13+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
-   "dauer_s": 4.3,
-   "meldung": "nur alle 110 Min. abgefragt – Stand 19:17 Uhr",
+   "dauer_s": 4.2,
+   "meldung": "25 Artikel im Feed",
    "status": "ok",
-   "zeit": "2026-11-25T19:17:42+01:00"
+   "zeit": "2026-11-25T21:42:13+01:00"
   }
  },
+ "rabattknaller": [
+  {
+   "bezug": 99.0,
+   "h": "940b9f04ae",
+   "hitze": null,
+   "kategorie_name": "Computer-Monitor",
+   "rabatt": 60,
+   "shop": "OTTO",
+   "title": "[Otto Up Lieferflat] Lenovo Monitor 22\" L22-4e - 1920x1080 (FHD) - 100Hz - IPS 1920 x 1080 Pixel, 21.50\"",
+   "url": "https://www.mydealz.de/deals/otto-up-lieferflat-lenovo-22-l22-4e-1920x1080-fhd-100hz-ips-1920-x-1080-pixel-2150-2876587",
+   "vergleichspreis": 39.99
+  },
+  {
+   "bezug": 86.2,
+   "h": "5d94e336f4",
+   "hitze": null,
+   "kategorie_name": "Airfryer",
+   "rabatt": 59,
+   "shop": "Joybuy",
+   "title": "[joybuy willkommensangebot App] Midea Heißluftfritteuse, 1800 Watt 7 Liter antihaftbeschichtet HeatXpress-Technologie,",
+   "url": "https://www.mydealz.de/deals/joybuy-willkommensangebot-app-midea-heissluftfritteuse-1800-watt-7-liter-antihaftbeschichtet-heatxpress-technologie-2878657",
+   "vergleichspreis": 34.99
+  },
+  {
+   "bezug": 219.9,
+   "h": "06af45957a",
+   "hitze": null,
+   "kategorie_name": "Akku-Schlagbohrschrauber-Set",
+   "rabatt": 44,
+   "shop": "ManoMano",
+   "title": "Makita/Bosch Sammeldeal Schlagbohrschrauber 18V 42 • Akkukreissäge 40V XGT • Kreissäge 40V XGT",
+   "url": "https://www.mydealz.de/deals/makitabosch-sammeldeal-schlagbohrschrauber-18v-42-akkukreissage-40v-xgt-kreissage-40v-xgt-2872320",
+   "vergleichspreis": 122.5
+  },
+  {
+   "bezug": 55.98,
+   "h": "06c86267a3",
+   "hitze": null,
+   "kategorie_name": "Airfryer",
+   "rabatt": 41,
+   "shop": "voelkner",
+   "title": "[voelkner] GourmetMaxx Heißluft-Fritteuse 7 Liter 1700 Watt Sichtfenster Airfryer",
+   "url": "https://www.mydealz.de/deals/voelkner-gourmetmaxx-heissluft-fritteuse-7-liter-1700-watt-sichtfenster-airfryer-2881629",
+   "vergleichspreis": 33.0
+  },
+  {
+   "bezug": 99.99,
+   "h": "11d6e86e23",
+   "hitze": null,
+   "kategorie_name": "Airfryer",
+   "rabatt": 40,
+   "shop": "Amazon",
+   "title": "Cosori Heißluftfritteuse 6,2 L mit beleuchtetem Sichtfenster, 12-in-1, 1700 W",
+   "url": "https://www.mydealz.de/deals/cosori-heissluftfritteuse-62-l-mit-beleuchtetem-sichtfenster-12-in-1-1700-w-2879469",
+   "vergleichspreis": 59.99
+  },
+  {
+   "bezug": 230.0,
+   "h": "37cc496cd8",
+   "hitze": null,
+   "kategorie_name": "Airfryer",
+   "rabatt": 30,
+   "shop": "Amazon",
+   "title": "Amazon: Ninja DZ400EUBK MAX Dual Zone Heißluftfritteuse – 9,5 l, 2 Körbe & 6-in-1",
+   "url": "https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520",
+   "vergleichspreis": 159.99
+  }
+ ],
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-25T21:04:13+01:00",
+ "stand": "2026-11-25T21:42:13+01:00",
  "version": 1,
- "warteschlange": []
+ "warteschlange": [
+  {
+   "art": "uebersicht",
+   "buttons": [
+    [
+     {
+      "callback_data": "i:knaller:37cc496cd8",
+      "text": "🙈 Ignorieren"
+     }
+    ],
+    [
+     {
+      "text": "🔗 Zum Angebot",
+      "url": "https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520"
+     }
+    ]
+   ],
+   "hitze": null,
+   "id": "323eb238c5",
+   "name": "Airfryer: Amazon: Ninja DZ400EUBK MAX Dual Zone Heißluftfritteuse – 9,5 l, 2 Kör",
+   "preis": 159.99,
+   "produkt": "knaller",
+   "rabatt": 30,
+   "score": null,
+   "shop": "Amazon",
+   "text": "💥 <b>Rabattknaller: Airfryer</b>\n<b>Amazon: Ninja DZ400EUBK MAX Dual Zone Heißluftfritteuse – 9,5 l, 2 Körbe &amp; 6-in-1</b>\n💶 <b>159,99 €</b> bei Amazon\n−30 % ggü. Preisvergleich 230,00 €\n<i>Quelle: mydealz · nicht auf deiner Produktliste</i>\n🔗 <a href=\"https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520\">Zum Angebot</a>",
+   "typ": "knaller",
+   "url": "https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520",
+   "zeit": "2026-11-25T21:42:13+01:00",
+   "ziel_erreicht": false
+  }
+ ]
 }
