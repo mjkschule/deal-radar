@@ -176,6 +176,10 @@ Newsletter der Shops, die dich interessieren, mit dieser Adresse abonnieren.
 er in der Mail oder ist das Angebot teurer als er, meldet das Radar lieber nichts. Gespeichert wird statt
 des Klick-Links aus der Mail ein neutraler Link zum Portal.
 
+**Newsletter von idealo/Geizhals** werden nie als Preisalarm gewertet (erkannt an Betreff, Absender oder daran,
+dass viele verschiedene Preise drinstehen). Ein Alarm, der auf mehrere deiner Produkte passt, wird
+übersprungen. Im Lauf-Protokoll steht, wie viele Mails warum übersprungen wurden.
+
 **Was mit den Mails passiert:** Gelesen werden die Mails der letzten 14 Tage, **nur lesend** (nichts wird
 gelöscht oder als gelesen markiert). Da das Repo öffentlich ist, werden **keine Gutschein-Codes, Betreffs,
 Texte oder Adressen gespeichert** – nur Shop, Rabatt, Mindestbestellwert und Gültigkeit. Den Code findest

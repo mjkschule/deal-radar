@@ -119,6 +119,27 @@ _CURRENT_BEFORE = re.compile(r"(?:aktuell\w*|jetzt|neu\w*|nur|best\w*|günstigst
                              r"\s*(?:preis\w*)?\s*(?:von|liegt\s+bei|beträgt)?\s*[:=]?\s*(?:nur|ab|für)?\s*$", re.I)
 
 
+_NEWS_SUBJECT = re.compile(r"newsletter|deals?\s+der\s+woche|top[-\s]?(?:deals|angebote)|angebote\s+der|"
+                           r"highlights|schnäppchen|black\s*friday|cyber\s*(?:monday|week)|sale\b|bis\s+zu\s+-?\d+\s*%|"
+                           r"\d+\s*%\s*(?:rabatt|reduziert)|unsere\s+(?:tipps|empfehlungen)|ratgeber|magazin|testberichte?|"
+                           r"gewinnspiel|neuheiten|trends?\b|wochen", re.I)
+# Absender nur bei eindeutigem Namen – idealo verschickt auch Preiswecker über „news“-Server
+_NEWS_SENDER = re.compile(r"newsletter|marketing|magazin|promo|kampagne", re.I)
+
+
+def is_newsletter(msg, subject: str, body: str) -> bool:
+    """Newsletter der Portale (idealo/Geizhals) – nie ein Preisalarm, auch wenn „jetzt günstiger“ drinsteht.
+    Erkennung: Absender/Betreff typisch für Newsletter oder sehr viele verschiedene Preise in einer Mail
+    (ein Preisalarm betrifft genau ein Produkt)."""
+    sender = _text(msg.get("From"))
+    if _NEWS_SENDER.search(sender) and not re.search(r"preis(?:alarm|wecker)", sender, re.I):
+        return True
+    if _NEWS_SUBJECT.search(subject) and not re.search(r"preis(?:alarm|wecker)|wunschpreis", subject, re.I):
+        return True
+    amounts = {round(v, 2) for v, _, _ in _amounts(body[:6000])}
+    return len(amounts) > 8
+
+
 def _is_alarm(subject: str, body: str) -> str:
     """'alarm', 'bestaetigung' (Einrichtung/Bestätigung/Abmeldung) oder 'kein_alarm'."""
     def triggered(text):
@@ -163,7 +184,7 @@ def parse_alarm(msg, products: list[Product], portal: str, stats: dict | None = 
     """Preisalarm-Mail (idealo/Geizhals): passendes Produkt + Angebotspreis (nicht dein Wunschpreis)."""
     subject = _text(msg.get("Subject"))
     body, links = mail_body(msg)
-    kind = _is_alarm(subject, body)
+    kind = "newsletter" if is_newsletter(msg, subject, body) else _is_alarm(subject, body)
     price = None
     if kind == "alarm":
         price, _ = alarm_price(subject, body)
@@ -174,10 +195,15 @@ def parse_alarm(msg, products: list[Product], portal: str, stats: dict | None = 
     if kind != "alarm":
         return []
     text = f"{subject} {body[:3000]}"
+    hits = [prod for prod in products if not prod.is_leasing and matches(prod, text)]
+    # Ein Preisalarm betrifft EIN Produkt. Passen mehrere (ohne Alternativen), ist die Mail nicht eindeutig.
+    if len({p.main_id for p in hits}) > 1:
+        if stats is not None:
+            stats["alarm"] -= 1
+            stats["mehrdeutig"] = stats.get("mehrdeutig", 0) + 1
+        return []
     offers = []
-    for prod in products:
-        if prod.is_leasing or not matches(prod, text):
-            continue
+    for prod in hits:
         offers.append(Offer(product_id=prod.id, source=NAME, shop=f"{portal} (Preisalarm)",
                             title=f"{portal}-Preisalarm: {prod.name}", url=portal_link(links, portal, prod.name),
                             price=price, shipping=None,
@@ -272,9 +298,11 @@ def fetch(products: list[Product], ctx: Context) -> list[Offer]:
         if k not in best or score > best[k]["_s"]:
             best[k] = {**c, "_s": score}
     ctx.cache["gutscheine"] = [{k: v for k, v in c.items() if k != "_s"} for c in best.values()]
-    skipped = stats.get("bestaetigung", 0) + stats.get("kein_alarm", 0) + stats.get("kein_preis", 0)
+    labels = {"bestaetigung": "Bestätigung", "newsletter": "Newsletter", "kein_alarm": "Info",
+              "kein_preis": "ohne Angebotspreis", "mehrdeutig": "mehrere Produkte"}
+    skipped = ", ".join(f"{stats[k]} {v}" for k, v in labels.items() if stats.get(k))
     ctx.notes.append(f"{len(msgs)} Mails, {alarms} Preisalarme mit Treffer, {len(best)} Gutscheine"
-                     + (f", {skipped} Portal-Mails ohne Alarm übersprungen (Bestätigung/Info)" if skipped else ""))
+                     + (f"; übersprungen: {skipped}" if skipped else ""))
     return offers
 
 
