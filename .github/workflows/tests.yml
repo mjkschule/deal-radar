@@ -2,7 +2,7 @@
 name: Tests
 on:
   push:
-    paths: ["dealradar/**", "tests/**", "worker/**", "products.yaml", "config.yaml"]
+    paths: ["dealradar/**", "tests/**", "worker/**", "products.yaml", "config.yaml", "shops.yaml"]
   workflow_dispatch:
 jobs:
   test:

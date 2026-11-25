@@ -1,0 +1,27 @@
+# =====================================================================
+#  Deal-Radar – Herstellershops (Quelle "hersteller")
+#
+#  Für jedes deiner Produkte sucht das Radar in der Sitemap des Shops nach einer
+#  passenden Produktseite (Suchbegriffe bzw. Modellnummer in der Adresse) und liest
+#  dort den Preis aus den maschinenlesbaren Angaben (schema.org JSON-LD).
+#
+#  Sparsam: Sitemap höchstens 1x pro Tag (oder wenn sich deine Produktliste ändert),
+#  höchstens 2 Produktseiten pro Produkt und Lauf, robots.txt wird immer beachtet.
+#
+#  Geprüft am 25.11.2026:
+#   - Tefal, Cosori: Preise maschinenlesbar, kein ausdrückliches Verbot in den Bedingungen
+#   - NICHT nutzbar (deshalb nicht in der Liste):
+#       ninjakitchen.de  – verweigert schon die robots.txt (HTTP 403)
+#       philips.de       – Preise werden erst per JavaScript geladen (nicht maschinenlesbar)
+#       makita.de        – zeigt keine Preise (kein eigener Onlineshop)
+# =====================================================================
+
+shops:
+  - name: Tefal
+    sitemap: "https://www.tefal.de/sitemapcontent/Product-de-EUR.xml"
+    aktiv: true
+
+  - name: Cosori
+    # Sitemap-Index: es werden nur die Produkt-Sitemaps gelesen
+    sitemap: "https://cosori.de/sitemap.xml"
+    aktiv: true

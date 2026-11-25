@@ -103,7 +103,8 @@ def format_alert(a: Alert, score: int | None = None) -> str:
                 f"+ {_fmt(o.shipping)} € Versand = <b>{_fmt(o.compare_price)} €</b>" if o.shipping is not None else
                 "Versand unbekannt")
         lines.append(f"💶 <b>{_fmt(o.price)} €</b> ({ship})")
-    lines.append(f"🏪 {_e(o.shop)} · Quelle: {_e(o.source)}")
+    also = f" (auch: {_e(', '.join(o.weitere_quellen))})" if o.weitere_quellen else ""
+    lines.append(f"🏪 {_e(o.shop)} · Quelle: {_e(o.source)}{also}")
     lines.append(f"🎯 Zielpreis: {_fmt(p.zielpreis)} €" + (" ✅" if "Zielpreis erreicht" in a.reasons else ""))
     if a.previous_low:
         diff = a.previous_low - o.compare_price

@@ -135,6 +135,34 @@ registriert (Menü beim Tippen von `/`).
 **Worker wieder entfernen:** Rufe `https://api.telegram.org/bot<DEIN-TOKEN>/deleteWebhook` auf. Dann
 holt der Suchlauf die Befehle wieder selbst ab (alle 2 Stunden).
 
+### 1.7 Deal-Postfach (Gmail, optional)
+
+Das Radar kann ein **eigenes** Gmail-Postfach mitlesen: Preisalarme von **idealo** und **Geizhals**
+(die du dort für deine Produkte einrichtest) und **Gutscheine** aus Shop-Newslettern.
+Nimm dafür bitte **nicht** dein normales Postfach, sondern ein neues, nur für Deals.
+
+**a) Gmail-Konto anlegen:** https://accounts.google.com/signup → z. B. `meinname.deals@gmail.com`.
+
+**b) 2-Schritt-Bestätigung einschalten** (Voraussetzung für App-Passwörter):
+https://myaccount.google.com/signinoptions/two-step-verification → **Jetzt aktivieren** → Handynummer bestätigen.
+
+**c) App-Passwort erzeugen:** https://myaccount.google.com/apppasswords → Name z. B. `deal-radar` →
+**Erstellen**. Google zeigt ein Passwort aus 16 Buchstaben (4 Blöcke). **Kopieren** – es wird nur einmal
+angezeigt. (Das ist *nicht* dein Gmail-Passwort; es kann nur Mails lesen und jederzeit dort gelöscht werden.)
+
+**d) Als GitHub-Secrets speichern** (wie in 1.3): Repository → **Settings** → **Secrets and variables** →
+**Actions** → **New repository secret**:
+- Name `DEAL_MAIL_ADRESSE`, Wert: die neue Gmail-Adresse
+- Name `DEAL_MAIL_APP_PASSWORT`, Wert: das App-Passwort (Leerzeichen dürfen drin bleiben)
+
+**e) Postfach füttern:** Bei idealo/Geizhals Preisalarme für deine Produkte an diese Adresse schicken lassen;
+Newsletter der Shops, die dich interessieren, mit dieser Adresse abonnieren.
+
+**Was mit den Mails passiert:** Gelesen werden die Mails der letzten 14 Tage, **nur lesend** (nichts wird
+gelöscht oder als gelesen markiert). Da das Repo öffentlich ist, werden **keine Gutschein-Codes, Betreffs,
+Texte oder Adressen gespeichert** – nur Shop, Rabatt, Mindestbestellwert und Gültigkeit. Den Code findest
+du in der Mail. Ohne die beiden Secrets steht die Quelle `postfach` einfach auf „nicht eingerichtet“.
+
 ## 2. Produkte hinzufügen und verwalten
 
 ### Variante A: `products.yaml` im GitHub-Webeditor
@@ -287,11 +315,18 @@ Ist der Versand nicht ermittelbar, steht „Versand unbekannt“ in Nachricht un
 Leasing: **Effektive Rate** = (Rate × Monate + Sonderzahlung + Bereitstellung) / Monate.
 Die Startseite zeigt pro Produkt das günstigste passende Angebot der letzten 48 Stunden.
 
-## 6. Datenquellen (rechtlich geprüft am 24.11.2026)
+## 6. Datenquellen (rechtlich geprüft am 24./25.11.2026)
 
 | Quelle | Status | Hinweis |
 |---|---|---|
-| mydealz Gruppen-RSS | ✅ | öffentliche Feeds; die mydealz-*Suche* ist per robots.txt gesperrt und wird nicht genutzt |
+| mydealz Gruppen-RSS | ✅ | öffentliche Feeds; die mydealz-*Suche* ist per robots.txt gesperrt und wird nicht genutzt (der RSS-Feed ignoriert Suchbegriffe – eine Suche pro Produkt gibt es also nicht) |
+| mein-deal.com, MyTopDeals, Schnäppchenfuchs, Dealdoktor | ✅ | öffentliche RSS-Feeds (geprüft 25.11.2026: robots.txt erlaubt, Bedingungen erlauben privaten Gebrauch); es wird geblättert, bis der letzte Lauf lückenlos erreicht ist |
+| Herstellershops Tefal, Cosori | ✅ sparsam | Produktseite über die Sitemap (max. 1×/Tag), Preis aus JSON-LD; Liste in `shops.yaml` |
+| ninjakitchen.de | ❌ | verweigert schon die robots.txt (HTTP 403) |
+| philips.de | ❌ | Preise erst per JavaScript geladen – nicht maschinenlesbar |
+| makita.de | ❌ | zeigt keine Preise (kein eigener Onlineshop) |
+| Gmail-Deal-Postfach | ⏳ optional | idealo-/Geizhals-Preisalarme + Newsletter-Gutscheine (Abschnitt 1.7) |
+| Keepa | ❌ | kostenpflichtig – auf deinen Wunsch nicht eingebaut |
 | eBay Browse API | ⏳ optional | offizielle API, braucht Schlüssel (Abschnitt 1.5) |
 | Shop-Seiten | ✅ | nur maschinenlesbare Preise (schema.org), nur wenn robots.txt es erlaubt |
 | LeasingMarkt.de | ✅ | Ergebnisliste + wenige Detailseiten (Zwischenspeicher 24 h) |
@@ -305,13 +340,22 @@ mindestens 3 Sekunden Pause pro Webseite, ein Lauf alle 2 Stunden. Antwortet ein
 Captcha/403/429, wird das nur als Fehler angezeigt und nicht umgangen. Fällt eine Quelle aus,
 laufen die anderen weiter; der Status steht oben auf der Startseite.
 
+**Doppelte Treffer:** Melden mehrere Quellen dasselbe Angebot (gleicher Shop, gleicher Preis inkl. Versand),
+kommt nur **eine** Meldung – mit „Quelle: mydealz (auch: mein-deal, dealdoktor)“. Bevorzugt wird die
+Quelle, die am nächsten am Shop ist (Shopseite > eBay-API > mydealz > Blogs > Postfach).
+
+**Tipp – mydealz-Gruppen:** Der allgemeine mydealz-Feed enthält in der Black Week nur die Deals der
+letzten ca. 35 Minuten. Die **Gruppen-Feeds** reichen dagegen Tage zurück. Gib deshalb bei jedem Produkt
+mindestens eine passende Gruppe an (`mydealz_gruppen`, z. B. `fritteusen`, `drucker`, `monitor`).
+
 ---
 
 ## 7. Dateien
 
 ```
 products.yaml            deine Produkte
-config.yaml              Enddatum, Quellen an/aus, Regeln
+config.yaml              Enddatum, Quellen an/aus, Regeln, Ruhezeiten
+shops.yaml               Herstellershops (Sitemap-Adressen) für die Quelle "hersteller"
 dealradar/               der Python-Code (gut kommentiert)
   sources/               ein Modul je Datenquelle
 data/state.json          gemeldete Angebote, Tiefstpreise, gesehene Angebote (vom Workflow gepflegt)

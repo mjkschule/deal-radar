@@ -15,7 +15,9 @@ from dealradar.models import Offer
 FIXTURE = Path(__file__).parent / "fixtures" / "products_test.yaml"
 
 TZ = ZoneInfo("Europe/Berlin")
-CFG = load_config()
+_REAL = load_config()
+# Tests unabhängig von deiner echten Einstellung (/ruhe an|aus ändert config.yaml)
+CFG = {**_REAL, "ruhezeiten": {**_REAL["ruhezeiten"], "aktiv": True}}
 
 
 def at(day, hhmm):
@@ -116,6 +118,8 @@ def _run(tmp_path, monkeypatch, now, price, ignored=None):
     # eingefrorene Produktliste statt der echten products.yaml (Makita: Ziel 215 €)
     (tmp_path / "products.yaml").write_text(FIXTURE.read_text(encoding="utf-8"), encoding="utf-8")
     monkeypatch.setattr(main, "ROOT", tmp_path)
+    monkeypatch.setattr(main, "load_config", lambda: CFG)
+    monkeypatch.setattr(main, "all_sources", lambda: [FakeSource(price)])
     if ignored:
         (data / "ignoriert.json").write_text(json.dumps(ignored))
     monkeypatch.setattr(telegram.Telegram, "_call", fake_call)

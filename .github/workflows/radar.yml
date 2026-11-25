@@ -86,6 +86,8 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          DEAL_MAIL_ADRESSE: ${{ secrets.DEAL_MAIL_ADRESSE }}
+          DEAL_MAIL_APP_PASSWORT: ${{ secrets.DEAL_MAIL_APP_PASSWORT }}
           GITHUB_TOKEN: ${{ github.token }}   # für Telegram-Befehle: products.yaml per API committen
           RADAR_GRUND: ${{ github.event.client_payload.grund }}   # "zeitplan" oder "befehl" (vom Worker)
         run: python -m dealradar.main

@@ -11,6 +11,7 @@ Regeln (siehe config.yaml -> regeln):
 from __future__ import annotations
 
 import datetime as dt
+import re
 import statistics
 from dataclasses import dataclass
 
@@ -92,6 +93,43 @@ def reference_median(product: Product, offers: list[Offer], stored: dict) -> flo
     if len(values) < 5:
         values.append(product.zielpreis)
     return min(statistics.median(values), product.zielpreis)
+
+
+# Welche Quelle "gewinnt", wenn mehrere dasselbe Angebot melden (kleiner = besser):
+# direkt beim Shop gelesen > offizielle API > Community > Blogs > Postfach
+_QUELLEN_RANG = {"shop": 0, "hersteller": 0, "ebay": 1, "leasingmarkt": 1, "mydealz": 2, "sparneuwagen": 2,
+                 "postfach": 4}
+
+
+def norm_shop(name: str) -> str:
+    """'www.Media-Markt.de' -> 'mediamarkt', 'Amazon.de' -> 'amazon'"""
+    t = (name or "").lower().strip()
+    t = re.sub(r"^https?://", "", t).removeprefix("www.")
+    t = re.sub(r"\.(de|com|net|eu|at|ch)(/.*)?$", "", t)
+    return re.sub(r"[^a-z0-9äöüß]", "", t)
+
+
+def merge_duplicates(offers: list[Offer]) -> list[Offer]:
+    """Gleiches Angebot aus mehreren Quellen (gleicher Shop + gleicher Preis inkl. Versand)
+    nur einmal behalten; die anderen Quellen stehen in `weitere_quellen`."""
+    groups: dict[tuple, list[Offer]] = {}
+    out: list[Offer] = []
+    for o in offers:
+        if o.compare_price is None or o.leasing:
+            out.append(o)
+            continue
+        groups.setdefault((o.product_id, norm_shop(o.shop), round(o.compare_price, 2)), []).append(o)
+    for group in groups.values():
+        group.sort(key=lambda o: (_QUELLEN_RANG.get(o.source, 3), o.shipping is None))
+        keep = group[0]
+        others = [o.source for o in group[1:] if o.source != keep.source]
+        keep.weitere_quellen = sorted(set(keep.weitere_quellen + others))
+        for o in group[1:]:  # Hinweise der anderen (z. B. "nur mit Prime") nicht verlieren
+            keep.hints = _unique(keep.hints + [h for h in o.hints if h != "Versand unbekannt"])
+        if keep.shipping is not None and "Versand unbekannt" in keep.hints:
+            keep.hints.remove("Versand unbekannt")
+        out.append(keep)
+    return out
 
 
 def evaluate(product: Product, offers: list[Offer], state: dict, rules: dict) -> list[Alert]:

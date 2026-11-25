@@ -40,6 +40,6 @@ def strip_tags(text: str) -> str:
 
 def all_sources():
     """Reihenfolge = Reihenfolge der Abfrage."""
-    from . import ebay, leasingmarkt, mydealz, shop, sparneuwagen
+    from . import dealblogs, ebay, hersteller, leasingmarkt, mydealz, postfach, shop, sparneuwagen
 
-    return [mydealz, ebay, shop, leasingmarkt, sparneuwagen]
+    return [mydealz, *dealblogs.SOURCES, ebay, shop, hersteller, postfach, leasingmarkt, sparneuwagen]

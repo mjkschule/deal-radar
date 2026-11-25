@@ -162,7 +162,7 @@ def run(args) -> int:
     if quiet:
         print("Ruhezeit: normale Meldungen werden danach vom Worker nachgeliefert.")
     for p in products:
-        offers = [o for o in all_offers if o.product_id == p.id]
+        offers = logic.merge_duplicates([o for o in all_offers if o.product_id == p.id])
         alerts = [a for a in logic.evaluate(p, offers, state, rules)
                   if meldungen.offer_hash(a.offer.key) not in ignored]
         for a in alerts:

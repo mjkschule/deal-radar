@@ -65,5 +65,7 @@ def build(products: list[Product], state: dict, history: dict, cfg: dict, now: d
         "ruhezeit_beim_lauf": quiet_now(cfg, now),
         # Meldungen, die der Worker nach der Ruhezeit bzw. in der Tagesübersicht verschickt
         "warteschlange": state.get("warteschlange") or [],
+        # Gutscheine aus dem Deal-Postfach (ohne Codes)
+        "gutscheine": (state.get("cache") or {}).get("gutscheine") or [],
         "produkte": out,
     }
