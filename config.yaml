@@ -3,14 +3,25 @@
 #  Diese Datei kannst du direkt im GitHub-Webeditor ändern (Stift-Symbol).
 # =====================================================================
 
-# Bis wann soll das Radar laufen? Danach beendet sich jeder Lauf sofort
-# und der Workflow schaltet sich selbst ab (keine Läufe, keine Fehler mehr).
-# Format: JJJJ-MM-TTTHH:MM (Uhrzeit in der unten angegebenen Zeitzone)
-enddatum: "2026-11-27T23:59"
+# Bis wann läuft das Radar im normalen Takt? Format JJJJ-MM-TTTHH:MM oder "nie".
+# Per Telegram änderbar:  /ende 24.12.2026   oder   /ende nie
+enddatum: "2026-11-30T23:59"
+# Was passiert danach?
+#   wunschliste = Wunschlisten-Modus: weiter 1x täglich suchen und melden (Standard)
+#   aus         = Radar beendet sich, der Workflow schaltet sich selbst ab
+nach_ende: wunschliste
 zeitzone: "Europe/Berlin"
 
+# Wie oft gesucht wird (der Cloudflare Worker startet die Läufe; GitHub läuft alle 2 Std. als Reserve)
+zeitplan:
+  normal_minuten: 120            # normal: alle 2 Stunden
+  aktion_minuten: 30             # Aktionszeit: alle 30 Minuten …
+  aktion_von: "2026-11-27T00:00" # … von Black Friday
+  aktion_bis: "2026-11-30T23:59" # … bis Cyber Monday
+  wunschliste_uhrzeit: "08:00"   # Wunschlisten-Modus: täglich um diese Uhrzeit
+
 # So meldet sich das Tool bei Webseiten. Bitte ehrlich lassen.
-user_agent: "DealRadar/1.0 (private Preisbeobachtung; Open-Source-Bot, max. 1 Abruf/2 Std.)"
+user_agent: "DealRadar/1.0 (private Preisbeobachtung; Open-Source-Bot, max. 1 Abruf/30 Min.)"
 
 # Höflichkeit: Mindestpause zwischen zwei Abrufen bei derselben Webseite (Sekunden)
 pause_sekunden: 3
@@ -31,15 +42,20 @@ quellen:
   hersteller: true     # Herstellershops aus shops.yaml (Tefal, Cosori)
   postfach: true       # Gmail-Deal-Postfach (nur aktiv, wenn die Mail-Secrets gesetzt sind)
 
+# Diese Quellen höchstens so oft abfragen (Minuten) – auch wenn das Radar öfter läuft.
+# Leasing-Angebote hängen nicht am Black Friday; so werden die Seiten geschont.
+quellen_mindestabstand_minuten:
+  leasingmarkt: 110
+  sparneuwagen: 110
+
+# Telegram-Warnung, wenn eine Quelle so viele Läufe in Folge ausfällt (und Entwarnung danach)
+quellen_alarm_nach: 3
+
 # Diese mydealz-Feeds werden immer für ALLE Produkte durchsucht
 # (zusätzlich zu den Gruppen, die beim Produkt stehen).
-mydealz_immer: ["new", "hot"]
+mydealz_immer: ["alles", "hot"]
 
 # LeasingMarkt: wie viele Ergebnisseiten (je 15 Angebote) maximal geladen werden
-# Zeitplan-Läufe (Cloudflare Worker und GitHub) werden übersprungen, wenn der
-# letzte Lauf weniger als so viele Minuten her ist. Läufe nach Bot-Befehlen laufen immer.
-mindestabstand_minuten: 60
-
 leasingmarkt_max_seiten: 20   # alle Ergebnisseiten (Stand 24.11.: 18); Elektro-Angebote stehen oft weiter hinten
 # ... und für wie viele Angebote pro Lauf die Detailseite (Sonderzahlung,
 # Überführung) nachgeladen wird

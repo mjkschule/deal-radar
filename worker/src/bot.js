@@ -8,9 +8,10 @@
 
 import { editFile } from "./github.js";
 import { describe, quietNow, readConfig } from "./ruhe.js";
+import * as zeitplan from "./zeitplan.js";
 import { deriveTerms, LinkError, readShopPage, suggestTarget } from "./shoplink.js";
 import {
-  appendProduct, parseProducts, ProductError, removeProduct, setActive, setConfigValue, setTarget,
+  appendProduct, parseProducts, ProductError, removeProduct, setActive, setConfigValue, setTarget, setTopValue,
 } from "./yamledit.js";
 
 const TZ = "Europe/Berlin";
@@ -41,12 +42,13 @@ export const HELP =
   "Sofort kommt nur, was den Zielpreis erreicht oder einen sehr hohen Deal-Score hat; " +
   "alles andere steht in der Übersicht um 19 Uhr.\n" +
   "<code>/ruhe aus</code> / <code>/ruhe an</code> – Ruhezeiten aus- oder einschalten, <code>/ruhe</code> zeigt den Stand\n" +
+  "<code>/ende 24.12.2026</code> / <code>/ende nie</code> – bis wann normal gesucht wird (danach 1× täglich)\n" +
   "Unter jeder Meldung: ✅ Gekauft · 🙈 Ignorieren · 🎯 Ziel −10 € · ⏸ Pausieren · 🔗 Zum Angebot\n\n" +
   "Statt der Nummer geht auch ein Name, z. B. <code>/pause airfryer</code>. " +
   "Passt er auf mehrere Produkte, frage ich mit Buttons nach.";
 
 const SHORT_HELP =
-  "Das kenne ich nicht. Befehle: /liste · /top · /status · /neu · /ziel · /pause · /fortsetzen · /loeschen · /ruhe\n" +
+  "Das kenne ich nicht. Befehle: /liste · /top · /status · /neu · /ziel · /pause · /fortsetzen · /loeschen · /ruhe · /ende\n" +
   "Beispiele: /hilfe";
 
 // ---------- Formatierung ----------
@@ -66,14 +68,6 @@ export function when(iso) {
   return new Intl.DateTimeFormat("de-DE", {
     timeZone: TZ, day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit",
   }).format(new Date(iso)) + " Uhr";
-}
-
-/** Nächster Zeitplan-Lauf: Minute 17 jeder geraden UTC-Stunde (wie in wrangler.toml). */
-export function nextRun(now) {
-  const d = new Date(now);
-  d.setUTCMinutes(17, 0, 0);
-  while (d <= now || d.getUTCHours() % 2 !== 0) d.setTime(d.getTime() + 3600e3);
-  return d;
 }
 
 function fold(s) {
@@ -215,9 +209,17 @@ export async function cmdStatus({ gh, env, now }) {
   return [
     "📊 <b>Status</b>",
     `Letzter Lauf: ${when(data.letzter_lauf)}${ago != null ? ` (vor ${ago < 120 ? ago + " Min." : Math.round(ago / 60) + " Std."})` : ""}`,
-    `Nächster Lauf: ca. ${when(nextRun(now).toISOString())}`,
+    (() => {
+      const next = zeitplan.nextRun(cfg, now);
+      return `Nächster Lauf: ${next ? "ca. " + when(next.toISOString()) : "keiner (Radar beendet)"} · ` +
+        `Takt: ${esc(zeitplan.describe(cfg, now))}`;
+    })(),
     `Produkte: ${active.length} aktiv, ${products.length - active.length} pausiert · Ziel erreicht: ${reached}`,
-    data.enddatum ? `Läuft bis: ${when(data.enddatum)}` : "",
+    (() => {
+      const end = zeitplan.endDate(cfg);
+      const after = String(cfg.nach_ende ?? "wunschliste") === "aus" ? "danach Ende" : "danach 1× täglich";
+      return end ? `Normaler Betrieb bis: ${when(end.toISOString())} (${after})` : "Läuft ohne Enddatum";
+    })(),
     `Ruhezeiten: ${quiet} · Übersicht täglich ${esc(cfg.meldungen.uebersicht_uhrzeit)} Uhr`,
     "",
     "<b>Quellen</b>",
@@ -484,6 +486,51 @@ async function alertAction(code, id, extra, cq, deps) {
   return { toast: "Schon erledigt", text: null, label: null };
 }
 
+// ---------- Enddatum ----------
+
+/** "24.12.2026", "24.12.", "2026-12-24", "2026-12-24T18:00", "nie" -> Wert für config.yaml (oder null) */
+export function parseEnd(arg, now) {
+  const a = arg.trim().toLowerCase();
+  if (a === "nie" || a === "never") return "nie";
+  let m = /^(\d{1,2})\.(\d{1,2})\.(\d{2,4})?(?:\s+(\d{1,2}):(\d{2}))?$/.exec(a);
+  let y, mo, d, hh = 23, mm = 59;
+  if (m) {
+    [d, mo] = [Number(m[1]), Number(m[2])];
+    y = m[3] ? Number(m[3]) : new Date(now).getUTCFullYear();
+    if (y < 100) y += 2000;
+    if (m[4]) [hh, mm] = [Number(m[4]), Number(m[5])];
+  } else if ((m = /^(\d{4})-(\d{2})-(\d{2})(?:t(\d{2}):(\d{2}))?$/.exec(a))) {
+    [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+    if (m[4]) [hh, mm] = [Number(m[4]), Number(m[5])];
+  } else {
+    return null;
+  }
+  const check = new Date(Date.UTC(y, mo - 1, d));
+  if (check.getUTCMonth() !== mo - 1 || hh > 23 || mm > 59) return null;
+  const p = (n) => String(n).padStart(2, "0");
+  return `${y}-${p(mo)}-${p(d)}T${p(hh)}:${p(mm)}`;
+}
+
+async function cmdEnde(arg, { gh, now }) {
+  if (!arg.trim()) {
+    const cfg = await loadConfig(gh);
+    const end = zeitplan.endDate(cfg);
+    return (end ? `📅 Normaler Betrieb bis <b>${when(end.toISOString())}</b>, danach ` +
+      (String(cfg.nach_ende) === "aus" ? "Ende." : "Wunschlisten-Modus (1× täglich).") : "📅 Kein Enddatum – das Radar läuft immer weiter.") +
+      `\nJetzt: ${esc(zeitplan.describe(cfg, now))}\nÄndern: <code>/ende 24.12.2026</code> oder <code>/ende nie</code>`;
+  }
+  const value = parseEnd(arg, now);
+  if (!value) return "Format: <code>/ende 24.12.2026</code>, <code>/ende 24.12.2026 18:00</code> oder <code>/ende nie</code>";
+  if (value !== "nie" && zeitplan.localDate(value) < now) {
+    return "Das Datum liegt in der Vergangenheit. Bitte ein künftiges Datum angeben.";
+  }
+  await editFile(gh, CONFIG, `Telegram: Enddatum ${value}`, (t) => setTopValue(t, "enddatum", value));
+  const cfg = await loadConfig(gh);
+  if (value === "nie") return `♾ Kein Enddatum mehr – das Radar läuft weiter (${esc(zeitplan.describe(cfg, now))}).`;
+  return `📅 Enddatum gesetzt: <b>${when(zeitplan.endDate(cfg).toISOString())}</b>. Danach ` +
+    (String(cfg.nach_ende) === "aus" ? "endet das Radar." : "läuft es im Wunschlisten-Modus 1× täglich weiter.");
+}
+
 // ---------- Ruhezeiten ----------
 
 async function cmdRuhe(arg, { gh, now }) {
@@ -538,6 +585,7 @@ export async function handleText(text, deps) {
     case "fortsetzen": return writeCommand("f", arg, deps);
     case "ziel": return writeCommand("z", arg, deps);
     case "ruhe": return { text: await cmdRuhe(arg, deps) };
+    case "ende": return { text: await cmdEnde(arg, deps) };
     default: return { text: SHORT_HELP };
   }
 }

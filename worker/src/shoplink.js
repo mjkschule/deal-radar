@@ -2,7 +2,7 @@
 // maschinenlesbaren Produktdaten (schema.org JSON-LD) lesen: Name, EAN/GTIN, Preis.
 // Kein Umgehen von Bot-Schutz: Verweigert der Shop den Abruf, sagen wir das ehrlich.
 
-export const USER_AGENT = "DealRadar/1.0 (private Preisbeobachtung; Open-Source-Bot, max. 1 Abruf/2 Std.)";
+export const USER_AGENT = "DealRadar/1.0 (private Preisbeobachtung; Open-Source-Bot, max. 1 Abruf/30 Min.)";
 
 // ---------- robots.txt (gleiche Regeln wie dealradar/robots.py) ----------
 

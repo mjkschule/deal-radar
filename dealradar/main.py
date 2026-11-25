@@ -15,7 +15,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import bewertung, botdata, github, logic, meldungen, page, storage
+from . import bewertung, botdata, github, logic, meldungen, page, pwa, storage, zeitplan
 from .config import (ROOT, ConfigError, end_datetime, expand_alternatives, is_over, load_config, load_products,
                      now_local)
 from .commands import CommandProcessor, split_message
@@ -85,8 +85,9 @@ def run(args) -> int:
     cfg = load_config()
     now = now_local(cfg)
     if is_over(cfg, now):
-        print(f"Enddatum {end_datetime(cfg):%d.%m.%Y %H:%M} erreicht – Deal-Radar ist beendet.")
+        print(f"Enddatum {end_datetime(cfg):%d.%m.%Y %H:%M} erreicht und nach_ende: aus – Deal-Radar ist beendet.")
         return 0
+    print(f"Zeitplan: {zeitplan.describe(cfg, now)}")
 
     env = dict(os.environ)
     http = Http(cfg["user_agent"], pause=float(cfg["pause_sekunden"]), timeout=float(cfg["timeout_sekunden"]))
@@ -115,7 +116,7 @@ def run(args) -> int:
     # Lauf weniger als X Minuten zurück, wird dieser Lauf übersprungen.
     if env.get("GITHUB_EVENT_NAME") == "schedule" or env.get("RADAR_GRUND") == "zeitplan":
         last = state.get("letzter_lauf")
-        gap = int(cfg.get("mindestabstand_minuten", 60))
+        gap = zeitplan.min_gap(cfg, now)
         if last and (now - dt.datetime.fromisoformat(last)).total_seconds() < gap * 60:
             print(f"Letzter Lauf {last} ist weniger als {gap} Minuten her – Zeitplan-Lauf übersprungen.")
             _output("lauf", "uebersprungen")
@@ -143,6 +144,14 @@ def run(args) -> int:
         if not cfg["quellen"].get(name, True):
             status[name] = {"status": "deaktiviert", "meldung": "in config.yaml ausgeschaltet"}
             continue
+        prev = (state.get("quellen") or {}).get(name) or {}
+        wait = int((cfg.get("quellen_mindestabstand_minuten") or {}).get(name, 0))
+        if (wait and prev.get("status") == "ok" and prev.get("zeit")
+                and (now - dt.datetime.fromisoformat(prev["zeit"])).total_seconds() < wait * 60):
+            # Nicht neu abfragen: Status und Angebote vom letzten Abruf gelten weiter (Startseite: 48 Std.)
+            status[name] = {**prev, "meldung": f"nur alle {wait} Min. abgefragt – Stand {prev['zeit'][11:16]} Uhr"}
+            print(f"[{name}] übersprungen (Mindestabstand {wait} Min.)")
+            continue
         ctx = Context(http=http, config=cfg, env=env, now=now, cache=cache)
         t0 = time.monotonic()
         try:
@@ -157,6 +166,11 @@ def run(args) -> int:
         status[name]["dauer_s"] = round(time.monotonic() - t0, 1)
         print(f"[{name}] {status[name]['status']}: {status[name].get('meldung', '')}")
     state["quellen"] = status
+    for text in meldungen.source_alerts(state, status, int(cfg.get("quellen_alarm_nach", 3))):
+        try:
+            tg.send(text)
+        except TelegramError as ex:
+            print(f"Telegram-Fehler: {ex}", file=sys.stderr)
 
     # --- Bewerten, melden, speichern ---
     rules = cfg["regeln"]
@@ -229,6 +243,7 @@ def run(args) -> int:
     (docs_dir / "index.html").write_text(page.render(load_products(products_path), state, history, cfg, now),
                                          encoding="utf-8")
     (docs_dir / ".nojekyll").write_text("", encoding="utf-8")
+    pwa.write_assets(docs_dir)  # Startseite als App installierbar
     print(f"Fertig: {len(all_offers)} Angebote, {sent} Meldungen, {queued} vorgemerkt, {http.request_count} Abrufe.")
     return 0
 

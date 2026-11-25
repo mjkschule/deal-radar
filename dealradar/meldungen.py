@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import datetime as dt
 import hashlib
+import html
 from zoneinfo import ZoneInfo
 
 SOFORT = "sofort"
@@ -121,3 +122,25 @@ def prune_queue(state: dict, now: dt.datetime) -> None:
     cutoff = now - dt.timedelta(hours=WARTESCHLANGE_STUNDEN)
     state["warteschlange"] = [x for x in state.get("warteschlange") or []
                               if dt.datetime.fromisoformat(x["zeit"]) >= cutoff]
+
+
+def source_alerts(state: dict, status: dict, after: int = 3) -> list[str]:
+    """Zählt Fehler je Quelle über die Läufe. Meldet einmal, wenn eine Quelle `after`-mal in Folge
+    ausfällt, und einmal, wenn sie danach wieder funktioniert. (Abgeschaltete Quellen zählen nicht.)"""
+    counts = state.setdefault("quellen_fehler", {})
+    out = []
+    for name, s in status.items():
+        st = s.get("status")
+        if st == "fehler":
+            counts[name] = counts.get(name, 0) + 1
+            if counts[name] == after:
+                out.append(f"⚠️ <b>Quelle „{name}“ fällt aus</b> – {after} Läufe in Folge.\n"
+                           f"Letzte Meldung: {html.escape(str(s.get('meldung', ''))[:200])}\n"
+                           "Die anderen Quellen laufen weiter. Ich melde mich, sobald sie wieder geht.")
+        elif st == "ok":
+            if counts.get(name, 0) >= after:
+                out.append(f"✅ Quelle „{name}“ funktioniert wieder.")
+            counts.pop(name, None)
+        else:  # abgeschaltet / nicht eingerichtet
+            counts.pop(name, None)
+    return out

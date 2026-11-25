@@ -1,10 +1,12 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { eur, handleUpdate, nextRun, parseNew } from "../src/bot.js";
+import { eur, handleUpdate, parseNew } from "../src/bot.js";
+import { readConfig } from "../src/ruhe.js";
+import { nextRun } from "../src/zeitplan.js";
 import { editFile } from "../src/github.js";
 import { parseProducts } from "../src/yamledit.js";
-import { deps, msg } from "./helpers.js";
+import { CONFIG, deps, msg } from "./helpers.js";
 
 const products = (d) => parseProducts(d.gh.store.get("products.yaml").text);
 const last = (d) => d.tg.sent.at(-1);
@@ -147,7 +149,8 @@ test("Hilfsfunktionen", () => {
   assert.equal(eur(215), "215");
   assert.equal(eur(39.9), "39,90");
   assert.equal(eur(1492.3), "1.492,30");
-  assert.equal(nextRun(new Date("2026-11-25T12:17:00Z")).toISOString(), "2026-11-25T14:17:00.000Z");
-  assert.equal(nextRun(new Date("2026-11-25T13:05:00Z")).toISOString(), "2026-11-25T14:17:00.000Z");
+  const cfg = readConfig(CONFIG);
+  assert.equal(nextRun(cfg, new Date("2026-11-25T12:17:00Z")).toISOString(), "2026-11-25T14:17:00.000Z");
+  assert.equal(nextRun(cfg, new Date("2026-11-25T13:05:00Z")).toISOString(), "2026-11-25T14:17:00.000Z");
   assert.deepEqual(parseNew("/neu A; 10"), { name: "A", zielpreis: 10, suchbegriffe: ["A"] });
 });

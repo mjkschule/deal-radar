@@ -10,6 +10,7 @@ export const COMMANDS = [
   { command: "fortsetzen", description: "Pausiertes Produkt fortsetzen: /fortsetzen 3" },
   { command: "loeschen", description: "Produkt löschen: /loeschen 3" },
   { command: "ruhe", description: "Ruhezeiten: /ruhe an, /ruhe aus oder /ruhe (Stand)" },
+  { command: "ende", description: "Enddatum: /ende 24.12.2026, /ende nie oder /ende (Stand)" },
   { command: "hilfe", description: "Alle Befehle mit Beispielen" },
 ];
 
