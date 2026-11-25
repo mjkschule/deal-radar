@@ -284,7 +284,7 @@ def test_alarm_stats_in_notes(monkeypatch):
     monkeypatch.setattr(postfach, "read_mails", lambda env, since: mails)
     c = ctx(env={"DEAL_MAIL_ADRESSE": "a@gmail.com", "DEAL_MAIL_APP_PASSWORT": "x"})
     assert [o.price for o in postfach.fetch(MAKITA, c)] == [185.0]
-    assert "1 Portal-Mails ohne Alarm übersprungen" in c.notes[-1]
+    assert "übersprungen: 1 Bestätigung" in c.notes[-1]
 
 
 def test_cleanup_removes_wish_price_offers_once(tmp_path):
@@ -315,3 +315,33 @@ def test_cleanup_removes_wish_price_offers_once(tmp_path):
     # nur einmal
     state["angebote"]["epson"]["neu"] = {"source": "postfach"}
     assert bereinigen.drop_postfach_offers(state, history, csv_path) == [] and "neu" in state["angebote"]["epson"]
+
+
+# ---------- Geizhals-Alarme und Newsletter der Portale ----------
+
+GH = "Geizhals Preisalarm <preisalarm@geizhals.de>"
+EPSON = parse_products([{"id": "epson", "name": "Epson EcoTank ET-2922", "suchbegriffe": ["ET-2922"], "zielpreis": 155}])
+NEWS_HTML = ("<p>Diese Produkte sind jetzt günstiger:</p>" + "".join(
+    f"<p>Produkt {i} jetzt für {100 + i},99 €</p>" for i in range(10)) + "<p>Epson EcoTank ET-2922 jetzt für 149,00 €</p>")
+
+
+@pytest.mark.parametrize("sender,subject,html,products,price", [
+    # Geizhals-Preisalarm (Betrag mit € davor) -> Angebot, Preislimit nicht
+    (GH, "Preisalarm: Epson EcoTank ET-2922 um € 149,90 erhältlich", "<p>Ihr Preislimit: € 155,00</p>", EPSON, 149.9),
+    (GH, "Ihr Preisalarm für Epson EcoTank ET-2922 wurde ausgelöst",
+     "<p>Ihr Preislimit: € 155,00 · Jetzt ab € 151,49</p>", EPSON, 151.49),
+    (GH, "Bitte bestätigen Sie Ihren Preisalarm", "<p>Epson EcoTank ET-2922, Preislimit € 155,00</p>", EPSON, None),
+    # Newsletter: nie ein Preisalarm – auch wenn ein Produkt der Liste mit „jetzt für“ drinsteht
+    ("geizhals <newsletter@geizhals.de>", "Geizhals Newsletter KW 48", NEWS_HTML, EPSON, None),
+    ("idealo <info@idealo.de>", "Black Friday: Die besten Deals – bis zu -60 %", NEWS_HTML, EPSON, None),
+    ("idealo <info@idealo.de>", "Diese Produkte sind jetzt günstiger", NEWS_HTML, EPSON, None),  # viele Preise
+    ("idealo <news@idealo.de>", "Bitte bestätige deine Newsletter-Anmeldung", "<p>Willkommen</p>", EPSON, None),
+    # Alarm, der auf zwei verschiedene Produkte passt -> lieber nichts melden
+    (GH, "Preisalarm: Epson ET-2922 und Makita DHP490RFX3 jetzt für 149 €", "", EPSON + MAKITA, None),
+])
+def test_geizhals_alarms_and_portal_newsletters(sender, subject, html, products, price):
+    portal = "Geizhals" if "geizhals" in sender else "idealo"
+    offers = postfach.parse_alarm(mail(sender, subject, html), products, portal)
+    assert [o.price for o in offers] == ([price] if price else [])
+    if offers:
+        assert offers[0].shop == "Geizhals (Preisalarm)"
