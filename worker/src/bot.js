@@ -29,7 +29,7 @@ export const HELP =
   "/liste – alle Produkte mit Nummer, Zielpreis, Bestpreis, Shop und Deal-Score\n" +
   "/top – die 5 besten Deals nach Deal-Score\n" +
   "/status – letzter und nächster Suchlauf, Zustand der Quellen\n" +
-  "/knaller – 💥 Rabattknaller: große Rabatte bei Schlagbohrschrauber-Sets, Monitoren, Airfryern, Farbdruckern\n\n" +
+  "/knaller – 💥 Rabattknaller: große Rabatte bei Schlagbohrschrauber-Sets, Monitoren, Airfryern, Farbdruckern, Wasserkochern\n\n" +
   "<b>Neues Produkt</b>\n" +
   "Einfach den <b>Link zur Produktseite</b> eines Shops schicken – ich lese Name, EAN und Preis " +
   "und schlage einen Zielpreis vor.\n" +

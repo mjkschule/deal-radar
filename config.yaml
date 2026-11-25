@@ -90,6 +90,13 @@ rabattknaller:
                    "druckerpapier", "fotopapier", "etiketten", "label", "s/w", "schwarzweiß", "schwarz-weiß",
                    "monochrom", "mono", "bondrucker", "beschrifter"]
       max_preis: 300
+    wasserkocher:
+      name: "Wasserkocher"
+      gruppen: [wasserkocher]
+      eines_von: ["wasserkocher", "teekocher", "kettle"]
+      ausschluss: ["entkalker", "kalkfilter", "ersatzfilter", "ersatzteil", "deckel", "dichtung", "frühstücksset",
+                   "frühstücks-set", "toaster", "reisewasserkocher-adapter"]
+      max_preis: 100
 
 # Abgelaufene mydealz-Deals erkennen (Deal-Seite wird geöffnet; laut robots.txt erlaubt)
 ablauf:

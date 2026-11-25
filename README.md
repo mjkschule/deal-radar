@@ -380,6 +380,7 @@ die nicht auf deiner Liste stehen:
 | Computer-Monitor (kein Zubehör wie Halterungen) | 300 € |
 | Airfryer / Heißluftfritteuse (kein Zubehör) | 200 € |
 | Farbdrucker (kein 3D-, Laser-s/w- oder Etikettendrucker, keine Patronen) | 300 € |
+| Wasserkocher (kein Entkalker, keine Frühstücks-Sets) | 100 € |
 
 - **Rabattknaller** ist ein Deal, der mindestens **30 % unter dem Preisvergleich** liegt (PVG, idealo,
   Geizhals, „nächster Preis“ – **nicht** UVP oder Streichpreis des Shops), **oder** der bei mydealz sehr
@@ -390,7 +391,7 @@ die nicht auf deiner Liste stehen:
 - **Startseite:** eigener Bereich „💥 Rabattknaller“ oben, mit „🚫 Abgelaufen?“ zum Ausblenden. Abgelaufene
   mydealz-Deals werden automatisch ausgeblendet.
 - **Quellen:** mydealz-Gruppen (akkuschrauber, werkzeug, monitor, fritteusen, drucker,
-  multifunktionsdrucker), mydealz „trending“ (für die Temperatur) und die Deal-Blogs.
+  multifunktionsdrucker, wasserkocher), mydealz „trending“ (für die Temperatur) und die Deal-Blogs.
 - **Anpassen:** `rabattknaller:` in `config.yaml` – Schwellen, Höchstpreise, Suchbegriffe, Ausschlusswörter;
   `aktiv: false` schaltet die Funktion ab.
 
