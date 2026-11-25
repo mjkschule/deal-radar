@@ -153,11 +153,3 @@
   suchbegriffe: [Philips HD9255/80, Philips HD9255/60, Philips Airfryer 5000 HD9255]
   kategorie: sonstiges
   mydealz_gruppen: [fritteusen]   # Heißluftfritteusen-Gruppe auf mydealz
-
-# per Telegram hinzugefügt
-- id: ninja-air-fryer-af100eu-3-8-l
-  name: Ninja Air Fryer AF100EU (3,8 l)
-  zielpreis: 65.0
-  suchbegriffe: [Ninja AF100EU, Ninja Air Fryer AF100]
-  kategorie: sonstiges
-  mydealz_gruppen: [fritteusen]   # Heißluftfritteusen-Gruppe auf mydealz
