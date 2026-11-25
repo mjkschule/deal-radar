@@ -46,15 +46,6 @@
   ebay_suche: "Makita DHP490RFX3"
   notizen: "Set mit 2x 3,0 Ah, Ladegerät, Koffer und 74-teiligem Zubehör."
 
-- id: hp-deskjet-2922
-  name: "HP DeskJet 2922 (Farbe, WLAN, Scan/Kopie)"
-  kategorie: drucker
-  suchbegriffe: ["DeskJet 2922"]
-  zielpreis: 45
-  ausschluss: ["Patrone", "Patronen", "Druckerpatronen", "Toner"]
-  mydealz_gruppen: [drucker, multifunktionsdrucker, hp]
-  ebay_suche: "HP DeskJet 2922"
-
 - id: epson-et-2922
   name: "Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)"
   kategorie: drucker
