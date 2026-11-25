@@ -1,12 +1,13 @@
 {
  "enddatum": "2026-11-27T23:59+01:00",
- "letzter_lauf": "2026-11-25T15:17:28+01:00",
+ "gutscheine": [],
+ "letzter_lauf": "2026-11-25T16:01:58+01:00",
  "produkte": {
   "drucker-allgemein": {
    "aktiv": true,
    "bester": {
     "effektivpreis": 39.99,
-    "gesehen": "2026-11-25T15:17:28+01:00",
+    "gesehen": "2026-11-25T16:01:58+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: Farbe"
@@ -32,7 +33,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-25T15:17:28+01:00",
+    "gesehen": "2026-11-25T16:01:58+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -70,7 +71,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-25T15:17:28+01:00",
+    "gesehen": "2026-11-25T16:01:58+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -95,7 +96,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 184.0,
-    "gesehen": "2026-11-25T15:17:28+01:00",
+    "gesehen": "2026-11-25T16:01:58+01:00",
     "hinweise": [
      "Gutschein/Code nötig",
      "nur für Neukunden",
@@ -159,7 +160,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 336.66,
-    "gesehen": "2026-11-25T15:17:28+01:00",
+    "gesehen": "2026-11-25T16:01:58+01:00",
     "hinweise": [
      "Verfügbar: 03/2027",
      "Sonderzahlung unbekannt",
@@ -198,7 +199,7 @@
    "aktiv": true,
    "bester": {
     "effektivpreis": 9.99,
-    "gesehen": "2026-11-25T15:17:28+01:00",
+    "gesehen": "2026-11-25T16:01:58+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -221,43 +222,83 @@
   }
  },
  "quellen": {
+  "dealdoktor": {
+   "anzahl": 0,
+   "dauer_s": 16.9,
+   "meldung": "40 Beiträge (4 Feed-Seiten)",
+   "status": "ok",
+   "zeit": "2026-11-25T16:01:58+01:00"
+  },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T15:17:28+01:00"
+   "zeit": "2026-11-25T16:01:58+01:00"
+  },
+  "hersteller": {
+   "anzahl": 0,
+   "dauer_s": 11.0,
+   "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
+   "status": "ok",
+   "zeit": "2026-11-25T16:01:58+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
-   "dauer_s": 70.9,
+   "dauer_s": 64.1,
    "meldung": "18 Seiten, 0 Detailseiten geladen; 263 Angebote geprüft, 29 elektrisch",
    "status": "ok",
-   "zeit": "2026-11-25T15:17:28+01:00"
+   "zeit": "2026-11-25T16:01:58+01:00"
+  },
+  "mein-deal": {
+   "anzahl": 0,
+   "dauer_s": 16.4,
+   "meldung": "64 Beiträge (4 Feed-Seiten)",
+   "status": "ok",
+   "zeit": "2026-11-25T16:01:58+01:00"
   },
   "mydealz": {
    "anzahl": 25,
-   "dauer_s": 51.3,
-   "meldung": "15/15 Feeds gelesen",
+   "dauer_s": 54.2,
+   "meldung": "16/16 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T15:17:28+01:00"
+   "zeit": "2026-11-25T16:01:58+01:00"
+  },
+  "mytopdeals": {
+   "anzahl": 0,
+   "dauer_s": 6.8,
+   "meldung": "20 Beiträge (2 Feed-Seiten)",
+   "status": "ok",
+   "zeit": "2026-11-25T16:01:58+01:00"
+  },
+  "postfach": {
+   "dauer_s": 0.0,
+   "meldung": "nicht eingerichtet (Gmail-Konto + App-Passwort, siehe README 1.7)",
+   "status": "deaktiviert",
+   "zeit": "2026-11-25T16:01:58+01:00"
+  },
+  "schnaeppchenfuchs": {
+   "dauer_s": 0.4,
+   "meldung": "RobotsBlocked: robots.txt verbietet den Abruf von https://schnaeppchenfuchs.com/rss",
+   "status": "fehler",
+   "zeit": "2026-11-25T16:01:58+01:00"
   },
   "shop": {
    "anzahl": 2,
-   "dauer_s": 9.3,
+   "dauer_s": 9.1,
    "meldung": "2/2 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T15:17:28+01:00"
+   "zeit": "2026-11-25T16:01:58+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
-   "dauer_s": 4.5,
+   "dauer_s": 4.3,
    "meldung": "25 Artikel im Feed",
    "status": "ok",
-   "zeit": "2026-11-25T15:17:28+01:00"
+   "zeit": "2026-11-25T16:01:58+01:00"
   }
  },
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-25T15:17:28+01:00",
+ "stand": "2026-11-25T16:01:58+01:00",
  "version": 1,
  "warteschlange": []
 }
