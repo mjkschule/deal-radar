@@ -12,8 +12,9 @@ import datetime as dt
 from .config import Product, end_datetime
 from .bewertung import buy_or_wait, rechenweg
 from .config import expand_alternatives
-from .logic import current_best
-from .meldungen import quiet_now
+from .logic import current_best, offers_by_status
+from .meldungen import offer_hash, quiet_now
+from .models import OK
 from .score import deal_score
 
 
@@ -69,6 +70,12 @@ def build(products: list[Product], state: dict, history: dict, cfg: dict, now: d
                          "ziel_erreicht": bool(ab and ab["effektivpreis"] is not None
                                                and ab["effektivpreis"] <= alt.zielpreis)})
         e["alternativen"] = alts
+        # Aktuelle Angebote mit Kurzschlüssel – für /weg und den Link „🚫 Abgelaufen?“ der Startseite
+        e["angebote"] = [
+            {"h": offer_hash(f"{(d.get('shop') or '').lower()}|{(d.get('url') or '').split('#')[0]}"),
+             "shop": d.get("shop"), "preis": d.get("vergleichspreis"), "url": d.get("url"),
+             "titel": (d.get("title") or "")[:100]}
+            for d in (offers_by_status(p, state, now, rules, (OK,)) if p.aktiv else [])[:8]]
     return {
         "version": 1,
         "stand": now.isoformat(timespec="seconds"),

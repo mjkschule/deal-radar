@@ -140,11 +140,15 @@ def merge_duplicates(offers: list[Offer]) -> list[Offer]:
     return out
 
 
-def evaluate(product: Product, offers: list[Offer], state: dict, rules: dict) -> list[Alert]:
+def evaluate(product: Product, offers: list[Offer], state: dict, rules: dict,
+             after_classify=None) -> list[Alert]:
     """Bewertet die Angebote eines Produkts. Ändert nur offer.status, nicht den state
-    (gemeldet wird erst nach erfolgreichem Versand mit mark_reported)."""
+    (gemeldet wird erst nach erfolgreichem Versand mit mark_reported).
+    after_classify(offers): optional, z. B. abgelaufene/ausgeblendete Angebote markieren."""
     for o in offers:
         classify(product, o)
+    if after_classify:
+        after_classify(offers)
     stored = state.setdefault("angebote", {}).get(product.id, {})
     median = reference_median(product, offers, stored)
     limit = rules.get("verdacht_unter_median", 0.4)

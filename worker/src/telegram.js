@@ -9,6 +9,7 @@ export const COMMANDS = [
   { command: "pause", description: "Produkt pausieren: /pause 3" },
   { command: "fortsetzen", description: "Pausiertes Produkt fortsetzen: /fortsetzen 3" },
   { command: "loeschen", description: "Produkt löschen: /loeschen 3" },
+  { command: "weg", description: "Abgelaufenes Angebot ausblenden: /weg 3" },
   { command: "ruhe", description: "Ruhezeiten: /ruhe an, /ruhe aus oder /ruhe (Stand)" },
   { command: "ende", description: "Enddatum: /ende 24.12.2026, /ende nie oder /ende (Stand)" },
   { command: "hilfe", description: "Alle Befehle mit Beispielen" },

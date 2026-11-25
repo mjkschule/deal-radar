@@ -243,6 +243,7 @@ Befehle auch im Menü, wenn du `/` tippst.
 | `/pause` | `/pause 3` | Produkt vorübergehend **nicht überwachen** (setzt `aktiv: false`); auf der Startseite ausgegraut am Ende |
 | `/fortsetzen` | `/fortsetzen 3` | Wieder überwachen (setzt `aktiv: true`) |
 | `/loeschen` | `/loeschen 3` oder `/löschen Makita` | Produkt entfernen; der Bot nennt, **welches** gelöscht wurde |
+| `/weg` | `/weg 3` oder `/weg makita` | Zeigt die aktuellen Angebote von Nr. 3 als Buttons – antippen blendet ein **abgelaufenes oder unpassendes Angebot** aus (mit „↩️ Rückgängig“) |
 | `/ruhe` | `/ruhe aus`, `/ruhe an`, `/ruhe` | Ruhezeiten aus-/einschalten bzw. Stand anzeigen (ändert `config.yaml`) |
 | `/ende` | `/ende 24.12.2026`, `/ende nie`, `/ende` | Enddatum setzen bzw. anzeigen (Abschnitt 4) |
 | `/hilfe` | `/hilfe` | Alle Befehle mit Beispielen |
@@ -252,12 +253,26 @@ Befehle auch im Menü, wenn du `/` tippst.
 | Button | Was passiert |
 |---|---|
 | ✅ Gekauft | Produkt wird nicht mehr überwacht und verschwindet von der Startseite. In `data/geloescht.json` steht „gekauft“ mit Preis, Link und Datum; der Preisverlauf bleibt. |
-| 🙈 Ignorieren | Genau **dieses** Angebot wird nie wieder gemeldet (gespeichert in `data/ignoriert.json`). Andere Angebote fürs gleiche Produkt kommen weiter. |
+| 🙈 Ignorieren | Genau **dieses** Angebot wird nie wieder gemeldet und ab dem nächsten Lauf auch nicht mehr auf der Startseite als Preis gezeigt (gespeichert in `data/ignoriert.json`). Andere Angebote fürs gleiche Produkt kommen weiter. |
 | 🎯 Ziel −10 € | Zielpreis um 10 € senken |
 | ⏸ Pausieren | wie `/pause` |
 | 🔗 Zum Angebot | öffnet das Angebot |
 
 Die Meldung selbst bleibt stehen; der gedrückte Button zeigt danach das Ergebnis (z. B. „✅ Gekauft“).
+
+**Abgelaufene Angebote**
+
+- **Automatisch:** mydealz lässt abgelaufene Deals noch tagelang in den Feeds stehen. Das Radar öffnet deshalb
+  die mydealz-Seite jedes Deals, der angezeigt oder gemeldet würde, und prüft, ob dort „abgelaufen“ steht
+  (erlaubt laut robots.txt; jeder Deal höchstens alle 3 Stunden, höchstens 25 Seiten pro Lauf; einstellbar
+  unter `ablauf:` in `config.yaml`). Abgelaufene Deals werden nicht gemeldet und nicht als Preis gezeigt.
+- **Von Hand:** Auf der Startseite steht neben „Zum Angebot“ der Link **🚫 Abgelaufen?**. Er öffnet deinen
+  Bot; tippe dort auf **Starten** – das Angebot wird ausgeblendet und ein Suchlauf startet. Alternativ
+  `/weg 3` oder der Button „🙈 Ignorieren“ unter einer Meldung.
+- **Wo sind sie hin?** Auf der Karte des Produkts unter „Abgelaufen / ausgeblendet“ (zugeklappt).
+  Rückgängig: Button „↩️ Rückgängig“ in der Bestätigung oder den Eintrag aus `data/ignoriert.json` löschen.
+- Andere Quellen (Deal-Blogs) zeigen den Ablauf nicht zuverlässig an – dort hilft „🚫 Abgelaufen?“.
+  Shopseiten und Leasing-Angebote werden bei jedem Lauf frisch gelesen.
 
 Legende in `/liste`: ✅ Ziel erreicht · 🟡 bis 10 % darüber · 🔴 darüber · ⚪ kein Angebot · ⏸ pausiert ·
 🆕 neu (wird beim nächsten Lauf gesucht).
@@ -337,7 +352,8 @@ Entwarnung, sobald sie wieder funktioniert (`quellen_alarm_nach` in `config.yaml
 | ✅ Zielpreis | **Effektivpreis** ≤ Zielpreis (Leasing: Monatsrate ≤ Zielpreis) |
 | ✅ Preissturz | Preis mindestens **10 % unter dem bisher niedrigsten** vom Radar gesehenen Preis |
 | 🔁 Keine Doppelmeldung | Gleiches Angebot (Shop + Link oder Shop + Preis) nur einmal; erneut nur, wenn es billiger wird |
-| 🙈 Ignoriert | Angebote, unter denen du „Ignorieren“ gedrückt hast |
+| 🙈 Ignoriert | Angebote, die du ausgeblendet hast („Ignorieren“, „🚫 Abgelaufen?“, `/weg`) |
+| ⌛ Abgelaufen | Deal bei mydealz als abgelaufen markiert |
 | 🚫 Ausgeschlossen | Ausschlusswort im Titel, Mindestwert unterschritten (z. B. nur 60 Hz), **andere EAN** als beim Produkt eingetragen, oder **B-Ware/gebraucht** (außer `b_ware: true`) |
 | ⚠️ Verdächtig | Preis < 40 % des Medians der gesehenen Preise (Bezugswert höchstens der Zielpreis) |
 | 🚗 Nicht passend (Leasing) | andere Laufzeit als 36 Monate, < 15.000 km/Jahr, nur Gewerbe, Sonderzahlung > 1.000 € |
@@ -437,7 +453,7 @@ data/state.json          gemeldete Angebote, Tiefstpreise, gesehene Angebote (vo
 data/verlauf.json        Preisverlauf pro Lauf (für die Sparklines)
 data/verlauf.csv         alle gesehenen Angebote (mit ; getrennt, öffnet in Excel)
 data/geloescht.json      per /loeschen oder „Gekauft“ entfernte Produkte (zum Wiederherstellen)
-data/ignoriert.json      per Button „Ignorieren“ ausgeblendete Angebote
+data/ignoriert.json      ausgeblendete Angebote („Ignorieren“, „🚫 Abgelaufen?“, /weg)
 docs/index.html          die Startseite (wird automatisch erzeugt)
 docs/manifest.webmanifest, docs/sw.js, docs/icon-*.png   damit die Startseite als App installierbar ist
 docs/bot.json            aktuelle Preise für den Telegram-Bot (wird automatisch erzeugt)

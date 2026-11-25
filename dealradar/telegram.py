@@ -47,6 +47,12 @@ class Telegram:
             raise TelegramError(f"Telegram meldet Fehler: {data.get('description', status)}")
         return data["result"]
 
+    def username(self) -> str | None:
+        """Name des Bots (für den Link „🚫 Abgelaufen?“ auf der Startseite)."""
+        if not self.live:
+            return None
+        return (self._call("getMe", {}) or {}).get("username")
+
     @property
     def live(self) -> bool:
         """True, wenn wirklich gesendet wird (Secrets gesetzt, kein --dry-run)."""

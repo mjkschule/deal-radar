@@ -128,5 +128,5 @@ def test_products_yaml_is_valid():
     import yaml
     raw = yaml.safe_load((pathlib.Path(__file__).parent.parent / "products.yaml").read_text(encoding="utf-8"))
     products = parse_products(raw)
-    assert len(products) >= 8
+    assert len(products) >= 1  # Liste ändert sich per Telegram
     assert any(p.is_leasing for p in products)
