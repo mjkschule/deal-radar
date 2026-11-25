@@ -170,6 +170,12 @@ angezeigt. (Das ist *nicht* dein Gmail-Passwort; es kann nur Mails lesen und jed
 **e) Postfach füttern:** Bei idealo/Geizhals Preisalarme für deine Produkte an diese Adresse schicken lassen;
 Newsletter der Shops, die dich interessieren, mit dieser Adresse abonnieren.
 
+**Preisalarme richtig gelesen:** Als Angebot zählt nur eine echte Alarm-Mail („Preis gefallen“,
+„Wunschpreis erreicht“, „jetzt für …“). Bestätigungs- und Einrichtungs-Mails („Preiswecker ist aktiv“,
+„bitte bestätigen“) werden übersprungen. Dein **Wunschpreis** wird nie als Angebotspreis genommen; steht nur
+er in der Mail oder ist das Angebot teurer als er, meldet das Radar lieber nichts. Gespeichert wird statt
+des Klick-Links aus der Mail ein neutraler Link zum Portal.
+
 **Was mit den Mails passiert:** Gelesen werden die Mails der letzten 14 Tage, **nur lesend** (nichts wird
 gelöscht oder als gelesen markiert). Da das Repo öffentlich ist, werden **keine Gutschein-Codes, Betreffs,
 Texte oder Adressen gespeichert** – nur Shop, Rabatt, Mindestbestellwert und Gültigkeit. Den Code findest
