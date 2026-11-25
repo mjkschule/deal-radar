@@ -48,6 +48,49 @@ quellen_mindestabstand_minuten:
   leasingmarkt: 110
   sparneuwagen: 110
 
+# 💥 Rabattknaller: große Rabatte in ganzen Kategorien – auch für Produkte, die NICHT auf deiner Liste stehen.
+# Bezug ist der PREISVERGLEICH (PVG, idealo, Geizhals), nicht UVP/Streichpreis. Sehr „heiße“ mydealz-Deals
+# (Temperatur ab hitze_ab °) zählen auch. Ab sofort_ab_prozent kommt die Meldung sofort (Ruhezeiten gelten),
+# sonst in der Tagesübersicht um 19 Uhr. Gesucht wird bei jedem Lauf (Black Friday bis Cyber Monday alle 30 Min.).
+# Begriffe: muss = alle im Titel · eines_von = mind. einer im Titel · zusatz_eines_von = mind. einer in Titel
+# oder Text · ausschluss = keiner im Titel. Kurze Begriffe (≤ 3 Zeichen, z. B. „Ah“) zählen nur als ganzes Wort.
+rabattknaller:
+  aktiv: true
+  ab_prozent: 30
+  sofort_ab_prozent: 40
+  hitze_ab: 300
+  kategorien:
+    schlagbohrset:
+      name: "Akku-Schlagbohrschrauber-Set"
+      gruppen: [akkuschrauber, werkzeug]
+      muss: ["schlagbohrschrauber"]
+      zusatz_eines_von: ["set", "2x", "akkus", "inkl. akku", "mit akku", "Ah", "koffer"]
+      ausschluss: ["solo", "ohne akku", "ohne ladegerät", "tool only", "nur gerät", "body", "bit-set", "bohrer-set"]
+      max_preis: 300
+    monitor:
+      name: "Computer-Monitor"
+      gruppen: [monitor]
+      eines_von: ["monitor", "gaming-monitor", "bildschirm"]
+      ausschluss: ["halterung", "monitorarm", "monitor-arm", "ständer", "kabel", "babyphone", "lampe", "lightbar",
+                   "blutdruck", "herzfrequenz", "puls", "schutzfolie", "adapter", "kvm", "tisch", "reiniger"]
+      max_preis: 300
+    airfryer:
+      name: "Airfryer"
+      gruppen: [fritteusen]
+      eines_von: ["airfryer", "air fryer", "heißluftfritteuse", "heissluftfritteuse", "heißluft-fritteuse",
+                  "heissluft-fritteuse", "dual zone", "dualzone", "easy fry", "turbo blaze"]
+      ausschluss: ["zubehör", "backpapier", "einsatz", "liner", "silikon", "rezept", "kochbuch", "ersatz", "korb"]
+      max_preis: 200
+    farbdrucker:
+      name: "Farbdrucker"
+      gruppen: [drucker, multifunktionsdrucker]
+      eines_von: ["drucker", "ecotank", "megatank", "officejet", "deskjet", "pixma", "envy", "workforce",
+                  "color laser", "farblaser"]
+      ausschluss: ["3d", "toner", "tintenpatrone", "druckerpatrone", "nachfülltinte", "tintenflasche", "ersatztinte",
+                   "druckerpapier", "fotopapier", "etiketten", "label", "s/w", "schwarzweiß", "schwarz-weiß",
+                   "monochrom", "mono", "bondrucker", "beschrifter"]
+      max_preis: 300
+
 # Abgelaufene mydealz-Deals erkennen (Deal-Seite wird geöffnet; laut robots.txt erlaubt)
 ablauf:
   aktiv: true

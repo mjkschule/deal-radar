@@ -15,6 +15,7 @@ from .config import expand_alternatives
 from .logic import current_best, offers_by_status
 from .meldungen import offer_hash, quiet_now
 from .models import OK
+from . import rabattknaller
 from .score import deal_score
 
 
@@ -88,4 +89,8 @@ def build(products: list[Product], state: dict, history: dict, cfg: dict, now: d
         # Gutscheine aus dem Deal-Postfach (ohne Codes)
         "gutscheine": (state.get("cache") or {}).get("gutscheine") or [],
         "produkte": out,
+        # Rabattknaller (große Rabatte in deinen Kategorien) – für /knaller und den Link „🚫 Abgelaufen?“
+        "rabattknaller": [{k: d.get(k) for k in ("h", "kategorie_name", "title", "vergleichspreis", "shop", "url",
+                                                  "rabatt", "bezug", "hitze")}
+                          for d in rabattknaller.current(state)[:15]],
     }

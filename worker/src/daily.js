@@ -50,6 +50,8 @@ export async function buildOverview({ kv, env }, data, products, cfg, now) {
     if (item.art === "uebersicht" && !(await isSent(kv, item.id))) fresh.push(item);
   }
   fresh.sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+  const knaller = fresh.filter((x) => x.typ === "knaller").sort((a, b) => (b.rabatt ?? 0) - (a.rabatt ?? 0));
+  const deals = fresh.filter((x) => x.typ !== "knaller");
 
   const day = new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", weekday: "long", day: "2-digit", month: "2-digit" })
     .format(now);
@@ -61,13 +63,22 @@ export async function buildOverview({ kv, env }, data, products, cfg, now) {
       out.push(line(nr, p, data.produkte[p.id]) + (b?.url ? ` · <a href="${esc(b.url)}">Angebot</a>` : ""));
     }
   }
-  if (fresh.length) {
+  if (knaller.length) {
+    out.push("\n💥 <b>Rabattknaller</b> (nicht auf deiner Liste)");
+    for (const it of knaller.slice(0, 10)) {
+      out.push(`• ${esc(it.name)} – ${eur(it.preis)} € bei ${esc(it.shop)}` +
+        (it.rabatt != null ? ` · −${it.rabatt} %` : "") + (it.hitze != null ? ` · 🔥 ${it.hitze}°` : "") +
+        (it.url ? ` · <a href="${esc(it.url)}">Angebot</a>` : ""));
+    }
+    if (knaller.length > 10) out.push(`… und ${knaller.length - 10} weitere auf der Startseite`);
+  }
+  if (deals.length) {
     out.push("\n🔥 <b>Weitere gute Deals seit der letzten Übersicht</b>");
-    for (const it of fresh.slice(0, 10)) {
+    for (const it of deals.slice(0, 10)) {
       out.push(`• ${esc(it.name)} – ${eur(it.preis)} € bei ${esc(it.shop)}` +
         (it.score != null ? ` · Score ${it.score}` : "") + (it.url ? ` · <a href="${esc(it.url)}">Angebot</a>` : ""));
     }
-    if (fresh.length > 10) out.push(`… und ${fresh.length - 10} weitere auf der Startseite`);
+    if (deals.length > 10) out.push(`… und ${deals.length - 10} weitere auf der Startseite`);
   } else {
     out.push("\n🔥 Keine weiteren neuen Deals seit der letzten Übersicht.");
   }

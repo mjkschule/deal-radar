@@ -18,7 +18,7 @@ from .. import prices
 from ..config import Product
 from ..matching import matches
 from ..models import Offer
-from . import Context, strip_tags
+from . import Context, remember_raw, strip_tags
 
 # Name: (Feed, Parameter zum Blättern). Ein Feed enthält nur die letzten 10–16 Beiträge
 # (in der Black Week weniger als 2 Stunden) – deshalb wird geblättert, bis der letzte Lauf
@@ -141,6 +141,8 @@ class BlogSource:
 
     def fetch(self, products: list[Product], ctx: Context) -> list[Offer]:
         items, pages = self.read_items(ctx)
+        remember_raw(self.NAME, [{**i, "merchant": shop_of(i, self.NAME), "price_raw": None, "feed": self.NAME}
+                                 for i in items])
         offers = []
         for prod in products:
             for item in items:

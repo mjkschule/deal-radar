@@ -242,6 +242,7 @@ Befehle auch im Menü, wenn du `/` tippst.
 |---|---|---|
 | `/liste` | `/liste` | Alle Produkte mit **Nummer**, Zielpreis, aktuell günstigstem Effektivpreis (inkl. Versand, bei Leasing die effektive Rate), Shop und **Deal-Score** |
 | `/top` | `/top` | Die 5 besten Deals nach Deal-Score, mit Link |
+| `/knaller` | `/knaller` | 💥 Aktuelle **Rabattknaller** (Abschnitt 5) mit Rabatt und mydealz-Temperatur |
 | `/status` | `/status` | Letzter und nächster Suchlauf, Zustand jeder Quelle, Anzahl Produkte |
 | *(Link)* | `https://www.baur.de/p/…` | Produkt per Shop-Link anlegen (Variante C) |
 | `/neu` | `/neu Philips HD9255; 55; HD9255, Airfryer 5000` | Produkt anlegen (Name; Zielpreis; Suchbegriffe) |
@@ -363,6 +364,31 @@ Entwarnung, sobald sie wieder funktioniert (`quellen_alarm_nach` in `config.yaml
 | 🚫 Ausgeschlossen | Ausschlusswort im Titel, Mindestwert unterschritten (z. B. nur 60 Hz), **andere EAN** als beim Produkt eingetragen, oder **B-Ware/gebraucht** (außer `b_ware: true`) |
 | ⚠️ Verdächtig | Preis < 40 % des Medians der gesehenen Preise (Bezugswert höchstens der Zielpreis) |
 | 🚗 Nicht passend (Leasing) | andere Laufzeit als 36 Monate, < 15.000 km/Jahr, nur Gewerbe, Sonderzahlung > 1.000 € |
+
+### 💥 Rabattknaller
+
+Zusätzlich zu deiner Produktliste sucht das Radar **große Rabatte in ganzen Kategorien** – auch für Geräte,
+die nicht auf deiner Liste stehen:
+
+| Kategorie | Höchstpreis |
+|---|---|
+| Akku-Schlagbohrschrauber-Set (mit Akku, kein „Solo“) | 300 € |
+| Computer-Monitor (kein Zubehör wie Halterungen) | 300 € |
+| Airfryer / Heißluftfritteuse (kein Zubehör) | 200 € |
+| Farbdrucker (kein 3D-, Laser-s/w- oder Etikettendrucker, keine Patronen) | 300 € |
+
+- **Rabattknaller** ist ein Deal, der mindestens **30 % unter dem Preisvergleich** liegt (PVG, idealo,
+  Geizhals, „nächster Preis“ – **nicht** UVP oder Streichpreis des Shops), **oder** der bei mydealz sehr
+  **heiß** ist (ab 300°, also viele positive Stimmen der Community).
+- **Meldung:** ab **40 %** sofort (Ruhezeiten gelten), sonst in der **Tagesübersicht um 19 Uhr** im Abschnitt
+  „💥 Rabattknaller“. Jeder Knaller kommt nur einmal (erneut nur, wenn er mind. 5 % billiger wird).
+- **Wie oft:** bei jedem Suchlauf – Black Friday bis Cyber Monday also alle 30 Minuten.
+- **Startseite:** eigener Bereich „💥 Rabattknaller“ oben, mit „🚫 Abgelaufen?“ zum Ausblenden. Abgelaufene
+  mydealz-Deals werden automatisch ausgeblendet.
+- **Quellen:** mydealz-Gruppen (akkuschrauber, werkzeug, monitor, fritteusen, drucker,
+  multifunktionsdrucker), mydealz „trending“ (für die Temperatur) und die Deal-Blogs.
+- **Anpassen:** `rabattknaller:` in `config.yaml` – Schwellen, Höchstpreise, Suchbegriffe, Ausschlusswörter;
+  `aktiv: false` schaltet die Funktion ab.
 
 ### So rechnet das Radar
 
