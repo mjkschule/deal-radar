@@ -1,7 +1,7 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-25T22:40:16+01:00",
+ "letzter_lauf": "2026-11-26T01:17:54+01:00",
  "produkte": {
   "epson-et-2922": {
    "aktiv": true,
@@ -24,7 +24,7 @@
    ],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-25T22:40:16+01:00",
+    "gesehen": "2026-11-26T01:17:54+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -40,7 +40,7 @@
     "vertrauen": []
    },
    "kategorie": "drucker",
-   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
+   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 1 Tag (27.11.)",
    "name": "Epson EcoTank ET-2922 (Farbe, WLAN, Scan/Kopie)",
    "score": 60,
    "tiefstpreis": 174.99,
@@ -63,7 +63,7 @@
    ],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-25T22:40:16+01:00",
+    "gesehen": "2026-11-26T01:17:54+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -78,7 +78,7 @@
     "vertrauen": []
    },
    "kategorie": "monitor",
-   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
+   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 1 Tag (27.11.)",
    "name": "Lenovo L24-4e (24 Zoll, Full HD, 100 Hz)",
    "score": 60,
    "tiefstpreis": 73.78,
@@ -182,7 +182,7 @@
    ],
    "bester": {
     "effektivpreis": 129.99,
-    "gesehen": "2026-11-25T22:40:16+01:00",
+    "gesehen": "2026-11-26T01:17:54+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -197,7 +197,7 @@
     "vertrauen": []
    },
    "kategorie": "sonstiges",
-   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
+   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 1 Tag (27.11.)",
    "name": "Ninja DualZone 7,6-l-Heißluftfritteuse mit 2 Schubladen – Schwarz",
    "score": 60,
    "tiefstpreis": 129.99,
@@ -220,7 +220,7 @@
    ],
    "bester": {
     "effektivpreis": 139.99,
-    "gesehen": "2026-11-25T22:40:16+01:00",
+    "gesehen": "2026-11-26T01:17:54+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -235,7 +235,7 @@
     "vertrauen": []
    },
    "kategorie": "sonstiges",
-   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
+   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 1 Tag (27.11.)",
    "name": "Ninja MAX 6-in-1 Dual Zone Heißluftfritteuse 9,5 L",
    "score": null,
    "tiefstpreis": 139.99,
@@ -307,7 +307,7 @@
    ],
    "bester": {
     "effektivpreis": 336.66,
-    "gesehen": "2026-11-25T21:42:13+01:00",
+    "gesehen": "2026-11-26T01:17:54+01:00",
     "hinweise": [
      "Verfügbar: 03/2027",
      "Sonderzahlung unbekannt",
@@ -324,7 +324,7 @@
     "vertrauen": []
    },
    "kategorie": "auto",
-   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
+   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 1 Tag (27.11.)",
    "name": "Opel Frontera Electric – Privatleasing",
    "score": 60,
    "tiefstpreis": 336.66,
@@ -347,7 +347,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-25T22:40:16+01:00",
+    "gesehen": "2026-11-26T01:17:54+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -363,7 +363,7 @@
     "vertrauen": []
    },
    "kategorie": "zubehoer",
-   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 2 Tagen (27.11.)",
+   "kaufen_oder_warten": "⏳ Eher warten: Black Friday ist in 1 Tag (27.11.)",
    "name": "Monitor-Wandhalterung für Samsung C27F396FHU",
    "score": 0,
    "tiefstpreis": 9.99,
@@ -376,58 +376,58 @@
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.1,
+   "dauer_s": 4.2,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T22:40:16+01:00"
+   "zeit": "2026-11-26T01:17:54+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-25T22:40:16+01:00"
+   "zeit": "2026-11-26T01:17:54+01:00"
   },
   "hersteller": {
    "anzahl": 0,
-   "dauer_s": 10.5,
+   "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T22:40:16+01:00"
+   "zeit": "2026-11-26T01:17:54+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
-   "dauer_s": 63.3,
-   "meldung": "nur alle 110 Min. abgefragt – Stand 21:42 Uhr",
+   "dauer_s": 73.7,
+   "meldung": "18 Seiten, 0 Detailseiten geladen; 263 Angebote geprüft, 29 elektrisch",
    "status": "ok",
-   "zeit": "2026-11-25T21:42:13+01:00"
+   "zeit": "2026-11-26T01:17:54+01:00"
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 4.6,
-   "meldung": "16 Beiträge (1 Feed-Seite)",
+   "dauer_s": 9.4,
+   "meldung": "32 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-25T22:40:16+01:00"
+   "zeit": "2026-11-26T01:17:54+01:00"
   },
   "mydealz": {
    "anzahl": 10,
-   "dauer_s": 56.2,
+   "dauer_s": 58.1,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T22:40:16+01:00"
+   "zeit": "2026-11-26T01:17:54+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.4,
+   "dauer_s": 3.7,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-25T22:40:16+01:00"
+   "zeit": "2026-11-26T01:17:54+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 27.7,
+   "dauer_s": 4.1,
    "meldung": "10 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 1 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-25T22:40:16+01:00"
+   "zeit": "2026-11-26T01:17:54+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -435,17 +435,17 @@
   },
   "shop": {
    "anzahl": 4,
-   "dauer_s": 16.3,
+   "dauer_s": 18.3,
    "meldung": "4/4 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-25T22:40:16+01:00"
+   "zeit": "2026-11-26T01:17:54+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
-   "dauer_s": 4.2,
-   "meldung": "nur alle 110 Min. abgefragt – Stand 21:42 Uhr",
+   "dauer_s": 4.9,
+   "meldung": "25 Artikel im Feed",
    "status": "ok",
-   "zeit": "2026-11-25T21:42:13+01:00"
+   "zeit": "2026-11-26T01:17:54+01:00"
   }
  },
  "rabattknaller": [
@@ -528,7 +528,7 @@
   }
  ],
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-25T22:40:16+01:00",
+ "stand": "2026-11-26T01:17:54+01:00",
  "version": 1,
  "warteschlange": [
   {
