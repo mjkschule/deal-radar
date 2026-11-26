@@ -140,3 +140,10 @@
   suchbegriffe: ["6-in-1"]
   zielpreis: 125
   shop_urls: ["https://www.sharkninja.de/ninja-max-6-in-1-dual-zone-heissluftfritteuse-95-l/DZ400EUCYD.html?dwvar_DZ400EUCYD_color=434D61"]
+
+# per Telegram hinzugefügt
+- id: akku-schlagbohrschrauber
+  name: "Akku-Schlagbohrschrauber"
+  kategorie: sonstiges
+  suchbegriffe: ["Akku-Schlagbohrschrauber"]
+  zielpreis: 200
