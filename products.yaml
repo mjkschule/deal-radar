@@ -154,3 +154,10 @@
   kategorie: sonstiges
   suchbegriffe: ["E-Bike"]
   zielpreis: 800
+
+# per Telegram hinzugefügt
+- id: farbdrucker
+  name: "Farbdrucker"
+  kategorie: sonstiges
+  suchbegriffe: ["Farbdrucker"]
+  zielpreis: 90
