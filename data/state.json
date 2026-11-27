@@ -28,6 +28,10 @@
    "abgelaufen": false,
    "geprueft": "2026-11-27T07:17:40+01:00"
   },
+  "https://www.mydealz.de/deals/gigabyte-g27q2-gaming-monitor-mit-27-wqhd-200hz-350nits-freesync-premium-usb-c-mit-dp-pd-2858404": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-27T07:47:41+01:00"
+  },
   "https://www.mydealz.de/deals/iiyama-prolite-xb2496hsc-b1-monitor-238-fhd-ips-300nits-144hz-2x-usb-c-pd-65w-hohenverstellbar-pivot-integr-speaker-3j-garantie-2881202": {
    "abgelaufen": false,
    "geprueft": "2026-11-27T00:47:38+01:00"
@@ -79,6 +83,10 @@
   "https://www.mydealz.de/deals/prime-one-for-all-tv-wandhalterung-neigbar-wm4421-32-bis-65-zoll-vesa-100x100-bis-400x400-10-jahre-garantie-max-100-kg-schwarz-2815407": {
    "abgelaufen": true,
    "geprueft": "2026-11-25T20:25:55+01:00"
+  },
+  "https://www.mydealz.de/deals/roxon-grillbesteck-bbq-tool-6-in-1-fur-reisen-wohnmobil-camping-2883250": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-27T07:47:41+01:00"
   },
   "https://www.mydealz.de/deals/russell-hobbs-inspire-wasserkocher-grau-17-l-2400-w-2873558": {
    "abgelaufen": false,
@@ -499,7 +507,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 184.9,
     "product_id": "epson-et-2922",
@@ -522,7 +530,7 @@
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 174.99,
     "product_id": "epson-et-2922",
@@ -544,7 +552,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 199.9,
     "product_id": "epson-et-2922",
@@ -569,7 +577,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 73.78,
     "product_id": "lenovo-l24-4e",
@@ -619,7 +627,7 @@
      "nur für Neukunden",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 184.0,
     "product_id": "makita-dhp490rfx3",
@@ -645,7 +653,7 @@
      "gebraucht/B-Ware",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 63.99,
     "product_id": "monitor-24-allgemein",
@@ -778,7 +786,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 129.99,
     "product_id": "ninja-dualzone-7-6-l-heissluftfritteuse",
@@ -795,6 +803,28 @@
    }
   },
   "ninja-max-6-in-1-dual-zone-heissluftfrit": {
+   "amazon|https://www.mydealz.de/deals/roxon-grillbesteck-bbq-tool-6-in-1-fur-reisen-wohnmobil-camping-2883250": {
+    "abzuege": [],
+    "ean": "",
+    "first_seen": "2026-11-27T07:47:41+01:00",
+    "hints": [
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-27T07:47:41+01:00",
+    "leasing": {},
+    "price": 10.79,
+    "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "verdaechtig",
+    "status_reason": "unter 40 % des Medians (125,00 €)",
+    "title": "Roxon Grillbesteck (BBQ Tool) 6 in 1 - für Reisen, Wohnmobil, Camping",
+    "url": "https://www.mydealz.de/deals/roxon-grillbesteck-bbq-tool-6-in-1-fur-reisen-wohnmobil-camping-2883250",
+    "vergleichspreis": 10.79,
+    "vertrauen": [],
+    "weitere_quellen": []
+   },
    "amazon|https://www.mydealz.de/deals/wmf-nuova-longdrinkloffel-6-teilig-die-nr-1-in-cocktailruhrloffel-amazon-prime-2883076": {
     "abzuege": [],
     "ean": "",
@@ -825,7 +855,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 139.99,
     "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
@@ -1807,7 +1837,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 44.95,
     "product_id": "wandhalterung-c27f396",
@@ -1832,7 +1862,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 12.0,
     "product_id": "wandhalterung-c27f396",
@@ -1854,7 +1884,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 9.99,
     "product_id": "wandhalterung-c27f396",
@@ -1877,7 +1907,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 35.99,
     "product_id": "wandhalterung-c27f396",
@@ -1900,9 +1930,9 @@
  "bot_name": "MJK_Dealradar_bot",
  "cache": {
   "blogs": {
-   "dealdoktor": "2026-11-27T07:17:40+01:00",
-   "mein-deal": "2026-11-27T07:17:40+01:00",
-   "mytopdeals": "2026-11-27T07:17:40+01:00"
+   "dealdoktor": "2026-11-27T07:47:41+01:00",
+   "mein-deal": "2026-11-27T07:47:41+01:00",
+   "mytopdeals": "2026-11-27T07:47:41+01:00"
   },
   "gutscheine": [],
   "hersteller": {
@@ -1961,62 +1991,62 @@
    "amazon|12.00"
   ]
  },
- "letzter_lauf": "2026-11-27T07:17:40+01:00",
+ "letzter_lauf": "2026-11-27T07:47:41+01:00",
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.0,
+   "dauer_s": 4.8,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T07:17:40+01:00"
+   "zeit": "2026-11-27T07:47:41+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-27T07:17:40+01:00"
+   "zeit": "2026-11-27T07:47:41+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T07:17:40+01:00"
+   "zeit": "2026-11-27T07:47:41+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
    "dauer_s": 68.8,
-   "meldung": "18 Seiten, 0 Detailseiten geladen; 262 Angebote geprüft, 29 elektrisch",
+   "meldung": "nur alle 110 Min. abgefragt – Stand 07:17 Uhr",
    "status": "ok",
    "zeit": "2026-11-27T07:17:40+01:00"
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 4.6,
+   "dauer_s": 5.3,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T07:17:40+01:00"
+   "zeit": "2026-11-27T07:47:41+01:00"
   },
   "mydealz": {
    "anzahl": 9,
-   "dauer_s": 56.4,
+   "dauer_s": 58.2,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T07:17:40+01:00"
+   "zeit": "2026-11-27T07:47:41+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.4,
+   "dauer_s": 3.6,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T07:17:40+01:00"
+   "zeit": "2026-11-27T07:47:41+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 3.0,
+   "dauer_s": 45.1,
    "meldung": "12 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 2 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-27T07:17:40+01:00"
+   "zeit": "2026-11-27T07:47:41+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -2024,15 +2054,15 @@
   },
   "shop": {
    "anzahl": 4,
-   "dauer_s": 16.1,
+   "dauer_s": 18.5,
    "meldung": "4/4 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T07:17:40+01:00"
+   "zeit": "2026-11-27T07:47:41+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
    "dauer_s": 4.3,
-   "meldung": "25 Artikel im Feed",
+   "meldung": "nur alle 110 Min. abgefragt – Stand 07:17 Uhr",
    "status": "ok",
    "zeit": "2026-11-27T07:17:40+01:00"
   }
@@ -2078,7 +2108,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 59.99,
     "product_id": "knaller:airfryer",
@@ -2105,7 +2135,7 @@
     "hitze": null,
     "kategorie": "wasserkocher",
     "kategorie_name": "Wasserkocher",
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 24.99,
     "product_id": "knaller:wasserkocher",
@@ -2134,7 +2164,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 34.99,
     "product_id": "knaller:airfryer",
@@ -2163,7 +2193,7 @@
     "hitze": null,
     "kategorie": "schlagbohrset",
     "kategorie_name": "Akku-Schlagbohrschrauber-Set",
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 122.5,
     "product_id": "knaller:schlagbohrset",
@@ -2190,7 +2220,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 99.0,
     "product_id": "knaller:monitor",
@@ -2222,7 +2252,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 154.99,
     "product_id": "knaller:monitor",
@@ -2249,7 +2279,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 74.9,
     "product_id": "knaller:airfryer",
@@ -2276,7 +2306,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 39.99,
     "product_id": "knaller:monitor",
@@ -2303,7 +2333,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T07:17:40+01:00",
+    "last_seen": "2026-11-27T07:47:41+01:00",
     "leasing": {},
     "price": 33.0,
     "product_id": "knaller:airfryer",
@@ -2318,6 +2348,35 @@
     "vergleichspreis": 33.0,
     "vertrauen": [],
     "weitere_quellen": []
+   },
+   "x-kom|https://www.mydealz.de/deals/gigabyte-g27q2-gaming-monitor-mit-27-wqhd-200hz-350nits-freesync-premium-usb-c-mit-dp-pd-2858404": {
+    "abzuege": [],
+    "bezug": 145.99,
+    "ean": "",
+    "first_seen": "2026-11-27T07:47:41+01:00",
+    "h": "bac6fdfa2e",
+    "heiss": true,
+    "hints": [
+     "evtl. nur per App"
+    ],
+    "hitze": 666,
+    "kategorie": "monitor",
+    "kategorie_name": "Computer-Monitor",
+    "last_seen": "2026-11-27T07:47:41+01:00",
+    "leasing": {},
+    "price": 136.98,
+    "product_id": "knaller:monitor",
+    "rabatt": 6,
+    "shipping": null,
+    "shop": "x-kom",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "Gigabyte G27Q2 Gaming Monitor mit 27\", WQHD, 200Hz, 350Nits, FreeSync Premium, USB-C mit DP & PD",
+    "url": "https://www.mydealz.de/deals/gigabyte-g27q2-gaming-monitor-mit-27-wqhd-200hz-350nits-freesync-premium-usb-c-mit-dp-pd-2858404",
+    "vergleichspreis": 136.98,
+    "vertrauen": [],
+    "weitere_quellen": []
    }
   },
   "gemeldet": {
@@ -2330,7 +2389,8 @@
    "notebooksbilliger|https://www.mydealz.de/deals/nbb-black-weeks-zb-lenovo-legion-27q-11-gaming-monitor-mit-27-ps-qhd-300hz-vrr-notebooks-monitore-gaming-zubehor-smart-home-2864204": 154.99,
    "otto|https://www.mydealz.de/deals/otto-tefal-easy-fry-smart-silence-xxl-heissluftfritteuse-ey876de0-7-l-1800-w-sichtfenster-55-programme-fur-7490-eur-2882488": 74.9,
    "otto|https://www.mydealz.de/deals/otto-up-lieferflat-lenovo-22-l22-4e-1920x1080-fhd-100hz-ips-1920-x-1080-pixel-2150-2876587": 39.99,
-   "voelkner|https://www.mydealz.de/deals/voelkner-gourmetmaxx-heissluft-fritteuse-7-liter-1700-watt-sichtfenster-airfryer-2881629": 33.0
+   "voelkner|https://www.mydealz.de/deals/voelkner-gourmetmaxx-heissluft-fritteuse-7-liter-1700-watt-sichtfenster-airfryer-2881629": 33.0,
+   "x-kom|https://www.mydealz.de/deals/gigabyte-g27q2-gaming-monitor-mit-27-wqhd-200hz-350nits-freesync-premium-usb-c-mit-dp-pd-2858404": 136.98
   }
  },
  "telegram_offset": 157988602,
@@ -2646,6 +2706,36 @@
    "typ": "knaller",
    "url": "https://www.mydealz.de/deals/msi-mag-27c6pfde-27-zoll-full-hd-curved-gaming-monitor-mit-180-hz-hohenverstellbar-2882601",
    "zeit": "2026-11-26T17:17:53+01:00",
+   "ziel_erreicht": false
+  },
+  {
+   "art": "uebersicht",
+   "buttons": [
+    [
+     {
+      "callback_data": "i:knaller:bac6fdfa2e",
+      "text": "🙈 Ignorieren"
+     }
+    ],
+    [
+     {
+      "text": "🔗 Zum Angebot",
+      "url": "https://www.mydealz.de/deals/gigabyte-g27q2-gaming-monitor-mit-27-wqhd-200hz-350nits-freesync-premium-usb-c-mit-dp-pd-2858404"
+     }
+    ]
+   ],
+   "hitze": 666,
+   "id": "7f19c7b653",
+   "name": "Computer-Monitor: Gigabyte G27Q2 Gaming Monitor mit 27\", WQHD, 200Hz, 350Nits, FreeSync ",
+   "preis": 136.98,
+   "produkt": "knaller",
+   "rabatt": 6,
+   "score": null,
+   "shop": "x-kom",
+   "text": "💥 <b>Rabattknaller: Computer-Monitor</b>\n<b>Gigabyte G27Q2 Gaming Monitor mit 27\", WQHD, 200Hz, 350Nits, FreeSync Premium, USB-C mit DP &amp; PD</b>\n💶 <b>136,98 €</b> bei x-kom\n−6 % ggü. Preisvergleich 145,99 € · 🔥 666°\n📋 evtl. nur per App\n<i>Quelle: mydealz · nicht auf deiner Produktliste</i>\n🔗 <a href=\"https://www.mydealz.de/deals/gigabyte-g27q2-gaming-monitor-mit-27-wqhd-200hz-350nits-freesync-premium-usb-c-mit-dp-pd-2858404\">Zum Angebot</a>",
+   "typ": "knaller",
+   "url": "https://www.mydealz.de/deals/gigabyte-g27q2-gaming-monitor-mit-27-wqhd-200hz-350nits-freesync-premium-usb-c-mit-dp-pd-2858404",
+   "zeit": "2026-11-27T07:47:41+01:00",
    "ziel_erreicht": false
   }
  ]
