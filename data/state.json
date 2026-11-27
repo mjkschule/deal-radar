@@ -87,6 +87,10 @@
   "https://www.mydealz.de/deals/voelkner-gourmetmaxx-heissluft-fritteuse-7-liter-1700-watt-sichtfenster-airfryer-2881629": {
    "abgelaufen": false,
    "geprueft": "2026-11-27T00:47:38+01:00"
+  },
+  "https://www.mydealz.de/deals/wmf-nuova-longdrinkloffel-6-teilig-die-nr-1-in-cocktailruhrloffel-amazon-prime-2883076": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-27T01:17:40+01:00"
   }
  },
  "angebote": {
@@ -467,7 +471,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 184.9,
     "product_id": "epson-et-2922",
@@ -490,7 +494,7 @@
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 174.99,
     "product_id": "epson-et-2922",
@@ -512,7 +516,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 199.9,
     "product_id": "epson-et-2922",
@@ -537,7 +541,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 73.78,
     "product_id": "lenovo-l24-4e",
@@ -587,7 +591,7 @@
      "nur für Neukunden",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 184.0,
     "product_id": "makita-dhp490rfx3",
@@ -613,7 +617,7 @@
      "gebraucht/B-Ware",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 63.99,
     "product_id": "monitor-24-allgemein",
@@ -636,7 +640,7 @@
      "evtl. nur lokal/in der Filiale",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 86.89,
     "product_id": "monitor-24-allgemein",
@@ -683,7 +687,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 84.0,
     "product_id": "monitor-24-allgemein",
@@ -746,7 +750,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 129.99,
     "product_id": "ninja-dualzone-7-6-l-heissluftfritteuse",
@@ -763,6 +767,29 @@
    }
   },
   "ninja-max-6-in-1-dual-zone-heissluftfrit": {
+   "amazon|https://www.mydealz.de/deals/wmf-nuova-longdrinkloffel-6-teilig-die-nr-1-in-cocktailruhrloffel-amazon-prime-2883076": {
+    "abzuege": [],
+    "ean": "",
+    "first_seen": "2026-11-27T01:17:40+01:00",
+    "hints": [
+     "evtl. nur mit Prime",
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-27T01:17:40+01:00",
+    "leasing": {},
+    "price": 12.49,
+    "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "verdaechtig",
+    "status_reason": "unter 40 % des Medians (125,00 €)",
+    "title": "WMF Nuova Longdrinklöffel 6-teilig, die Nr. 1 in Cocktailrührlöffel (Amazon Prime)",
+    "url": "https://www.mydealz.de/deals/wmf-nuova-longdrinkloffel-6-teilig-die-nr-1-in-cocktailruhrloffel-amazon-prime-2883076",
+    "vergleichspreis": 12.49,
+    "vertrauen": [],
+    "weitere_quellen": []
+   },
    "sharkninja.de|https://www.sharkninja.de/ninja-max-6-in-1-dual-zone-heissluftfritteuse-95-l/DZ400EUCYD.html?dwvar_DZ400EUCYD_color=434D61": {
     "abzuege": [],
     "ean": "",
@@ -770,7 +797,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 139.99,
     "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
@@ -796,7 +823,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -828,7 +855,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -860,7 +887,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -892,7 +919,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -924,7 +951,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -956,7 +983,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -988,7 +1015,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1020,7 +1047,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1052,7 +1079,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1084,7 +1111,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1116,7 +1143,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1148,7 +1175,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1180,7 +1207,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1212,7 +1239,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1244,7 +1271,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1276,7 +1303,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1308,7 +1335,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1340,7 +1367,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1372,7 +1399,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1404,7 +1431,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1436,7 +1463,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1468,7 +1495,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 360.77,
@@ -1500,7 +1527,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 429.0,
@@ -1532,7 +1559,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 336.66,
@@ -1562,7 +1589,7 @@
     "hints": [
      "Verfügbar: 03/2027"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": 1492.3,
      "effektiv": 342.45,
@@ -1620,7 +1647,7 @@
     "hints": [
      "Verfügbar: 05/2027"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": 1189.3,
      "effektiv": 346.04,
@@ -1652,7 +1679,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 341.0,
@@ -1684,7 +1711,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 422.12,
@@ -1716,7 +1743,7 @@
      "Sonderzahlung unbekannt",
      "Bereitstellungskosten unbekannt"
     ],
-    "last_seen": "2026-11-26T23:17:40+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {
      "bereitstellung": null,
      "effektiv": 430.22,
@@ -1752,7 +1779,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 44.95,
     "product_id": "wandhalterung-c27f396",
@@ -1777,7 +1804,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 12.0,
     "product_id": "wandhalterung-c27f396",
@@ -1799,7 +1826,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 9.99,
     "product_id": "wandhalterung-c27f396",
@@ -1822,7 +1849,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 35.99,
     "product_id": "wandhalterung-c27f396",
@@ -1845,9 +1872,9 @@
  "bot_name": "MJK_Dealradar_bot",
  "cache": {
   "blogs": {
-   "dealdoktor": "2026-11-27T00:47:38+01:00",
-   "mein-deal": "2026-11-27T00:47:38+01:00",
-   "mytopdeals": "2026-11-27T00:47:38+01:00"
+   "dealdoktor": "2026-11-27T01:17:40+01:00",
+   "mein-deal": "2026-11-27T01:17:40+01:00",
+   "mytopdeals": "2026-11-27T01:17:40+01:00"
   },
   "gutscheine": [],
   "hersteller": {
@@ -1902,62 +1929,62 @@
    "amazon|12.00"
   ]
  },
- "letzter_lauf": "2026-11-27T00:47:38+01:00",
+ "letzter_lauf": "2026-11-27T01:17:40+01:00",
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.0,
+   "dauer_s": 4.2,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T00:47:38+01:00"
+   "zeit": "2026-11-27T01:17:40+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-27T00:47:38+01:00"
+   "zeit": "2026-11-27T01:17:40+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T00:47:38+01:00"
+   "zeit": "2026-11-27T01:17:40+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
-   "dauer_s": 73.5,
-   "meldung": "nur alle 110 Min. abgefragt – Stand 23:17 Uhr",
+   "dauer_s": 74.3,
+   "meldung": "18 Seiten, 0 Detailseiten geladen; 262 Angebote geprüft, 29 elektrisch",
    "status": "ok",
-   "zeit": "2026-11-26T23:17:40+01:00"
+   "zeit": "2026-11-27T01:17:40+01:00"
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 5.0,
+   "dauer_s": 4.8,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T00:47:38+01:00"
+   "zeit": "2026-11-27T01:17:40+01:00"
   },
   "mydealz": {
-   "anzahl": 10,
-   "dauer_s": 56.8,
+   "anzahl": 11,
+   "dauer_s": 58.5,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T00:47:38+01:00"
+   "zeit": "2026-11-27T01:17:40+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.8,
+   "dauer_s": 3.7,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T00:47:38+01:00"
+   "zeit": "2026-11-27T01:17:40+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 2.5,
+   "dauer_s": 2.8,
    "meldung": "12 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 2 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-27T00:47:38+01:00"
+   "zeit": "2026-11-27T01:17:40+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -1965,17 +1992,17 @@
   },
   "shop": {
    "anzahl": 4,
-   "dauer_s": 16.4,
+   "dauer_s": 18.5,
    "meldung": "4/4 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T00:47:38+01:00"
+   "zeit": "2026-11-27T01:17:40+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
    "dauer_s": 4.7,
-   "meldung": "nur alle 110 Min. abgefragt – Stand 23:17 Uhr",
+   "meldung": "25 Artikel im Feed",
    "status": "ok",
-   "zeit": "2026-11-26T23:17:40+01:00"
+   "zeit": "2026-11-27T01:17:40+01:00"
   }
  },
  "quellen_fehler": {},
@@ -2019,7 +2046,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 59.99,
     "product_id": "knaller:airfryer",
@@ -2046,7 +2073,7 @@
     "hitze": null,
     "kategorie": "wasserkocher",
     "kategorie_name": "Wasserkocher",
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 24.99,
     "product_id": "knaller:wasserkocher",
@@ -2075,7 +2102,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 34.99,
     "product_id": "knaller:airfryer",
@@ -2104,7 +2131,7 @@
     "hitze": null,
     "kategorie": "schlagbohrset",
     "kategorie_name": "Akku-Schlagbohrschrauber-Set",
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 122.5,
     "product_id": "knaller:schlagbohrset",
@@ -2131,7 +2158,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 99.0,
     "product_id": "knaller:monitor",
@@ -2163,7 +2190,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 154.99,
     "product_id": "knaller:monitor",
@@ -2190,7 +2217,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 74.9,
     "product_id": "knaller:airfryer",
@@ -2217,7 +2244,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 39.99,
     "product_id": "knaller:monitor",
@@ -2244,7 +2271,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T00:47:38+01:00",
+    "last_seen": "2026-11-27T01:17:40+01:00",
     "leasing": {},
     "price": 33.0,
     "product_id": "knaller:airfryer",
