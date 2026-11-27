@@ -1,7 +1,7 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-27T07:47:41+01:00",
+ "letzter_lauf": "2026-11-27T08:17:38+01:00",
  "produkte": {
   "akku-schlagbohrschrauber": {
    "aktiv": true,
@@ -63,7 +63,7 @@
    ],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-27T07:47:41+01:00",
+    "gesehen": "2026-11-27T08:17:38+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -102,7 +102,7 @@
    ],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-27T07:47:41+01:00",
+    "gesehen": "2026-11-27T08:17:38+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -221,7 +221,7 @@
    ],
    "bester": {
     "effektivpreis": 129.99,
-    "gesehen": "2026-11-27T07:47:41+01:00",
+    "gesehen": "2026-11-27T08:17:38+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -259,7 +259,7 @@
    ],
    "bester": {
     "effektivpreis": 139.99,
-    "gesehen": "2026-11-27T07:47:41+01:00",
+    "gesehen": "2026-11-27T08:17:38+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -386,7 +386,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-27T07:47:41+01:00",
+    "gesehen": "2026-11-27T08:17:38+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -418,20 +418,20 @@
    "dauer_s": 4.8,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T07:47:41+01:00"
+   "zeit": "2026-11-27T08:17:38+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-27T07:47:41+01:00"
+   "zeit": "2026-11-27T08:17:38+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T07:47:41+01:00"
+   "zeit": "2026-11-27T08:17:38+01:00"
   },
   "leasingmarkt": {
    "anzahl": 29,
@@ -442,31 +442,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 5.3,
+   "dauer_s": 4.9,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T07:47:41+01:00"
+   "zeit": "2026-11-27T08:17:38+01:00"
   },
   "mydealz": {
-   "anzahl": 9,
-   "dauer_s": 58.2,
+   "anzahl": 8,
+   "dauer_s": 57.7,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T07:47:41+01:00"
+   "zeit": "2026-11-27T08:17:38+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.6,
+   "dauer_s": 4.1,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T07:47:41+01:00"
+   "zeit": "2026-11-27T08:17:38+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 45.1,
+   "dauer_s": 1.5,
    "meldung": "12 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 2 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-27T07:47:41+01:00"
+   "zeit": "2026-11-27T08:17:38+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -477,7 +477,7 @@
    "dauer_s": 18.5,
    "meldung": "4/4 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T07:47:41+01:00"
+   "zeit": "2026-11-27T08:17:38+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -542,6 +542,17 @@
    "title": "Makita/Bosch Sammeldeal Schlagbohrschrauber 18V 42 • Akkukreissäge 40V XGT • Kreissäge 40V XGT",
    "url": "https://www.mydealz.de/deals/makitabosch-sammeldeal-schlagbohrschrauber-18v-42-akkukreissage-40v-xgt-kreissage-40v-xgt-2872320",
    "vergleichspreis": 122.5
+  },
+  {
+   "bezug": 160.0,
+   "h": "0be8fbcef9",
+   "hitze": null,
+   "kategorie_name": "Airfryer",
+   "rabatt": 44,
+   "shop": "Lidl",
+   "title": "🍟 Ninja-Killer von Lidl: Silvercrest Ultrazone Airfryer für nur 89,99€",
+   "url": "https://www.dealdoktor.de/silvercrest-ultrazone-airfryer/",
+   "vergleichspreis": 89.99
   },
   {
    "bezug": 55.98,
@@ -611,7 +622,7 @@
   }
  ],
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-27T07:47:41+01:00",
+ "stand": "2026-11-27T08:17:38+01:00",
  "version": 1,
  "warteschlange": [
   {
