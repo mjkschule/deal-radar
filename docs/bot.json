@@ -1,7 +1,7 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-27T12:47:40+01:00",
+ "letzter_lauf": "2026-11-27T13:17:41+01:00",
  "produkte": {
   "akku-schlagbohrschrauber": {
    "aktiv": true,
@@ -85,7 +85,7 @@
    ],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-27T12:47:40+01:00",
+    "gesehen": "2026-11-27T13:17:41+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -124,7 +124,7 @@
    ],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-27T12:47:40+01:00",
+    "gesehen": "2026-11-27T13:17:41+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -168,13 +168,6 @@
    "alternativen": [],
    "angebote": [
     {
-     "h": "a44990e65a",
-     "preis": 65.99,
-     "shop": "notebooksbilliger",
-     "titel": "23.8\" Acer Nitro VG0 VG240YP6bip, Full-HD, IPS, 144Hz, entspiegelt, 1500:1 Kontrast, 1x DP 1.2, 1xHD",
-     "url": "https://www.mydealz.de/deals/238-acer-nitro-vg0-vg240yp6bip-full-hd-ips-144hz-entspiegelt-15001-kontrast-1x-dp-12-1xhdmi-14-1x-35mm-gaming-monitor-2877936"
-    },
-    {
      "h": "19b656a95f",
      "preis": 65.99,
      "shop": "notebooksbilliger",
@@ -212,18 +205,16 @@
    ],
    "bester": {
     "effektivpreis": 65.99,
-    "gesehen": "2026-11-25T13:17:28+01:00",
-    "hinweise": [
-     "Versand unbekannt"
-    ],
+    "gesehen": "2026-11-26T09:17:40+01:00",
+    "hinweise": [],
     "preis": 65.99,
     "quelle": "mydealz",
     "rate": null,
     "rechenweg": "",
     "shop": "notebooksbilliger",
-    "titel": "23.8\" Acer Nitro VG0 VG240YP6bip, Full-HD, IPS, 144Hz, entspiegelt, 1500:1 Kontrast, 1x DP 1.2, 1xHDMI 1.4, 1x 3.5mm, Gaming Monitor",
-    "url": "https://www.mydealz.de/deals/238-acer-nitro-vg0-vg240yp6bip-full-hd-ips-144hz-entspiegelt-15001-kontrast-1x-dp-12-1xhdmi-14-1x-35mm-gaming-monitor-2877936",
-    "versand": null,
+    "titel": "[notebooksbilliger] Acer Nitro VG240YP6bip Monitor | 23,8\" IPS, Full HD, 144Hz, FreeSync, 99% sRGB | 65,99€ (inkl. Versand) | 0.9% CB Budgey",
+    "url": "https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252",
+    "versand": 0.0,
     "vertrauen": []
    },
    "kategorie": "monitor",
@@ -296,7 +287,7 @@
    ],
    "bester": {
     "effektivpreis": 139.99,
-    "gesehen": "2026-11-27T12:47:40+01:00",
+    "gesehen": "2026-11-27T13:17:41+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -383,7 +374,7 @@
    ],
    "bester": {
     "effektivpreis": 336.66,
-    "gesehen": "2026-11-27T11:17:37+01:00",
+    "gesehen": "2026-11-27T13:17:41+01:00",
     "hinweise": [
      "Verfügbar: 03/2027",
      "Sonderzahlung unbekannt",
@@ -423,7 +414,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-27T12:47:40+01:00",
+    "gesehen": "2026-11-27T13:17:41+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -451,59 +442,59 @@
  },
  "quellen": {
   "dealdoktor": {
-   "anzahl": 1,
-   "dauer_s": 9.1,
+   "anzahl": 0,
+   "dauer_s": 9.2,
    "meldung": "20 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-27T12:47:40+01:00"
+   "zeit": "2026-11-27T13:17:41+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-27T12:47:40+01:00"
+   "zeit": "2026-11-27T13:17:41+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T12:47:40+01:00"
+   "zeit": "2026-11-27T13:17:41+01:00"
   },
   "leasingmarkt": {
-   "anzahl": 27,
-   "dauer_s": 72.7,
-   "meldung": "nur alle 110 Min. abgefragt – Stand 11:17 Uhr",
+   "anzahl": 28,
+   "dauer_s": 76.7,
+   "meldung": "18 Seiten, 0 Detailseiten geladen; 263 Angebote geprüft, 28 elektrisch",
    "status": "ok",
-   "zeit": "2026-11-27T11:17:37+01:00"
+   "zeit": "2026-11-27T13:17:41+01:00"
   },
   "mein-deal": {
-   "anzahl": 0,
-   "dauer_s": 5.3,
-   "meldung": "16 Beiträge (1 Feed-Seite)",
+   "anzahl": 1,
+   "dauer_s": 9.6,
+   "meldung": "32 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-27T12:47:40+01:00"
+   "zeit": "2026-11-27T13:17:41+01:00"
   },
   "mydealz": {
    "anzahl": 9,
-   "dauer_s": 57.5,
+   "dauer_s": 58.4,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T12:47:40+01:00"
+   "zeit": "2026-11-27T13:17:41+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
    "dauer_s": 3.7,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T12:47:40+01:00"
+   "zeit": "2026-11-27T13:17:41+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 1.7,
+   "dauer_s": 38.7,
    "meldung": "13 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 3 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-27T12:47:40+01:00"
+   "zeit": "2026-11-27T13:17:41+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -511,17 +502,17 @@
   },
   "shop": {
    "anzahl": 4,
-   "dauer_s": 18.4,
+   "dauer_s": 18.7,
    "meldung": "4/4 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T12:47:40+01:00"
+   "zeit": "2026-11-27T13:17:41+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
-   "dauer_s": 4.6,
-   "meldung": "nur alle 110 Min. abgefragt – Stand 11:17 Uhr",
+   "dauer_s": 5.0,
+   "meldung": "25 Artikel im Feed",
    "status": "ok",
-   "zeit": "2026-11-27T11:17:37+01:00"
+   "zeit": "2026-11-27T13:17:41+01:00"
   }
  },
  "rabattknaller": [
@@ -659,7 +650,7 @@
   }
  ],
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-27T12:47:40+01:00",
+ "stand": "2026-11-27T13:17:41+01:00",
  "version": 1,
  "warteschlange": [
   {
