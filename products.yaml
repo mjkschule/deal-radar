@@ -147,3 +147,10 @@
   kategorie: sonstiges
   suchbegriffe: ["Akku-Schlagbohrschrauber"]
   zielpreis: 200
+
+# per Telegram hinzugefügt
+- id: e-bike
+  name: "E-Bike"
+  kategorie: sonstiges
+  suchbegriffe: ["E-Bike"]
+  zielpreis: 800
