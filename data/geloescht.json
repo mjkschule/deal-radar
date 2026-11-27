@@ -188,5 +188,28 @@
       ],
       "ebay_suche": "HP DeskJet 2922"
     }
+  },
+  {
+    "id": "ninja-dualzone-7-6-l-heissluftfritteuse",
+    "name": "Ninja DualZone 7,6-l-Heißluftfritteuse mit 2 Schubladen – Schwarz",
+    "geloescht_am": "2026-11-27T14:50:50.359Z",
+    "grund": "gekauft",
+    "gekauft": {
+      "preis": 100,
+      "url": "https://www.dealdoktor.de/ninja-dual-zone-heissluftfritteuse-dz300eu/",
+      "am": "2026-11-27T14:50:50.359Z"
+    },
+    "eintrag": {
+      "id": "ninja-dualzone-7-6-l-heissluftfritteuse",
+      "name": "Ninja DualZone 7,6-l-Heißluftfritteuse mit 2 Schubladen – Schwarz",
+      "kategorie": "sonstiges",
+      "suchbegriffe": [
+        "6-l-Heißluftfritteuse"
+      ],
+      "zielpreis": 116,
+      "shop_urls": [
+        "https://www.sharkninja.de/ninja-dualzone-76-l-heissluftfritteuse-mit-2-schubladen-schwarz/DZ801EU.html?gclsrc=aw.ds&utm_source=google&utm_medium=cpc&utm_campaign=ninja_pla_heated_cooking_air-fryers_brand&utm_content=203334940767&utm_productid=DZ801EU&gad_source=1&gad_campaignid=24187195660&gbraid=0AAAAACnqWUIZoLEyQNCoG6ZhyXnJVw5M1&gclid=CjwKCAiAq5rYBhB-EiwAhj1RdhFGpOh5hDX7Fi1R8Z3SU3hyyiCA96LLGaHMKHMey7NfiuQ99u7xkxoC470QAvD_BwE&dwvar_DZ801EU_color=363838"
+      ]
+    }
   }
 ]
