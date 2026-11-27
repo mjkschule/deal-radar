@@ -1,7 +1,7 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-27T13:47:38+01:00",
+ "letzter_lauf": "2026-11-27T14:09:56+01:00",
  "produkte": {
   "akku-schlagbohrschrauber": {
    "aktiv": true,
@@ -85,7 +85,7 @@
    ],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-27T13:47:38+01:00",
+    "gesehen": "2026-11-27T14:09:56+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -110,6 +110,21 @@
    "ziel_erreicht": false,
    "zielpreis": 145.0
   },
+  "farbdrucker": {
+   "aktiv": true,
+   "alternativen": [],
+   "angebote": [],
+   "bester": null,
+   "kategorie": "sonstiges",
+   "kaufen_oder_warten": "",
+   "name": "Farbdrucker",
+   "score": null,
+   "tiefstpreis": null,
+   "tiefstpreis_shop": null,
+   "typ": "produkt",
+   "ziel_erreicht": false,
+   "zielpreis": 90.0
+  },
   "lenovo-l24-4e": {
    "aktiv": true,
    "alternativen": [],
@@ -124,7 +139,7 @@
    ],
    "bester": {
     "effektivpreis": 73.78,
-    "gesehen": "2026-11-27T13:47:38+01:00",
+    "gesehen": "2026-11-27T14:09:56+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -287,7 +302,7 @@
    ],
    "bester": {
     "effektivpreis": 139.99,
-    "gesehen": "2026-11-27T13:47:38+01:00",
+    "gesehen": "2026-11-27T14:09:56+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -414,7 +429,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-27T13:47:38+01:00",
+    "gesehen": "2026-11-27T14:09:56+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -443,23 +458,23 @@
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 8.4,
+   "dauer_s": 9.2,
    "meldung": "20 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-27T13:47:38+01:00"
+   "zeit": "2026-11-27T14:09:56+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-27T13:47:38+01:00"
+   "zeit": "2026-11-27T14:09:56+01:00"
   },
   "hersteller": {
    "anzahl": 0,
-   "dauer_s": 0.0,
+   "dauer_s": 10.8,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T13:47:38+01:00"
+   "zeit": "2026-11-27T14:09:56+01:00"
   },
   "leasingmarkt": {
    "anzahl": 28,
@@ -470,31 +485,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 8.8,
-   "meldung": "32 Beiträge (2 Feed-Seiten)",
+   "dauer_s": 4.9,
+   "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T13:47:38+01:00"
+   "zeit": "2026-11-27T14:09:56+01:00"
   },
   "mydealz": {
    "anzahl": 8,
-   "dauer_s": 56.1,
+   "dauer_s": 57.0,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T13:47:38+01:00"
+   "zeit": "2026-11-27T14:09:56+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.5,
+   "dauer_s": 4.8,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T13:47:38+01:00"
+   "zeit": "2026-11-27T14:09:56+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 2.9,
+   "dauer_s": 4.7,
    "meldung": "13 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 3 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-27T13:47:38+01:00"
+   "zeit": "2026-11-27T14:09:56+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -502,10 +517,10 @@
   },
   "shop": {
    "anzahl": 4,
-   "dauer_s": 16.6,
+   "dauer_s": 18.3,
    "meldung": "4/4 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T13:47:38+01:00"
+   "zeit": "2026-11-27T14:09:56+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -548,17 +563,6 @@
    "title": "[joybuy willkommensangebot App] Midea Heißluftfritteuse, 1800 Watt 7 Liter antihaftbeschichtet HeatXpress-Technologie,",
    "url": "https://www.mydealz.de/deals/joybuy-willkommensangebot-app-midea-heissluftfritteuse-1800-watt-7-liter-antihaftbeschichtet-heatxpress-technologie-2878657",
    "vergleichspreis": 34.99
-  },
-  {
-   "bezug": 134.99,
-   "h": "2104866bfe",
-   "hitze": null,
-   "kategorie_name": "Airfryer",
-   "rabatt": 45,
-   "shop": "OTTO",
-   "title": "OTTO UP: Tefal Easy Fry Smart & Silence XXL Heißluftfritteuse EY876DE0, 7 L, 1800 W, Sichtfenster, 55 Programme für 74,90 €",
-   "url": "https://www.mydealz.de/deals/otto-tefal-easy-fry-smart-silence-xxl-heissluftfritteuse-ey876de0-7-l-1800-w-sichtfenster-55-programme-fur-7490-eur-2882488",
-   "vergleichspreis": 74.9
   },
   {
    "bezug": 160.0,
@@ -650,7 +654,7 @@
   }
  ],
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-27T13:47:38+01:00",
+ "stand": "2026-11-27T14:09:56+01:00",
  "version": 1,
  "warteschlange": [
   {
