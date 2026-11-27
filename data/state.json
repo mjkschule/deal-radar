@@ -194,23 +194,23 @@
    "lidl|https://www.mydealz.de/deals/lidl-ab-1611-parkside-performance-20v-akku-schlagbohrschrauber-set-psbsap-20-li-d4-2-akkus-ladegerat-alu-koffer-98-tlg-zubehor-2866708": {
     "abzuege": [],
     "ean": "",
-    "first_seen": "2026-11-27T15:47:40+01:00",
+    "first_seen": "2026-11-27T16:17:42+01:00",
     "hints": [
      "Gutschein/Code nötig",
-     "evtl. nur per App"
+     "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 80.99,
     "product_id": "akku-schlagbohrschrauber",
-    "shipping": 5.95,
+    "shipping": null,
     "shop": "Lidl",
     "source": "mydealz",
     "status": "ok",
     "status_reason": "",
-    "title": "[Lidl] Parkside Performance 20V Akku-Schlagbohrschrauber-Set »PSBSAP 20-Li D4« | 2 Akkus + Ladegerät + Alu-Koffer + 98-tlg. Zubehör",
+    "title": "1403° - [Lidl] Parkside Performance 20V Akku-Schlagbohrschrauber-Set »PSBSAP 20-Li D4« | 2 Akkus + Ladegerät + Alu-Koffer + 98-tlg. Zubehör",
     "url": "https://www.mydealz.de/deals/lidl-ab-1611-parkside-performance-20v-akku-schlagbohrschrauber-set-psbsap-20-li-d4-2-akkus-ladegerat-alu-koffer-98-tlg-zubehor-2866708",
-    "vergleichspreis": 86.94,
+    "vergleichspreis": 80.99,
     "vertrauen": [],
     "weitere_quellen": []
    }
@@ -613,7 +613,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 184.9,
     "product_id": "epson-et-2922",
@@ -636,7 +636,7 @@
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 174.99,
     "product_id": "epson-et-2922",
@@ -658,7 +658,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 199.9,
     "product_id": "epson-et-2922",
@@ -684,7 +684,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 73.78,
     "product_id": "lenovo-l24-4e",
@@ -734,7 +734,7 @@
      "nur für Neukunden",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 184.0,
     "product_id": "makita-dhp490rfx3",
@@ -806,7 +806,7 @@
      "Marketplace-Händler",
      "bitte prüfen: VESA"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 85.89,
     "product_id": "monitor-24-allgemein",
@@ -966,7 +966,7 @@
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 211.99,
     "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
@@ -975,7 +975,7 @@
     "source": "mydealz",
     "status": "ok",
     "status_reason": "",
-    "title": "261° - U'King Akku LED Par Set (4 Stück) - 6x 18W RGBWA+UV 6-in-1, WiFi-App, DMX, IR-Fernbedienung, Akkubetrieb, inkl. Tasche",
+    "title": "289° - U'King Akku LED Par Set (4 Stück) - 6x 18W RGBWA+UV 6-in-1, WiFi-App, DMX, IR-Fernbedienung, Akkubetrieb, inkl. Tasche",
     "url": "https://www.mydealz.de/deals/uking-akku-led-par-set-4-stuck-6x-18w-rgbwauv-6-in-1-wifi-app-dmx-ir-fernbedienung-akkubetrieb-inkl-tasche-2863541",
     "vergleichspreis": 211.99,
     "vertrauen": [],
@@ -1033,7 +1033,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 139.99,
     "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
@@ -2015,7 +2015,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 44.95,
     "product_id": "wandhalterung-c27f396",
@@ -2040,7 +2040,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 12.0,
     "product_id": "wandhalterung-c27f396",
@@ -2062,7 +2062,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 9.99,
     "product_id": "wandhalterung-c27f396",
@@ -2085,7 +2085,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 35.99,
     "product_id": "wandhalterung-c27f396",
@@ -2108,9 +2108,9 @@
  "bot_name": "MJK_Dealradar_bot",
  "cache": {
   "blogs": {
-   "dealdoktor": "2026-11-27T15:51:17+01:00",
-   "mein-deal": "2026-11-27T15:51:17+01:00",
-   "mytopdeals": "2026-11-27T15:51:17+01:00"
+   "dealdoktor": "2026-11-27T16:17:42+01:00",
+   "mein-deal": "2026-11-27T16:17:42+01:00",
+   "mytopdeals": "2026-11-27T16:17:42+01:00"
   },
   "gutscheine": [],
   "hersteller": {
@@ -2179,27 +2179,27 @@
    "amazon|12.00"
   ]
  },
- "letzter_lauf": "2026-11-27T15:51:17+01:00",
+ "letzter_lauf": "2026-11-27T16:17:42+01:00",
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.2,
-   "meldung": "10 Beiträge (1 Feed-Seite)",
+   "dauer_s": 8.5,
+   "meldung": "20 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-27T15:51:17+01:00"
+   "zeit": "2026-11-27T16:17:42+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-27T15:51:17+01:00"
+   "zeit": "2026-11-27T16:17:42+01:00"
   },
   "hersteller": {
    "anzahl": 0,
-   "dauer_s": 10.5,
+   "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T15:51:17+01:00"
+   "zeit": "2026-11-27T16:17:42+01:00"
   },
   "leasingmarkt": {
    "anzahl": 28,
@@ -2210,31 +2210,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 4.9,
-   "meldung": "16 Beiträge (1 Feed-Seite)",
+   "dauer_s": 8.6,
+   "meldung": "32 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-27T15:51:17+01:00"
+   "zeit": "2026-11-27T16:17:42+01:00"
   },
   "mydealz": {
    "anzahl": 10,
-   "dauer_s": 57.1,
+   "dauer_s": 56.1,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T15:51:17+01:00"
+   "zeit": "2026-11-27T16:17:42+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.6,
+   "dauer_s": 3.5,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-27T15:51:17+01:00"
+   "zeit": "2026-11-27T16:17:42+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 19.6,
+   "dauer_s": 2.4,
    "meldung": "13 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 3 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-27T15:51:17+01:00"
+   "zeit": "2026-11-27T16:17:42+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -2242,10 +2242,10 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 13.4,
+   "dauer_s": 12.3,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-27T15:51:17+01:00"
+   "zeit": "2026-11-27T16:17:42+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -2296,7 +2296,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 59.99,
     "product_id": "knaller:airfryer",
@@ -2323,7 +2323,7 @@
     "hitze": null,
     "kategorie": "wasserkocher",
     "kategorie_name": "Wasserkocher",
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 24.99,
     "product_id": "knaller:wasserkocher",
@@ -2336,6 +2336,33 @@
     "title": "Russell Hobbs Inspire Wasserkocher grau (1,7 l, 2400 W)",
     "url": "https://www.mydealz.de/deals/russell-hobbs-inspire-wasserkocher-grau-17-l-2400-w-2873558",
     "vergleichspreis": 24.99,
+    "vertrauen": [],
+    "weitere_quellen": []
+   },
+   "dealdoktor|https://www.dealdoktor.de/koorui-e2711f-27-zoll-monitor/": {
+    "abzuege": [],
+    "bezug": 107.0,
+    "ean": "",
+    "first_seen": "2026-11-27T16:17:42+01:00",
+    "h": "b9671cb0f1",
+    "heiss": false,
+    "hints": [],
+    "hitze": null,
+    "kategorie": "monitor",
+    "kategorie_name": "Computer-Monitor",
+    "last_seen": "2026-11-27T16:17:42+01:00",
+    "leasing": {},
+    "price": 52.57,
+    "product_id": "knaller:monitor",
+    "rabatt": 51,
+    "shipping": null,
+    "shop": "dealdoktor",
+    "source": "dealdoktor",
+    "status": "ok",
+    "status_reason": "",
+    "title": "KOORUI E2711F 27 Zoll Monitor (FHD, 100 Hz, IPS) für 52,57€ (statt 107€)",
+    "url": "https://www.dealdoktor.de/koorui-e2711f-27-zoll-monitor/",
+    "vergleichspreis": 52.57,
     "vertrauen": [],
     "weitere_quellen": []
    },
@@ -2352,7 +2379,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 34.99,
     "product_id": "knaller:airfryer",
@@ -2410,7 +2437,7 @@
     "hitze": null,
     "kategorie": "schlagbohrset",
     "kategorie_name": "Akku-Schlagbohrschrauber-Set",
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 122.5,
     "product_id": "knaller:schlagbohrset",
@@ -2437,7 +2464,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 99.0,
     "product_id": "knaller:monitor",
@@ -2469,7 +2496,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 154.99,
     "product_id": "knaller:monitor",
@@ -2523,7 +2550,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-27T15:51:17+01:00",
+    "last_seen": "2026-11-27T16:17:42+01:00",
     "leasing": {},
     "price": 33.0,
     "product_id": "knaller:airfryer",
@@ -2573,6 +2600,7 @@
    "amazon|https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520": 159.99,
    "amazon|https://www.mydealz.de/deals/cosori-heissluftfritteuse-62-l-mit-beleuchtetem-sichtfenster-12-in-1-1700-w-2879469": 59.99,
    "amazon|https://www.mydealz.de/deals/russell-hobbs-inspire-wasserkocher-grau-17-l-2400-w-2873558": 24.99,
+   "dealdoktor|https://www.dealdoktor.de/koorui-e2711f-27-zoll-monitor/": 52.57,
    "joybuy|https://www.mydealz.de/deals/joybuy-willkommensangebot-app-midea-heissluftfritteuse-1800-watt-7-liter-antihaftbeschichtet-heatxpress-technologie-2878657": 34.99,
    "lidl|https://www.dealdoktor.de/silvercrest-ultrazone-airfryer/": 89.99,
    "manomano|https://www.mydealz.de/deals/makitabosch-sammeldeal-schlagbohrschrauber-18v-42-akkukreissage-40v-xgt-kreissage-40v-xgt-2872320": 122.5,
