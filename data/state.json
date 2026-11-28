@@ -700,7 +700,7 @@
      "Gutschein/Code nötig",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 549.0,
     "product_id": "e-bike",
@@ -746,7 +746,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 184.9,
     "product_id": "epson-et-2922",
@@ -769,7 +769,7 @@
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 174.99,
     "product_id": "epson-et-2922",
@@ -791,7 +791,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 199.9,
     "product_id": "epson-et-2922",
@@ -817,7 +817,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 78.55,
     "product_id": "lenovo-l24-4e",
@@ -867,7 +867,7 @@
      "nur für Neukunden",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 184.0,
     "product_id": "makita-dhp490rfx3",
@@ -939,7 +939,7 @@
      "Marketplace-Händler",
      "bitte prüfen: VESA"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 85.89,
     "product_id": "monitor-24-allgemein",
@@ -1209,7 +1209,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 139.99,
     "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
@@ -2191,7 +2191,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 44.95,
     "product_id": "wandhalterung-c27f396",
@@ -2216,7 +2216,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 12.0,
     "product_id": "wandhalterung-c27f396",
@@ -2238,7 +2238,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 9.99,
     "product_id": "wandhalterung-c27f396",
@@ -2261,7 +2261,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 35.99,
     "product_id": "wandhalterung-c27f396",
@@ -2284,9 +2284,9 @@
  "bot_name": "MJK_Dealradar_bot",
  "cache": {
   "blogs": {
-   "dealdoktor": "2026-11-28T17:17:37+01:00",
-   "mein-deal": "2026-11-28T17:17:37+01:00",
-   "mytopdeals": "2026-11-28T17:17:37+01:00"
+   "dealdoktor": "2026-11-28T17:47:35+01:00",
+   "mein-deal": "2026-11-28T17:47:35+01:00",
+   "mytopdeals": "2026-11-28T17:47:35+01:00"
   },
   "gutscheine": [],
   "hersteller": {
@@ -2368,62 +2368,62 @@
    "amazon|12.00"
   ]
  },
- "letzter_lauf": "2026-11-28T17:17:37+01:00",
+ "letzter_lauf": "2026-11-28T17:47:35+01:00",
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
    "dauer_s": 4.0,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T17:17:37+01:00"
+   "zeit": "2026-11-28T17:47:35+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-28T17:17:37+01:00"
+   "zeit": "2026-11-28T17:47:35+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T17:17:37+01:00"
+   "zeit": "2026-11-28T17:47:35+01:00"
   },
   "leasingmarkt": {
    "anzahl": 28,
    "dauer_s": 71.0,
-   "meldung": "18 Seiten, 0 Detailseiten geladen; 266 Angebote geprüft, 28 elektrisch",
+   "meldung": "nur alle 110 Min. abgefragt – Stand 17:17 Uhr",
    "status": "ok",
    "zeit": "2026-11-28T17:17:37+01:00"
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 8.3,
-   "meldung": "32 Beiträge (2 Feed-Seiten)",
+   "dauer_s": 4.2,
+   "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T17:17:37+01:00"
+   "zeit": "2026-11-28T17:47:35+01:00"
   },
   "mydealz": {
-   "anzahl": 10,
-   "dauer_s": 55.9,
+   "anzahl": 9,
+   "dauer_s": 56.8,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T17:17:37+01:00"
+   "zeit": "2026-11-28T17:47:35+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.4,
+   "dauer_s": 3.5,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T17:17:37+01:00"
+   "zeit": "2026-11-28T17:47:35+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 7.5,
+   "dauer_s": 2.3,
    "meldung": "15 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 5 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-28T17:17:37+01:00"
+   "zeit": "2026-11-28T17:47:35+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -2431,15 +2431,15 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 12.4,
+   "dauer_s": 14.6,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T17:17:37+01:00"
+   "zeit": "2026-11-28T17:47:35+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
    "dauer_s": 4.2,
-   "meldung": "25 Artikel im Feed",
+   "meldung": "nur alle 110 Min. abgefragt – Stand 17:17 Uhr",
    "status": "ok",
    "zeit": "2026-11-28T17:17:37+01:00"
   }
@@ -2447,33 +2447,6 @@
  "quellen_fehler": {},
  "rabattknaller": {
   "angebote": {
-   "amazon|https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520": {
-    "abzuege": [],
-    "bezug": 230.0,
-    "ean": "",
-    "first_seen": "2026-11-25T21:42:13+01:00",
-    "h": "37cc496cd8",
-    "heiss": false,
-    "hints": [],
-    "hitze": null,
-    "kategorie": "airfryer",
-    "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-26T17:17:53+01:00",
-    "leasing": {},
-    "price": 159.99,
-    "product_id": "knaller:airfryer",
-    "rabatt": 30,
-    "shipping": null,
-    "shop": "Amazon",
-    "source": "mydealz",
-    "status": "ok",
-    "status_reason": "",
-    "title": "Amazon: Ninja DZ400EUBK MAX Dual Zone Heißluftfritteuse – 9,5 l, 2 Körbe & 6-in-1",
-    "url": "https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520",
-    "vergleichspreis": 159.99,
-    "vertrauen": [],
-    "weitere_quellen": []
-   },
    "amazon|https://www.mydealz.de/deals/cosori-heissluftfritteuse-62-l-mit-beleuchtetem-sichtfenster-12-in-1-1700-w-2879469": {
     "abzuege": [],
     "bezug": 99.99,
@@ -2485,7 +2458,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 59.99,
     "product_id": "knaller:airfryer",
@@ -2512,7 +2485,7 @@
     "hitze": null,
     "kategorie": "wasserkocher",
     "kategorie_name": "Wasserkocher",
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 24.99,
     "product_id": "knaller:wasserkocher",
@@ -2568,7 +2541,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 34.99,
     "product_id": "knaller:airfryer",
@@ -2626,7 +2599,7 @@
     "hitze": null,
     "kategorie": "schlagbohrset",
     "kategorie_name": "Akku-Schlagbohrschrauber-Set",
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 122.5,
     "product_id": "knaller:schlagbohrset",
@@ -2653,7 +2626,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 99.0,
     "product_id": "knaller:monitor",
@@ -2685,7 +2658,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 154.99,
     "product_id": "knaller:monitor",
@@ -2739,7 +2712,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-28T17:17:37+01:00",
+    "last_seen": "2026-11-28T17:47:35+01:00",
     "leasing": {},
     "price": 33.0,
     "product_id": "knaller:airfryer",
@@ -2786,7 +2759,6 @@
    }
   },
   "gemeldet": {
-   "amazon|https://www.mydealz.de/deals/amazon-ninja-dz400eubk-max-dual-zone-heissluftfritteuse-95-l-2-korbe-6-in-1-2835520": 159.99,
    "amazon|https://www.mydealz.de/deals/cosori-heissluftfritteuse-62-l-mit-beleuchtetem-sichtfenster-12-in-1-1700-w-2879469": 59.99,
    "amazon|https://www.mydealz.de/deals/russell-hobbs-inspire-wasserkocher-grau-17-l-2400-w-2873558": 24.99,
    "dealdoktor|https://www.dealdoktor.de/koorui-e2711f-27-zoll-monitor/": 52.57,
