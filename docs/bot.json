@@ -1,7 +1,7 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-28T09:17:39+01:00",
+ "letzter_lauf": "2026-11-28T09:47:39+01:00",
  "produkte": {
   "akku-schlagbohrschrauber": {
    "aktiv": true,
@@ -69,9 +69,9 @@
     },
     {
      "h": "7daf11ca4a",
-     "preis": 609.0,
+     "preis": 599.0,
      "shop": "unbekannt",
-     "titel": "OneSport OT16-2 Folding E-Bike 250W Motor, 48V 17Ah (816 Wh) Akku , bis zu 120 km Reichweite, faltba",
+     "titel": "98° - OneSport OT16-2 Folding E-Bike 250W Motor, 48V 17Ah (816 Wh) Akku , bis zu 120 km Reichweite, ",
      "url": "https://www.mydealz.de/deals/onesport-ot16-2-folding-e-bike-250w-motor-48v-17ah-816-wh-akku-bis-zu-120-km-reichweite-faltbares-fatbike-fur-nur-609eur-statt-685eur-2884266"
     },
     {
@@ -127,7 +127,7 @@
    ],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-28T09:17:39+01:00",
+    "gesehen": "2026-11-28T09:47:39+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -181,7 +181,7 @@
    ],
    "bester": {
     "effektivpreis": 78.55,
-    "gesehen": "2026-11-28T09:17:39+01:00",
+    "gesehen": "2026-11-28T09:47:39+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -225,13 +225,6 @@
    "alternativen": [],
    "angebote": [
     {
-     "h": "19b656a95f",
-     "preis": 65.99,
-     "shop": "notebooksbilliger",
-     "titel": "[notebooksbilliger] Acer Nitro VG240YP6bip Monitor | 23,8\" IPS, Full HD, 144Hz, FreeSync, 99% sRGB |",
-     "url": "https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252"
-    },
-    {
      "h": "290c8706f5",
      "preis": 84.0,
      "shop": "Joybuy",
@@ -254,27 +247,29 @@
     }
    ],
    "bester": {
-    "effektivpreis": 65.99,
-    "gesehen": "2026-11-26T09:17:40+01:00",
-    "hinweise": [],
-    "preis": 65.99,
+    "effektivpreis": 84.0,
+    "gesehen": "2026-11-27T06:17:56+01:00",
+    "hinweise": [
+     "Versand unbekannt"
+    ],
+    "preis": 84.0,
     "quelle": "mydealz",
     "rate": null,
     "rechenweg": "",
-    "shop": "notebooksbilliger",
-    "titel": "[notebooksbilliger] Acer Nitro VG240YP6bip Monitor | 23,8\" IPS, Full HD, 144Hz, FreeSync, 99% sRGB | 65,99€ (inkl. Versand) | 0.9% CB Budgey",
-    "url": "https://www.mydealz.de/deals/notebooksbilliger-acer-nitro-vg240yp6bip-238-ips-full-hd-144hz-freesync-99-srgb-6599eur-inkl-versand-09-cb-mit-budgey-2880252",
-    "versand": 0.0,
+    "shop": "Joybuy",
+    "titel": "MSI MAG 245F X24 Monitor | 23,8\" Rapid IPS, Full HD 240Hz, FreeSync Premium, 0,5ms (GtG) | 3 Jahre Garantie",
+    "url": "https://www.mydealz.de/deals/msi-mag-245f-x24-monitor-238-rapid-ips-full-hd-240hz-freesync-premium-05ms-gtg-3-jahre-garantie-2881472",
+    "versand": null,
     "vertrauen": []
    },
    "kategorie": "monitor",
-   "kaufen_oder_warten": "✅ Kaufen: Zielpreis erreicht",
+   "kaufen_oder_warten": "⏳ Eher warten: Cyber Monday (30.11.) bringt oft noch einmal Deals",
    "name": "Monitor 24 Zoll mit VESA (Full HD, mind. 75 Hz)",
-   "score": 60,
+   "score": 0,
    "tiefstpreis": 65.99,
    "tiefstpreis_shop": "notebooksbilliger",
    "typ": "produkt",
-   "ziel_erreicht": true,
+   "ziel_erreicht": false,
    "zielpreis": 75.0
   },
   "ninja-max-6-in-1-dual-zone-heissluftfrit": {
@@ -305,7 +300,7 @@
    ],
    "bester": {
     "effektivpreis": 99.98,
-    "gesehen": "2026-11-28T08:47:37+01:00",
+    "gesehen": "2026-11-28T09:47:39+01:00",
     "hinweise": [],
     "preis": 99.98,
     "quelle": "mein-deal",
@@ -430,7 +425,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-28T09:17:39+01:00",
+    "gesehen": "2026-11-28T09:47:39+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -459,58 +454,58 @@
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.6,
+   "dauer_s": 4.7,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T09:17:39+01:00"
+   "zeit": "2026-11-28T09:47:39+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-28T09:17:39+01:00"
+   "zeit": "2026-11-28T09:47:39+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T09:17:39+01:00"
+   "zeit": "2026-11-28T09:47:39+01:00"
   },
   "leasingmarkt": {
    "anzahl": 28,
    "dauer_s": 76.4,
-   "meldung": "19 Seiten, 0 Detailseiten geladen; 273 Angebote geprüft, 28 elektrisch",
+   "meldung": "nur alle 110 Min. abgefragt – Stand 09:17 Uhr",
    "status": "ok",
    "zeit": "2026-11-28T09:17:39+01:00"
   },
   "mein-deal": {
-   "anzahl": 0,
-   "dauer_s": 4.7,
-   "meldung": "16 Beiträge (1 Feed-Seite)",
+   "anzahl": 1,
+   "dauer_s": 9.9,
+   "meldung": "32 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-28T09:17:39+01:00"
+   "zeit": "2026-11-28T09:47:39+01:00"
   },
   "mydealz": {
-   "anzahl": 8,
-   "dauer_s": 57.2,
+   "anzahl": 10,
+   "dauer_s": 57.9,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T09:17:39+01:00"
+   "zeit": "2026-11-28T09:47:39+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 4.0,
+   "dauer_s": 3.6,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T09:17:39+01:00"
+   "zeit": "2026-11-28T09:47:39+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 2.5,
+   "dauer_s": 1.6,
    "meldung": "15 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 5 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-28T09:17:39+01:00"
+   "zeit": "2026-11-28T09:47:39+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -518,15 +513,15 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 13.2,
+   "dauer_s": 15.6,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T09:17:39+01:00"
+   "zeit": "2026-11-28T09:47:39+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
    "dauer_s": 4.5,
-   "meldung": "25 Artikel im Feed",
+   "meldung": "nur alle 110 Min. abgefragt – Stand 09:17 Uhr",
    "status": "ok",
    "zeit": "2026-11-28T09:17:39+01:00"
   }
@@ -666,7 +661,7 @@
   }
  ],
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-28T09:17:39+01:00",
+ "stand": "2026-11-28T09:47:39+01:00",
  "version": 1,
  "warteschlange": [
   {
