@@ -116,6 +116,10 @@
    "abgelaufen": true,
    "geprueft": "2026-11-25T20:25:55+01:00"
   },
+  "https://www.mydealz.de/deals/ugreen-docking-station-hub-ethernet-4k-hdmi-pd100w-3usb-a-30-6-in-1-15598-2884615": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-28T10:17:40+01:00"
+  },
   "https://www.mydealz.de/deals/uking-akku-led-par-set-4-stuck-6x-18w-rgbwauv-6-in-1-wifi-app-dmx-ir-fernbedienung-akkubetrieb-inkl-tasche-2863541": {
    "abgelaufen": false,
    "geprueft": "2026-11-27T15:47:40+01:00"
@@ -639,7 +643,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 599.0,
     "product_id": "e-bike",
@@ -648,7 +652,7 @@
     "source": "mydealz",
     "status": "ok",
     "status_reason": "",
-    "title": "98° - OneSport OT16-2 Folding E-Bike 250W Motor, 48V 17Ah (816 Wh) Akku , bis zu 120 km Reichweite, faltbares Fatbike für nur 599€ statt 685€",
+    "title": "105° - OneSport OT16-2 Folding E-Bike 250W Motor, 48V 17Ah (816 Wh) Akku , bis zu 120 km Reichweite, faltbares Fatbike für nur 599€ statt 685€",
     "url": "https://www.mydealz.de/deals/onesport-ot16-2-folding-e-bike-250w-motor-48v-17ah-816-wh-akku-bis-zu-120-km-reichweite-faltbares-fatbike-fur-nur-609eur-statt-685eur-2884266",
     "vergleichspreis": 599.0,
     "vertrauen": [],
@@ -663,7 +667,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 184.9,
     "product_id": "epson-et-2922",
@@ -686,7 +690,7 @@
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 174.99,
     "product_id": "epson-et-2922",
@@ -708,7 +712,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 199.9,
     "product_id": "epson-et-2922",
@@ -734,7 +738,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 78.55,
     "product_id": "lenovo-l24-4e",
@@ -784,7 +788,7 @@
      "nur für Neukunden",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 184.0,
     "product_id": "makita-dhp490rfx3",
@@ -856,7 +860,7 @@
      "Marketplace-Händler",
      "bitte prüfen: VESA"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 85.89,
     "product_id": "monitor-24-allgemein",
@@ -1073,6 +1077,29 @@
     "vertrauen": [],
     "weitere_quellen": []
    },
+   "amazon|https://www.mydealz.de/deals/ugreen-docking-station-hub-ethernet-4k-hdmi-pd100w-3usb-a-30-6-in-1-15598-2884615": {
+    "abzuege": [],
+    "ean": "",
+    "first_seen": "2026-11-28T10:17:40+01:00",
+    "hints": [
+     "evtl. nur mit Prime",
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-28T10:17:40+01:00",
+    "leasing": {},
+    "price": 17.11,
+    "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
+    "shipping": null,
+    "shop": "Amazon",
+    "source": "mydealz",
+    "status": "verdaechtig",
+    "status_reason": "unter 40 % des Medians (58,55 €)",
+    "title": "Ugreen Docking Station Hub Ethernet, 4K HDMI, PD100W, 3*USB A 3.0 6-in-1 15598 (Prime)",
+    "url": "https://www.mydealz.de/deals/ugreen-docking-station-hub-ethernet-4k-hdmi-pd100w-3usb-a-30-6-in-1-15598-2884615",
+    "vergleichspreis": 17.11,
+    "vertrauen": [],
+    "weitere_quellen": []
+   },
    "amazon|https://www.mydealz.de/deals/wmf-nuova-longdrinkloffel-6-teilig-die-nr-1-in-cocktailruhrloffel-amazon-prime-2883076": {
     "abzuege": [],
     "ean": "",
@@ -1081,7 +1108,7 @@
      "evtl. nur mit Prime",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 12.49,
     "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
@@ -1089,8 +1116,8 @@
     "shop": "Amazon",
     "source": "mydealz",
     "status": "verdaechtig",
-    "status_reason": "unter 40 % des Medians (99,98 €)",
-    "title": "104° - WMF Nuova Longdrinklöffel 6-teilig, die Nr. 1 in Cocktailrührlöffel (Amazon Prime)",
+    "status_reason": "unter 40 % des Medians (58,55 €)",
+    "title": "106° - WMF Nuova Longdrinklöffel 6-teilig, die Nr. 1 in Cocktailrührlöffel (Amazon Prime)",
     "url": "https://www.mydealz.de/deals/wmf-nuova-longdrinkloffel-6-teilig-die-nr-1-in-cocktailruhrloffel-amazon-prime-2883076",
     "vergleichspreis": 12.49,
     "vertrauen": [],
@@ -1103,7 +1130,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 139.99,
     "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
@@ -2085,7 +2112,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 44.95,
     "product_id": "wandhalterung-c27f396",
@@ -2110,7 +2137,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 12.0,
     "product_id": "wandhalterung-c27f396",
@@ -2132,7 +2159,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 9.99,
     "product_id": "wandhalterung-c27f396",
@@ -2155,7 +2182,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 35.99,
     "product_id": "wandhalterung-c27f396",
@@ -2178,9 +2205,9 @@
  "bot_name": "MJK_Dealradar_bot",
  "cache": {
   "blogs": {
-   "dealdoktor": "2026-11-28T09:47:39+01:00",
-   "mein-deal": "2026-11-28T09:47:39+01:00",
-   "mytopdeals": "2026-11-28T09:47:39+01:00"
+   "dealdoktor": "2026-11-28T10:17:40+01:00",
+   "mein-deal": "2026-11-28T10:17:40+01:00",
+   "mytopdeals": "2026-11-28T10:17:40+01:00"
   },
   "gutscheine": [],
   "hersteller": {
@@ -2260,27 +2287,27 @@
    "amazon|12.00"
   ]
  },
- "letzter_lauf": "2026-11-28T09:47:39+01:00",
+ "letzter_lauf": "2026-11-28T10:17:40+01:00",
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.7,
+   "dauer_s": 4.2,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T09:47:39+01:00"
+   "zeit": "2026-11-28T10:17:40+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-28T09:47:39+01:00"
+   "zeit": "2026-11-28T10:17:40+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T09:47:39+01:00"
+   "zeit": "2026-11-28T10:17:40+01:00"
   },
   "leasingmarkt": {
    "anzahl": 28,
@@ -2290,32 +2317,32 @@
    "zeit": "2026-11-28T09:17:39+01:00"
   },
   "mein-deal": {
-   "anzahl": 1,
-   "dauer_s": 9.9,
+   "anzahl": 0,
+   "dauer_s": 9.0,
    "meldung": "32 Beiträge (2 Feed-Seiten)",
    "status": "ok",
-   "zeit": "2026-11-28T09:47:39+01:00"
+   "zeit": "2026-11-28T10:17:40+01:00"
   },
   "mydealz": {
-   "anzahl": 10,
-   "dauer_s": 57.9,
+   "anzahl": 11,
+   "dauer_s": 57.5,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T09:47:39+01:00"
+   "zeit": "2026-11-28T10:17:40+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.6,
+   "dauer_s": 4.2,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T09:47:39+01:00"
+   "zeit": "2026-11-28T10:17:40+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 1.6,
+   "dauer_s": 5.5,
    "meldung": "15 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 5 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-28T09:47:39+01:00"
+   "zeit": "2026-11-28T10:17:40+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -2323,10 +2350,10 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 15.6,
+   "dauer_s": 14.6,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T09:47:39+01:00"
+   "zeit": "2026-11-28T10:17:40+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -2377,7 +2404,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 59.99,
     "product_id": "knaller:airfryer",
@@ -2404,7 +2431,7 @@
     "hitze": null,
     "kategorie": "wasserkocher",
     "kategorie_name": "Wasserkocher",
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 24.99,
     "product_id": "knaller:wasserkocher",
@@ -2460,7 +2487,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 34.99,
     "product_id": "knaller:airfryer",
@@ -2518,7 +2545,7 @@
     "hitze": null,
     "kategorie": "schlagbohrset",
     "kategorie_name": "Akku-Schlagbohrschrauber-Set",
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 122.5,
     "product_id": "knaller:schlagbohrset",
@@ -2545,7 +2572,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 99.0,
     "product_id": "knaller:monitor",
@@ -2577,7 +2604,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 154.99,
     "product_id": "knaller:monitor",
@@ -2631,7 +2658,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-28T09:47:39+01:00",
+    "last_seen": "2026-11-28T10:17:40+01:00",
     "leasing": {},
     "price": 33.0,
     "product_id": "knaller:airfryer",
