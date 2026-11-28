@@ -1,7 +1,7 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-28T18:17:45+01:00",
+ "letzter_lauf": "2026-11-28T18:47:38+01:00",
  "produkte": {
   "akku-schlagbohrschrauber": {
    "aktiv": true,
@@ -82,6 +82,13 @@
      "url": "https://www.mydealz.de/deals/onesport-ot16-2-folding-e-bike-250w-motor-48v-17ah-816-wh-akku-bis-zu-120-km-reichweite-faltbares-fatbike-fur-nur-609eur-statt-685eur-2884266"
     },
     {
+     "h": "966410de94",
+     "preis": 899.1,
+     "shop": "ENGWE",
+     "titel": "ENGWE P20 – 250W Leiser Motor mit Drehmomentsensor Klapp-E-Bike",
+     "url": "https://www.mydealz.de/deals/engwe-p20-250w-leiser-motor-mit-drehmomentsensor-klapp-e-bike-2884921"
+    },
+    {
      "h": "f1bab60364",
      "preis": 1099.0,
      "shop": "Amazon",
@@ -148,7 +155,7 @@
    ],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-28T18:17:45+01:00",
+    "gesehen": "2026-11-28T18:47:38+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -202,7 +209,7 @@
    ],
    "bester": {
     "effektivpreis": 78.55,
-    "gesehen": "2026-11-28T18:17:45+01:00",
+    "gesehen": "2026-11-28T18:47:38+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -446,7 +453,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-28T18:17:45+01:00",
+    "gesehen": "2026-11-28T18:47:38+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -475,23 +482,23 @@
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.8,
+   "dauer_s": 4.1,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "leasingmarkt": {
    "anzahl": 28,
@@ -502,31 +509,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 6.0,
+   "dauer_s": 4.3,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "mydealz": {
    "anzahl": 9,
-   "dauer_s": 58.0,
+   "dauer_s": 56.4,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.5,
+   "dauer_s": 3.4,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 42.9,
+   "dauer_s": 2.4,
    "meldung": "15 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 5 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -534,10 +541,10 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 13.4,
+   "dauer_s": 12.4,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -671,7 +678,7 @@
   }
  ],
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-28T18:17:45+01:00",
+ "stand": "2026-11-28T18:47:38+01:00",
  "version": 1,
  "warteschlange": [
   {

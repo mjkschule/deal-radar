@@ -24,6 +24,10 @@
    "abgelaufen": false,
    "geprueft": "2026-11-28T16:17:39+01:00"
   },
+  "https://www.mydealz.de/deals/engwe-p20-250w-leiser-motor-mit-drehmomentsensor-klapp-e-bike-2884921": {
+   "abgelaufen": false,
+   "geprueft": "2026-11-28T18:47:38+01:00"
+  },
   "https://www.mydealz.de/deals/epson-ecotank-et-2922-fur-18490-eur-bei-amazon-2847452": {
    "abgelaufen": true,
    "geprueft": "2026-11-25T20:25:55+01:00"
@@ -647,6 +651,28 @@
     "vertrauen": [],
     "weitere_quellen": []
    },
+   "engwe|https://www.mydealz.de/deals/engwe-p20-250w-leiser-motor-mit-drehmomentsensor-klapp-e-bike-2884921": {
+    "abzuege": [],
+    "ean": "",
+    "first_seen": "2026-11-28T18:47:38+01:00",
+    "hints": [
+     "Versand unbekannt"
+    ],
+    "last_seen": "2026-11-28T18:47:38+01:00",
+    "leasing": {},
+    "price": 899.1,
+    "product_id": "e-bike",
+    "shipping": null,
+    "shop": "ENGWE",
+    "source": "mydealz",
+    "status": "ok",
+    "status_reason": "",
+    "title": "ENGWE P20 – 250W Leiser Motor mit Drehmomentsensor Klapp-E-Bike",
+    "url": "https://www.mydealz.de/deals/engwe-p20-250w-leiser-motor-mit-drehmomentsensor-klapp-e-bike-2884921",
+    "vergleichspreis": 899.1,
+    "vertrauen": [],
+    "weitere_quellen": []
+   },
    "fischer e-bikes|https://www.mydealz.de/deals/fischer-e-bike-2884724": {
     "abzuege": [],
     "ean": "",
@@ -746,7 +772,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 184.9,
     "product_id": "epson-et-2922",
@@ -769,7 +795,7 @@
      "evtl. nur per App",
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 174.99,
     "product_id": "epson-et-2922",
@@ -791,7 +817,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 199.9,
     "product_id": "epson-et-2922",
@@ -817,7 +843,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 78.55,
     "product_id": "lenovo-l24-4e",
@@ -867,7 +893,7 @@
      "nur für Neukunden",
      "Preis evtl. inkl. Cashback/Payback"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 184.0,
     "product_id": "makita-dhp490rfx3",
@@ -939,7 +965,7 @@
      "Marketplace-Händler",
      "bitte prüfen: VESA"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 85.89,
     "product_id": "monitor-24-allgemein",
@@ -1209,7 +1235,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 139.99,
     "product_id": "ninja-max-6-in-1-dual-zone-heissluftfrit",
@@ -2191,7 +2217,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 44.95,
     "product_id": "wandhalterung-c27f396",
@@ -2216,7 +2242,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 12.0,
     "product_id": "wandhalterung-c27f396",
@@ -2238,7 +2264,7 @@
     "hints": [
      "Versand unbekannt"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 9.99,
     "product_id": "wandhalterung-c27f396",
@@ -2261,7 +2287,7 @@
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
     ],
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 35.99,
     "product_id": "wandhalterung-c27f396",
@@ -2284,9 +2310,9 @@
  "bot_name": "MJK_Dealradar_bot",
  "cache": {
   "blogs": {
-   "dealdoktor": "2026-11-28T18:17:45+01:00",
-   "mein-deal": "2026-11-28T18:17:45+01:00",
-   "mytopdeals": "2026-11-28T18:17:45+01:00"
+   "dealdoktor": "2026-11-28T18:47:38+01:00",
+   "mein-deal": "2026-11-28T18:47:38+01:00",
+   "mytopdeals": "2026-11-28T18:47:38+01:00"
   },
   "gutscheine": [],
   "hersteller": {
@@ -2368,27 +2394,27 @@
    "amazon|12.00"
   ]
  },
- "letzter_lauf": "2026-11-28T18:17:45+01:00",
+ "letzter_lauf": "2026-11-28T18:47:38+01:00",
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.8,
+   "dauer_s": 4.1,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "leasingmarkt": {
    "anzahl": 28,
@@ -2399,31 +2425,31 @@
   },
   "mein-deal": {
    "anzahl": 0,
-   "dauer_s": 6.0,
+   "dauer_s": 4.3,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "mydealz": {
    "anzahl": 9,
-   "dauer_s": 58.0,
+   "dauer_s": 56.4,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.5,
+   "dauer_s": 3.4,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 42.9,
+   "dauer_s": 2.4,
    "meldung": "15 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 5 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -2431,10 +2457,10 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 13.4,
+   "dauer_s": 12.4,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T18:17:45+01:00"
+   "zeit": "2026-11-28T18:47:38+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -2458,7 +2484,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 59.99,
     "product_id": "knaller:airfryer",
@@ -2485,7 +2511,7 @@
     "hitze": null,
     "kategorie": "wasserkocher",
     "kategorie_name": "Wasserkocher",
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 24.99,
     "product_id": "knaller:wasserkocher",
@@ -2541,7 +2567,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 34.99,
     "product_id": "knaller:airfryer",
@@ -2599,7 +2625,7 @@
     "hitze": null,
     "kategorie": "schlagbohrset",
     "kategorie_name": "Akku-Schlagbohrschrauber-Set",
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 122.5,
     "product_id": "knaller:schlagbohrset",
@@ -2626,7 +2652,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 99.0,
     "product_id": "knaller:monitor",
@@ -2658,7 +2684,7 @@
     "hitze": null,
     "kategorie": "monitor",
     "kategorie_name": "Computer-Monitor",
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 154.99,
     "product_id": "knaller:monitor",
@@ -2712,7 +2738,7 @@
     "hitze": null,
     "kategorie": "airfryer",
     "kategorie_name": "Airfryer",
-    "last_seen": "2026-11-28T18:17:45+01:00",
+    "last_seen": "2026-11-28T18:47:38+01:00",
     "leasing": {},
     "price": 33.0,
     "product_id": "knaller:airfryer",
