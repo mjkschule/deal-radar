@@ -1,7 +1,7 @@
 {
  "enddatum": "2026-11-30T23:59+01:00",
  "gutscheine": [],
- "letzter_lauf": "2026-11-28T04:17:40+01:00",
+ "letzter_lauf": "2026-11-28T04:47:42+01:00",
  "produkte": {
   "akku-schlagbohrschrauber": {
    "aktiv": true,
@@ -127,7 +127,7 @@
    ],
    "bester": {
     "effektivpreis": 174.99,
-    "gesehen": "2026-11-28T04:17:40+01:00",
+    "gesehen": "2026-11-28T04:47:42+01:00",
     "hinweise": [
      "evtl. nur per App",
      "Versand unbekannt"
@@ -181,7 +181,7 @@
    ],
    "bester": {
     "effektivpreis": 78.55,
-    "gesehen": "2026-11-28T04:17:40+01:00",
+    "gesehen": "2026-11-28T04:47:42+01:00",
     "hinweise": [
      "Versand unbekannt"
     ],
@@ -305,7 +305,7 @@
    ],
    "bester": {
     "effektivpreis": 99.98,
-    "gesehen": "2026-11-28T04:17:40+01:00",
+    "gesehen": "2026-11-28T04:47:42+01:00",
     "hinweise": [],
     "preis": 99.98,
     "quelle": "mein-deal",
@@ -430,7 +430,7 @@
    ],
    "bester": {
     "effektivpreis": 35.99,
-    "gesehen": "2026-11-28T04:17:40+01:00",
+    "gesehen": "2026-11-28T04:47:42+01:00",
     "hinweise": [
      "Versand unbekannt",
      "bitte prüfen: schwenkbar"
@@ -459,23 +459,23 @@
  "quellen": {
   "dealdoktor": {
    "anzahl": 0,
-   "dauer_s": 4.1,
+   "dauer_s": 4.5,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T04:17:40+01:00"
+   "zeit": "2026-11-28T04:47:42+01:00"
   },
   "ebay": {
    "dauer_s": 0.0,
    "meldung": "deaktiviert – keine eBay-API-Schlüssel hinterlegt",
    "status": "deaktiviert",
-   "zeit": "2026-11-28T04:17:40+01:00"
+   "zeit": "2026-11-28T04:47:42+01:00"
   },
   "hersteller": {
    "anzahl": 0,
    "dauer_s": 0.0,
    "meldung": "Tefal: 1942 Seiten, 0 passende Produkte, 0 gelesen; Cosori: 34 Seiten, 0 passende Produkte, 0 gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T04:17:40+01:00"
+   "zeit": "2026-11-28T04:47:42+01:00"
   },
   "leasingmarkt": {
    "anzahl": 28,
@@ -486,31 +486,31 @@
   },
   "mein-deal": {
    "anzahl": 1,
-   "dauer_s": 4.6,
+   "dauer_s": 4.9,
    "meldung": "16 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T04:17:40+01:00"
+   "zeit": "2026-11-28T04:47:42+01:00"
   },
   "mydealz": {
    "anzahl": 8,
-   "dauer_s": 56.1,
+   "dauer_s": 57.3,
    "meldung": "17/17 Feeds gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T04:17:40+01:00"
+   "zeit": "2026-11-28T04:47:42+01:00"
   },
   "mytopdeals": {
    "anzahl": 0,
-   "dauer_s": 3.5,
+   "dauer_s": 4.3,
    "meldung": "10 Beiträge (1 Feed-Seite)",
    "status": "ok",
-   "zeit": "2026-11-28T04:17:40+01:00"
+   "zeit": "2026-11-28T04:47:42+01:00"
   },
   "postfach": {
    "anzahl": 0,
-   "dauer_s": 3.1,
+   "dauer_s": 3.3,
    "meldung": "15 Mails, 0 Preisalarme mit Treffer, 0 Gutscheine; übersprungen: 6 Bestätigung, 5 Newsletter",
    "status": "ok",
-   "zeit": "2026-11-28T04:17:40+01:00"
+   "zeit": "2026-11-28T04:47:42+01:00"
   },
   "schnaeppchenfuchs": {
    "meldung": "in config.yaml ausgeschaltet",
@@ -518,10 +518,10 @@
   },
   "shop": {
    "anzahl": 3,
-   "dauer_s": 12.7,
+   "dauer_s": 13.1,
    "meldung": "3/3 Shop-Seiten gelesen",
    "status": "ok",
-   "zeit": "2026-11-28T04:17:40+01:00"
+   "zeit": "2026-11-28T04:47:42+01:00"
   },
   "sparneuwagen": {
    "anzahl": 0,
@@ -666,7 +666,7 @@
   }
  ],
  "ruhezeit_beim_lauf": false,
- "stand": "2026-11-28T04:17:40+01:00",
+ "stand": "2026-11-28T04:47:42+01:00",
  "version": 1,
  "warteschlange": [
   {
